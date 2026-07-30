@@ -1,0 +1,86 @@
+from datetime import datetime
+from typing import Literal
+
+from pydantic import BaseModel, Field, HttpUrl
+
+from app.models.tabs import DiseaseTabContent
+
+SHA256_PATTERN = r"^[0-9a-f]{64}$"
+
+
+class DiseaseSource(BaseModel):
+    plugin: str = Field(min_length=1)
+    url: HttpUrl
+    canonical_url: HttpUrl
+    retrieved_at: datetime
+    content_hash: str = Field(pattern=SHA256_PATTERN)
+    language: str = Field(min_length=2, max_length=16)
+
+
+class DiseaseFields(BaseModel):
+    name: str = Field(min_length=1)
+    aliases: tuple[str, ...] = ()
+    summary: str | None = None
+    causes: tuple[str, ...] = ()
+    risk_factors: tuple[str, ...] = ()
+    symptoms: tuple[str, ...] = ()
+    diagnosis: tuple[str, ...] = ()
+    treatment: tuple[str, ...] = ()
+    prevention: tuple[str, ...] = ()
+    prognosis: str | None = None
+    when_to_seek_care: tuple[str, ...] = ()
+
+
+class DiseaseSection(BaseModel):
+    heading: str = Field(min_length=1)
+    level: int = Field(ge=1, le=6)
+    order: int = Field(ge=1)
+    markdown: str = Field(min_length=1)
+
+
+class ParseMetadata(BaseModel):
+    method: Literal["rules", "llm", "rules+llm"]
+    model: str | None = None
+    prompt_version: str | None = None
+    parser_version: str = Field(min_length=1)
+    confidence: float | None = Field(default=None, ge=0, le=1)
+    warnings: tuple[str, ...] = ()
+
+
+class DiseaseDocument(BaseModel):
+    schema_version: str = "1.1"
+    document_id: str = Field(pattern=SHA256_PATTERN)
+    source: DiseaseSource
+    disease: DiseaseFields
+    sections: tuple[DiseaseSection, ...]
+    tabs: tuple[DiseaseTabContent, ...] = ()
+    parse_metadata: ParseMetadata
+
+
+class PartialDiseaseFields(BaseModel):
+    name: str | None = None
+    aliases: tuple[str, ...] = ()
+    summary: str | None = None
+    causes: tuple[str, ...] = ()
+    risk_factors: tuple[str, ...] = ()
+    symptoms: tuple[str, ...] = ()
+    diagnosis: tuple[str, ...] = ()
+    treatment: tuple[str, ...] = ()
+    prevention: tuple[str, ...] = ()
+    prognosis: str | None = None
+    when_to_seek_care: tuple[str, ...] = ()
+
+
+class ParsingPolicy(BaseModel):
+    timeout_seconds: float = Field(default=30, gt=0)
+    max_model_calls: int = Field(default=40, ge=1)
+    max_input_chars: int = Field(default=200_000, ge=1)
+
+
+class ParsedArtifactResult(BaseModel):
+    job_id: str
+    item_id: str
+    artifact_dir: str
+    document: DiseaseDocument
+    schema_hash: str = Field(pattern=SHA256_PATTERN)
+    reused_artifacts: bool = False

@@ -1,0 +1,790 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MedCrawler — Control Center</title>
+  <style>
+    :root {
+      --ink: #17211d;
+      --muted: #66736d;
+      --paper: #f4f1e9;
+      --surface: #fffdf8;
+      --surface-2: #eeebe2;
+      --line: #ddd8cc;
+      --green: #174c3c;
+      --green-2: #246b54;
+      --mint: #d8e9df;
+      --orange: #e86735;
+      --orange-soft: #fae2d5;
+      --yellow: #f2c45c;
+      --red: #b43f3f;
+      --red-soft: #f7dddd;
+      --blue: #386b8c;
+      --shadow: 0 12px 36px rgba(30, 42, 36, .08);
+      --radius: 18px;
+      --sidebar: 250px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 80% -10%, rgba(232, 103, 53, .10), transparent 28rem),
+        var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      font-size: 14px;
+    }
+
+    button, input, select { font: inherit; }
+    button { color: inherit; }
+
+    .app {
+      display: grid;
+      grid-template-columns: var(--sidebar) minmax(0, 1fr);
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 24px 18px;
+      color: #edf5f0;
+      background:
+        linear-gradient(150deg, rgba(255,255,255,.06), transparent 35%),
+        var(--green);
+      overflow: hidden;
+    }
+
+    .sidebar::after {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      left: -120px;
+      bottom: -100px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 50%;
+      box-shadow: 0 0 0 34px rgba(255,255,255,.025), 0 0 0 68px rgba(255,255,255,.02);
+      pointer-events: none;
+    }
+
+    .brand {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 8px 26px;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      color: var(--green);
+      background: #f4c96a;
+      box-shadow: inset 0 -3px 0 rgba(0,0,0,.09);
+    }
+
+    .brand-mark svg { width: 23px; height: 23px; }
+    .brand strong { display: block; font-size: 16px; letter-spacing: -.02em; }
+    .brand span { color: rgba(237,245,240,.62); font-size: 11px; }
+
+    .nav-label {
+      margin: 9px 11px;
+      color: rgba(237,245,240,.45);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .nav {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 5px;
+    }
+
+    .nav-button {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 12px;
+      border: 0;
+      border-radius: 11px;
+      color: rgba(244,250,246,.74);
+      background: transparent;
+      cursor: pointer;
+      text-align: left;
+      transition: .18s ease;
+    }
+
+    .nav-button svg { width: 18px; height: 18px; flex: 0 0 auto; }
+    .nav-button:hover { color: white; background: rgba(255,255,255,.07); }
+    .nav-button.active {
+      color: white;
+      background: rgba(255,255,255,.13);
+      box-shadow: inset 3px 0 var(--yellow);
+    }
+
+    .nav-count {
+      min-width: 21px;
+      margin-left: auto;
+      padding: 2px 6px;
+      color: #ffe9e1;
+      background: rgba(232,103,53,.65);
+      border-radius: 999px;
+      font-size: 10px;
+      text-align: center;
+    }
+
+    .session-card {
+      position: relative;
+      z-index: 1;
+      margin-top: auto;
+      padding: 14px;
+      border: 1px solid rgba(255,255,255,.11);
+      border-radius: 14px;
+      background: rgba(0,0,0,.10);
+    }
+
+    .session-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .session-head span:first-child { font-size: 11px; color: rgba(255,255,255,.58); }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #73d09e; box-shadow: 0 0 0 4px rgba(115,208,158,.12); }
+    .session-card strong { font-size: 12px; }
+    .session-card p { margin: 4px 0 0; color: rgba(255,255,255,.52); font-size: 10px; }
+
+    .main { min-width: 0; }
+
+    .topbar {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 0 34px;
+      border-bottom: 1px solid rgba(92, 99, 94, .13);
+      background: rgba(244,241,233,.78);
+      backdrop-filter: blur(16px);
+    }
+
+    .topbar-copy p { margin: 3px 0 0; color: var(--muted); font-size: 12px; }
+    .topbar-copy h1 { margin: 0; font-family: Georgia, serif; font-size: 21px; font-weight: 600; letter-spacing: -.02em; }
+    .actions { display: flex; align-items: center; gap: 10px; }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 38px;
+      padding: 0 15px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--surface);
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 12px;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+
+    .button:hover { transform: translateY(-1px); box-shadow: 0 7px 18px rgba(28,52,42,.10); }
+    .button svg { width: 16px; height: 16px; }
+    .button.primary { border-color: var(--green); color: white; background: var(--green); }
+    .button.orange { border-color: var(--orange); color: white; background: var(--orange); }
+    .button.ghost { background: transparent; }
+    .button.icon { width: 38px; padding: 0; }
+
+    .content { padding: 28px 34px 48px; }
+
+    .notice {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding: 12px 15px;
+      border: 1px solid #e5cf9a;
+      border-radius: 13px;
+      background: #fff7df;
+      color: #665221;
+    }
+
+    .notice svg { width: 18px; height: 18px; flex: 0 0 auto; }
+    .notice strong { color: #463817; }
+    .notice .close { margin-left: auto; border: 0; background: none; cursor: pointer; color: inherit; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .card {
+      border: 1px solid rgba(131,130,119,.20);
+      border-radius: var(--radius);
+      background: rgba(255,253,248,.92);
+      box-shadow: 0 3px 14px rgba(26,40,33,.035);
+    }
+
+    .stat { position: relative; padding: 18px; overflow: hidden; }
+    .stat::after {
+      content: "";
+      position: absolute;
+      width: 76px;
+      height: 76px;
+      right: -28px;
+      bottom: -38px;
+      border-radius: 50%;
+      background: var(--tint, var(--mint));
+    }
+
+    .stat-top { display: flex; align-items: center; justify-content: space-between; color: var(--muted); font-size: 11px; font-weight: 700; }
+    .stat-icon { width: 31px; height: 31px; display: grid; place-items: center; border-radius: 9px; color: var(--accent, var(--green)); background: var(--tint, var(--mint)); }
+    .stat-icon svg { width: 16px; height: 16px; }
+    .stat strong { display: block; margin-top: 11px; font-family: Georgia, serif; font-size: 26px; font-weight: 500; }
+    .stat-foot { margin-top: 5px; color: var(--muted); font-size: 10px; }
+    .stat-foot b { color: var(--green-2); }
+
+    .workspace {
+      display: grid;
+      grid-template-columns: minmax(0, 1.55fr) minmax(280px, .75fr);
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .panel-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 18px 20px 0;
+    }
+
+    .panel-head h2 { margin: 0; font-size: 14px; }
+    .panel-head p { margin: 4px 0 0; color: var(--muted); font-size: 10px; }
+    .panel-body { padding: 18px 20px 20px; }
+
+    .job-heading { display: flex; align-items: center; gap: 11px; }
+    .job-id { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--muted); font-size: 10px; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .03em;
+    }
+
+    .badge.running { color: var(--green); background: var(--mint); }
+    .badge.failed { color: var(--red); background: var(--red-soft); }
+    .badge.pending { color: #795d14; background: #faedc8; }
+    .pulse { width: 6px; height: 6px; border-radius: 50%; background: currentColor; animation: pulse 1.4s infinite; }
+    @keyframes pulse { 50% { opacity: .3; transform: scale(.75); } }
+
+    .progress-meta { display: flex; align-items: flex-end; justify-content: space-between; margin: 5px 0 10px; }
+    .progress-meta strong { font-family: Georgia, serif; font-size: 34px; font-weight: 500; }
+    .progress-meta span { color: var(--muted); font-size: 10px; }
+    .progress-track { height: 9px; border-radius: 99px; background: var(--surface-2); overflow: hidden; }
+    .progress-fill { width: 68%; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--green), #46a079); }
+
+    .pipeline {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 5px;
+      margin-top: 24px;
+    }
+
+    .pipeline::before {
+      content: "";
+      position: absolute;
+      left: 7%;
+      right: 7%;
+      top: 13px;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .stage { position: relative; z-index: 1; text-align: center; }
+    .stage-dot { width: 27px; height: 27px; display: grid; place-items: center; margin: 0 auto 8px; border: 4px solid var(--surface); border-radius: 50%; color: white; background: #aeb6b1; font-size: 10px; font-weight: 800; box-shadow: 0 0 0 1px var(--line); }
+    .stage.done .stage-dot { background: var(--green-2); }
+    .stage.current .stage-dot { background: var(--orange); box-shadow: 0 0 0 4px var(--orange-soft); }
+    .stage span { color: var(--muted); font-size: 9px; }
+    .stage.current span { color: var(--ink); font-weight: 800; }
+
+    .current-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 22px;
+      padding: 12px;
+      border-radius: 12px;
+      background: var(--surface-2);
+    }
+
+    .doc-icon { width: 35px; height: 42px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 8px; color: var(--green); background: white; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+    .doc-icon svg { width: 18px; }
+    .current-item strong { display: block; font-size: 11px; }
+    .current-item span { display: block; margin-top: 3px; color: var(--muted); font-size: 9px; }
+    .spinner { width: 17px; height: 17px; margin-left: auto; border: 2px solid #bdc8c2; border-top-color: var(--green); border-radius: 50%; animation: spin .8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .activity-list { display: grid; gap: 16px; }
+    .activity { display: grid; grid-template-columns: 9px 1fr auto; gap: 10px; align-items: start; }
+    .activity-dot { width: 8px; height: 8px; margin-top: 3px; border-radius: 50%; background: var(--green-2); box-shadow: 0 0 0 4px var(--mint); }
+    .activity.warning .activity-dot { background: var(--orange); box-shadow: 0 0 0 4px var(--orange-soft); }
+    .activity.error .activity-dot { background: var(--red); box-shadow: 0 0 0 4px var(--red-soft); }
+    .activity strong { display: block; font-size: 10px; }
+    .activity p { margin: 3px 0 0; color: var(--muted); font-size: 9px; line-height: 1.45; }
+    .activity time { color: #9ba29e; font-size: 9px; }
+
+    .table-panel { overflow: hidden; }
+    .table-tools { display: flex; align-items: center; gap: 8px; }
+
+    .search {
+      width: 190px;
+      height: 34px;
+      padding: 0 11px 0 32px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      outline: none;
+      background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%2366736d' stroke-width='1.7'%3E%3Ccircle cx='7' cy='7' r='4.5'/%3E%3Cpath d='m10.5 10.5 3.5 3.5'/%3E%3C/svg%3E")
+        no-repeat 9px center,
+        white;
+      font-size: 10px;
+    }
+
+    .search:focus { border-color: var(--green-2); box-shadow: 0 0 0 3px var(--mint); }
+    table { width: 100%; margin-top: 14px; border-collapse: collapse; }
+    th, td { padding: 12px 20px; border-top: 1px solid #ebe7de; text-align: left; white-space: nowrap; }
+    th { color: var(--muted); background: #faf8f2; font-size: 9px; letter-spacing: .06em; text-transform: uppercase; }
+    td { font-size: 10px; }
+    td.name { min-width: 220px; white-space: normal; font-weight: 750; }
+    .method { padding: 4px 7px; border: 1px solid var(--line); border-radius: 6px; color: var(--muted); font-family: ui-monospace, monospace; font-size: 8px; }
+    .row-action { border: 0; background: none; color: var(--muted); cursor: pointer; font-size: 18px; }
+    .empty-row { display: none; padding: 35px; color: var(--muted); text-align: center; }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      display: none;
+      place-items: center;
+      padding: 20px;
+      background: rgba(10,24,18,.48);
+      backdrop-filter: blur(5px);
+    }
+
+    .modal-backdrop.show { display: grid; }
+    .modal { width: min(510px, 100%); padding: 23px; border-radius: 20px; background: var(--surface); box-shadow: 0 30px 80px rgba(0,0,0,.24); animation: rise .2s ease; }
+    @keyframes rise { from { opacity: 0; transform: translateY(12px) scale(.98); } }
+    .modal h2 { margin: 0; font-family: Georgia, serif; font-size: 22px; font-weight: 500; }
+    .modal > p { margin: 6px 0 22px; color: var(--muted); font-size: 11px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { display: block; margin-bottom: 7px; font-size: 10px; font-weight: 800; }
+    .field input, .field select { width: 100%; height: 40px; padding: 0 11px; border: 1px solid var(--line); border-radius: 9px; outline: none; background: white; font-size: 11px; }
+    .field input:focus, .field select:focus { border-color: var(--green-2); box-shadow: 0 0 0 3px var(--mint); }
+    .modal-actions { display: flex; justify-content: flex-end; gap: 9px; margin-top: 22px; }
+
+    .toast {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 30;
+      padding: 13px 16px;
+      border-radius: 11px;
+      color: white;
+      background: var(--green);
+      box-shadow: var(--shadow);
+      transform: translateY(20px);
+      opacity: 0;
+      pointer-events: none;
+      transition: .22s ease;
+      font-size: 11px;
+    }
+
+    .toast.show { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1050px) {
+      :root { --sidebar: 78px; }
+      .brand-copy, .nav-button span:not(.nav-count), .nav-label, .session-card { display: none; }
+      .brand { justify-content: center; padding-inline: 0; }
+      .nav-button { justify-content: center; padding-inline: 8px; }
+      .nav-count { position: absolute; transform: translate(14px, -11px); }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .workspace { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 700px) {
+      .app { display: block; }
+      .sidebar { position: static; width: 100%; height: auto; flex-direction: row; align-items: center; padding: 10px 14px; }
+      .brand { padding: 0; }
+      .brand-mark { width: 34px; height: 34px; }
+      .nav { display: flex; margin-left: auto; }
+      .nav-button { width: 38px; height: 38px; }
+      .nav-button:nth-child(n+4), .sidebar .nav-label { display: none; }
+      .topbar { height: auto; padding: 17px 18px; }
+      .topbar-copy p, .button .button-label { display: none; }
+      .content { padding: 18px; }
+      .stats { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .stat { padding: 14px; }
+      .stat strong { font-size: 22px; }
+      .pipeline { grid-template-columns: repeat(3, 1fr); row-gap: 16px; }
+      .pipeline::before { display: none; }
+      .panel-head { flex-direction: column; }
+      .table-tools { width: 100%; }
+      .search { width: 100%; }
+      .table-wrap { overflow-x: auto; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="8"/>
+          </svg>
+        </div>
+        <div class="brand-copy">
+          <strong>MedCrawler</strong>
+          <span>Control Center</span>
+        </div>
+      </div>
+
+      <div class="nav-label">Workspace</div>
+      <nav class="nav">
+        <button class="nav-button active" data-view="Tổng quan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>
+          <span>Tổng quan</span>
+        </button>
+        <button class="nav-button" data-view="Crawl jobs">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v5H4zM4 15h16v5H4z"/><path d="M8 9v6m8-6v6"/></svg>
+          <span>Crawl jobs</span>
+        </button>
+        <button class="nav-button" data-view="Kho dữ liệu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7"/></svg>
+          <span>Kho dữ liệu</span>
+        </button>
+        <button class="nav-button" data-view="Failed queue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 9v4m0 4h.01"/><path d="M10.3 3.8 2.6 17.1A2 2 0 0 0 4.3 20h15.4a2 2 0 0 0 1.7-2.9L13.7 3.8a2 2 0 0 0-3.4 0Z"/></svg>
+          <span>Failed queue</span><span class="nav-count">3</span>
+        </button>
+        <button class="nav-button" data-view="Báo cáo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10m6 10V4m6 16v-7m4 7H2"/></svg>
+          <span>Báo cáo</span>
+        </button>
+      </nav>
+
+      <div class="nav-label" style="margin-top:22px">System</div>
+      <nav class="nav">
+        <button class="nav-button" data-view="Plugins">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3v4m8-4v4M5 11h14v4a7 7 0 0 1-14 0v-4Z"/><path d="M12 22v-4"/></svg>
+          <span>Plugins</span>
+        </button>
+        <button class="nav-button" data-view="Cấu hình">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3A1.7 1.7 0 0 0 10 3V2.8h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v4H21a1.7 1.7 0 0 0-1.6 1Z"/></svg>
+          <span>Cấu hình</span>
+        </button>
+      </nav>
+
+      <div class="session-card">
+        <div class="session-head"><span>WEBSITE SESSION</span><span class="dot"></span></div>
+        <strong>Genre Manuals / CLUE</strong>
+        <p>Hợp lệ · kiểm tra 2 phút trước</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar-copy">
+          <h1 id="pageTitle">Tổng quan hệ thống</h1>
+          <p>Thứ ba, 28 tháng 7 · Crawler đang hoạt động ổn định</p>
+        </div>
+        <div class="actions">
+          <button class="button icon" title="Làm mới" id="refreshButton">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6v5h-5"/><path d="M18.5 15a7 7 0 1 1-.7-7.8L20 11"/></svg>
+          </button>
+          <button class="button primary" id="newJobButton">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            <span class="button-label">Tạo crawl job</span>
+          </button>
+        </div>
+      </header>
+
+      <div class="content">
+        <div class="notice" id="notice">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v5m0 3h.01"/></svg>
+          <div><strong>Incremental crawl đang bật.</strong> 47 tài liệu không thay đổi đã được bỏ qua, tiết kiệm 47 lượt gọi AI.</div>
+          <button class="close" id="closeNotice" aria-label="Đóng">×</button>
+        </div>
+
+        <section class="stats">
+          <article class="card stat" style="--accent:#174c3c;--tint:#d8e9df">
+            <div class="stat-top"><span>TỔNG TÀI LIỆU</span><span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7m-7 4h7"/></svg></span></div>
+            <strong>1,284</strong>
+            <div class="stat-foot"><b>+126</b> trong lần chạy này</div>
+          </article>
+          <article class="card stat" style="--accent:#386b8c;--tint:#dce9f1">
+            <div class="stat-top"><span>ĐÃ HOÀN THÀNH</span><span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.6 2.6L16.5 9"/></svg></span></div>
+            <strong>1,191</strong>
+            <div class="stat-foot"><b>92.8%</b> tỷ lệ thành công</div>
+          </article>
+          <article class="card stat" style="--accent:#d45f31;--tint:#fae2d5">
+            <div class="stat-top"><span>ĐANG XỬ LÝ</span><span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4m0 12v4M4.9 4.9l2.8 2.8m8.6 8.6 2.8 2.8M2 12h4m12 0h4M4.9 19.1l2.8-2.8m8.6-8.6 2.8-2.8"/></svg></span></div>
+            <strong>87</strong>
+            <div class="stat-foot">Ước tính còn <b>18 phút</b></div>
+          </article>
+          <article class="card stat" style="--accent:#a73636;--tint:#f7dddd">
+            <div class="stat-top"><span>CẦN XỬ LÝ</span><span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 9v4m0 4h.01"/><circle cx="12" cy="12" r="9"/></svg></span></div>
+            <strong>6</strong>
+            <div class="stat-foot"><b>3 lỗi</b> có thể retry</div>
+          </article>
+        </section>
+
+        <section class="workspace">
+          <article class="card">
+            <div class="panel-head">
+              <div class="job-heading">
+                <div>
+                  <h2>Full crawl · Genre Manuals</h2>
+                  <p class="job-id">job_01J3M9Q8WKV61A2B7N</p>
+                </div>
+                <span class="badge running"><span class="pulse"></span> RUNNING</span>
+              </div>
+              <button class="button ghost" id="pauseButton">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 5v14m8-14v14"/></svg>
+                <span id="pauseText">Tạm dừng</span>
+              </button>
+            </div>
+            <div class="panel-body">
+              <div class="progress-meta">
+                <div><strong>68%</strong><span> · 872 / 1,284 tài liệu</span></div>
+                <span>14:32:08 → hiện tại</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill"></div></div>
+
+              <div class="pipeline">
+                <div class="stage done"><div class="stage-dot">✓</div><span>Discover</span></div>
+                <div class="stage done"><div class="stage-dot">✓</div><span>Fetch</span></div>
+                <div class="stage done"><div class="stage-dot">✓</div><span>Extract</span></div>
+                <div class="stage current"><div class="stage-dot">4</div><span>Clean</span></div>
+                <div class="stage"><div class="stage-dot">5</div><span>Parse</span></div>
+                <div class="stage"><div class="stage-dot">6</div><span>Persist</span></div>
+              </div>
+
+              <div class="current-item">
+                <div class="doc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/></svg></div>
+                <div>
+                  <strong>Chronic obstructive pulmonary disease</strong>
+                  <span>Đang chuẩn hóa Markdown · 142 KB HTML</span>
+                </div>
+                <div class="spinner"></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="panel-head">
+              <div><h2>Hoạt động gần đây</h2><p>Live event stream</p></div>
+              <button class="button icon ghost" title="Mở log"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </div>
+            <div class="panel-body activity-list">
+              <div class="activity">
+                <span class="activity-dot"></span>
+                <div><strong>Document persisted</strong><p>Asthma · JSON schema v1.0</p></div>
+                <time>2s</time>
+              </div>
+              <div class="activity">
+                <span class="activity-dot"></span>
+                <div><strong>Session validated</strong><p>Cookie state còn hiệu lực</p></div>
+                <time>1m</time>
+              </div>
+              <div class="activity warning">
+                <span class="activity-dot"></span>
+                <div><strong>Retry succeeded</strong><p>NETWORK_TIMEOUT · attempt 2</p></div>
+                <time>4m</time>
+              </div>
+              <div class="activity error">
+                <span class="activity-dot"></span>
+                <div><strong>Parsing failed</strong><p>Thiếu content root · queued</p></div>
+                <time>7m</time>
+              </div>
+              <div class="activity">
+                <span class="activity-dot"></span>
+                <div><strong>Checkpoint saved</strong><p>Item 868 · atomic write</p></div>
+                <time>9m</time>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="card table-panel">
+          <div class="panel-head">
+            <div><h2>Hàng đợi tài liệu</h2><p>Artifact và trạng thái xử lý gần nhất</p></div>
+            <div class="table-tools">
+              <input class="search" id="searchInput" type="search" placeholder="Tìm bệnh hoặc trạng thái…">
+              <button class="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16M7 12h10m-7 7h4"/></svg><span class="button-label">Lọc</span></button>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Tài liệu</th><th>Trạng thái</th><th>Phương thức</th><th>Thời gian</th><th>Hash</th><th></th></tr></thead>
+              <tbody id="queueBody">
+                <tr><td class="name">Chronic obstructive pulmonary disease</td><td><span class="badge running"><span class="pulse"></span> CLEANING</span></td><td><span class="method">rules+llm</span></td><td>Đang chạy</td><td class="job-id">7ac0…e82f</td><td><button class="row-action">⋯</button></td></tr>
+                <tr><td class="name">Acute bronchitis</td><td><span class="badge pending">PENDING</span></td><td><span class="method">—</span></td><td>—</td><td class="job-id">—</td><td><button class="row-action">⋯</button></td></tr>
+                <tr><td class="name">Asthma</td><td><span class="badge running">COMPLETED</span></td><td><span class="method">rules+llm</span></td><td>12.4s</td><td class="job-id">c19e…28a1</td><td><button class="row-action">⋯</button></td></tr>
+                <tr><td class="name">Cardiac arrhythmias</td><td><span class="badge failed">FAILED</span></td><td><span class="method">rules</span></td><td>30.0s</td><td class="job-id">—</td><td><button class="row-action">⋯</button></td></tr>
+                <tr><td class="name">Coronary artery disease</td><td><span class="badge running">UNCHANGED</span></td><td><span class="method">hash</span></td><td>3.2s</td><td class="job-id">b521…f907</td><td><button class="row-action">⋯</button></td></tr>
+              </tbody>
+            </table>
+            <div class="empty-row" id="emptyRow">Không tìm thấy tài liệu phù hợp.</div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <h2 id="modalTitle">Tạo crawl job mới</h2>
+      <p>Thiết lập phạm vi và giới hạn an toàn trước khi bắt đầu.</p>
+      <form id="jobForm">
+        <div class="form-grid">
+          <div class="field">
+            <label for="plugin">Plugin</label>
+            <select id="plugin"><option>genre_manuals</option></select>
+          </div>
+          <div class="field">
+            <label for="mode">Chế độ</label>
+            <select id="mode"><option>Incremental</option><option>Full crawl</option><option>Retry failed</option></select>
+          </div>
+          <div class="field">
+            <label for="maxItems">Giới hạn tài liệu</label>
+            <input id="maxItems" type="number" value="100" min="1">
+          </div>
+          <div class="field">
+            <label for="maxPages">Giới hạn trang</label>
+            <input id="maxPages" type="number" value="20" min="1">
+          </div>
+          <div class="field full">
+            <label for="evidence">Lưu bằng chứng</label>
+            <select id="evidence"><option>HTML + Markdown + JSON + Screenshot</option><option>HTML + Markdown + JSON</option></select>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="button" id="cancelModal">Hủy</button>
+          <button type="submit" class="button orange">Tạo và chạy</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Đã cập nhật dữ liệu hệ thống</div>
+
+  <script>
+    const modal = document.getElementById("modal");
+    const toast = document.getElementById("toast");
+    const pauseButton = document.getElementById("pauseButton");
+    let paused = false;
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 2300);
+    }
+
+    document.getElementById("newJobButton").addEventListener("click", () => {
+      modal.classList.add("show");
+      document.getElementById("plugin").focus();
+    });
+
+    document.getElementById("cancelModal").addEventListener("click", () => modal.classList.remove("show"));
+    modal.addEventListener("click", event => {
+      if (event.target === modal) modal.classList.remove("show");
+    });
+
+    document.getElementById("jobForm").addEventListener("submit", event => {
+      event.preventDefault();
+      modal.classList.remove("show");
+      showToast("Crawl job mới đã được tạo");
+    });
+
+    document.getElementById("closeNotice").addEventListener("click", () => {
+      document.getElementById("notice").remove();
+    });
+
+    document.getElementById("refreshButton").addEventListener("click", event => {
+      event.currentTarget.querySelector("svg").style.transform = "rotate(360deg)";
+      event.currentTarget.querySelector("svg").style.transition = "transform .45s ease";
+      setTimeout(() => event.currentTarget.querySelector("svg").style.transform = "", 500);
+      showToast("Đã cập nhật dữ liệu hệ thống");
+    });
+
+    pauseButton.addEventListener("click", () => {
+      paused = !paused;
+      document.getElementById("pauseText").textContent = paused ? "Tiếp tục" : "Tạm dừng";
+      const status = document.querySelector(".job-heading .badge");
+      status.className = paused ? "badge pending" : "badge running";
+      status.innerHTML = paused ? "PAUSED" : '<span class="pulse"></span> RUNNING';
+      document.querySelector(".spinner").style.animationPlayState = paused ? "paused" : "running";
+      showToast(paused ? "Job sẽ dừng tại checkpoint an toàn" : "Job đã tiếp tục");
+    });
+
+    document.querySelectorAll(".nav-button").forEach(button => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".nav-button").forEach(item => item.classList.remove("active"));
+        button.classList.add("active");
+        document.getElementById("pageTitle").textContent = button.dataset.view;
+        if (button.dataset.view !== "Tổng quan") {
+          showToast(`${button.dataset.view}: bản thiết kế demo`);
+        }
+      });
+    });
+
+    document.getElementById("searchInput").addEventListener("input", event => {
+      const query = event.target.value.trim().toLowerCase();
+      let visible = 0;
+      document.querySelectorAll("#queueBody tr").forEach(row => {
+        const match = row.textContent.toLowerCase().includes(query);
+        row.style.display = match ? "" : "none";
+        if (match) visible += 1;
+      });
+      document.getElementById("emptyRow").style.display = visible ? "none" : "block";
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") modal.classList.remove("show");
+    });
+  </script>
+</body>
+</html>

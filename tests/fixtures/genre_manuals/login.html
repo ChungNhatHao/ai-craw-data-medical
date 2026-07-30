@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <body>
+    <main id="content">
+      <form method="post" name="loginForm" action="/cms/login" id="loginForm">
+        <input type="hidden" name="site" value="CLUE">
+        <input
+          type="hidden"
+          name="redirect"
+          value="/sites/CLUE/home.html"
+        >
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+        <input type="checkbox" id="rememberme" name="useCookie">
+        <input type="submit" class="button" value="Login">
+      </form>
+    </main>
+  </body>
+</html>
+

@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Medical Crawler Console</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Medical Crawler Console">
+        <span class="brand-mark" aria-hidden="true">M</span>
+        <span>
+          <strong>Medical Crawler</strong>
+          <small>Operator Console · MVP</small>
+        </span>
+      </a>
+      <div class="system-status">
+        <span id="healthDot" class="health-dot"></span>
+        <span id="healthText">Đang kiểm tra hệ thống</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">CONTROLLED EXTRACTION WORKFLOW</p>
+          <h1>Từ website đến dữ liệu bệnh<br><span>có thể kiểm chứng.</span></h1>
+          <p class="hero-copy">
+            Nhập website và tài khoản được cấp quyền. Hệ thống sẽ hiển thị từng
+            giai đoạn từ đăng nhập, tìm trang bệnh đến xuất Markdown, JSON và report.
+          </p>
+        </div>
+        <div class="hero-metric">
+          <span>FLOW</span>
+          <strong>08</strong>
+          <small>checkpoint quan sát được</small>
+        </div>
+      </section>
+
+      <div class="workspace">
+        <section class="panel setup-panel">
+          <div class="panel-heading">
+            <span class="section-number">01</span>
+            <div>
+              <h2>Thiết lập phiên crawl</h2>
+              <p>Credential không được ghi vào report hoặc log.</p>
+            </div>
+          </div>
+
+          <form id="runForm" novalidate>
+            <div class="crawl-mode-tabs" role="tablist"
+              aria-label="Chọn cách tìm bệnh">
+              <button id="automaticModeTab" class="crawl-mode-tab active"
+                type="button" role="tab" aria-selected="true"
+                aria-controls="automaticModePanel" data-mode="automatic">
+                <strong>Crawl tự động</strong>
+                <small>Duyệt cây Medical</small>
+              </button>
+              <button id="importModeTab" class="crawl-mode-tab"
+                type="button" role="tab" aria-selected="false"
+                aria-controls="importModePanel" data-mode="import">
+                <strong>Import tên bệnh</strong>
+                <small>Tìm đúng danh sách</small>
+              </button>
+            </div>
+
+            <label class="field full">
+              <span>Website cần crawl</span>
+              <input id="url" name="url" type="url"
+                value="https://www.genre-manuals.com/sites/CLUE/home.html"
+                required spellcheck="false">
+              <small>Hiện hỗ trợ HTTPS thuộc genre-manuals.com</small>
+            </label>
+
+            <div class="field-grid">
+              <label class="field">
+                <span>Username</span>
+                <input id="username" name="username" type="text"
+                  autocomplete="username" required>
+              </label>
+              <label class="field">
+                <span>Password</span>
+                <span class="password-wrap">
+                  <input id="password" name="password" type="password"
+                    autocomplete="current-password" required>
+                  <button id="togglePassword" type="button"
+                    aria-label="Hiện hoặc ẩn password">Hiện</button>
+                </span>
+              </label>
+            </div>
+
+            <section id="automaticModePanel" class="crawl-mode-panel"
+              role="tabpanel" aria-labelledby="automaticModeTab">
+              <label class="field full">
+                <span>Số bệnh tối đa</span>
+                <div class="range-row">
+                  <input id="maxItems" name="max_items" type="range"
+                    min="1" max="25" value="10">
+                  <output id="maxItemsValue">10</output>
+                </div>
+                <small>AI sẽ duyệt cây Medical và chỉ nhận trang được xác minh là nội dung bệnh.</small>
+              </label>
+            </section>
+
+            <section id="importModePanel" class="crawl-mode-panel" role="tabpanel"
+              aria-labelledby="importModeTab" hidden>
+              <label class="field full">
+                <span>Danh sách tên bệnh</span>
+                <textarea id="diseaseNames" rows="7"
+                  placeholder="Mỗi dòng một tên bệnh, ví dụ:&#10;Down syndrome&#10;Sepsis&#10;Aortic dilatation"></textarea>
+                <small>Hệ thống khớp chính xác tên kết quả và hỗ trợ tối đa 25 bệnh.</small>
+              </label>
+              <div class="import-tools">
+                <label class="file-button" for="diseaseNamesFile">
+                  Import .txt / .csv / .xlsx
+                </label>
+                <input id="diseaseNamesFile" type="file"
+                  accept=".txt,.csv,.xlsx,text/plain,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+                <a class="file-button template-download"
+                  href="/api/v1/jobs/imports/xlsx/template">
+                  Tải XLSX mẫu
+                </a>
+                <span id="diseaseNameCount">0 tên hợp lệ</span>
+              </div>
+              <div class="category-expansion">
+                <label class="category-toggle">
+                  <input id="expandDiseaseCategories" type="checkbox" checked>
+                  <span>
+                    <strong>Mở rộng menu bệnh cha</strong>
+                    Nếu kết quả là danh mục, duyệt có giới hạn để tìm các trang bệnh con.
+                  </span>
+                </label>
+                <details class="category-advanced">
+                  <summary>Giới hạn nâng cao</summary>
+                  <div class="category-limit-grid">
+                    <label>
+                      <span>Độ sâu menu tối đa</span>
+                      <input id="categoryMaxDepth" type="number"
+                        min="1" max="8" value="5">
+                    </label>
+                    <label>
+                      <span>Số node tối đa</span>
+                      <input id="categoryMaxNodes" type="number"
+                        min="1" max="250" value="100">
+                    </label>
+                    <label>
+                      <span>Số bệnh con tối đa</span>
+                      <input id="categoryMaxDiseases" type="number"
+                        min="1" max="250" value="100">
+                    </label>
+                  </div>
+                </details>
+                <p id="categoryExpansionSummary" class="category-summary">
+                  0 tên gốc · mở rộng menu đang bật · tối đa 100 bệnh con
+                </p>
+              </div>
+              <div class="search-flow-note">
+                <strong>Luồng tìm kiếm</strong>
+                <span>Đăng nhập → tìm tên gốc → mở rộng menu cha → xác minh bệnh con → crawl nội dung.</span>
+                <small>Trong lúc chạy sẽ hiển thị: tên gốc đã xử lý · danh mục đã mở rộng · node đang chờ · bệnh đã xác nhận · node bỏ qua/lỗi.</small>
+              </div>
+            </section>
+
+            <label class="authorization">
+              <input id="authorization" type="checkbox" required>
+              <span>
+                Tôi xác nhận tài khoản này có quyền automation và lưu nội dung
+                từ website mục tiêu.
+              </span>
+            </label>
+
+            <div class="agent-options">
+              <label>
+                <input id="agenticDiscovery" type="checkbox">
+                <span>
+                  <strong id="agenticOptionTitle">Gemini Agentic Discovery</strong>
+                  <span id="agenticOptionDescription">AI chọn candidate và xác minh trang bệnh; browser vẫn do backend kiểm soát.</span>
+                </span>
+              </label>
+              <label>
+                <input id="aiNormalization" type="checkbox">
+                <span>
+                  <strong>AI Normalization</strong>
+                  Chỉ xử lý field mơ hồ sau bước BeautifulSoup và deterministic normalization.
+                </span>
+              </label>
+            </div>
+
+            <div id="formError" class="form-error" role="alert"></div>
+            <button id="runButton" class="primary-button" type="submit">
+              <span>Thực thi crawler tự động</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </form>
+
+          <div class="security-note">
+            <span class="shield" aria-hidden="true">✓</span>
+            <p><strong>Security boundary</strong> Password chỉ tồn tại trong bộ nhớ
+              lúc chạy. Session được lưu riêng với permission hạn chế.</p>
+          </div>
+        </section>
+
+        <section class="panel flow-panel">
+          <div class="panel-heading flow-heading">
+            <span class="section-number">02</span>
+            <div>
+              <h2>Tiến trình thực thi</h2>
+              <p id="runMeta">Chưa có run nào được khởi tạo.</p>
+            </div>
+            <span id="runBadge" class="run-badge idle">IDLE</span>
+          </div>
+
+          <div id="stageList" class="stage-list" aria-live="polite"></div>
+
+          <div id="runError" class="run-error" hidden>
+            <strong id="runErrorCode">RUN FAILED</strong>
+            <p id="runErrorMessage"></p>
+          </div>
+        </section>
+      </div>
+
+      <section id="resultsPanel" class="panel results-panel" hidden>
+        <div class="panel-heading">
+          <span class="section-number">03</span>
+          <div>
+            <h2>Output của phiên crawl</h2>
+            <p>Report tổng hợp, trạng thái item và artifact có thể tải xuống.</p>
+          </div>
+          <div class="header-actions">
+            <a id="discoveryLink" class="secondary-button" href="#" target="_blank">
+              Nhật ký AI
+            </a>
+            <a id="agentTraceLink" class="secondary-button" href="#" target="_blank">
+              Agent trace
+            </a>
+            <a id="importAuditLink" class="secondary-button" href="#"
+              target="_blank" hidden>
+              Nhật ký import
+            </a>
+            <a id="categoryExpansionLink" class="secondary-button" href="#"
+              target="_blank" hidden>
+              Nhật ký menu cha-con
+            </a>
+            <a id="reportLink" class="secondary-button" href="#" target="_blank">
+              Mở report JSON
+            </a>
+          </div>
+        </div>
+
+        <div class="summary-grid">
+          <article><span>Tổng item</span><strong id="totalItems">0</strong></article>
+          <article><span>Thành công</span><strong id="successItems">0</strong></article>
+          <article><span>Có lỗi</span><strong id="failedItems">0</strong></article>
+          <article><span>Nội dung mới</span><strong id="newItems">0</strong></article>
+          <article><span>Có cập nhật</span><strong id="updatedItems">0</strong></article>
+          <article><span>Không đổi</span><strong id="unchangedItems">0</strong></article>
+          <article><span>Job status</span><strong id="finalStatus">—</strong></article>
+        </div>
+        <div id="categoryWarnings" class="category-warnings" hidden></div>
+        <section id="searchDecisionPanel" class="search-decisions" hidden>
+          <div class="search-decisions-heading">
+            <div>
+              <p class="eyebrow">AI AUTOCOMPLETE DECISION</p>
+              <h3>Quyết định chọn tên bệnh</h3>
+            </div>
+            <span>Gợi ý website → Gemini → matcher an toàn</span>
+          </div>
+          <div id="searchDecisionRows" class="search-decision-rows"></div>
+        </section>
+
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Bệnh / item</th>
+                <th>Trạng thái</th>
+                <th>Kiểm chứng</th>
+                <th>Output</th>
+              </tr>
+            </thead>
+            <tbody id="resultRows"></tbody>
+          </table>
+        </div>
+
+        <article id="diseaseViewer" class="disease-viewer" hidden>
+          <div class="disease-viewer-head">
+            <div>
+              <p class="eyebrow">EXTRACTED DISEASE CONTENT</p>
+              <h3 id="diseaseName">Chi tiết bệnh</h3>
+            </div>
+            <button id="closeDiseaseViewer" type="button" aria-label="Đóng chi tiết">×</button>
+          </div>
+          <div id="diseaseMeta" class="disease-meta"></div>
+          <div id="diseaseAliases" class="alias-list"></div>
+          <div id="diseaseSummary" class="disease-summary"></div>
+          <div id="diseaseFields" class="disease-fields"></div>
+          <div id="diseaseTabs" class="disease-tabs"></div>
+          <div id="diseaseWarnings" class="disease-warnings"></div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <span>AI Medical Crawler · Internal Tool</span>
+      <span>Không dùng cho chẩn đoán hoặc tư vấn y khoa</span>
+    </footer>
+  </div>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
