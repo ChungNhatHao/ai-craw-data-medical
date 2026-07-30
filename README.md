@@ -190,4 +190,8 @@ without stopping successful items.
 Detailed architecture, decisions and daily evidence are in
 [PlanDetail/README.md](PlanDetail/README.md).
 
-# ai-craw-data-medical
+Hướng dẫn đầy đủ về phần mềm hệ thống, thư viện Python, Chromium và cấu hình
+máy mới nằm trong [INSTALLATION.md](INSTALLATION.md).
+
+Hướng dẫn khởi động backend, thao tác UI, theo dõi job và đọc output nằm trong
+[RUN_GUIDE.md](RUN_GUIDE.md).
