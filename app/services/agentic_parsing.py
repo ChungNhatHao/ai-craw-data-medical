@@ -26,14 +26,18 @@ from app.models.disease import (
 from app.parser.chunks import chunk_by_heading
 from app.parser.extractor import ContentExtractor
 from app.parser.markdown import MarkdownConverter
-from app.parser.structured import disease_schema_hash, missing_field_warnings
+from app.parser.structured import (
+    disease_schema_hash,
+    extract_deterministic_fields,
+    missing_field_warnings,
+)
 from app.plugins.base import SitePlugin
 from app.repositories.attempts import AttemptRepository
 from app.repositories.items import ItemRepository
 from app.services.cleaning import CLEANER_VERSION
 from app.storage.artifacts import ArtifactStore
 
-AGENTIC_PARSER_VERSION = "agentic-1.1.0"
+AGENTIC_PARSER_VERSION = "agentic-1.2.0"
 AGENTIC_PROMPT_VERSION = "agentic-1.1.0"
 
 
@@ -104,10 +108,7 @@ class AgenticParsingService:
                 item_id=item.item_id,
                 plugin=current_manifest.plugin,
             )
-            if (
-                baseline is not None
-                and baseline.job_id == current_manifest.baseline_job_id
-            ):
+            if baseline is not None and baseline.job_id == current_manifest.baseline_job_id:
                 reused = self.artifacts.reuse_valid_document(
                     job_id=job_id,
                     item=item,
@@ -164,9 +165,7 @@ class AgenticParsingService:
                     root_selectors=self.plugin.content_root_selectors(),
                     title_selectors=self.plugin.content_title_selectors(),
                 )
-                rebuilt_markdown, _ = MarkdownConverter(
-                    self.plugin.canonicalize_url
-                ).convert(
+                rebuilt_markdown, _ = MarkdownConverter(self.plugin.canonicalize_url).convert(
                     extracted.html,
                     base_url=str(item.canonical_url),
                 )
@@ -203,11 +202,32 @@ class AgenticParsingService:
                     file_name="disease-draft.json",
                     payload=draft.model_dump(mode="json"),
                 )
+                draft, backfilled_fields = _backfill_source_explicit_fields(
+                    draft,
+                    stored_markdown,
+                )
                 normalized, normalization = await self._normalize(
                     item=item,
                     content=content,
                     draft=draft,
                 )
+                if backfilled_fields:
+                    normalization = normalization.model_copy(
+                        update={
+                            "changed_fields": tuple(
+                                dict.fromkeys(
+                                    (
+                                        *normalization.changed_fields,
+                                        *backfilled_fields,
+                                    )
+                                )
+                            ),
+                            "warnings": (
+                                *normalization.warnings,
+                                *(f"deterministic_backfill:{field}" for field in backfilled_fields),
+                            ),
+                        }
+                    )
                 self.artifacts.persist_auxiliary_json(
                     job_id=job_id,
                     item=item,
@@ -348,9 +368,7 @@ def _draft_to_fields(draft: DiseaseDraft) -> DiseaseFields:
         treatment=tuple(value.value for value in draft.treatment),
         prevention=tuple(value.value for value in draft.prevention),
         prognosis=draft.prognosis.value if draft.prognosis else None,
-        when_to_seek_care=tuple(
-            value.value for value in draft.when_to_seek_care
-        ),
+        when_to_seek_care=tuple(value.value for value in draft.when_to_seek_care),
     )
 
 
@@ -377,3 +395,57 @@ def _deduplicate_draft(draft: DiseaseDraft) -> DiseaseDraft:
             unique.append(evidence)
         updates[field_name] = tuple(unique)
     return draft.model_copy(update=updates)
+
+
+def _backfill_source_explicit_fields(
+    draft: DiseaseDraft,
+    markdown: str,
+) -> tuple[DiseaseDraft, tuple[DiseaseFieldName, ...]]:
+    """Fill model omissions only when deterministic source structure is explicit."""
+    deterministic = extract_deterministic_fields(markdown)
+    updates: dict[str, object] = {}
+    changed: list[DiseaseFieldName] = []
+    scalar_fields: tuple[DiseaseFieldName, ...] = ("summary", "prognosis")
+    list_fields: tuple[DiseaseFieldName, ...] = (
+        "aliases",
+        "causes",
+        "risk_factors",
+        "symptoms",
+        "diagnosis",
+        "treatment",
+        "prevention",
+        "when_to_seek_care",
+    )
+
+    for field_name in scalar_fields:
+        if getattr(draft, field_name) is not None:
+            continue
+        value = getattr(deterministic, field_name)
+        if value is None:
+            continue
+        updates[field_name] = EvidenceValue(
+            value=value,
+            source_quote=value,
+            source_section="Deterministic source extraction",
+        )
+        changed.append(field_name)
+
+    for field_name in list_fields:
+        if getattr(draft, field_name):
+            continue
+        values = getattr(deterministic, field_name)
+        if not values:
+            continue
+        updates[field_name] = tuple(
+            EvidenceValue(
+                value=value,
+                source_quote=value,
+                source_section="Deterministic source extraction",
+            )
+            for value in values
+        )
+        changed.append(field_name)
+
+    if not updates:
+        return draft, ()
+    return draft.model_copy(update=updates), tuple(changed)

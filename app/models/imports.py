@@ -17,6 +17,7 @@ class ImportSearchAttempt(BaseModel):
     autocomplete_decision_source: Literal[
         "gemini",
         "deterministic_fallback",
+        "all_suggestions",
         "none",
     ] = "none"
     autocomplete_confidence: float | None = Field(default=None, ge=0, le=1)
@@ -27,6 +28,8 @@ class ImportSearchAttempt(BaseModel):
     selected_url: str | None = None
     selected_urls: tuple[str, ...] = ()
     confirmed_disease_count: int = Field(default=0, ge=0)
+    skipped_existing_count: int = Field(default=0, ge=0)
+    skipped_existing_urls: tuple[str, ...] = ()
     status: Literal["matched", "not_found"]
     reason_code: str
     reason: str

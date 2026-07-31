@@ -8,6 +8,7 @@ from app.parser.chunks import chunk_by_heading
 from app.parser.structured import (
     RuleBasedStructuredClient,
     disease_schema_hash,
+    extract_deterministic_fields,
     load_parser_prompt,
     merge_partial_fields,
     missing_field_warnings,
@@ -43,12 +44,7 @@ def test_chunk_rule_parse_and_merge_are_deterministic() -> None:
         chunks = chunk_by_heading(MARKDOWN)
         client = RuleBasedStructuredClient()
         prompt = load_parser_prompt()
-        partials = tuple(
-            [
-                await client.parse_chunk(chunk=chunk, prompt=prompt)
-                for chunk in chunks
-            ]
-        )
+        partials = tuple([await client.parse_chunk(chunk=chunk, prompt=prompt) for chunk in chunks])
         fields = merge_partial_fields(partials)
 
         assert [chunk.heading for chunk in chunks] == [
@@ -89,3 +85,27 @@ def test_grounding_guard_rejects_hallucinated_value() -> None:
 
     assert captured.value.code is ErrorCode.LLM_OUTPUT_INVALID
     assert "treatment" in str(captured.value)
+
+
+def test_deterministic_extraction_maps_genre_manuals_source_signals() -> None:
+    markdown = """# Patent foramen ovale
+
+Q21.1
+
+PFO
+
+The foramen ovale is a normal passageway in the fetus.
+
+This later paragraph must not replace the first source summary.
+
+| Column 1 | Column 2 |
+| --- | --- |
+| [Supportive evidence](https://example.test/evidence) | Cardiological report<br>Resting ECG |
+"""
+
+    fields = extract_deterministic_fields(markdown)
+
+    assert fields.aliases == ("PFO",)
+    assert fields.summary == ("The foramen ovale is a normal passageway in the fetus.")
+    assert fields.diagnosis == ("Cardiological report", "Resting ECG")
+    validate_grounding(fields, markdown)

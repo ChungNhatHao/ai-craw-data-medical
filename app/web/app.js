@@ -263,6 +263,8 @@ async function loadReport(jobId) {
   document.querySelector("#newItems").textContent = report.new_items || 0;
   document.querySelector("#updatedItems").textContent = report.updated_items || 0;
   document.querySelector("#unchangedItems").textContent = report.unchanged_items || 0;
+  document.querySelector("#missingFieldItems").textContent =
+    report.items_with_missing_fields || 0;
   document.querySelector("#finalStatus").textContent = stateLabel(report.status);
   document.querySelector("#reportLink").href = `/api/v1/jobs/${jobId}/report`;
   document.querySelector("#discoveryLink").href =
@@ -327,7 +329,11 @@ function renderSearchDecisions(audit) {
           )}">${escapeHtml(
             attempt.autocomplete_decision_source === "gemini"
               ? `Gemini · ${confidence}`
-              : "Fallback an toàn",
+              : (
+                attempt.autocomplete_decision_source === "all_suggestions"
+                  ? "Lấy toàn bộ gợi ý"
+                  : "Fallback an toàn"
+              ),
           )}</span>
         </div>
         <div class="suggestion-list">
@@ -349,6 +355,13 @@ function renderSearchDecisions(audit) {
           <p>
             <strong>Tên chuẩn dùng để tìm:</strong>
             ${escapeHtml(resolvedNames.join(" · "))}
+          </p>
+        ` : ""}
+        ${attempt.skipped_existing_count ? `
+          <p>
+            <strong>Đã bỏ qua:</strong>
+            ${escapeHtml(String(attempt.skipped_existing_count))}
+            bệnh đã hoàn tất ở lần chạy trước hoặc đã có trong job
           </p>
         ` : ""}
         <p>
@@ -430,6 +443,18 @@ function renderReportRows(items, jobId) {
 }
 
 function renderItemRow(item, jobId, provenance = null) {
+    const fieldLabels = {
+      aliases: "Tên gọi khác",
+      summary: "Tóm tắt",
+      causes: "Nguyên nhân",
+      risk_factors: "Yếu tố nguy cơ",
+      symptoms: "Triệu chứng",
+      diagnosis: "Chẩn đoán",
+      treatment: "Điều trị",
+      prevention: "Phòng ngừa",
+      prognosis: "Tiên lượng",
+      when_to_seek_care: "Khi nào cần chăm sóc",
+    };
     const changeLabels = {
       new: "Mới",
       updated: "Có cập nhật",
@@ -451,6 +476,18 @@ function renderItemRow(item, jobId, provenance = null) {
     const evidence = item.complete_artifact_set
       ? '<span class="verified">✓ Đủ artifact</span>'
       : escapeHtml(item.last_error_code || "Chưa đầy đủ");
+    const missingFields = item.missing_fields || [];
+    const missingFieldNote = missingFields.length
+      ? `<small class="missing-fields-warning">⚠ Không lấy được: ${
+          missingFields.map(field =>
+            escapeHtml(fieldLabels[field] || field)
+          ).join(", ")
+        }</small>`
+      : (
+        item.status === "parsed"
+          ? '<small class="fields-complete">✓ Đủ dữ liệu các field</small>'
+          : ""
+      );
     const changeBadge = item.change_status
       ? `<span class="change-pill ${escapeHtml(item.change_status)}">${
           escapeHtml(changeLabels[item.change_status] || item.change_status)
@@ -478,7 +515,7 @@ function renderItemRow(item, jobId, provenance = null) {
           ${provenanceNote}
         </td>
         <td><span class="status-pill ${escapeHtml(item.status)}">${escapeHtml(item.status)}</span></td>
-        <td>${evidence}${changeBadge}${changedNote}</td>
+        <td>${evidence}${changeBadge}${changedNote}${missingFieldNote}</td>
         <td><div class="artifact-links">${viewButton}${links || "—"}</div></td>
       </tr>`;
 }
@@ -531,13 +568,13 @@ function renderDisease(diseaseDocument) {
     <strong>Tóm tắt</strong>
     ${disease.summary
       ? escapeHtml(disease.summary)
-      : '<span class="empty-value">Nguồn không cung cấp trường này.</span>'}
+      : '<span class="empty-value">Không lấy được dữ liệu cho field này.</span>'}
   `;
   document.querySelector("#diseaseFields").innerHTML = fields.map(([label, value]) => {
     const values = Array.isArray(value) ? value : value ? [value] : [];
     const content = values.length
       ? `<ul>${values.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`
-      : '<p class="empty-value">Không có trong nguồn</p>';
+      : '<p class="empty-value">Không lấy được dữ liệu cho field này</p>';
     return `<section class="disease-field"><h4>${label}</h4>${content}</section>`;
   }).join("");
   const tabs = diseaseDocument.tabs || [];
@@ -595,9 +632,42 @@ function renderDisease(diseaseDocument) {
           </details>`;
       }).join("")}`
     : "";
+  const warningLabels = {
+    aliases: "Tên gọi khác",
+    summary: "Tóm tắt",
+    causes: "Nguyên nhân",
+    risk_factors: "Yếu tố nguy cơ",
+    symptoms: "Triệu chứng",
+    diagnosis: "Chẩn đoán",
+    treatment: "Điều trị",
+    prevention: "Phòng ngừa",
+    prognosis: "Tiên lượng",
+    when_to_seek_care: "Khi nào cần chăm sóc",
+  };
   const warnings = metadata.warnings || [];
+  const missingFields = warnings
+    .filter(value => value.startsWith("missing_field:"))
+    .map(value => value.slice("missing_field:".length))
+    .filter(Boolean);
+  const otherWarnings = warnings.filter(
+    value => !value.startsWith("missing_field:"),
+  );
   document.querySelector("#diseaseWarnings").innerHTML = warnings.length
-    ? `<strong>Warnings:</strong> ${warnings.map(escapeHtml).join(" · ")}`
+    ? `${
+        missingFields.length
+          ? `<strong>⚠ Các field không lấy được dữ liệu:</strong> ${
+              missingFields.map(field =>
+                escapeHtml(warningLabels[field] || field)
+              ).join(" · ")
+            }`
+          : ""
+      }${
+        otherWarnings.length
+          ? `<br><strong>Warnings khác:</strong> ${
+              otherWarnings.map(escapeHtml).join(" · ")
+            }`
+          : ""
+      }`
     : "";
   const viewer = document.querySelector("#diseaseViewer");
   viewer.hidden = false;

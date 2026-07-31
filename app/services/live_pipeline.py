@@ -262,7 +262,9 @@ class LivePipelineRunner:
             StageState.COMPLETED,
             (
                 f"Hoàn tất: {report.successful_items} thành công, "
-                f"{report.failed_items} lỗi"
+                f"{report.failed_items} lỗi, "
+                f"{report.items_with_missing_fields} bệnh thiếu field "
+                f"({report.missing_field_count} field)"
             ),
             1,
             1,

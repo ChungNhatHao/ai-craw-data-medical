@@ -84,12 +84,16 @@ class GenreManualsPlugin(SitePlugin):
     async def discover_demo_items(self) -> list[DiscoveredItem]:
         return []
 
+    def raw_tabs_complete(self, tabs: tuple[RawDiseaseTab, ...]) -> bool:
+        required = {"info", "life_dd_tpd", "ip", "health"}
+        return {tab.key for tab in tabs} == required and all(
+            tab.available and bool(tab.html.strip()) for tab in tabs
+        )
+
     async def discover_items(self, page: Page) -> list[DiscoveredItem]:
         self._validate_allowed_url(page.url)
         branch_links = await self._current_tree_sibling_links(page)
-        breadcrumb = (
-            await self._first_inner_text(page, selectors.BREADCRUMB)
-        ).lower()
+        breadcrumb = (await self._first_inner_text(page, selectors.BREADCRUMB)).lower()
         if "medical" not in breadcrumb or "ratings" not in breadcrumb:
             branch_links = None
         links = branch_links or page.locator(selectors.NAVIGATION_LINKS)
@@ -105,10 +109,7 @@ class GenreManualsPlugin(SitePlugin):
             canonical_url = self.canonicalize_url(source_url)
             if canonical_url == self.canonicalize_url(page.url):
                 continue
-            if (
-                branch_links is None
-                and not DETAIL_URL_PATTERN.search(urlparse(canonical_url).path)
-            ):
+            if branch_links is None and not DETAIL_URL_PATTERN.search(urlparse(canonical_url).path):
                 continue
             title = " ".join((await link.inner_text()).split()) or None
             item_id = build_item_id(self.name, canonical_url)
@@ -133,10 +134,7 @@ class GenreManualsPlugin(SitePlugin):
             if not href:
                 continue
             absolute_url = self.canonicalize_url(urljoin(page.url, href))
-            if (
-                not self._is_allowed_url(absolute_url)
-                or absolute_url in visited_pages
-            ):
+            if not self._is_allowed_url(absolute_url) or absolute_url in visited_pages:
                 continue
             return NavigationCandidate(
                 key=absolute_url,
@@ -257,20 +255,14 @@ class GenreManualsPlugin(SitePlugin):
                 "Expected login form was not found",
             )
 
-        await page.locator(selectors.USERNAME_INPUT).fill(
-            credentials.username.get_secret_value()
-        )
-        await page.locator(selectors.PASSWORD_INPUT).fill(
-            credentials.password.get_secret_value()
-        )
+        await page.locator(selectors.USERNAME_INPUT).fill(credentials.username.get_secret_value())
+        await page.locator(selectors.PASSWORD_INPUT).fill(credentials.password.get_secret_value())
         remember_me = page.locator(selectors.REMEMBER_ME)
         if await remember_me.count() and not await remember_me.is_checked():
             await remember_me.check()
 
         try:
-            await page.locator(selectors.SUBMIT).click(
-                timeout=self.selector_timeout_ms
-            )
+            await page.locator(selectors.SUBMIT).click(timeout=self.selector_timeout_ms)
             await page.wait_for_load_state(
                 "domcontentloaded",
                 timeout=self.navigation_timeout_ms,
@@ -335,8 +327,7 @@ class GenreManualsPlugin(SitePlugin):
         breadcrumb = await self._first_inner_text(page, selectors.BREADCRUMB)
         normalized_breadcrumb = " ".join(breadcrumb.lower().split())
         is_medical_ratings = (
-            "medical" in normalized_breadcrumb
-            and "ratings" in normalized_breadcrumb
+            "medical" in normalized_breadcrumb and "ratings" in normalized_breadcrumb
         )
         normalized_text = " ".join(f"{title} {content}".lower().split())
         matched_terms = tuple(
@@ -423,9 +414,7 @@ class GenreManualsPlugin(SitePlugin):
     ) -> NavigationCandidate | None:
         branch_links = await self._current_tree_branch_links(page)
         links = branch_links or page.locator("a[href]")
-        breadcrumb = (
-            await self._first_inner_text(page, selectors.BREADCRUMB)
-        ).lower()
+        breadcrumb = (await self._first_inner_text(page, selectors.BREADCRUMB)).lower()
         in_medical_tree = "medical" in breadcrumb
         ranked: list[tuple[int, str, str]] = []
         for index in range(await links.count()):
@@ -487,9 +476,7 @@ class GenreManualsPlugin(SitePlugin):
                         f"Candidate page returned HTTP {response.status}",
                     )
             else:
-                await page.locator(candidate.target).click(
-                    timeout=self.selector_timeout_ms
-                )
+                await page.locator(candidate.target).click(timeout=self.selector_timeout_ms)
                 await page.wait_for_load_state(
                     "domcontentloaded",
                     timeout=self.navigation_timeout_ms,
@@ -539,7 +526,10 @@ class GenreManualsPlugin(SitePlugin):
         tab_container = page.locator(".tabContainer").first
         tab_links = page.locator("ul.idTabs a")
         if not await tab_container.count() or not await tab_links.count():
-            return ()
+            raise CrawlerError(
+                ErrorCode.CONTENT_EMPTY,
+                "Disease detail is missing the required tab container",
+            )
 
         definitions: tuple[tuple[TabKey, str], ...] = (
             ("info", "Info"),
@@ -547,56 +537,39 @@ class GenreManualsPlugin(SitePlugin):
             ("ip", "IP"),
             ("health", "Health"),
         )
+        info_html = await tab_container.inner_html()
+        if not info_html.strip():
+            raise CrawlerError(
+                ErrorCode.CONTENT_EMPTY,
+                "Disease Info tab is empty",
+            )
         captured: list[RawDiseaseTab] = [
             RawDiseaseTab(
                 key="info",
                 label="Info",
                 source_url=page.url,
-                html=await tab_container.inner_html(),
+                html=info_html,
             )
         ]
         for key, label in definitions[1:]:
             link = tab_links.filter(has_text=label).first
             if not await link.count():
-                captured.append(
-                    RawDiseaseTab(
-                        key=key,
-                        label=label,
-                        source_url=page.url,
-                        available=False,
-                        warning="tab_link_not_found",
-                    )
+                raise CrawlerError(
+                    ErrorCode.CONTENT_EMPTY,
+                    f"Disease detail is missing the required {label} tab",
                 )
-                continue
             onclick = await link.get_attribute("onclick") or ""
             endpoint_match = re.search(
                 r"['\"]([^'\"]+\.html\.ajax)['\"]",
                 onclick,
             )
-            source_url = (
-                urljoin(page.url, endpoint_match.group(1))
-                if endpoint_match
-                else page.url
+            source_url = urljoin(page.url, endpoint_match.group(1)) if endpoint_match else page.url
+            html = await self._capture_required_tab_html(
+                page,
+                link=link,
+                label=label,
+                source_url=source_url,
             )
-            try:
-                async with page.expect_response(
-                    lambda response: ".html.ajax" in response.url,
-                    timeout=self.selector_timeout_ms,
-                ):
-                    await link.click(timeout=self.selector_timeout_ms)
-                await page.wait_for_timeout(100)
-                html = await page.locator(".tabContainer").first.inner_html()
-            except PlaywrightTimeoutError:
-                captured.append(
-                    RawDiseaseTab(
-                        key=key,
-                        label=label,
-                        source_url=source_url,
-                        available=False,
-                        warning="tab_ajax_timeout",
-                    )
-                )
-                continue
             captured.append(
                 RawDiseaseTab(
                     key=key,
@@ -609,6 +582,49 @@ class GenreManualsPlugin(SitePlugin):
         for tab in captured:
             enriched.append(await self._capture_related_details(page, tab))
         return tuple(enriched)
+
+    async def _capture_required_tab_html(
+        self,
+        page: Page,
+        *,
+        link: Locator,
+        label: str,
+        source_url: str,
+    ) -> str:
+        for _ in range(3):
+            previous_html = await page.locator(".tabContainer").first.inner_html()
+            try:
+                async with page.expect_response(
+                    lambda response: ".html.ajax" in response.url,
+                    timeout=self.selector_timeout_ms,
+                ):
+                    await link.click(timeout=self.selector_timeout_ms)
+                html = await page.locator(".tabContainer").first.inner_html()
+                if html.strip() and html != previous_html:
+                    return html
+            except PlaywrightTimeoutError:
+                html = await page.locator(".tabContainer").first.inner_html()
+                if html.strip() and html != previous_html:
+                    return html
+
+            if source_url != page.url:
+                try:
+                    response = await page.context.request.get(
+                        source_url,
+                        headers={"Referer": page.url},
+                        timeout=self.navigation_timeout_ms,
+                    )
+                    if response.status < 400:
+                        html = await response.text()
+                        if len(BeautifulSoup(html, "lxml").get_text(strip=True)) >= 1:
+                            return html
+                except PlaywrightError:
+                    pass
+
+        raise CrawlerError(
+            ErrorCode.CONTENT_EMPTY,
+            f"Required {label} tab could not be captured after retries",
+        )
 
     async def _capture_related_details(
         self,
@@ -724,10 +740,7 @@ class GenreManualsPlugin(SitePlugin):
 
     def _is_allowed_url(self, url: str) -> bool:
         parsed = urlparse(url)
-        return (
-            parsed.scheme in {"http", "https"}
-            and parsed.hostname in self.allowed_domains
-        )
+        return parsed.scheme in {"http", "https"} and parsed.hostname in self.allowed_domains
 
     async def _first_inner_text(self, page: Page, selector: str) -> str:
         locator = page.locator(selector)

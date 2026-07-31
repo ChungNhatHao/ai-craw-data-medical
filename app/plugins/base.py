@@ -82,6 +82,11 @@ class SitePlugin(ABC):
         del page
         return ()
 
+    def raw_tabs_complete(self, tabs: tuple[RawDiseaseTab, ...]) -> bool:
+        """Return whether cached raw tabs satisfy this plugin's source contract."""
+        del tabs
+        return True
+
     def content_root_selectors(self) -> tuple[str, ...]:
         """Return ordered selectors for offline main-content extraction."""
         return ("article", "main", "#content")

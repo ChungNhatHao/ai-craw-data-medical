@@ -637,6 +637,10 @@ input[type="range"] { flex: 1; accent-color: var(--teal); }
   color: #145c45;
   background: #dff4eb;
 }
+.decision-source.all_suggestions {
+  color: #174f7a;
+  background: #e2f1fb;
+}
 .suggestion-list {
   display: flex;
   flex-wrap: wrap;
@@ -840,6 +844,14 @@ td { padding: 15px 12px; border-bottom: 1px solid #edf1f0; font-size: 12px; vert
   line-height: 1.55;
 }
 .empty-value { color: #95a3a6 !important; font-style: italic; }
+.missing-fields-warning,
+.fields-complete {
+  display: block;
+  margin-top: 6px;
+  line-height: 1.45;
+}
+.missing-fields-warning { color: #9a5d16; }
+.fields-complete { color: #237356; }
 .disease-warnings {
   margin-top: 14px;
   color: #846323;
