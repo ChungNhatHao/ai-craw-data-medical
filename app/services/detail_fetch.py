@@ -50,17 +50,19 @@ class DetailFetchService:
     ) -> RawFetchResult:
         recovered = self.artifacts.load_valid_raw(job_id, item)
         if recovered is not None:
-            manifest, artifact_dir = recovered
-            await self.items.mark_fetched(job_id, item.item_id, artifact_dir)
-            checkpoint = await self.items.get_checkpoint(job_id, item.item_id)
-            return RawFetchResult(
-                job_id=job_id,
-                item_id=item.item_id,
-                artifact_dir=artifact_dir,
-                manifest=manifest,
-                attempt_count=checkpoint.attempt_count if checkpoint else 0,
-                reused_artifacts=True,
-            )
+            cached_tabs = self.artifacts.read_raw_tabs(job_id, item)
+            if self.plugin.raw_tabs_complete(cached_tabs):
+                manifest, artifact_dir = recovered
+                await self.items.mark_fetched(job_id, item.item_id, artifact_dir)
+                checkpoint = await self.items.get_checkpoint(job_id, item.item_id)
+                return RawFetchResult(
+                    job_id=job_id,
+                    item_id=item.item_id,
+                    artifact_dir=artifact_dir,
+                    manifest=manifest,
+                    attempt_count=checkpoint.attempt_count if checkpoint else 0,
+                    reused_artifacts=True,
+                )
 
         last_error: CrawlerError | None = None
         for policy_attempt in range(1, self.policy.max_attempts + 1):
@@ -87,8 +89,7 @@ class DetailFetchService:
                     error_message=str(exc),
                 )
                 should_retry = (
-                    exc.code in RETRYABLE_FETCH_ERRORS
-                    and policy_attempt < self.policy.max_attempts
+                    exc.code in RETRYABLE_FETCH_ERRORS and policy_attempt < self.policy.max_attempts
                 )
                 if should_retry:
                     await self.sleeper(self._retry_delay(policy_attempt))

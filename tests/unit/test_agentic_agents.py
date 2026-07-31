@@ -23,6 +23,7 @@ from app.models.agentic import (
     ObservedLink,
     PageObservation,
 )
+from app.services.agentic_parsing import _backfill_source_explicit_fields
 
 T = TypeVar("T", bound=BaseModel)
 CONTENT_HASH = "a" * 64
@@ -71,9 +72,7 @@ class SequencedStructuredClient:
                 "payload": payload,
             }
         )
-        return response_model.model_validate(
-            self.responses.pop(0).model_dump()
-        )
+        return response_model.model_validate(self.responses.pop(0).model_dump())
 
 
 def observation(*, text: str = "Symptoms and treatment of Example disease.") -> PageObservation:
@@ -126,6 +125,46 @@ def disease_draft() -> DiseaseDraft:
     )
 
 
+def test_agentic_draft_backfills_only_source_explicit_missing_fields() -> None:
+    draft = DiseaseDraft(
+        name=EvidenceValue(
+            value="Example disease",
+            source_quote="Example disease",
+        ),
+        symptoms=(
+            EvidenceValue(
+                value="Model symptom",
+                source_quote="Model symptom",
+            ),
+        ),
+    )
+    markdown = """# Example disease
+
+E10
+
+ED
+
+Source summary.
+
+| Column 1 | Column 2 |
+| --- | --- |
+| Symptoms | Deterministic symptom |
+| Supportive evidence | Source report<br>Source test |
+"""
+
+    completed, changed = _backfill_source_explicit_fields(draft, markdown)
+
+    assert changed == ("summary", "aliases", "diagnosis")
+    assert completed.summary is not None
+    assert completed.summary.value == "Source summary."
+    assert tuple(value.value for value in completed.aliases) == ("ED",)
+    assert tuple(value.value for value in completed.diagnosis) == (
+        "Source report",
+        "Source test",
+    )
+    assert tuple(value.value for value in completed.symptoms) == ("Model symptom",)
+
+
 def test_navigation_agent_allows_only_observed_unvisited_candidate() -> None:
     accepted = FakeStructuredClient(
         NavigationDecision(
@@ -135,9 +174,7 @@ def test_navigation_agent_allows_only_observed_unvisited_candidate() -> None:
             reason_code="disease_candidate",
         )
     )
-    decision = asyncio.run(
-        NavigationAgent(accepted).decide(observation(), remaining_hops=2)
-    )
+    decision = asyncio.run(NavigationAgent(accepted).decide(observation(), remaining_hops=2))
     assert decision.candidate_id == "candidate-1"
 
     with pytest.raises(ValueError, match="unknown or visited"):
@@ -158,10 +195,7 @@ def test_autocomplete_agent_selects_only_supplied_suggestion_and_explains() -> N
         ),
         AutocompleteSuggestion(
             candidate_id="autocomplete-2",
-            label=(
-                "Functional cardiac arrhythmias - "
-                "Functional cardiovascular symptoms"
-            ),
+            label=("Functional cardiac arrhythmias - Functional cardiovascular symptoms"),
         ),
     )
     accepted = FakeStructuredClient(
@@ -169,9 +203,7 @@ def test_autocomplete_agent_selects_only_supplied_suggestion_and_explains() -> N
             selected_candidate_ids=("autocomplete-1",),
             confidence=0.97,
             reason_code="singular_plural",
-            reason=(
-                "Cardiac arrhythmias chỉ khác tên import ở dạng số nhiều."
-            ),
+            reason=("Cardiac arrhythmias chỉ khác tên import ở dạng số nhiều."),
         )
     )
 
@@ -279,11 +311,7 @@ def test_extraction_agent_never_sends_clean_html_and_checks_grounding() -> None:
     )
     failed_client = FakeStructuredClient(hallucinated)
     with pytest.raises(AgentContractError, match="absent"):
-        asyncio.run(
-            DiseaseExtractionAgent(failed_client).extract(
-                clean_content()
-            )
-        )
+        asyncio.run(DiseaseExtractionAgent(failed_client).extract(clean_content()))
     assert len(failed_client.calls) == 2
     assert "grounding_retry" in failed_client.calls[1]["payload"]
 
@@ -298,9 +326,7 @@ def test_extraction_agent_never_sends_clean_html_and_checks_grounding() -> None:
         }
     )
     repaired = asyncio.run(
-        DiseaseExtractionAgent(FakeStructuredClient(paraphrased)).extract(
-            clean_content()
-        )
+        DiseaseExtractionAgent(FakeStructuredClient(paraphrased)).extract(clean_content())
     )
     assert repaired.symptoms[0].value == "Source symptom."
 
@@ -318,9 +344,7 @@ def test_extraction_agent_repairs_first_ungrounded_draft_on_retry() -> None:
     )
     client = SequencedStructuredClient((ungrounded, disease_draft()))
 
-    repaired = asyncio.run(
-        DiseaseExtractionAgent(client).extract(clean_content())
-    )
+    repaired = asyncio.run(DiseaseExtractionAgent(client).extract(clean_content()))
 
     assert repaired == disease_draft()
     assert len(client.calls) == 2
@@ -364,25 +388,13 @@ def test_normalization_changes_only_ambiguous_grounded_fields() -> None:
         normalized_draft=normalized_draft,
         changed_fields=("symptoms",),
     )
-    result = asyncio.run(
-        NormalizationAgent(FakeStructuredClient(valid_result)).normalize(source)
-    )
+    result = asyncio.run(NormalizationAgent(FakeStructuredClient(valid_result)).normalize(source))
     assert result.changed_fields == ("symptoms",)
 
     invalid_result = valid_result.model_copy(update={"changed_fields": ("treatment",)})
     with pytest.raises(AgentContractError, match="non-ambiguous"):
-        asyncio.run(
-            NormalizationAgent(FakeStructuredClient(invalid_result)).normalize(
-                source
-            )
-        )
+        asyncio.run(NormalizationAgent(FakeStructuredClient(invalid_result)).normalize(source))
 
-    unsafe_source = source.model_copy(
-        update={"evidence_text": "<script>alert(1)</script>"}
-    )
+    unsafe_source = source.model_copy(update={"evidence_text": "<script>alert(1)</script>"})
     with pytest.raises(AgentContractError, match="BeautifulSoup"):
-        asyncio.run(
-            NormalizationAgent(FakeStructuredClient(valid_result)).normalize(
-                unsafe_source
-            )
-        )
+        asyncio.run(NormalizationAgent(FakeStructuredClient(valid_result)).normalize(unsafe_source))

@@ -7,9 +7,9 @@ from typing import Protocol
 
 from app.core.errors import CrawlerError, ErrorCode
 from app.models.disease import DiseaseDocument, DiseaseFields, PartialDiseaseFields
-from app.parser.chunks import MarkdownChunk
+from app.parser.chunks import MarkdownChunk, chunk_by_heading
 
-PARSER_VERSION = "1.0.3"
+PARSER_VERSION = "1.1.0"
 PROMPT_VERSION = "1.0.0"
 PROMPT_PATH = Path(__file__).parents[1] / "prompts" / "parser_v1.md"
 HEADING_PATTERN = re.compile(r"^#\s+(.+?)\s*$", re.MULTILINE)
@@ -39,6 +39,7 @@ TABLE_FIELD_MAP = {
     "symptoms": "symptoms",
     "diagnosis": "diagnosis",
     "diagnostic": "diagnosis",
+    "supportive evidence": "diagnosis",
     "treatment": "treatment",
     "prevention": "prevention",
     "prognosis": "prognosis",
@@ -79,32 +80,7 @@ class RuleBasedStructuredClient:
         prompt: str,
     ) -> PartialDiseaseFields:
         del prompt
-        values: dict[str, object] = {}
-        title = HEADING_PATTERN.search(chunk.markdown)
-        if title:
-            name = _plain_text(title.group(1))
-            values["name"] = name
-            values.update(_extract_intro_fields(chunk.markdown, name))
-
-        for line in chunk.markdown.splitlines():
-            if not line.startswith("|") or line.count("|") < 3:
-                continue
-            cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
-            if len(cells) < 2 or set(cells[0]) <= {"-", ":"}:
-                continue
-            label = _plain_text(cells[0]).casefold()
-            field = TABLE_FIELD_MAP.get(label)
-            value = cells[1].strip()
-            if field is None or not value or set(value) <= {"-", ":"}:
-                continue
-            if field in SCALAR_FIELDS:
-                values.setdefault(field, value)
-            else:
-                existing = values.get(field)
-                current = list(existing) if isinstance(existing, tuple) else []
-                current.extend(part.strip() for part in value.split("<br>") if part.strip())
-                values[field] = tuple(current)
-        return PartialDiseaseFields.model_validate(values)
+        return _parse_rule_chunk(chunk)
 
     async def repair(
         self,
@@ -136,12 +112,16 @@ def load_parser_prompt() -> str:
     return prompt
 
 
+def extract_deterministic_fields(markdown: str) -> DiseaseFields:
+    """Extract source-explicit fields without relying on a model response."""
+    partials = tuple(_parse_rule_chunk(chunk) for chunk in chunk_by_heading(markdown))
+    return merge_partial_fields(partials)
+
+
 def merge_partial_fields(
     partials: tuple[PartialDiseaseFields, ...],
 ) -> DiseaseFields:
-    names = _deduplicate(
-        tuple(partial.name for partial in partials if partial.name)
-    )
+    names = _deduplicate(tuple(partial.name for partial in partials if partial.name))
     if not names:
         raise CrawlerError(
             ErrorCode.LLM_OUTPUT_INVALID,
@@ -156,19 +136,11 @@ def merge_partial_fields(
     merged: dict[str, object] = {"name": names[0]}
     for field in LIST_FIELDS:
         merged[field] = _deduplicate(
-            tuple(
-                value
-                for partial in partials
-                for value in getattr(partial, field)
-            )
+            tuple(value for partial in partials for value in getattr(partial, field))
         )
     for field in SCALAR_FIELDS:
         values = _deduplicate(
-            tuple(
-                value
-                for partial in partials
-                if (value := getattr(partial, field)) is not None
-            )
+            tuple(value for partial in partials if (value := getattr(partial, field)) is not None)
         )
         merged[field] = values[0] if values else None
     return DiseaseFields.model_validate(merged)
@@ -236,13 +208,38 @@ def _ground_text(value: str) -> str:
     return _plain_text(normalized).casefold()
 
 
+def _parse_rule_chunk(chunk: MarkdownChunk) -> PartialDiseaseFields:
+    values: dict[str, object] = {}
+    title = HEADING_PATTERN.search(chunk.markdown)
+    if title:
+        name = _plain_text(title.group(1))
+        values["name"] = name
+        values.update(_extract_intro_fields(chunk.markdown, name))
+
+    for line in chunk.markdown.splitlines():
+        if not line.startswith("|") or line.count("|") < 3:
+            continue
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        if len(cells) < 2 or set(cells[0]) <= {"-", ":"}:
+            continue
+        label = _plain_text(cells[0]).casefold()
+        field = TABLE_FIELD_MAP.get(label)
+        value = cells[1].strip()
+        if field is None or not value or set(value) <= {"-", ":"}:
+            continue
+        if field in SCALAR_FIELDS:
+            values.setdefault(field, value)
+            continue
+        existing = values.get(field)
+        current = list(existing) if isinstance(existing, tuple) else []
+        current.extend(part.strip() for part in value.split("<br>") if part.strip())
+        values[field] = tuple(current)
+    return PartialDiseaseFields.model_validate(values)
+
+
 def _extract_intro_fields(markdown: str, disease_name: str) -> dict[str, object]:
     before_table = markdown.split("\n|", 1)[0]
-    blocks = [
-        block.strip()
-        for block in re.split(r"\n\s*\n", before_table)
-        if block.strip()
-    ]
+    blocks = [block.strip() for block in re.split(r"\n\s*\n", before_table) if block.strip()]
     aliases: list[str] = []
     summary_blocks: list[str] = []
     for block in blocks[1:]:
@@ -250,17 +247,13 @@ def _extract_intro_fields(markdown: str, disease_name: str) -> dict[str, object]
         if not plain:
             continue
         star_parts = tuple(
-            _plain_text(part)
-            for part in re.split(r"\s+\*\s+", block)
-            if _plain_text(part)
+            _plain_text(part) for part in re.split(r"\s+\*\s+", block) if _plain_text(part)
         )
         if star_parts and all(ICD_CODE_PATTERN.fullmatch(part) for part in star_parts):
             continue
-        if len(star_parts) > 1:
+        if len(star_parts) > 1 or _looks_like_single_alias(plain):
             aliases.extend(
-                part
-                for part in star_parts
-                if _ground_text(part) != _ground_text(disease_name)
+                part for part in star_parts if _ground_text(part) != _ground_text(disease_name)
             )
             continue
         summary_blocks.append(block)
@@ -269,5 +262,15 @@ def _extract_intro_fields(markdown: str, disease_name: str) -> dict[str, object]
     if aliases:
         output["aliases"] = tuple(aliases)
     if summary_blocks:
-        output["summary"] = " ".join(summary_blocks)
+        output["summary"] = summary_blocks[0]
     return output
+
+
+def _looks_like_single_alias(value: str) -> bool:
+    """Recognize compact pre-table aliases such as ``PFO`` without guessing."""
+    return (
+        "\n" not in value
+        and len(value) <= 120
+        and len(value.split()) <= 12
+        and not value.endswith((".", "!", "?", ":", ";"))
+    )

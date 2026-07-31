@@ -33,11 +33,13 @@ class ReportItem(BaseModel):
     checked_at: str | None = None
     last_error_code: str | None = None
     warnings: tuple[str, ...] = ()
+    missing_fields: tuple[str, ...] = ()
+    data_complete: bool = False
     provenance: tuple[CategoryItemProvenance, ...] = ()
 
 
 class JobReport(BaseModel):
-    schema_version: str = "1.0"
+    schema_version: str = "1.1"
     job_id: str = Field(min_length=1)
     plugin: str = Field(min_length=1)
     status: JobStatus
@@ -49,6 +51,8 @@ class JobReport(BaseModel):
     new_items: int = Field(default=0, ge=0)
     updated_items: int = Field(default=0, ge=0)
     unchanged_items: int = Field(default=0, ge=0)
+    items_with_missing_fields: int = Field(default=0, ge=0)
+    missing_field_count: int = Field(default=0, ge=0)
     items: tuple[ReportItem, ...]
     warnings: tuple[str, ...] = ()
 

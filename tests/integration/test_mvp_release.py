@@ -98,6 +98,15 @@ def test_mvp_replay_e2e_exports_report_with_success_and_failure(
         assert report.successful_items == 2
         assert report.failed_items == 1
         assert sum(item.complete_artifact_set for item in report.items) == 2
+        parsed_reports = tuple(
+            item for item in report.items if item.status == "parsed"
+        )
+        assert report.items_with_missing_fields == 2
+        assert report.missing_field_count == sum(
+            len(item.missing_fields) for item in parsed_reports
+        )
+        assert all(item.missing_fields for item in parsed_reports)
+        assert all(not item.data_complete for item in parsed_reports)
         failed_report = next(
             item for item in report.items if item.status == "retryable_failed"
         )
@@ -115,4 +124,3 @@ def test_mvp_replay_e2e_exports_report_with_success_and_failure(
         assert not list((settings.output_root / "jobs" / job_id).rglob("*.tmp"))
 
     asyncio.run(scenario())
-

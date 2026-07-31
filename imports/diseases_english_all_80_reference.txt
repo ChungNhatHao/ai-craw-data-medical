@@ -1,0 +1,80 @@
+Hypertension / High blood pressure
+Coronary artery disease / CAD
+Ischemic heart disease
+Angina pectoris
+Myocardial infarction / Heart attack
+Heart failure
+Cardiac arrhythmia
+Atrial fibrillation
+Premature beats / Extrasystoles
+Valvular heart disease
+Mitral regurgitation
+Aortic stenosis
+Cardiomyopathy
+Congenital heart disease
+Aortic aneurysm
+Diabetes mellitus
+Prediabetes
+Dyslipidemia / Hyperlipidemia
+Obesity
+Overweight
+Metabolic syndrome
+Hyperuricemia
+Gout
+Thyroid disorder
+Hyperthyroidism
+Hypothyroidism
+Thyroid nodule / Nodular goiter
+Graves' disease
+Polycystic ovary syndrome / PCOS
+Fatty liver / Hepatic steatosis
+Elevated liver enzymes
+Hepatitis B
+Hepatitis C
+Liver cirrhosis
+Hepatic hemangioma
+Liver cyst
+Gallstones / Cholelithiasis
+Cholecystitis
+Peptic ulcer disease
+Gastritis
+Gastroesophageal reflux disease / GERD
+Gastric polyp
+Colon polyp
+Colitis
+Irritable bowel syndrome / IBS
+Crohn's disease
+Ulcerative colitis
+Pancreatitis
+Bronchial asthma
+Chronic obstructive pulmonary disease / COPD
+Chronic bronchitis
+Bronchiectasis
+Pulmonary tuberculosis
+Pulmonary nodule
+Pneumothorax
+Sleep apnea
+Pneumonia
+Chronic kidney disease / CKD
+Glomerulonephritis
+Nephrotic syndrome
+Proteinuria
+Hematuria
+Kidney stones / Nephrolithiasis
+Renal cyst
+Urinary tract infection / UTI
+Benign prostatic hyperplasia / BPH
+Stroke / Cerebrovascular accident
+Transient ischemic attack / TIA
+Epilepsy
+Migraine
+Parkinson's disease
+Dementia
+Anxiety disorder
+Depression
+Bipolar disorder
+Osteoarthritis
+Rheumatoid arthritis
+Systemic lupus erythematosus / SLE
+Herniated disc / Disc herniation
+Osteoporosis

@@ -98,6 +98,33 @@ class ItemRepository:
             for row in rows
         ]
 
+    async def list_completed_item_ids(
+        self,
+        *,
+        plugin: str,
+        exclude_job_id: str | None = None,
+    ) -> set[str]:
+        def select(connection: sqlite3.Connection) -> list[sqlite3.Row]:
+            parameters: list[str] = [plugin]
+            job_filter = ""
+            if exclude_job_id is not None:
+                job_filter = "AND ci.job_id <> ?"
+                parameters.append(exclude_job_id)
+            return connection.execute(
+                f"""
+                SELECT DISTINCT ci.item_id
+                FROM crawl_items AS ci
+                JOIN crawl_jobs AS cj ON cj.id = ci.job_id
+                WHERE cj.plugin = ?
+                  AND ci.status = 'parsed'
+                  {job_filter}
+                """,  # noqa: S608
+                parameters,
+            ).fetchall()
+
+        rows = await self.database.execute_read(select)
+        return {str(row["item_id"]) for row in rows}
+
     async def mark_fetching(self, job_id: str, item_id: str) -> int:
         def update(connection: sqlite3.Connection) -> int:
             cursor = connection.execute(

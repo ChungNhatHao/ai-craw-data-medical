@@ -115,16 +115,21 @@ class ImportedDiseaseDiscoveryService:
         progress: ImportProgress,
     ) -> tuple[list[DiscoveredItem], tuple[str, ...]]:
         discovered: dict[str, DiscoveredItem] = {}
+        completed_item_ids = await self.items.list_completed_item_ids(
+            plugin=self.plugin.name,
+            exclude_job_id=job_id,
+        )
         unmatched: list[str] = []
         attempts: list[ImportSearchAttempt] = []
         total = len(disease_names)
         for processed, disease_name in enumerate(disease_names, start=1):
             variants = await self._search_variants(page, disease_name)
-            search = variants[0]
+            search = self._representative_search(variants)
             inspected_links = 0
             exact_matches = 0
             match_strategies: set[str] = set()
             accepted: list[DiscoveredItem] = []
+            skipped_existing: dict[str, DiscoveredItem] = {}
             detail_steps: list[str] = []
             for variant in variants:
                 detail_steps.extend(variant.steps)
@@ -141,6 +146,20 @@ class ImportedDiseaseDiscoveryService:
                     match_strategies.add(scan.strategy)
                 if scan.candidate is None:
                     continue
+                if (
+                    scan.candidate.item_id in completed_item_ids
+                    or scan.candidate.item_id in discovered
+                    or any(
+                        value.item_id == scan.candidate.item_id
+                        for value in accepted
+                    )
+                ):
+                    skipped_existing[scan.candidate.item_id] = scan.candidate
+                    detail_steps.append(
+                        "Bỏ qua bệnh đã hoàn tất hoặc đã chọn trong job: "
+                        f"{scan.candidate.title_hint or scan.candidate.item_id}"
+                    )
+                    continue
                 confirmation = await self._confirm_detail(
                     page,
                     scan.candidate,
@@ -154,19 +173,32 @@ class ImportedDiseaseDiscoveryService:
                 str(value.canonical_url) for value in accepted
             )
             matched = bool(accepted)
+            found_existing_only = bool(skipped_existing) and not matched
             reason_code = (
                 "autocomplete_candidates_confirmed"
                 if matched
                 else (
-                    search.reason_code
-                    or "autocomplete_candidates_not_confirmed"
+                    "autocomplete_candidates_already_completed"
+                    if found_existing_only
+                    else (
+                        search.reason_code
+                        or "autocomplete_candidates_not_confirmed"
+                    )
                 )
             )
             reason = (
                 f"Đã xác nhận {len(accepted)} trang bệnh từ "
                 f"{len(variants)} tên tìm kiếm"
                 if matched
-                else "Không có gợi ý tìm kiếm nào được xác nhận là trang bệnh"
+                else (
+                    f"Đã bỏ qua {len(skipped_existing)} bệnh hoàn tất "
+                    "ở lần chạy trước"
+                    if found_existing_only
+                    else (
+                        "Không có gợi ý tìm kiếm nào được xác nhận "
+                        "là trang bệnh"
+                    )
+                )
             )
             steps = (
                 *detail_steps,
@@ -208,13 +240,22 @@ class ImportedDiseaseDiscoveryService:
                     selected_url=selected_urls[0] if selected_urls else None,
                     selected_urls=selected_urls,
                     confirmed_disease_count=len(accepted),
-                    status="matched" if matched else "not_found",
+                    skipped_existing_count=len(skipped_existing),
+                    skipped_existing_urls=tuple(
+                        str(value.canonical_url)
+                        for value in skipped_existing.values()
+                    ),
+                    status=(
+                        "matched"
+                        if matched or found_existing_only
+                        else "not_found"
+                    ),
                     reason_code=reason_code,
                     reason=reason,
                     steps=steps,
                 )
             )
-            if not matched:
+            if not matched and not found_existing_only:
                 unmatched.append(disease_name)
                 await progress(
                     len(discovered),
@@ -222,6 +263,15 @@ class ImportedDiseaseDiscoveryService:
                     total,
                     disease_name,
                     "not_found",
+                )
+                continue
+            if found_existing_only:
+                await progress(
+                    len(discovered),
+                    processed,
+                    total,
+                    disease_name,
+                    "matched",
                 )
                 continue
             for candidate in accepted:
@@ -274,12 +324,14 @@ class ImportedDiseaseDiscoveryService:
 
         for processed, disease_name in enumerate(disease_names, start=1):
             variants = await self._search_variants(page, disease_name)
-            search = variants[0]
-            if search.reason_code is not None:
+            search = self._representative_search(variants)
+            if not any(
+                variant.reason_code is None for variant in variants
+            ):
                 match = SearchMatch(
                     None,
                     None,
-                    search.reason_code,
+                    search.reason_code or "search_failed",
                 )
                 records.append(
                     RootSearchRecord(
@@ -565,65 +617,29 @@ class ImportedDiseaseDiscoveryService:
             steps.append(
                 f"Đã thu thập {len(suggestions)} gợi ý autocomplete"
             )
-            if self.autocomplete_agent is None:
-                decision_source = "deterministic_fallback"
-                decision_reason_code = "autocomplete_agent_unavailable"
-                decision_reason = (
-                    "Gemini autocomplete agent không được cấu hình; "
-                    "giữ nguyên tên import để tìm kiếm an toàn"
-                )
-            else:
-                try:
-                    decision = await self.autocomplete_agent.decide(
-                        imported_name=disease_name,
-                        suggestions=suggestions,
-                    )
-                    decision_confidence = decision.confidence
-                    decision_reason_code = decision.reason_code
-                    decision_reason = decision.reason
-                    chosen = tuple(
-                        value
-                        for value in suggestions
-                        if value.candidate_id
-                        in decision.selected_candidate_ids
-                    )
-                    if chosen and (
-                        decision.reason_code == "ambiguous"
-                        or decision.confidence >= 0.60
-                    ):
-                        selected_suggestions = tuple(
-                            value.label for value in chosen
-                        )
-                        resolved_suggestions = (
-                            self.resolve_autocomplete_labels(
-                                selected_suggestions
-                            )
-                        )
-                        submitted_query = resolved_suggestions[0]
-                        decision_source = "gemini"
-                        await search.fill(submitted_query)
-                    else:
-                        decision_source = "deterministic_fallback"
-                except (CrawlerError, ValueError):
-                    decision_source = "deterministic_fallback"
-                    decision_reason_code = "autocomplete_agent_failed"
-                    decision_reason = (
-                        "Gemini autocomplete agent không trả về quyết định "
-                        "hợp lệ; giữ nguyên tên import để tìm kiếm an toàn"
-                    )
-            steps.append(
-                f"Autocomplete: {decision_source}; "
-                f"chọn {len(selected_suggestions)} gợi ý: "
-                f"{', '.join(selected_suggestions)}"
-                if selected_suggestions
-                else (
-                    f"Autocomplete: {decision_source}; "
-                    "không chọn gợi ý, giữ nguyên tên import"
-                )
+            selected_suggestions = tuple(
+                value.label for value in suggestions
             )
-            if selected_suggestions:
+            resolved_suggestions = self.resolve_autocomplete_labels(
+                selected_suggestions
+            )
+            decision_source = "all_suggestions"
+            decision_reason_code = "autocomplete_all_suggestions"
+            decision_reason = (
+                "Chiến lược import thu thập toàn bộ gợi ý autocomplete "
+                "và xác minh từng trang bệnh"
+            )
+            if resolved_suggestions:
+                submitted_query = resolved_suggestions[0]
+                await search.fill(submitted_query)
+            steps.append(
+                "Autocomplete: thu thập toàn bộ "
+                f"{len(selected_suggestions)} gợi ý: "
+                f"{', '.join(selected_suggestions)}"
+            )
+            if resolved_suggestions:
                 steps.append(
-                    "Tên chuẩn dùng để tìm kiếm: "
+                    "Toàn bộ tên chuẩn đưa vào hàng đợi tìm kiếm: "
                     + ", ".join(resolved_suggestions)
                 )
         else:
@@ -666,19 +682,83 @@ class ImportedDiseaseDiscoveryService:
         page: Page,
         disease_name: str,
     ) -> tuple[SearchOutcome, ...]:
-        primary = await self._search(page, disease_name)
-        if primary.reason_code is not None:
-            return (primary,)
-        variants = [primary]
-        for selected_name in primary.resolved_suggestions[1:10]:
-            variants.append(
-                await self._submit_search_query(
+        queries = self.imported_search_queries(disease_name)
+        variants: list[SearchOutcome] = []
+        submitted: set[str] = set()
+        for query in queries:
+            if normalize_search_name(query) in submitted:
+                continue
+            outcome = await self._search(page, query)
+            self._append_search_outcome(variants, submitted, outcome, query)
+            if outcome.reason_code is not None:
+                continue
+            for selected_name in outcome.resolved_suggestions[1:]:
+                identity = normalize_search_name(selected_name)
+                if not identity or identity in submitted:
+                    continue
+                supplemental = await self._submit_search_query(
                     page,
                     selected_name,
-                    primary=primary,
+                    primary=outcome,
                 )
-            )
+                self._append_search_outcome(
+                    variants,
+                    submitted,
+                    supplemental,
+                    selected_name,
+                )
         return tuple(variants)
+
+    @staticmethod
+    def _representative_search(
+        variants: tuple[SearchOutcome, ...],
+    ) -> SearchOutcome:
+        return next(
+            (
+                outcome
+                for outcome in variants
+                if outcome.reason_code is None
+                and outcome.selected_suggestions
+            ),
+            next(
+                (
+                    outcome
+                    for outcome in variants
+                    if outcome.reason_code is None
+                ),
+                variants[0],
+            ),
+        )
+
+    @staticmethod
+    def imported_search_queries(disease_name: str) -> tuple[str, ...]:
+        """Return the original import plus explicit ``name / alias`` parts."""
+        values = (disease_name, *re.split(r"\s+/\s+", disease_name))
+        queries: list[str] = []
+        seen: set[str] = set()
+        for value in values:
+            query = " ".join(value.split())
+            identity = normalize_search_name(query)
+            if not query or identity in seen:
+                continue
+            seen.add(identity)
+            queries.append(query)
+        return tuple(queries)
+
+    @staticmethod
+    def _append_search_outcome(
+        variants: list[SearchOutcome],
+        submitted: set[str],
+        outcome: SearchOutcome,
+        fallback_query: str,
+    ) -> None:
+        identity = normalize_search_name(
+            outcome.submitted_query or fallback_query
+        )
+        if not identity or identity in submitted:
+            return
+        submitted.add(identity)
+        variants.append(outcome)
 
     async def _submit_search_query(
         self,
@@ -761,7 +841,7 @@ class ImportedDiseaseDiscoveryService:
         values: list[AutocompleteSuggestion] = []
         seen: set[str] = set()
         entries = menu.locator("li")
-        for index in range(min(await entries.count(), 20)):
+        for index in range(await entries.count()):
             label = " ".join((await entries.nth(index).inner_text()).split())
             identity = normalize_search_name(label)
             if not label or identity in seen:

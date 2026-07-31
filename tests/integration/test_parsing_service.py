@@ -11,7 +11,7 @@ from app.models.discovery import DiscoveredItem
 from app.models.disease import PartialDiseaseFields
 from app.parser.chunks import MarkdownChunk
 from app.parser.extractor import ContentExtractor
-from app.parser.structured import RuleBasedStructuredClient
+from app.parser.structured import PARSER_VERSION, RuleBasedStructuredClient
 from app.plugins.fake import FakeSitePlugin
 from app.repositories.attempts import AttemptRepository
 from app.repositories.database import Database
@@ -135,7 +135,7 @@ def test_parsing_service_persists_schema_and_reuses_checkpoint(
         assert str(first.document.source.canonical_url) == str(item.canonical_url)
         assert first.document.parse_metadata.method == "rules"
         assert first.document.parse_metadata.prompt_version == "1.0.0"
-        assert first.document.parse_metadata.parser_version == "1.0.3"
+        assert first.document.parse_metadata.parser_version == PARSER_VERSION
         assert "missing_field:summary" in first.document.parse_metadata.warnings
         assert [section.order for section in first.document.sections] == list(
             range(1, len(first.document.sections) + 1)
@@ -148,7 +148,7 @@ def test_parsing_service_persists_schema_and_reuses_checkpoint(
         assert payload["schema_version"] == "1.1"
         assert manifest["state"] == "parsed"
         assert manifest["schema_hash"] == first.schema_hash
-        assert manifest["parser_version"] == "1.0.3"
+        assert manifest["parser_version"] == PARSER_VERSION
         assert manifest["prompt_version"] == "1.0.0"
         assert (
             hashlib.sha256(disease_bytes).hexdigest()

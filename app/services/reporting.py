@@ -15,6 +15,7 @@ REQUIRED_MVP_ARTIFACTS = frozenset(
 )
 REQUIRED_TAB_ARTIFACTS = frozenset({"tabs_raw", "tabs"})
 FAILED_STATUSES = frozenset({"retryable_failed", "failed"})
+MISSING_FIELD_PREFIX = "missing_field:"
 
 
 class ReportingService:
@@ -55,6 +56,17 @@ class ReportingService:
                 if manifest is not None
                 else ()
             )
+            manifest_warnings = (
+                manifest.warnings if manifest is not None else ()
+            )
+            missing_fields = tuple(
+                dict.fromkeys(
+                    warning.removeprefix(MISSING_FIELD_PREFIX)
+                    for warning in manifest_warnings
+                    if warning.startswith(MISSING_FIELD_PREFIX)
+                    and warning.removeprefix(MISSING_FIELD_PREFIX)
+                )
+            )
             report_items.append(
                 ReportItem(
                     item_id=item.item_id,
@@ -76,7 +88,12 @@ class ReportingService:
                     changed_components=checkpoint.changed_components,
                     checked_at=checkpoint.checked_at,
                     last_error_code=checkpoint.last_error_code,
-                    warnings=manifest.warnings if manifest is not None else (),
+                    warnings=manifest_warnings,
+                    missing_fields=missing_fields,
+                    data_complete=(
+                        checkpoint.status == "parsed"
+                        and not missing_fields
+                    ),
                     provenance=provenance_by_item.get(item.item_id, ()),
                 )
             )
@@ -118,6 +135,12 @@ class ReportingService:
             ),
             unchanged_items=sum(
                 item.change_status == "unchanged" for item in report_items
+            ),
+            items_with_missing_fields=sum(
+                bool(item.missing_fields) for item in report_items
+            ),
+            missing_field_count=sum(
+                len(item.missing_fields) for item in report_items
             ),
             items=tuple(report_items),
             warnings=category_warnings,
