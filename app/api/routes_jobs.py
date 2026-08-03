@@ -26,6 +26,7 @@ SAFE_ARTIFACT_FILES = frozenset(
         "tabs-raw.json",
         "tabs.json",
         "content.html",
+        "coverage.json",
         "markdown.md",
         "disease.json",
         "disease-decision.json",
@@ -41,6 +42,8 @@ SAFE_JOB_ARTIFACT_FILES = frozenset(
         "disease-list.json",
         "import-search.json",
         "report.json",
+        "coverage-report.json",
+        "site-profile.json",
     }
 )
 

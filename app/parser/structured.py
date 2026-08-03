@@ -9,7 +9,7 @@ from app.core.errors import CrawlerError, ErrorCode
 from app.models.disease import DiseaseDocument, DiseaseFields, PartialDiseaseFields
 from app.parser.chunks import MarkdownChunk, chunk_by_heading
 
-PARSER_VERSION = "1.1.0"
+PARSER_VERSION = "1.2.0"
 PROMPT_VERSION = "1.0.0"
 PROMPT_PATH = Path(__file__).parents[1] / "prompts" / "parser_v1.md"
 HEADING_PATTERN = re.compile(r"^#\s+(.+?)\s*$", re.MULTILINE)
@@ -142,7 +142,7 @@ def merge_partial_fields(
         values = _deduplicate(
             tuple(value for partial in partials if (value := getattr(partial, field)) is not None)
         )
-        merged[field] = values[0] if values else None
+        merged[field] = "\n\n".join(values) if values else None
     return DiseaseFields.model_validate(merged)
 
 
@@ -154,8 +154,12 @@ def validate_grounding(fields: DiseaseFields, markdown: str) -> None:
         for candidate in values:
             if candidate is None:
                 continue
-            grounded_value = _ground_text(str(candidate))
-            if grounded_value and grounded_value not in grounded_source:
+            grounded_parts = tuple(
+                _ground_text(part)
+                for part in re.split(r"\n{2,}", str(candidate))
+                if _ground_text(part)
+            )
+            if any(part not in grounded_source for part in grounded_parts):
                 unsupported.append(field)
     if unsupported:
         names = ", ".join(dict.fromkeys(unsupported))
@@ -198,7 +202,10 @@ def _deduplicate(values: tuple[str, ...]) -> tuple[str, ...]:
 def _plain_text(value: str) -> str:
     return SPACE_PATTERN.sub(
         " ",
-        MARKUP_PATTERN.sub("", LINK_PATTERN.sub(r"\1", value)),
+        MARKUP_PATTERN.sub(
+            "",
+            LINK_PATTERN.sub(r"\1", value.replace("\\|", "|")),
+        ),
     ).strip()
 
 
@@ -219,7 +226,10 @@ def _parse_rule_chunk(chunk: MarkdownChunk) -> PartialDiseaseFields:
     for line in chunk.markdown.splitlines():
         if not line.startswith("|") or line.count("|") < 3:
             continue
-        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        cells = [
+            cell.strip().replace("\\|", "|")
+            for cell in re.split(r"(?<!\\)\|", line.strip().strip("|"))
+        ]
         if len(cells) < 2 or set(cells[0]) <= {"-", ":"}:
             continue
         label = _plain_text(cells[0]).casefold()
@@ -228,7 +238,12 @@ def _parse_rule_chunk(chunk: MarkdownChunk) -> PartialDiseaseFields:
         if field is None or not value or set(value) <= {"-", ":"}:
             continue
         if field in SCALAR_FIELDS:
-            values.setdefault(field, value)
+            existing_scalar = values.get(field)
+            values[field] = (
+                f"{existing_scalar}\n\n{value}"
+                if isinstance(existing_scalar, str)
+                else value
+            )
             continue
         existing = values.get(field)
         current = list(existing) if isinstance(existing, tuple) else []
@@ -262,7 +277,7 @@ def _extract_intro_fields(markdown: str, disease_name: str) -> dict[str, object]
     if aliases:
         output["aliases"] = tuple(aliases)
     if summary_blocks:
-        output["summary"] = summary_blocks[0]
+        output["summary"] = "\n\n".join(summary_blocks)
     return output
 
 

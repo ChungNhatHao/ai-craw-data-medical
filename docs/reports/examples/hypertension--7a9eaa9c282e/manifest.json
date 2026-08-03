@@ -1,0 +1,100 @@
+{
+  "artifacts": {
+    "content_html": {
+      "name": "content.html",
+      "sha256": "40abc129ee535c9cac33d22595b03b279afe1ac915edf9eec43822c84a26c8ef",
+      "size": 3534
+    },
+    "coverage": {
+      "name": "coverage.json",
+      "sha256": "e5365e147acd3618805248a3c7194a0263af00ce5e347450422000783a86e390",
+      "size": 616
+    },
+    "disease_draft": {
+      "name": "disease-draft.json",
+      "sha256": "1b4850e4aef2ebbc0cb1b7bab45b0a1a80c12f8a406d69f00cda25fda663a606",
+      "size": 5191
+    },
+    "disease_json": {
+      "name": "disease.json",
+      "sha256": "2db32edd4dd296f1644e3d3f056763a4a7b2b3fe5b0ca189adfe0d5b6d15e0eb",
+      "size": 361295
+    },
+    "markdown": {
+      "name": "markdown.md",
+      "sha256": "b41d5c4992f3bf3125f9c5e7b419af740aae89202d22afa8ab38cd9d908d4b00",
+      "size": 3033
+    },
+    "normalization": {
+      "name": "normalization.json",
+      "sha256": "9eeffbef14496b3bdbd44c4e97eba71f2b6825a2b1a0a730c949f50c7e70c5a0",
+      "size": 6588
+    },
+    "raw_html": {
+      "name": "raw.html",
+      "sha256": "32f82e33f954c417f4a533a6d59766881a7ad6d7842e4cb56150da7ed55d2e66",
+      "size": 34148
+    },
+    "screenshot": {
+      "name": "screenshot.png",
+      "sha256": "277f412eb0f62be0ec179e930b710ca7ff9797df94a02ad9411c3332c5c53950",
+      "size": 400243
+    },
+    "tabs": {
+      "name": "tabs.json",
+      "sha256": "f2d43bb3077cc71083cc795a6ef306c6dab9e4317fdeb0cda60ade5cd4eb5ec2",
+      "size": 343427
+    },
+    "tabs_raw": {
+      "name": "tabs-raw.json",
+      "sha256": "2349b16deeb3d725854d8831bbfb859a6deaac87b1cd5cc5f10637ef9901f71a",
+      "size": 160513
+    }
+  },
+  "baseline_job_id": "60269863-1866-4498-9b49-a1052df3317e",
+  "change_status": "updated",
+  "changed_components": [
+    "main",
+    "tab:health",
+    "tab:info",
+    "tab:ip",
+    "tab:life_dd_tpd"
+  ],
+  "cleaner_version": "1.2.0",
+  "confidence": 1.0,
+  "content_hash": "b41d5c4992f3bf3125f9c5e7b419af740aae89202d22afa8ab38cd9d908d4b00",
+  "item_id": "7a9eaa9c282e989248753e68418f875ade18cefaee249e5c9ccd98d892eb57c7",
+  "job_id": "0633dcfa-9054-4d59-8262-07401ea45760",
+  "model_version": "gemini-3.5-flash-lite",
+  "page_type": "disease_detail",
+  "parser_version": "agentic-1.4.0",
+  "plugin": "genre_manuals",
+  "previous_snapshot_hash": "1b0ef11972aaf0e821fad2fa3a80ba53381295a939385ea520ccc78cc145e5d4",
+  "prompt_version": "agentic-1.2.0",
+  "retrieved_at": "2026-08-03T03:44:03.571073Z",
+  "schema_hash": "51f60377307277f7e425cd9698d22dc6fe881e3996323564ada789ac1d709a90",
+  "schema_version": "1.0",
+  "snapshot_components": {
+    "main": "b41d5c4992f3bf3125f9c5e7b419af740aae89202d22afa8ab38cd9d908d4b00",
+    "tab:health": "0fc299c7776f0491defad590971f259ec2d9b9a1de65c11c5c1d36a7074fbbd2",
+    "tab:info": "af263f78245e13c95cc4ffde1eb43f4887babce77eba388bc3b73ff4abb1b50b",
+    "tab:ip": "4f030199c2b7fddc9769ff2fae1827712aa580a98d9078a623688235eb841e7b",
+    "tab:life_dd_tpd": "ada625320c0cbaf8f175e84c43f8820331ea0345e7ecd2bd5de9eef038f77abe"
+  },
+  "snapshot_hash": "b9f2815cea37d883b9bc208260834fb69b968a5a411e8e7e67c198735153bdd9",
+  "source_url": "https://www.genre-manuals.com/en_hypertension.htm",
+  "state": "parsed",
+  "warnings": [
+    "incremental_content_updated",
+    "missing_field:prevention",
+    "missing_field:when_to_seek_care",
+    "ai_normalization_not_required",
+    "deterministic_full_content:summary",
+    "deterministic_full_content:prognosis",
+    "deterministic_full_content:aliases",
+    "deterministic_full_content:causes",
+    "deterministic_full_content:symptoms",
+    "deterministic_full_content:diagnosis",
+    "deterministic_full_content:treatment"
+  ]
+}

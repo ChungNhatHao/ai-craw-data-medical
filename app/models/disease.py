@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import Literal
 
-from pydantic import BaseModel, Field, HttpUrl
+from pydantic import BaseModel, Field, HttpUrl, model_validator
 
 from app.models.tabs import DiseaseTabContent
 
@@ -38,6 +38,14 @@ class DiseaseSection(BaseModel):
     markdown: str = Field(min_length=1)
 
 
+class MenuHierarchyLevel(BaseModel):
+    level: int = Field(ge=0)
+    distance_from_disease: int = Field(ge=0)
+    label: str = Field(min_length=1, max_length=1_000)
+    url: HttpUrl | None = None
+    is_current: bool = False
+
+
 class ParseMetadata(BaseModel):
     method: Literal["rules", "llm", "rules+llm"]
     model: str | None = None
@@ -48,13 +56,32 @@ class ParseMetadata(BaseModel):
 
 
 class DiseaseDocument(BaseModel):
-    schema_version: str = "1.1"
+    schema_version: str = "1.2"
     document_id: str = Field(pattern=SHA256_PATTERN)
     source: DiseaseSource
     disease: DiseaseFields
+    menu_hierarchy: tuple[MenuHierarchyLevel, ...] = ()
     sections: tuple[DiseaseSection, ...]
     tabs: tuple[DiseaseTabContent, ...] = ()
     parse_metadata: ParseMetadata
+
+    @model_validator(mode="after")
+    def validate_menu_hierarchy(self) -> "DiseaseDocument":
+        if not self.menu_hierarchy:
+            return self
+        last = len(self.menu_hierarchy) - 1
+        for index, node in enumerate(self.menu_hierarchy):
+            if node.level != index:
+                raise ValueError("Menu hierarchy levels must be contiguous")
+            if node.distance_from_disease != last - index:
+                raise ValueError(
+                    "Menu hierarchy distance_from_disease is inconsistent"
+                )
+            if node.is_current != (index == last):
+                raise ValueError(
+                    "Only the final menu hierarchy node can be current"
+                )
+        return self
 
 
 class PartialDiseaseFields(BaseModel):

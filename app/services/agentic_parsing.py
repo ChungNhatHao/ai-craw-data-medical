@@ -5,6 +5,7 @@ from pydantic import ValidationError
 
 from app.agents.disease_extraction_agent import DiseaseExtractionAgent
 from app.agents.normalization_agent import NormalizationAgent
+from app.agents.protocol import AgentContractError
 from app.core.errors import CrawlerError, ErrorCode
 from app.models.agentic import (
     AgentNormalizationInput,
@@ -14,6 +15,7 @@ from app.models.agentic import (
     EvidenceValue,
     NormalizationResult,
 )
+from app.models.content import UnsafeContentPayload
 from app.models.discovery import DiscoveredItem
 from app.models.disease import (
     DiseaseDocument,
@@ -26,6 +28,7 @@ from app.models.disease import (
 from app.parser.chunks import chunk_by_heading
 from app.parser.extractor import ContentExtractor
 from app.parser.markdown import MarkdownConverter
+from app.parser.menu import extract_menu_hierarchy
 from app.parser.structured import (
     disease_schema_hash,
     extract_deterministic_fields,
@@ -37,8 +40,8 @@ from app.repositories.items import ItemRepository
 from app.services.cleaning import CLEANER_VERSION
 from app.storage.artifacts import ArtifactStore
 
-AGENTIC_PARSER_VERSION = "agentic-1.2.0"
-AGENTIC_PROMPT_VERSION = "agentic-1.1.0"
+AGENTIC_PARSER_VERSION = "agentic-1.4.0"
+AGENTIC_PROMPT_VERSION = "agentic-1.2.0"
 
 
 class AgenticParsingService:
@@ -160,8 +163,9 @@ class AgenticParsingService:
                         ErrorCode.LLM_OUTPUT_INVALID,
                         "Clean Markdown exceeds the Gemini input budget",
                     )
+                raw_html = self.artifacts.read_raw_html(job_id, item)
                 extracted = self.extractor.extract(
-                    self.artifacts.read_raw_html(job_id, item),
+                    raw_html,
                     root_selectors=self.plugin.content_root_selectors(),
                     title_selectors=self.plugin.content_title_selectors(),
                 )
@@ -195,14 +199,21 @@ class AgenticParsingService:
                     removed_node_count=extracted.removed_nodes,
                     content_hash=manifest.content_hash,
                 )
-                draft = await self.extraction_agent.extract(content)
+                extraction_warnings: tuple[str, ...] = ()
+                try:
+                    draft = await self.extraction_agent.extract(content)
+                except (AgentContractError, ValidationError):
+                    draft = _deterministic_draft(stored_markdown)
+                    extraction_warnings = (
+                        "agentic_extraction_fallback:contract_or_grounding",
+                    )
                 self.artifacts.persist_auxiliary_json(
                     job_id=job_id,
                     item=item,
                     file_name="disease-draft.json",
                     payload=draft.model_dump(mode="json"),
                 )
-                draft, backfilled_fields = _backfill_source_explicit_fields(
+                draft, source_merged_fields = _merge_source_explicit_fields(
                     draft,
                     stored_markdown,
                 )
@@ -211,20 +222,36 @@ class AgenticParsingService:
                     content=content,
                     draft=draft,
                 )
-                if backfilled_fields:
+                if extraction_warnings:
+                    normalization = normalization.model_copy(
+                        update={
+                            "warnings": tuple(
+                                dict.fromkeys(
+                                    (
+                                        *normalization.warnings,
+                                        *extraction_warnings,
+                                    )
+                                )
+                            )
+                        }
+                    )
+                if source_merged_fields:
                     normalization = normalization.model_copy(
                         update={
                             "changed_fields": tuple(
                                 dict.fromkeys(
                                     (
                                         *normalization.changed_fields,
-                                        *backfilled_fields,
+                                        *source_merged_fields,
                                     )
                                 )
                             ),
                             "warnings": (
                                 *normalization.warnings,
-                                *(f"deterministic_backfill:{field}" for field in backfilled_fields),
+                                *(
+                                    f"deterministic_full_content:{field}"
+                                    for field in source_merged_fields
+                                ),
                             ),
                         }
                     )
@@ -235,6 +262,12 @@ class AgenticParsingService:
                     payload=normalization.model_dump(mode="json"),
                 )
                 fields = _draft_to_fields(normalized)
+                menu_hierarchy = extract_menu_hierarchy(
+                    raw_html,
+                    page_url=str(item.canonical_url),
+                    current_label=fields.name,
+                    canonicalize_url=self.plugin.canonicalize_url,
+                )
                 document = DiseaseDocument(
                     document_id=item.item_id,
                     source=DiseaseSource(
@@ -246,6 +279,7 @@ class AgenticParsingService:
                         language=self.language,
                     ),
                     disease=fields,
+                    menu_hierarchy=menu_hierarchy,
                     sections=tuple(chunk.as_section() for chunk in chunks),
                     tabs=self.artifacts.read_tabs(
                         job_id,
@@ -261,6 +295,11 @@ class AgenticParsingService:
                         warnings=tuple(
                             (
                                 *missing_field_warnings(fields),
+                                *(
+                                    ()
+                                    if menu_hierarchy
+                                    else ("missing_menu_hierarchy",)
+                                ),
                                 *normalization.warnings,
                             )
                         ),
@@ -291,6 +330,13 @@ class AgenticParsingService:
         except CrawlerError as exc:
             await self._fail(attempt_id, job_id, item.item_id, exc)
             raise
+        except UnsafeContentPayload as exc:
+            error = CrawlerError(
+                ErrorCode.UNSAFE_CONTENT_PAYLOAD,
+                f"Cleaned agent input still contains HTML: {exc}",
+            )
+            await self._fail(attempt_id, job_id, item.item_id, error)
+            raise error from exc
         except (ValidationError, ValueError) as exc:
             error = CrawlerError(
                 ErrorCode.GROUNDING_FAILED,
@@ -372,6 +418,33 @@ def _draft_to_fields(draft: DiseaseDraft) -> DiseaseFields:
     )
 
 
+def _deterministic_draft(markdown: str) -> DiseaseDraft:
+    fields = extract_deterministic_fields(markdown)
+
+    def evidence(value: str) -> EvidenceValue:
+        return EvidenceValue(
+            value=value,
+            source_quote=value,
+            source_section="Deterministic extraction fallback",
+        )
+
+    return DiseaseDraft(
+        name=evidence(fields.name),
+        aliases=tuple(evidence(value) for value in fields.aliases),
+        summary=evidence(fields.summary) if fields.summary else None,
+        causes=tuple(evidence(value) for value in fields.causes),
+        risk_factors=tuple(evidence(value) for value in fields.risk_factors),
+        symptoms=tuple(evidence(value) for value in fields.symptoms),
+        diagnosis=tuple(evidence(value) for value in fields.diagnosis),
+        treatment=tuple(evidence(value) for value in fields.treatment),
+        prevention=tuple(evidence(value) for value in fields.prevention),
+        prognosis=evidence(fields.prognosis) if fields.prognosis else None,
+        when_to_seek_care=tuple(
+            evidence(value) for value in fields.when_to_seek_care
+        ),
+    )
+
+
 def _deduplicate_draft(draft: DiseaseDraft) -> DiseaseDraft:
     updates: dict[str, object] = {}
     for field_name in (
@@ -397,11 +470,11 @@ def _deduplicate_draft(draft: DiseaseDraft) -> DiseaseDraft:
     return draft.model_copy(update=updates)
 
 
-def _backfill_source_explicit_fields(
+def _merge_source_explicit_fields(
     draft: DiseaseDraft,
     markdown: str,
 ) -> tuple[DiseaseDraft, tuple[DiseaseFieldName, ...]]:
-    """Fill model omissions only when deterministic source structure is explicit."""
+    """Prefer complete structured source values over model-selected fragments."""
     deterministic = extract_deterministic_fields(markdown)
     updates: dict[str, object] = {}
     changed: list[DiseaseFieldName] = []
@@ -418,32 +491,54 @@ def _backfill_source_explicit_fields(
     )
 
     for field_name in scalar_fields:
-        if getattr(draft, field_name) is not None:
-            continue
         value = getattr(deterministic, field_name)
         if value is None:
             continue
-        updates[field_name] = EvidenceValue(
+        current_scalar = cast(
+            EvidenceValue | None,
+            getattr(draft, field_name),
+        )
+        scalar_replacement = EvidenceValue(
             value=value,
             source_quote=value,
             source_section="Deterministic source extraction",
         )
+        if current_scalar == scalar_replacement:
+            continue
+        updates[field_name] = scalar_replacement
         changed.append(field_name)
 
     for field_name in list_fields:
-        if getattr(draft, field_name):
+        source_values = cast(tuple[str, ...], getattr(deterministic, field_name))
+        if not source_values:
             continue
-        values = getattr(deterministic, field_name)
-        if not values:
-            continue
-        updates[field_name] = tuple(
+        complete = [
             EvidenceValue(
                 value=value,
                 source_quote=value,
                 source_section="Deterministic source extraction",
             )
-            for value in values
+            for value in source_values
+        ]
+        normalized_complete = tuple(
+            " ".join(value.casefold().split()) for value in source_values
         )
+        current_values = cast(
+            tuple[EvidenceValue, ...],
+            getattr(draft, field_name),
+        )
+        for evidence in current_values:
+            normalized = " ".join(evidence.value.casefold().split())
+            if any(
+                normalized and normalized in source_value
+                for source_value in normalized_complete
+            ):
+                continue
+            complete.append(evidence)
+        list_replacement = tuple(complete)
+        if list_replacement == current_values:
+            continue
+        updates[field_name] = list_replacement
         changed.append(field_name)
 
     if not updates:

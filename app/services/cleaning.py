@@ -10,6 +10,7 @@ from app.models.tabs import (
     RawTabRelatedDetail,
     TabRelatedDetail,
 )
+from app.parser.classification import extract_classification_table
 from app.parser.extractor import ContentExtractor
 from app.parser.markdown import MarkdownConverter, content_hash
 from app.plugins.base import SitePlugin
@@ -22,7 +23,7 @@ from app.services.incremental import (
 )
 from app.storage.artifacts import ArtifactStore
 
-CLEANER_VERSION = "1.1.0"
+CLEANER_VERSION = "1.2.0"
 
 
 class CleaningService:
@@ -300,6 +301,7 @@ class CleaningService:
                     plain_text=extracted.plain_text,
                     markdown=markdown,
                     tables=self._extract_tables(extracted.html),
+                    classification_table=extract_classification_table(tab.html),
                     content_hash=content_hash(markdown),
                     warnings=tuple(
                         dict.fromkeys(

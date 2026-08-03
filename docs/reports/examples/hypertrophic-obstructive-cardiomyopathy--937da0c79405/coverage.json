@@ -1,0 +1,20 @@
+{
+  "blockers": [],
+  "checks": {
+    "classification_hierarchy_preserved": true,
+    "main_content_present": true,
+    "related_details_preserved": true,
+    "required_tabs_captured": true,
+    "structured_fields_complete": true,
+    "tables_preserved": true,
+    "tabs_mapped_to_output": true
+  },
+  "complete": true,
+  "item_id": "937da0c79405322c570a070858299aaf39140e91f7aae8b432abb406d3622c03",
+  "schema_version": "1.0",
+  "source_url": "https://www.genre-manuals.com/hypertrophic_obstructive_cardiomyopathy.htm",
+  "warnings": [
+    "field_not_present_in_source:prevention",
+    "field_not_present_in_source:when_to_seek_care"
+  ]
+}

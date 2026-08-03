@@ -47,6 +47,25 @@ ImportProgress = Callable[
     Awaitable[None],
 ]
 
+MAX_IMPORT_SEARCH_QUERIES = 8
+MIN_BACKOFF_SIGNIFICANT_TOKENS = 3
+SEARCH_CONNECTOR_TERMS = frozenset(
+    {
+        "a",
+        "an",
+        "and",
+        "for",
+        "in",
+        "of",
+        "on",
+        "or",
+        "the",
+        "to",
+        "with",
+        "without",
+    }
+)
+
 
 @dataclass(frozen=True)
 class SearchOutcome:
@@ -732,18 +751,91 @@ class ImportedDiseaseDiscoveryService:
 
     @staticmethod
     def imported_search_queries(disease_name: str) -> tuple[str, ...]:
-        """Return the original import plus explicit ``name / alias`` parts."""
+        """Build bounded, specific-to-broad queries for an imported name.
+
+        Explicit ``name / alias`` values are always queued before derived
+        backoff queries. Backoffs keep at least three medically meaningful
+        tokens so generic searches such as ``heart`` or ``disease`` are never
+        submitted.
+        """
         values = (disease_name, *re.split(r"\s+/\s+", disease_name))
         queries: list[str] = []
         seen: set[str] = set()
-        for value in values:
+
+        def append(value: str) -> None:
+            if len(queries) >= MAX_IMPORT_SEARCH_QUERIES:
+                return
             query = " ".join(value.split())
             identity = normalize_search_name(query)
             if not query or identity in seen:
-                continue
+                return
             seen.add(identity)
             queries.append(query)
+
+        normalized_values = tuple(
+            query
+            for value in values
+            if (query := " ".join(value.split()))
+        )
+        # Preserve the original and every explicit slash alias before adding
+        # lower-priority derived searches.
+        for value in normalized_values:
+            append(value)
+
+        for value in normalized_values:
+            if "/" in value:
+                continue
+            for backoff in ImportedDiseaseDiscoveryService._query_backoffs(
+                value
+            ):
+                append(backoff)
+                if len(queries) >= MAX_IMPORT_SEARCH_QUERIES:
+                    break
+            if len(queries) >= MAX_IMPORT_SEARCH_QUERIES:
+                break
         return tuple(queries)
+
+    @staticmethod
+    def _query_backoffs(disease_name: str) -> tuple[str, ...]:
+        tokens = disease_name.split()
+        significant = [
+            token
+            for token in tokens
+            if ImportedDiseaseDiscoveryService._search_token_identity(token)
+            not in SEARCH_CONNECTOR_TERMS
+        ]
+        if len(significant) < 4:
+            return ()
+
+        significant_positions = [
+            index
+            for index, token in enumerate(tokens)
+            if ImportedDiseaseDiscoveryService._search_token_identity(token)
+            not in SEARCH_CONNECTOR_TERMS
+        ]
+        backoffs: list[str] = []
+
+        # Prefix backoff is especially useful for autocomplete widgets, which
+        # may stop returning suggestions once a long title is fully entered.
+        for dropped in range(1, min(2, len(significant) - 3) + 1):
+            cutoff = significant_positions[-dropped]
+            backoffs.append(" ".join(tokens[:cutoff]))
+
+        connectorless = " ".join(significant)
+        if connectorless != disease_name:
+            backoffs.append(connectorless)
+
+        # Also try medically meaningful suffixes while retaining enough terms
+        # to avoid broad searches such as "heart disease".
+        for dropped in range(1, min(2, len(significant) - 3) + 1):
+            suffix = " ".join(significant[dropped:])
+            backoffs.append(f"{suffix[:1].upper()}{suffix[1:]}")
+
+        return tuple(backoffs)
+
+    @staticmethod
+    def _search_token_identity(token: str) -> str:
+        return re.sub(r"^\W+|\W+$", "", token, flags=re.UNICODE).casefold()
 
     @staticmethod
     def _append_search_outcome(

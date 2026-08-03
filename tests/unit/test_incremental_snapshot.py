@@ -1,4 +1,6 @@
 from app.models.tabs import (
+    ClassificationRow,
+    DiseaseClassificationTable,
     DiseaseTabContent,
     DiseaseTabTable,
     TabRelatedDetail,
@@ -47,3 +49,51 @@ def test_snapshot_detects_a_single_tab_change() -> None:
 
     assert snapshot_hash(before) != snapshot_hash(after)
     assert changed_components(after, before) == ("tab:info",)
+
+
+def test_snapshot_detects_a_classification_level_change() -> None:
+    root = ClassificationRow(
+        classification_id=HASH_A,
+        classification="Root",
+        level=0,
+        classification_path=("Root",),
+        is_group=True,
+    )
+    child = ClassificationRow(
+        classification_id=HASH_B,
+        parent_classification_id=HASH_A,
+        parent_classification="Root",
+        classification="Child",
+        level=1,
+        classification_path=("Root", "Child"),
+        is_group=False,
+    )
+    hierarchical = _tab("health", HASH_A).model_copy(
+        update={
+            "classification_table": DiseaseClassificationTable(
+                rows=(root, child),
+            )
+        }
+    )
+    flat = _tab("health", HASH_A).model_copy(
+        update={
+            "classification_table": DiseaseClassificationTable(
+                rows=(
+                    root,
+                    child.model_copy(
+                        update={
+                            "parent_classification_id": None,
+                            "parent_classification": None,
+                            "level": 0,
+                            "classification_path": ("Child",),
+                        }
+                    ),
+                ),
+            )
+        }
+    )
+
+    before = snapshot_components(HASH_A, (flat,))
+    after = snapshot_components(HASH_A, (hierarchical,))
+
+    assert before["tab:health"] != after["tab:health"]

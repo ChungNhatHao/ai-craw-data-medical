@@ -17,6 +17,11 @@ def snapshot_components(
                 [list(row) for row in table.rows]
                 for table in tab.tables
             ],
+            "classification_table": (
+                tab.classification_table.model_dump(mode="json")
+                if tab.classification_table is not None
+                else None
+            ),
             "related_details": [
                 {
                     "label": detail.label,

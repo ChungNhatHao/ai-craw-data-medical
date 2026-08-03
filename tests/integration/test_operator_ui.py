@@ -129,6 +129,9 @@ def test_operator_ui_and_progress_api(settings: Settings) -> None:
         assert 'id="categoryMaxNodes"' in page.text
         assert 'id="categoryMaxDiseases"' in page.text
         assert 'id="categoryExpansionLink"' in page.text
+        assert 'id="siteProfileLink"' in page.text
+        assert 'id="coverageReportLink"' in page.text
+        assert 'id="coverageStatus"' in page.text
         assert 'id="searchDecisionPanel"' in page.text
         assert "Quyết định chọn tên bệnh" in page.text
         assert "Nhật ký menu cha-con" in page.text
@@ -138,6 +141,9 @@ def test_operator_ui_and_progress_api(settings: Settings) -> None:
         assert script.status_code == 200
         assert "activeCrawlerJob" in script.text
         assert "renderDisease" in script.text
+        assert "Cha trực tiếp" in script.text
+        assert "Đường dẫn đầy đủ" in script.text
+        assert "parent_classification" in script.text
         assert "agentic_discovery" in script.text
         assert "ai_normalization" in script.text
         assert "discovery_mode" in script.text
@@ -147,6 +153,8 @@ def test_operator_ui_and_progress_api(settings: Settings) -> None:
         assert "category_max_nodes" in script.text
         assert "category_max_diseases" in script.text
         assert "category-expansion.json" in script.text
+        assert "site-profile.json" in script.text
+        assert "coverage-report.json" in script.text
         assert "normalizeProvenance" in script.text
         assert "renderSearchDecisions" in script.text
         assert "autocomplete_selected_name" in script.text

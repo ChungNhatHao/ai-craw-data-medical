@@ -901,16 +901,45 @@ td { padding: 15px 12px; border-bottom: 1px solid #edf1f0; font-size: 12px; vert
   border-collapse: collapse;
   font-size: 10px;
 }
-.source-table td {
+.source-table td,
+.source-table th {
   padding: 7px 8px;
   border: 1px solid var(--line);
   color: #425960;
   vertical-align: top;
 }
+.source-table th {
+  color: var(--ink);
+  background: #f1f6f5;
+  white-space: nowrap;
+}
 .source-table tr:first-child td {
   color: var(--ink);
   background: #f1f6f5;
   font-weight: 700;
+}
+.classification-table .classification-level {
+  color: var(--teal-dark);
+  font-weight: 800;
+  text-align: center;
+}
+.classification-name {
+  display: block;
+  padding-left: calc(var(--hierarchy-level) * 14px);
+  color: var(--ink);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.classification-name::before {
+  content: "↳ ";
+  color: #86a49d;
+}
+.classification-table tr:first-child .classification-name::before {
+  content: "";
+}
+.classification-path {
+  min-width: 240px;
+  color: var(--muted) !important;
 }
 .related-details {
   margin-top: 15px;

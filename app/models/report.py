@@ -4,6 +4,7 @@ from pydantic import BaseModel, Field, HttpUrl
 
 from app.models.category import CategoryItemProvenance
 from app.models.crawl import CrawlJob, JobStatus
+from app.models.disease import MenuHierarchyLevel
 
 
 class ReportItem(BaseModel):
@@ -35,11 +36,12 @@ class ReportItem(BaseModel):
     warnings: tuple[str, ...] = ()
     missing_fields: tuple[str, ...] = ()
     data_complete: bool = False
+    menu_hierarchy: tuple[MenuHierarchyLevel, ...] = ()
     provenance: tuple[CategoryItemProvenance, ...] = ()
 
 
 class JobReport(BaseModel):
-    schema_version: str = "1.1"
+    schema_version: str = "1.3"
     job_id: str = Field(min_length=1)
     plugin: str = Field(min_length=1)
     status: JobStatus
@@ -53,6 +55,8 @@ class JobReport(BaseModel):
     unchanged_items: int = Field(default=0, ge=0)
     items_with_missing_fields: int = Field(default=0, ge=0)
     missing_field_count: int = Field(default=0, ge=0)
+    coverage_complete: bool = False
+    coverage_failed_items: int = Field(default=0, ge=0)
     items: tuple[ReportItem, ...]
     warnings: tuple[str, ...] = ()
 

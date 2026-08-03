@@ -150,6 +150,28 @@ def test_imported_search_queries_split_explicit_slash_aliases() -> None:
     ) == ("HIV/AIDS",)
 
 
+def test_imported_search_queries_back_off_long_disease_name_safely() -> None:
+    assert ImportedDiseaseDiscoveryService.imported_search_queries(
+        "Multiple and mixed valvular heart disease"
+    ) == (
+        "Multiple and mixed valvular heart disease",
+        "Multiple and mixed valvular heart",
+        "Multiple and mixed valvular",
+        "Multiple mixed valvular heart disease",
+        "Mixed valvular heart disease",
+        "Valvular heart disease",
+    )
+
+
+def test_imported_search_queries_do_not_create_overly_broad_variants() -> None:
+    assert ImportedDiseaseDiscoveryService.imported_search_queries(
+        "Coronary artery disease"
+    ) == ("Coronary artery disease",)
+    assert ImportedDiseaseDiscoveryService.imported_search_queries(
+        "Heart disease"
+    ) == ("Heart disease",)
+
+
 def test_search_variants_retry_each_explicit_alias(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:

@@ -45,6 +45,23 @@ class ReportingService:
             else REQUIRED_MVP_ARTIFACTS
         )
         provenance_by_item = await self.provenance.list_for_job(job_id)
+        coverage = self.artifacts.read_job_json(
+            job_id,
+            "coverage-report.json",
+        )
+        raw_coverage_results = coverage.get("results") if coverage else None
+        coverage_blockers_by_item: dict[str, tuple[str, ...]] = {}
+        if isinstance(raw_coverage_results, list):
+            for result in raw_coverage_results:
+                if not isinstance(result, dict):
+                    continue
+                item_id = result.get("item_id")
+                blockers = result.get("blockers")
+                if not isinstance(item_id, str) or not isinstance(blockers, list):
+                    continue
+                coverage_blockers_by_item[item_id] = tuple(
+                    str(value) for value in blockers
+                )
         report_items: list[ReportItem] = []
         for item in discovered:
             checkpoint = await self.items.get_checkpoint(job_id, item.item_id)
@@ -59,12 +76,27 @@ class ReportingService:
             manifest_warnings = (
                 manifest.warnings if manifest is not None else ()
             )
-            missing_fields = tuple(
-                dict.fromkeys(
-                    warning.removeprefix(MISSING_FIELD_PREFIX)
-                    for warning in manifest_warnings
-                    if warning.startswith(MISSING_FIELD_PREFIX)
-                    and warning.removeprefix(MISSING_FIELD_PREFIX)
+            disease_document = self.artifacts.read_disease_document(
+                job_id,
+                item,
+            )
+            coverage_blockers = coverage_blockers_by_item.get(item.item_id)
+            missing_fields = (
+                tuple(
+                    dict.fromkeys(
+                        blocker.removeprefix("source_field_not_extracted:")
+                        for blocker in coverage_blockers
+                        if blocker.startswith("source_field_not_extracted:")
+                    )
+                )
+                if coverage_blockers is not None
+                else tuple(
+                    dict.fromkeys(
+                        warning.removeprefix(MISSING_FIELD_PREFIX)
+                        for warning in manifest_warnings
+                        if warning.startswith(MISSING_FIELD_PREFIX)
+                        and warning.removeprefix(MISSING_FIELD_PREFIX)
+                    )
                 )
             )
             report_items.append(
@@ -94,6 +126,11 @@ class ReportingService:
                         checkpoint.status == "parsed"
                         and not missing_fields
                     ),
+                    menu_hierarchy=(
+                        disease_document.menu_hierarchy
+                        if disease_document is not None
+                        else ()
+                    ),
                     provenance=provenance_by_item.get(item.item_id, ()),
                 )
             )
@@ -119,6 +156,17 @@ class ReportingService:
             if isinstance(raw_category_warnings, list)
             else ()
         )
+        coverage_complete = bool(
+            coverage is not None and coverage.get("complete") is True
+        )
+        raw_coverage_failed = (
+            coverage.get("failed_items", 0) if coverage is not None else 0
+        )
+        coverage_failed_items = (
+            int(raw_coverage_failed)
+            if isinstance(raw_coverage_failed, int)
+            else 0
+        )
         report = JobReport(
             job_id=job_id,
             plugin=job.plugin,
@@ -142,8 +190,17 @@ class ReportingService:
             missing_field_count=sum(
                 len(item.missing_fields) for item in report_items
             ),
+            coverage_complete=coverage_complete,
+            coverage_failed_items=coverage_failed_items,
             items=tuple(report_items),
-            warnings=category_warnings,
+            warnings=tuple(
+                dict.fromkeys(
+                    (
+                        *category_warnings,
+                        *(() if coverage_complete else ("coverage_incomplete",)),
+                    )
+                )
+            ),
         )
         self.artifacts.persist_job_report(report)
         return report

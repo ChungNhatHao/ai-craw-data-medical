@@ -10,9 +10,11 @@ class RunStageName(StrEnum):
     AUTHENTICATE = "authenticate"
     NAVIGATE = "navigate"
     DISCOVER = "discover"
+    PROFILE = "profile"
     FETCH = "fetch"
     CLEAN = "clean"
     PARSE = "parse"
+    COVERAGE = "coverage"
     REPORT = "report"
 
 

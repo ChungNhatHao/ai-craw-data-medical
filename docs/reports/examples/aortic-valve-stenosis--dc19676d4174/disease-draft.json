@@ -1,0 +1,55 @@
+{
+  "aliases": [
+    {
+      "source_quote": "Aortic stenosis",
+      "source_section": "Aortic valve stenosis",
+      "value": "Aortic stenosis"
+    }
+  ],
+  "causes": [
+    {
+      "source_quote": "Congenital (e.g. bicuspid aortic valve), rheumatic fever, degenerative (atherosclerotic).",
+      "source_section": "Aortic valve stenosis",
+      "value": "Congenital (e.g. bicuspid aortic valve), rheumatic fever, degenerative (atherosclerotic)."
+    }
+  ],
+  "diagnosis": [
+    {
+      "source_quote": "Cardiological or medical report with follow-up / Echocardiography (transthoracic or transoesophageal) / Resting ECG / Blood pressure",
+      "source_section": "Aortic valve stenosis",
+      "value": "Cardiological or medical report with follow-up / Echocardiography (transthoracic or transoesophageal) / Resting ECG / Blood pressure"
+    }
+  ],
+  "name": {
+    "source_quote": "Aortic valve stenosis",
+    "source_section": "Aortic valve stenosis",
+    "value": "Aortic valve stenosis"
+  },
+  "prevention": [],
+  "prognosis": {
+    "source_quote": "Depending on severity of stenosis; after surgery depending on the extent of left ventricular failure [1, 2, 3].",
+    "source_section": "Aortic valve stenosis",
+    "value": "Depending on severity of stenosis; after surgery depending on the extent of left ventricular failure [1, 2, 3]."
+  },
+  "risk_factors": [],
+  "summary": {
+    "source_quote": "Narrowing of the aortic valve, often combined with aortic incompetence. The left ventricle has to force blood through the narrowed aortic valve causing hypertrophy and later dilatation of the left ventricle.",
+    "source_section": "Aortic valve stenosis",
+    "value": "Narrowing of the aortic valve, often combined with aortic incompetence. The left ventricle has to force blood through the narrowed aortic valve causing hypertrophy and later dilatation of the left ventricle."
+  },
+  "symptoms": [
+    {
+      "source_quote": "Attacks of dizziness, angina pectoris on effort, exertional dyspnoea, syncope.",
+      "source_section": "Aortic valve stenosis",
+      "value": "Attacks of dizziness, angina pectoris on effort, exertional dyspnoea, syncope."
+    }
+  ],
+  "treatment": [
+    {
+      "source_quote": "Medical treatment: avoidance of strenuous physical activity, diuretics, digitalis / Surgical treatment – there are various procedures: / Valve replacement with a mechanical or tissue prosthesis. / Valve reconstruction/repair, rare and usually restricted to post-traumatic injury. / TAVI (transcatheter percutaneous aortic valve implantation), an alternative therapy for high risk patients, involves a synthetic valve being transported to the heart through the femoral artery.",
+      "source_section": "Aortic valve stenosis",
+      "value": "Medical treatment: avoidance of strenuous physical activity, diuretics, digitalis / Surgical treatment – there are various procedures: / Valve replacement with a mechanical or tissue prosthesis. / Valve reconstruction/repair, rare and usually restricted to post-traumatic injury. / TAVI (transcatheter percutaneous aortic valve implantation), an alternative therapy for high risk patients, involves a synthetic valve being transported to the heart through the femoral artery."
+    }
+  ],
+  "when_to_seek_care": []
+}

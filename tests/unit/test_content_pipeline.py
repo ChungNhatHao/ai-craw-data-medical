@@ -65,3 +65,39 @@ def test_markdown_normalization_and_content_hash_are_deterministic() -> None:
 
     assert normalize_markdown(composed) == normalize_markdown(decomposed)
     assert content_hash(composed) == content_hash(decomposed)
+
+
+def test_markdown_converter_omits_empty_table_without_leaking_html() -> None:
+    plugin = make_plugin()
+    markdown, warnings = MarkdownConverter(plugin.canonicalize_url).convert(
+        """
+        <article>
+          <h1>Multiple and mixed valvular heart disease</h1>
+          <p>Clinical description.</p>
+          <table></table>
+        </article>
+        """,
+        base_url=BASE_URL,
+    )
+
+    assert "<table" not in markdown
+    assert "</table>" not in markdown
+    assert "Clinical description." in markdown
+    assert warnings == ("empty_table_omitted",)
+
+
+def test_markdown_table_uses_plain_text_for_multiline_cells() -> None:
+    plugin = make_plugin()
+    markdown, warnings = MarkdownConverter(plugin.canonicalize_url).convert(
+        """
+        <article><table>
+          <tr><th>Evidence</th><th>Details</th></tr>
+          <tr><td>Report<br>ECG</td><td>Required</td></tr>
+        </table></article>
+        """,
+        base_url=BASE_URL,
+    )
+
+    assert "| Report / ECG | Required |" in markdown
+    assert "<br>" not in markdown
+    assert warnings == ()

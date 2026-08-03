@@ -1,4 +1,5 @@
 import asyncio
+from collections.abc import Callable
 from typing import Literal, cast
 
 from pydantic import ValidationError
@@ -13,6 +14,7 @@ from app.models.disease import (
     ParsingPolicy,
 )
 from app.parser.chunks import chunk_by_heading
+from app.parser.menu import extract_menu_hierarchy
 from app.parser.structured import (
     PARSER_VERSION,
     PROMPT_VERSION,
@@ -41,6 +43,7 @@ class StructuredParsingService:
         artifacts: ArtifactStore,
         language: str,
         policy: ParsingPolicy | None = None,
+        canonicalize_url: Callable[[str], str] | None = None,
     ) -> None:
         self.client = client
         self.items = items
@@ -48,6 +51,7 @@ class StructuredParsingService:
         self.artifacts = artifacts
         self.language = language
         self.policy = policy or ParsingPolicy()
+        self.canonicalize_url = canonicalize_url or (lambda value: value)
 
     async def run(
         self,
@@ -196,6 +200,12 @@ class StructuredParsingService:
                     "Clean manifest is missing its content hash",
                 )
             method = cast(ParseMethod, self.client.method)
+            menu_hierarchy = extract_menu_hierarchy(
+                self.artifacts.read_raw_html(job_id, item),
+                page_url=str(item.canonical_url),
+                current_label=fields.name,
+                canonicalize_url=self.canonicalize_url,
+            )
             document = DiseaseDocument(
                 document_id=item.item_id,
                 source=DiseaseSource(
@@ -207,6 +217,7 @@ class StructuredParsingService:
                     language=self.language,
                 ),
                 disease=fields,
+                menu_hierarchy=menu_hierarchy,
                 sections=tuple(chunk.as_section() for chunk in chunks),
                 tabs=self.artifacts.read_tabs(
                     job_id,
@@ -222,6 +233,11 @@ class StructuredParsingService:
                     warnings=tuple(
                         (
                             *missing_field_warnings(fields),
+                            *(
+                                ()
+                                if menu_hierarchy
+                                else ("missing_menu_hierarchy",)
+                            ),
                             *(("validation_repair_applied",) if repair_applied else ()),
                         )
                     ),

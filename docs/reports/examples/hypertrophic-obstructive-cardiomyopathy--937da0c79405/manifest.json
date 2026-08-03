@@ -1,0 +1,99 @@
+{
+  "artifacts": {
+    "content_html": {
+      "name": "content.html",
+      "sha256": "742dcf9dc1eb08e5dbfe1c740a84e47268be2619124b5a9b108381f899b939c2",
+      "size": 2323
+    },
+    "coverage": {
+      "name": "coverage.json",
+      "sha256": "ca8e1a11d4e08b0ce328fb736022a6c65fe3a49cf2171e89eed3e03645f22e77",
+      "size": 640
+    },
+    "disease_draft": {
+      "name": "disease-draft.json",
+      "sha256": "7b8c5fe881805dd8974bc9a0df8da9c4b994314daffa6ebd448e7de5a2a81c81",
+      "size": 4393
+    },
+    "disease_json": {
+      "name": "disease.json",
+      "sha256": "488119985acd9c1ce916db1d0e2f25603ed5b6c7c45c5546fa692e383a45da22",
+      "size": 251940
+    },
+    "markdown": {
+      "name": "markdown.md",
+      "sha256": "ed0c968f55922afdeaeb8246d0fac2b3e6343499700ec76730edbbd3a1f0cb47",
+      "size": 1877
+    },
+    "normalization": {
+      "name": "normalization.json",
+      "sha256": "1daf973419fe7a9a687faa0c1845d22a258ee84cc3a8fd6f6ff57601b574335f",
+      "size": 5530
+    },
+    "raw_html": {
+      "name": "raw.html",
+      "sha256": "f5bbae814461b4901e386633ee2c42bf296e960ad4830d9ec631444778105064",
+      "size": 32977
+    },
+    "screenshot": {
+      "name": "screenshot.png",
+      "sha256": "1fbb5b45db01e8c64aa710f503c46496d29ecb8427a4c56bafa8e606441f02e3",
+      "size": 324791
+    },
+    "tabs": {
+      "name": "tabs.json",
+      "sha256": "0c44d0149b919fbc30c5a75b44454ad893daa77cfd78502fd41ab39dd2cde8fd",
+      "size": 237002
+    },
+    "tabs_raw": {
+      "name": "tabs-raw.json",
+      "sha256": "1111a89c93433e6c16fb0d9633857a7069adb38b482cf679413d9cc080c9fac7",
+      "size": 111075
+    }
+  },
+  "baseline_job_id": "60269863-1866-4498-9b49-a1052df3317e",
+  "change_status": "updated",
+  "changed_components": [
+    "main",
+    "tab:health",
+    "tab:info",
+    "tab:ip",
+    "tab:life_dd_tpd"
+  ],
+  "cleaner_version": "1.2.0",
+  "confidence": 1.0,
+  "content_hash": "ed0c968f55922afdeaeb8246d0fac2b3e6343499700ec76730edbbd3a1f0cb47",
+  "item_id": "937da0c79405322c570a070858299aaf39140e91f7aae8b432abb406d3622c03",
+  "job_id": "0633dcfa-9054-4d59-8262-07401ea45760",
+  "model_version": "gemini-3.5-flash-lite",
+  "page_type": "disease_detail",
+  "parser_version": "agentic-1.4.0",
+  "plugin": "genre_manuals",
+  "previous_snapshot_hash": "aaf3395a0d3bda94257547ce049e717e20de2e15b59aa91d38c6fcdbb72a3257",
+  "prompt_version": "agentic-1.2.0",
+  "retrieved_at": "2026-08-03T03:45:55.143812Z",
+  "schema_hash": "51f60377307277f7e425cd9698d22dc6fe881e3996323564ada789ac1d709a90",
+  "schema_version": "1.0",
+  "snapshot_components": {
+    "main": "ed0c968f55922afdeaeb8246d0fac2b3e6343499700ec76730edbbd3a1f0cb47",
+    "tab:health": "b11041c98d1f49fd96211113d29d06d84d022c79ff3f9357468eaaa7bf938352",
+    "tab:info": "a4d4c387e3577ee5b4d009cdc8810db83547f24e42b3f456a3423a990a19ec3d",
+    "tab:ip": "b18671184e75cdcff938adaf0e1720f9d9f4bc0e4371330037ddf7121cd62dd4",
+    "tab:life_dd_tpd": "08b473e72d30e0cb0ff97096987a112a3a19a3d11f97366dec6a7d023da54743"
+  },
+  "snapshot_hash": "f667d13bbbd0cc8fb5f053b3fb1ce990fe7902a08b5ced2eb30f83c9cdb7e1be",
+  "source_url": "https://www.genre-manuals.com/hypertrophic_obstructive_cardiomyopathy.htm",
+  "state": "parsed",
+  "warnings": [
+    "incremental_content_updated",
+    "missing_field:prevention",
+    "missing_field:when_to_seek_care",
+    "ai_normalization_not_required",
+    "deterministic_full_content:prognosis",
+    "deterministic_full_content:aliases",
+    "deterministic_full_content:causes",
+    "deterministic_full_content:symptoms",
+    "deterministic_full_content:diagnosis",
+    "deterministic_full_content:treatment"
+  ]
+}

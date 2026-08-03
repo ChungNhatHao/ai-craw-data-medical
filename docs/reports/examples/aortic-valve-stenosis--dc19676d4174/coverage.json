@@ -1,0 +1,21 @@
+{
+  "blockers": [],
+  "checks": {
+    "classification_hierarchy_preserved": true,
+    "main_content_present": true,
+    "related_details_preserved": true,
+    "required_tabs_captured": true,
+    "structured_fields_complete": true,
+    "tables_preserved": true,
+    "tabs_mapped_to_output": true
+  },
+  "complete": true,
+  "item_id": "dc19676d4174ef0c59ee17c7e360f60a0f79a9e654037ca3229f0eaa4e4d1acd",
+  "schema_version": "1.0",
+  "source_url": "https://www.genre-manuals.com/en_aortic_valve_stenosis.htm",
+  "warnings": [
+    "field_not_present_in_source:risk_factors",
+    "field_not_present_in_source:prevention",
+    "field_not_present_in_source:when_to_seek_care"
+  ]
+}
