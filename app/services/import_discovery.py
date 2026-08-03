@@ -2,7 +2,7 @@ import re
 from collections import Counter
 from collections.abc import Awaitable, Callable
 from dataclasses import dataclass
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse
 
 from bs4 import BeautifulSoup
 from playwright.async_api import Error as PlaywrightError
@@ -38,6 +38,7 @@ from app.services.category_expansion import (
     SearchMatch,
     autocomplete_label_parts,
     is_exact_alias_match,
+    is_singular_plural_pair,
     normalize_search_name,
 )
 from app.storage.artifacts import ArtifactStore
@@ -64,6 +65,11 @@ SEARCH_CONNECTOR_TERMS = frozenset(
         "with",
         "without",
     }
+)
+DIRECT_DETAIL_HEADING_SELECTORS = (
+    "h1",
+    "h2.pageTitle",
+    ".pageTitle",
 )
 
 
@@ -406,6 +412,7 @@ class ImportedDiseaseDiscoveryService:
                 candidates, inspected = self._search_candidates(
                     variant.result_html,
                     result_page=variant.url,
+                    query=variant.submitted_query or disease_name,
                 )
                 inspected_links += inspected
                 query = variant.submitted_query or disease_name
@@ -624,7 +631,21 @@ class ImportedDiseaseDiscoveryService:
         await search.fill("")
         await search.press_sequentially(disease_name, delay=35)
         steps.append(f"Đã nhập truy vấn vào #searchTerm: {disease_name}")
-        suggestions = await self._collect_autocomplete_suggestions(page)
+        collected_suggestions = await self._collect_autocomplete_suggestions(
+            page
+        )
+        suggestions = self.filter_relevant_autocomplete_suggestions(
+            disease_name,
+            collected_suggestions,
+        )
+        filtered_suggestion_count = len(collected_suggestions) - len(
+            suggestions
+        )
+        if filtered_suggestion_count:
+            steps.append(
+                "Đã loại "
+                f"{filtered_suggestion_count} gợi ý autocomplete không liên quan"
+            )
         submitted_query = disease_name
         selected_suggestions: tuple[str, ...] = ()
         resolved_suggestions: tuple[str, ...] = ()
@@ -963,6 +984,50 @@ class ImportedDiseaseDiscoveryService:
             resolved.append(value)
         return tuple(resolved)
 
+    @staticmethod
+    def filter_relevant_autocomplete_suggestions(
+        query: str,
+        suggestions: tuple[AutocompleteSuggestion, ...],
+    ) -> tuple[AutocompleteSuggestion, ...]:
+        """Reject stale autocomplete entries left over from another query."""
+
+        query_variants = tuple(
+            value
+            for raw in (query, *re.split(r"\s+/\s+", query))
+            if (value := normalize_search_name(raw))
+        )
+        if not query_variants:
+            return ()
+        return tuple(
+            suggestion
+            for suggestion in suggestions
+            if any(
+                ImportedDiseaseDiscoveryService._phrases_overlap(
+                    query_variant,
+                    normalize_search_name(part),
+                )
+                for query_variant in query_variants
+                for part in autocomplete_label_parts(suggestion.label)
+            )
+        )
+
+    @staticmethod
+    def _phrases_overlap(left: str, right: str) -> bool:
+        left_tokens = left.split()
+        right_tokens = right.split()
+        if not left_tokens or not right_tokens:
+            return False
+        shorter, longer = (
+            (left_tokens, right_tokens)
+            if len(left_tokens) <= len(right_tokens)
+            else (right_tokens, left_tokens)
+        )
+        width = len(shorter)
+        return any(
+            longer[index : index + width] == shorter
+            for index in range(len(longer) - width + 1)
+        )
+
     async def _confirm_detail(
         self,
         page: Page,
@@ -1043,6 +1108,13 @@ class ImportedDiseaseDiscoveryService:
         candidates: dict[str, DiscoveredItem] = {}
         soup = BeautifulSoup(html, "lxml")
         links = soup.select("a[href]")
+        direct = self._direct_detail_candidate(
+            soup,
+            query=query,
+            result_page=result_page,
+        )
+        if direct is not None:
+            return CandidateScan(direct, 1, 1, "direct_detail")
         exact_matches = 0
         alias_match_found = False
         for link in links:
@@ -1090,8 +1162,24 @@ class ImportedDiseaseDiscoveryService:
         html: str,
         *,
         result_page: str,
+        query: str,
     ) -> tuple[tuple[SearchCandidate, ...], int]:
         soup = BeautifulSoup(html, "lxml")
+        direct = self._direct_detail_candidate(
+            soup,
+            query=query,
+            result_page=result_page,
+        )
+        if direct is not None:
+            return (
+                (
+                    SearchCandidate(
+                        direct.title_hint or query,
+                        str(direct.canonical_url),
+                    ),
+                ),
+                1,
+            )
         links = soup.select("a[href]")
         candidates: list[SearchCandidate] = []
         for link in links:
@@ -1112,6 +1200,44 @@ class ImportedDiseaseDiscoveryService:
                 )
             )
         return tuple(candidates), len(links)
+
+    def _direct_detail_candidate(
+        self,
+        soup: BeautifulSoup,
+        *,
+        query: str,
+        result_page: str,
+    ) -> DiscoveredItem | None:
+        if urlparse(result_page).path.casefold().endswith(
+            "/search_result.htm"
+        ):
+            return None
+        heading = next(
+            (
+                " ".join(node.get_text(" ", strip=True).split())
+                for selector in DIRECT_DETAIL_HEADING_SELECTORS
+                if (node := soup.select_one(selector)) is not None
+                and node.get_text(" ", strip=True)
+            ),
+            "",
+        )
+        if not heading or not (
+            self._name_identity(heading) == self._name_identity(query)
+            or is_exact_alias_match(query, heading)
+            or is_exact_alias_match(heading, query)
+            or is_singular_plural_pair(query, heading)
+        ):
+            return None
+        canonical = self.plugin.canonicalize_url(result_page)
+        if not self.plugin._is_allowed_url(canonical):
+            return None
+        return DiscoveredItem(
+            item_id=build_item_id(self.plugin.name, canonical),
+            source_url=canonical,
+            canonical_url=canonical,
+            title_hint=heading,
+            discovery_page=result_page,
+        )
 
     def _persist_category_expansion(
         self,
