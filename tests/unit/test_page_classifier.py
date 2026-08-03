@@ -46,6 +46,14 @@ def make_plugin() -> GenreManualsPlugin:
             PageType.DISEASE_DETAIL,
         ),
         (
+            "article_detail_like.html",
+            (
+                "https://www.genre-manuals.com/sites/CLUE/home/page7/"
+                "part-3-substitution-therapy.html"
+            ),
+            PageType.HOME_OR_MENU,
+        ),
+        (
             "unknown.html",
             "https://www.genre-manuals.com/temporary.html",
             PageType.UNKNOWN,

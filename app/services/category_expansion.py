@@ -222,8 +222,11 @@ class CategoryExpansionService:
         seeds: Iterable[CategorySeed],
         progress: Progress | None = None,
     ) -> CategoryExpansionResult:
-        queue = deque(
-            _QueuedNode(
+        queue: deque[_QueuedNode] = deque()
+        scheduled: set[tuple[str, str]] = set()
+        nodes: list[CategoryDiscoveryNode] = []
+        for seed in seeds:
+            node = _QueuedNode(
                 root_query=seed.root_query,
                 label=seed.label,
                 url=seed.url,
@@ -232,13 +235,24 @@ class CategoryExpansionService:
                 ancestors=frozenset(),
                 depth=0,
             )
-            for seed in seeds
-        )
+            key = self._schedule_key(node)
+            if key in scheduled:
+                nodes.append(
+                    self._audit(
+                        node,
+                        PageType.UNKNOWN,
+                        0,
+                        CategoryNodeStatus.SKIPPED,
+                        CategoryReasonCode.DUPLICATE_CANONICAL_URL,
+                    )
+                )
+                continue
+            scheduled.add(key)
+            queue.append(node)
         visited: set[str] = set()
         classifications: dict[str, PageClassification] = {}
         cached_children: dict[str, tuple[CategoryChild, ...]] = {}
         items: dict[str, DiscoveredItem] = {}
-        nodes: list[CategoryDiscoveryNode] = []
         provenance: list[CategoryItemProvenance] = []
         provenance_keys: set[tuple[str, str, tuple[str, ...]]] = set()
         limits: list[str] = []
@@ -309,6 +323,7 @@ class CategoryExpansionService:
                     provenance,
                     provenance_keys,
                     queue,
+                    scheduled,
                     job_id,
                 )
                 continue
@@ -390,6 +405,7 @@ class CategoryExpansionService:
                     node,
                     canonical,
                     children,
+                    scheduled,
                 )
             else:
                 nodes.append(
@@ -548,6 +564,7 @@ class CategoryExpansionService:
         provenance: list[CategoryItemProvenance],
         provenance_keys: set[tuple[str, str, tuple[str, ...]]],
         queue: deque[_QueuedNode],
+        scheduled: set[tuple[str, str]],
         job_id: str,
     ) -> None:
         classification = classifications.get(canonical)
@@ -584,6 +601,7 @@ class CategoryExpansionService:
                 node,
                 canonical,
                 cached_children.get(canonical, ()),
+                scheduled,
             )
 
     def _enqueue_children(
@@ -593,6 +611,7 @@ class CategoryExpansionService:
         parent: _QueuedNode,
         canonical_parent: str,
         children: tuple[CategoryChild, ...],
+        scheduled: set[tuple[str, str]],
     ) -> None:
         ancestors = parent.ancestors | {canonical_parent}
         for child in children:
@@ -605,6 +624,19 @@ class CategoryExpansionService:
                 ancestors=ancestors,
                 depth=parent.depth + 1,
             )
+            key = self._schedule_key(queued)
+            if key in scheduled:
+                nodes.append(
+                    self._audit(
+                        queued,
+                        PageType.UNKNOWN,
+                        0,
+                        CategoryNodeStatus.SKIPPED,
+                        CategoryReasonCode.DUPLICATE_CANONICAL_URL,
+                    )
+                )
+                continue
+            scheduled.add(key)
             queue.append(queued)
             nodes.append(
                 self._audit(
@@ -615,6 +647,12 @@ class CategoryExpansionService:
                     CategoryReasonCode.CATEGORY_CHILD_ENQUEUED,
                 )
             )
+
+    def _schedule_key(self, node: _QueuedNode) -> tuple[str, str]:
+        return (
+            " ".join(node.root_query.casefold().split()),
+            self.plugin.canonicalize_url(node.url),
+        )
 
     def _add_provenance(
         self,

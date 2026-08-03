@@ -333,6 +333,7 @@ class GenreManualsPlugin(SitePlugin):
         matched_terms = tuple(
             sorted(term for term in MEDICAL_SECTION_TERMS if term in normalized_text)
         )
+        has_required_tabs = await self.has_required_detail_structure(page)
         signals: list[str] = []
         score = 0.0
 
@@ -365,10 +366,14 @@ class GenreManualsPlugin(SitePlugin):
         if matched_terms:
             score += 0.15
             signals.append(f"medical_sections:{','.join(matched_terms)}")
+        if has_required_tabs:
+            score += 0.15
+            signals.append("required_detail_tabs")
         if (
             score >= self.detail_confidence_threshold
             and title.strip()
             and len(content.strip()) >= self.minimum_detail_chars
+            and has_required_tabs
         ):
             return self._classification(
                 page.url,
@@ -508,6 +513,16 @@ class GenreManualsPlugin(SitePlugin):
                 ErrorCode.CONTENT_EMPTY,
                 "Disease detail content did not become ready",
             ) from exc
+
+    async def has_required_detail_structure(self, page: Page) -> bool:
+        if not await page.locator(".tabContainer").count():
+            return False
+        links = page.locator("ul.idTabs a")
+        labels = {
+            " ".join((await links.nth(index).inner_text()).casefold().split())
+            for index in range(await links.count())
+        }
+        return {"info", "life/dd/tpd", "ip", "health"}.issubset(labels)
 
     async def screenshot_masks(self, page: Page) -> list[Locator]:
         account_region = page.locator("#genre-shortcuts")

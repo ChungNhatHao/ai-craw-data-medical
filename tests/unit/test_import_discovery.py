@@ -5,6 +5,7 @@ import pytest
 from pydantic import ValidationError
 
 from app.core.ids import build_item_id
+from app.models.agentic import AutocompleteSuggestion
 from app.models.run import RunRequest
 from app.plugins.genre_manuals.plugin import GenreManualsPlugin
 from app.repositories.items import ItemRepository
@@ -137,6 +138,58 @@ def test_autocomplete_aliases_resolve_to_canonical_search_names_and_dedupe() -> 
     )
 
 
+def test_autocomplete_filter_rejects_stale_unrelated_suggestions() -> None:
+    suggestions = tuple(
+        AutocompleteSuggestion(candidate_id=str(index), label=label)
+        for index, label in enumerate(
+            (
+                "Urinary tract infection",
+                "Autism spectrum disorders",
+                "Schizophrenia",
+                "Utility Vehicle Mechanic",
+            ),
+            start=1,
+        )
+    )
+
+    filtered = (
+        ImportedDiseaseDiscoveryService.filter_relevant_autocomplete_suggestions(
+            "Urinary tract infection / UTI",
+            suggestions,
+        )
+    )
+
+    assert tuple(value.label for value in filtered) == (
+        "Urinary tract infection",
+    )
+
+
+def test_autocomplete_filter_keeps_related_alias_suggestions() -> None:
+    suggestions = tuple(
+        AutocompleteSuggestion(candidate_id=str(index), label=label)
+        for index, label in enumerate(
+            (
+                "Manic depression - Bipolar disorder",
+                "ST-depression - ECG changes",
+                "Depressants, sedatives",
+            ),
+            start=1,
+        )
+    )
+
+    filtered = (
+        ImportedDiseaseDiscoveryService.filter_relevant_autocomplete_suggestions(
+            "Depression",
+            suggestions,
+        )
+    )
+
+    assert tuple(value.label for value in filtered) == (
+        "Manic depression - Bipolar disorder",
+        "ST-depression - ECG changes",
+    )
+
+
 def test_imported_search_queries_split_explicit_slash_aliases() -> None:
     assert ImportedDiseaseDiscoveryService.imported_search_queries(
         "Hypertension / High blood pressure"
@@ -148,6 +201,37 @@ def test_imported_search_queries_split_explicit_slash_aliases() -> None:
     assert ImportedDiseaseDiscoveryService.imported_search_queries(
         "HIV/AIDS"
     ) == ("HIV/AIDS",)
+
+
+def test_direct_detail_result_does_not_scan_unrelated_page_links() -> None:
+    plugin = GenreManualsPlugin(base_url=BASE_URL)
+    service = ImportedDiseaseDiscoveryService(
+        plugin=plugin,
+        items=Mock(spec=ItemRepository),
+        artifacts=Mock(spec=ArtifactStore),
+    )
+    html = """
+    <main>
+      <h2 class="pageTitle">Urinary tract infection</h2>
+      <a href="/en_autism.htm">Autism spectrum disorders</a>
+      <a href="/en_schizophrenia.htm">Schizophrenia</a>
+    </main>
+    """
+
+    candidates, inspected = service._search_candidates(
+        html,
+        result_page=(
+            "https://www.genre-manuals.com/en_urinarytractinfection.htm"
+        ),
+        query="Urinary tract infection",
+    )
+
+    assert inspected == 1
+    assert len(candidates) == 1
+    assert candidates[0].label == "Urinary tract infection"
+    assert candidates[0].url == (
+        "https://www.genre-manuals.com/en_urinarytractinfection.htm"
+    )
 
 
 def test_imported_search_queries_back_off_long_disease_name_safely() -> None:

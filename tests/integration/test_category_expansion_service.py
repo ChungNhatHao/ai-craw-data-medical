@@ -192,3 +192,37 @@ def test_node_limit_stops_gracefully_with_reason_codes() -> None:
         )
 
     asyncio.run(scenario())
+
+
+def test_duplicate_seed_is_not_enqueued_or_expanded_twice() -> None:
+    async def scenario() -> None:
+        plugin = FakeCategoryPlugin()
+        result = await FakeExpansionService(
+            plugin=plugin,
+            policy=CategoryExpansionPolicy(
+                max_depth=5,
+                max_nodes=20,
+                max_diseases=10,
+            ),
+        ).run(
+            cast(Page, FakePage()),
+            job_id="job-category",
+            seeds=(
+                CategorySeed("Root A query", "Root A", ROOT_A),
+                CategorySeed("Root A query", "Root A duplicate", ROOT_A),
+            ),
+        )
+
+        assert plugin.navigation_count[ROOT_A] == 1
+        assert result.visited_count == 4
+        assert result.stopped_reason == "category_queue_exhausted"
+        assert sum(
+            node.reason_code == "category_child_enqueued"
+            for node in result.nodes
+        ) == 3
+        assert any(
+            node.reason_code == "duplicate_canonical_url"
+            for node in result.nodes
+        )
+
+    asyncio.run(scenario())
