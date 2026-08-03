@@ -1,0 +1,71 @@
+{
+  "aliases": [
+    {
+      "source_quote": "Hypertrophic cardiomyopathy * HOCM * HCM",
+      "source_section": "Hypertrophic obstructive cardiomyopathy",
+      "value": "Hypertrophic cardiomyopathy"
+    },
+    {
+      "source_quote": "Hypertrophic cardiomyopathy * HOCM * HCM",
+      "source_section": "Hypertrophic obstructive cardiomyopathy",
+      "value": "HOCM"
+    },
+    {
+      "source_quote": "Hypertrophic cardiomyopathy * HOCM * HCM",
+      "source_section": "Hypertrophic obstructive cardiomyopathy",
+      "value": "HCM"
+    }
+  ],
+  "causes": [
+    {
+      "source_quote": "This is inherited usually in an autosomal dominant fashion. There are many different genetic mutations that cause this condition and the spectrum of disease severity may be high.",
+      "source_section": "Causes",
+      "value": "This is inherited usually in an autosomal dominant fashion. There are many different genetic mutations that cause this condition and the spectrum of disease severity may be high."
+    }
+  ],
+  "diagnosis": [
+    {
+      "source_quote": "Cardiological report with follow-up / Cardiac CT / MRI or coronary angiography (invasive) / Echocardiography (transthoracic or transoesophageal) / Resting ECG / Exercise ECG / Blood pressure",
+      "source_section": "Supportive evidence",
+      "value": "Cardiological report with follow-up / Cardiac CT / MRI or coronary angiography (invasive) / Echocardiography (transthoracic or transoesophageal) / Resting ECG / Exercise ECG / Blood pressure"
+    }
+  ],
+  "name": {
+    "source_quote": "Hypertrophic obstructive cardiomyopathy",
+    "source_section": "Hypertrophic obstructive cardiomyopathy",
+    "value": "Hypertrophic obstructive cardiomyopathy"
+  },
+  "prevention": [],
+  "prognosis": {
+    "source_quote": "There is a wide range of severity and each case deserves careful assessment. The prognosis depends on the ventricular wall dimensions, the degree of outflow obstruction as measured by the gradient within the left ventricle, the occurrence of any arrhythmias and any reported sudden death in the family history.",
+    "source_section": "Prognosis",
+    "value": "There is a wide range of severity and each case deserves careful assessment. The prognosis depends on the ventricular wall dimensions, the degree of outflow obstruction as measured by the gradient within the left ventricle, the occurrence of any arrhythmias and any reported sudden death in the family history."
+  },
+  "risk_factors": [
+    {
+      "source_quote": "A history of sudden death in the family history especially at a young age is an important factor in risk stratification.",
+      "source_section": "Symptoms",
+      "value": "A history of sudden death in the family history especially at a young age is an important factor in risk stratification."
+    }
+  ],
+  "summary": {
+    "source_quote": "Hypertrophic cardiomyopathy is the most common inherited cardiomyopathy",
+    "source_section": "Hypertrophic obstructive cardiomyopathy",
+    "value": "Hypertrophic cardiomyopathy is the most common inherited cardiomyopathy"
+  },
+  "symptoms": [
+    {
+      "source_quote": "Palpitations or episodes of syncope or faintness may signify potentially life-threatening arrhythmias. Symptoms of heart failure such as breathlessness may occur.",
+      "source_section": "Symptoms",
+      "value": "Palpitations or episodes of syncope or faintness may signify potentially life-threatening arrhythmias. Symptoms of heart failure such as breathlessness may occur."
+    }
+  ],
+  "treatment": [
+    {
+      "source_quote": "Betablockers are used to reduce the heart rate. Restriction of the exertion of the individual is advised to keep the pulse below 120 beats per minute. An implantable defibrillator may be used to prevent or reduce the risk of Ventricular Fibrillation. Ablation of the muscle bulk in the interventricular septum may reduce muscle mass but the risk of arrhythmias remain.",
+      "source_section": "Treatment",
+      "value": "Betablockers are used to reduce the heart rate. Restriction of the exertion of the individual is advised to keep the pulse below 120 beats per minute. An implantable defibrillator may be used to prevent or reduce the risk of Ventricular Fibrillation. Ablation of the muscle bulk in the interventricular septum may reduce muscle mass but the risk of arrhythmias remain."
+    }
+  ],
+  "when_to_seek_care": []
+}

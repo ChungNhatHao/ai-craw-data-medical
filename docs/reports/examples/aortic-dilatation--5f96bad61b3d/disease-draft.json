@@ -1,0 +1,100 @@
+{
+  "aliases": [
+    {
+      "source_quote": "Abdominal aortic aneurysm * Aortic dilatation * Aortic dissection * Ascending aortic aneurysm * Dilatation ascending aorta * Dissecting aneurysm * Mycotic aneurysm * Peripheral aortic aneurysm * Peripheral vascular aneurysm * Thoracic aortic aneurysm * Thoracoabdominal aneurysm",
+      "source_section": null,
+      "value": "Abdominal aortic aneurysm"
+    },
+    {
+      "source_quote": "Abdominal aortic aneurysm * Aortic dilatation * Aortic dissection * Ascending aortic aneurysm * Dilatation ascending aorta * Dissecting aneurysm * Mycotic aneurysm * Peripheral aortic aneurysm * Peripheral vascular aneurysm * Thoracic aortic aneurysm * Thoracoabdominal aneurysm",
+      "source_section": null,
+      "value": "Aortic dissection"
+    },
+    {
+      "source_quote": "Abdominal aortic aneurysm * Aortic dilatation * Aortic dissection * Ascending aortic aneurysm * Dilatation ascending aorta * Dissecting aneurysm * Mycotic aneurysm * Peripheral aortic aneurysm * Peripheral vascular aneurysm * Thoracic aortic aneurysm * Thoracoabdominal aneurysm",
+      "source_section": null,
+      "value": "Ascending aortic aneurysm"
+    },
+    {
+      "source_quote": "Abdominal aortic aneurysm * Aortic dilatation * Aortic dissection * Ascending aortic aneurysm * Dilatation ascending aorta * Dissecting aneurysm * Mycotic aneurysm * Peripheral aortic aneurysm * Peripheral vascular aneurysm * Thoracic aortic aneurysm * Thoracoabdominal aneurysm",
+      "source_section": null,
+      "value": "Dilatation ascending aorta"
+    },
+    {
+      "source_quote": "Abdominal aortic aneurysm * Aortic dilatation * Aortic dissection * Ascending aortic aneurysm * Dilatation ascending aorta * Dissecting aneurysm * Mycotic aneurysm * Peripheral aortic aneurysm * Peripheral vascular aneurysm * Thoracic aortic aneurysm * Thoracoabdominal aneurysm",
+      "source_section": null,
+      "value": "Dissecting aneurysm"
+    },
+    {
+      "source_quote": "Abdominal aortic aneurysm * Aortic dilatation * Aortic dissection * Ascending aortic aneurysm * Dilatation ascending aorta * Dissecting aneurysm * Mycotic aneurysm * Peripheral aortic aneurysm * Peripheral vascular aneurysm * Thoracic aortic aneurysm * Thoracoabdominal aneurysm",
+      "source_section": null,
+      "value": "Mycotic aneurysm"
+    },
+    {
+      "source_quote": "Abdominal aortic aneurysm * Aortic dilatation * Aortic dissection * Ascending aortic aneurysm * Dilatation ascending aorta * Dissecting aneurysm * Mycotic aneurysm * Peripheral aortic aneurysm * Peripheral vascular aneurysm * Thoracic aortic aneurysm * Thoracoabdominal aneurysm",
+      "source_section": null,
+      "value": "Peripheral aortic aneurysm"
+    },
+    {
+      "source_quote": "Abdominal aortic aneurysm * Aortic dilatation * Aortic dissection * Ascending aortic aneurysm * Dilatation ascending aorta * Dissecting aneurysm * Mycotic aneurysm * Peripheral aortic aneurysm * Peripheral vascular aneurysm * Thoracic aortic aneurysm * Thoracoabdominal aneurysm",
+      "source_section": null,
+      "value": "Peripheral vascular aneurysm"
+    },
+    {
+      "source_quote": "Abdominal aortic aneurysm * Aortic dilatation * Aortic dissection * Ascending aortic aneurysm * Dilatation ascending aorta * Dissecting aneurysm * Mycotic aneurysm * Peripheral aortic aneurysm * Peripheral vascular aneurysm * Thoracic aortic aneurysm * Thoracoabdominal aneurysm",
+      "source_section": null,
+      "value": "Thoracic aortic aneurysm"
+    },
+    {
+      "source_quote": "Abdominal aortic aneurysm * Aortic dilatation * Aortic dissection * Ascending aortic aneurysm * Dilatation ascending aorta * Dissecting aneurysm * Mycotic aneurysm * Peripheral aortic aneurysm * Peripheral vascular aneurysm * Thoracic aortic aneurysm * Thoracoabdominal aneurysm",
+      "source_section": null,
+      "value": "Thoracoabdominal aneurysm"
+    }
+  ],
+  "causes": [
+    {
+      "source_quote": "Presence of hypertension, obesity, hyperlipidemia, connective tissue disorders, atherosclerosis, advanced age. About 20% are hereditary.",
+      "source_section": null,
+      "value": "Presence of hypertension, obesity, hyperlipidemia, connective tissue disorders, atherosclerosis, advanced age. About 20% are hereditary."
+    }
+  ],
+  "diagnosis": [
+    {
+      "source_quote": "Cardiological report with follow-up / Cardiac CT / MRI or coronary angiography (invasive) / Echocardiography (transthoracic or transoesophageal) / Resting ECG / Blood pressure",
+      "source_section": null,
+      "value": "Cardiological report with follow-up / Cardiac CT / MRI or coronary angiography (invasive) / Echocardiography (transthoracic or transoesophageal) / Resting ECG / Blood pressure"
+    }
+  ],
+  "name": {
+    "source_quote": "Aortic dilatation",
+    "source_section": null,
+    "value": "Aortic dilatation"
+  },
+  "prevention": [],
+  "prognosis": {
+    "source_quote": "Dilatations smaller than 4 cm are generally considered low-risk for rupture. They can be monitored annually without immediate intervention. Dilatations over 4 cm require close monitoring and, in certain cases, intervention to prevent complications such as dissection or rupture. The prognosis is worse if the dilatation is over 4.5 cm [1, 2, 3]. Hereditary aortic disease is associated with greater risk including rate of progression.",
+    "source_section": null,
+    "value": "Dilatations smaller than 4 cm are generally considered low-risk for rupture. They can be monitored annually without immediate intervention. Dilatations over 4 cm require close monitoring and, in certain cases, intervention to prevent complications such as dissection or rupture. The prognosis is worse if the dilatation is over 4.5 cm [1, 2, 3]. Hereditary aortic disease is associated with greater risk including rate of progression."
+  },
+  "risk_factors": [],
+  "summary": {
+    "source_quote": "Aortic dilatation refers to the abnormal enlargement of the aorta, the largest blood vessel in the body. Aortic dissection is a serious condition where a tear occurs in the inner layer of the aorta.",
+    "source_section": null,
+    "value": "Aortic dilatation refers to the abnormal enlargement of the aorta, the largest blood vessel in the body. Aortic dissection is a serious condition where a tear occurs in the inner layer of the aorta."
+  },
+  "symptoms": [
+    {
+      "source_quote": "Symptoms may include back pain, cough, shortness of breath, chest pain. However, most cases are asymptomatic until dissection occurs.",
+      "source_section": null,
+      "value": "Symptoms may include back pain, cough, shortness of breath, chest pain. However, most cases are asymptomatic until dissection occurs."
+    }
+  ],
+  "treatment": [
+    {
+      "source_quote": "Medication: beta blockers, angiotensin receptor blockers, statins. Surgery and/or procedures: open chest surgery, aortic root surgery, valve aortic root repair",
+      "source_section": null,
+      "value": "Medication: beta blockers, angiotensin receptor blockers, statins. Surgery and/or procedures: open chest surgery, aortic root surgery, valve aortic root repair"
+    }
+  ],
+  "when_to_seek_care": []
+}

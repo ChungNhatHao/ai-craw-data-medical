@@ -1,0 +1,96 @@
+{
+  "aliases": [
+    {
+      "source_quote": "Primary pulmonary hypertension",
+      "source_section": "Pulmonary hypertension",
+      "value": "Primary pulmonary hypertension"
+    },
+    {
+      "source_quote": "PPH",
+      "source_section": "Pulmonary hypertension",
+      "value": "PPH"
+    },
+    {
+      "source_quote": "Secondary pulmonary hypertension",
+      "source_section": "Pulmonary hypertension",
+      "value": "Secondary pulmonary hypertension"
+    },
+    {
+      "source_quote": "Idiopathic pulmonary hypertension",
+      "source_section": "Pulmonary hypertension",
+      "value": "Idiopathic pulmonary hypertension"
+    }
+  ],
+  "causes": [
+    {
+      "source_quote": "Idiopathic pulmonary hypertension: Increased pulmonary artery pressure and pulmonary vascular resistance without an obvious cause. A genetic basis for primary pulmonary hypertension appears likely. Familial primary pulmonary hypertension occurs in approximately 7% of cases, the pattern of inheritance identified as autosomal dominant.",
+      "source_section": "Causes",
+      "value": "Idiopathic pulmonary hypertension: Increased pulmonary artery pressure and pulmonary vascular resistance without an obvious cause. A genetic basis for primary pulmonary hypertension appears likely. Familial primary pulmonary hypertension occurs in approximately 7% of cases, the pattern of inheritance identified as autosomal dominant."
+    },
+    {
+      "source_quote": "Secondary pulmonary hypertension can result from left sided cardiac disease, low oxygen levels, sleep apnoea, thromboembolic diseases and lung disease, e.g. COPD and Interstitial lung disease. It can also arise from intracardiac shunts in congenital heart disease.",
+      "source_section": "Causes",
+      "value": "Secondary pulmonary hypertension: Secondary pulmonary hypertension can result from left sided cardiac disease, low oxygen levels, sleep apnoea, thromboembolic diseases and lung disease, e.g. COPD and Interstitial lung disease. It can also arise from intracardiac shunts in congenital heart disease."
+    }
+  ],
+  "diagnosis": [
+    {
+      "source_quote": "Cardiological report with follow-up",
+      "source_section": "Supportive evidence",
+      "value": "Cardiological report with follow-up"
+    },
+    {
+      "source_quote": "Echocardiography (transthoracic or transoesophageal)",
+      "source_section": "Supportive evidence",
+      "value": "Echocardiography (transthoracic or transoesophageal)"
+    },
+    {
+      "source_quote": "Resting ECG",
+      "source_section": "Supportive evidence",
+      "value": "Resting ECG"
+    },
+    {
+      "source_quote": "Blood pressure",
+      "source_section": "Supportive evidence",
+      "value": "Blood pressure"
+    }
+  ],
+  "name": {
+    "source_quote": "Pulmonary hypertension",
+    "source_section": "Pulmonary hypertension",
+    "value": "Pulmonary hypertension"
+  },
+  "prevention": [],
+  "prognosis": {
+    "source_quote": "The course of PPH is often one of steady deterioration and reduced life expectancy; non-transplanted patients have a one year survival of 68 - 77%, and a five year survival of 22 - 38%.",
+    "source_section": "Prognosis",
+    "value": "The course of PPH is often one of steady deterioration and reduced life expectancy; non-transplanted patients have a one year survival of 68 - 77%, and a five year survival of 22 - 38%."
+  },
+  "risk_factors": [
+    {
+      "source_quote": "Risk factors that have been linked to the development of unexplained pulmonary hypertension include essential hypertension, human immunodeficiency virus, portal hypertension, collagen vascular disease, and congenital shunts resulting in increased pulmonary blood flow.",
+      "source_section": "Causes",
+      "value": "Risk factors that have been linked to the development of unexplained pulmonary hypertension include essential hypertension, human immunodeficiency virus, portal hypertension, collagen vascular disease, and congenital shunts resulting in increased pulmonary blood flow."
+    }
+  ],
+  "summary": {
+    "source_quote": "Hypertension in the pulmonary circuit; may be primary idiopathic, or secondary to pulmonary or cardiac disease. In this condition pressure is increased in the pulmonary arteries. This causes increased resistance to the blood flow in the pulmonary arterial circulation.",
+    "source_section": "Pulmonary hypertension",
+    "value": "Hypertension in the pulmonary circuit; may be primary idiopathic, or secondary to pulmonary or cardiac disease. In this condition pressure is increased in the pulmonary arteries. This causes increased resistance to the blood flow in the pulmonary arterial circulation."
+  },
+  "symptoms": [
+    {
+      "source_quote": "The most common symptoms of PPH are shortness of breath with exertion and general fatigue. Syncope, dizziness, ankle or leg swelling, and chest pain or pre-cordial pressure are often observed during the course of the disease.",
+      "source_section": "Symptoms",
+      "value": "The most common symptoms of PPH are shortness of breath with exertion and general fatigue. Syncope, dizziness, ankle or leg swelling, and chest pain or pre-cordial pressure are often observed during the course of the disease."
+    }
+  ],
+  "treatment": [
+    {
+      "source_quote": "Thromboendarterectomy, Sildenafil intravenous prostacyclin, high-dose calcium blockers, anticoagulation, diuresis, lung transplantation.",
+      "source_section": "Treatment",
+      "value": "Thromboendarterectomy, Sildenafil intravenous prostacyclin, high-dose calcium blockers, anticoagulation, diuresis, lung transplantation."
+    }
+  ],
+  "when_to_seek_care": []
+}

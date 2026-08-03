@@ -96,7 +96,7 @@ PFO
 
 The foramen ovale is a normal passageway in the fetus.
 
-This later paragraph must not replace the first source summary.
+This later paragraph is also part of the source summary.
 
 | Column 1 | Column 2 |
 | --- | --- |
@@ -106,6 +106,63 @@ This later paragraph must not replace the first source summary.
     fields = extract_deterministic_fields(markdown)
 
     assert fields.aliases == ("PFO",)
-    assert fields.summary == ("The foramen ovale is a normal passageway in the fetus.")
+    assert fields.summary == (
+        "The foramen ovale is a normal passageway in the fetus.\n\n"
+        "This later paragraph is also part of the source summary."
+    )
     assert fields.diagnosis == ("Cardiological report", "Resting ECG")
+    validate_grounding(fields, markdown)
+
+
+def test_deterministic_extraction_preserves_complete_content_for_all_fields() -> None:
+    markdown = """# Complete disease
+
+Complete source summary paragraph one with qualifications.
+
+Complete source summary paragraph two with additional details.
+
+| Field | Full content |
+| --- | --- |
+| Causes | Complete cause sentence, including qualification and exception. |
+| Risk factors | Complete risk-factor sentence with age, duration, and severity. |
+| Symptoms | Fever, cough, fatigue, and a complete explanatory clause. |
+| Diagnosis | Complete clinical \\| laboratory diagnostic evidence. |
+| Treatment | Complete treatment sentence with dose, duration, and follow-up. |
+| Prevention | Complete prevention sentence with every source recommendation. |
+| Prognosis | First complete prognosis sentence. |
+| Prognosis | Second complete prognosis sentence. |
+| When to seek care | Complete urgent-care instruction with warning signs. |
+"""
+
+    fields = extract_deterministic_fields(markdown)
+
+    assert fields.summary == (
+        "Complete source summary paragraph one with qualifications.\n\n"
+        "Complete source summary paragraph two with additional details."
+    )
+    assert fields.causes == (
+        "Complete cause sentence, including qualification and exception.",
+    )
+    assert fields.risk_factors == (
+        "Complete risk-factor sentence with age, duration, and severity.",
+    )
+    assert fields.symptoms == (
+        "Fever, cough, fatigue, and a complete explanatory clause.",
+    )
+    assert fields.diagnosis == (
+        "Complete clinical | laboratory diagnostic evidence.",
+    )
+    assert fields.treatment == (
+        "Complete treatment sentence with dose, duration, and follow-up.",
+    )
+    assert fields.prevention == (
+        "Complete prevention sentence with every source recommendation.",
+    )
+    assert fields.prognosis == (
+        "First complete prognosis sentence.\n\n"
+        "Second complete prognosis sentence."
+    )
+    assert fields.when_to_seek_care == (
+        "Complete urgent-care instruction with warning signs.",
+    )
     validate_grounding(fields, markdown)

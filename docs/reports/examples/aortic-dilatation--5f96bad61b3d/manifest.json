@@ -1,0 +1,101 @@
+{
+  "artifacts": {
+    "content_html": {
+      "name": "content.html",
+      "sha256": "84b6465d88dc2f04855ad55143775ee47a6e2f7ef6b7a083df25ff692c8196d3",
+      "size": 4503
+    },
+    "coverage": {
+      "name": "coverage.json",
+      "sha256": "bda5f20398250838aaddc207089fbd59b585ba40252078dd24ff53cd0ffe40ba",
+      "size": 669
+    },
+    "disease_draft": {
+      "name": "disease-draft.json",
+      "sha256": "0e599b3d1f95638629c446ba06e433bb1fbeaf031f6e6d2a181e5dfee1e93ad5",
+      "size": 7166
+    },
+    "disease_json": {
+      "name": "disease.json",
+      "sha256": "c59bb87026f1d06b8c13feea046a40c242e5fdf560d961cff8a4e8a47a651d2e",
+      "size": 445868
+    },
+    "markdown": {
+      "name": "markdown.md",
+      "sha256": "deaa763e654abc4053c0f9daaa5f45e58758c1f5d2d25175a253571b31891448",
+      "size": 3921
+    },
+    "normalization": {
+      "name": "normalization.json",
+      "sha256": "2432b03fdaf4ab0b79ebaf5bcf4d4607a4326a8566ab65feed3a73636aac7613",
+      "size": 6077
+    },
+    "raw_html": {
+      "name": "raw.html",
+      "sha256": "a8a0ec37ff4f5d31ecaa7918349e5713d6a687662fc75f5200f26c8d8ea7ed2d",
+      "size": 34037
+    },
+    "screenshot": {
+      "name": "screenshot.png",
+      "sha256": "dde4ab736bb89d95e8998dc8bc86f0309513efa880ed6240211f7fb0e1912a01",
+      "size": 408778
+    },
+    "tabs": {
+      "name": "tabs.json",
+      "sha256": "63f2b5cb3f5cf9f5e957cc94f925fa8e0583f82bd6227b73fee5b92f25ea25bb",
+      "size": 422511
+    },
+    "tabs_raw": {
+      "name": "tabs-raw.json",
+      "sha256": "659b3195c920a047f800d52fe811e0ab15e098d62f263db331fabbf02a37fd41",
+      "size": 147344
+    }
+  },
+  "baseline_job_id": "60269863-1866-4498-9b49-a1052df3317e",
+  "change_status": "updated",
+  "changed_components": [
+    "main",
+    "tab:health",
+    "tab:info",
+    "tab:ip",
+    "tab:life_dd_tpd"
+  ],
+  "cleaner_version": "1.2.0",
+  "confidence": 1.0,
+  "content_hash": "deaa763e654abc4053c0f9daaa5f45e58758c1f5d2d25175a253571b31891448",
+  "item_id": "5f96bad61b3d6511d17eb8e918e711ac687649c2b4c890e919c4f717a33da7bf",
+  "job_id": "0633dcfa-9054-4d59-8262-07401ea45760",
+  "model_version": "gemini-3.5-flash-lite",
+  "page_type": "disease_detail",
+  "parser_version": "agentic-1.4.0",
+  "plugin": "genre_manuals",
+  "previous_snapshot_hash": "e8978bd5e364cc177aef1bc825cd4c79d2ba779cd71bae025b966c5f1b5b3d09",
+  "prompt_version": "agentic-1.2.0",
+  "retrieved_at": "2026-08-03T03:42:44.163222Z",
+  "schema_hash": "51f60377307277f7e425cd9698d22dc6fe881e3996323564ada789ac1d709a90",
+  "schema_version": "1.0",
+  "snapshot_components": {
+    "main": "deaa763e654abc4053c0f9daaa5f45e58758c1f5d2d25175a253571b31891448",
+    "tab:health": "c385a82b4b6dbe96b533599c46d343b8a46ee786e7db9dbd1c834028329cc290",
+    "tab:info": "4488c40e80f6388deea1500b91d3d7ed89d85406bc293b0225498f4aefa1f288",
+    "tab:ip": "19acd0ecbc2cab86d5bc2c7b86015e2361f05f406b3a65e1ace8ae5e35b0af0f",
+    "tab:life_dd_tpd": "14a96e43d725699affdd7ecbd2388da68b9b3b59d502faa0fdc4e893860d2fba"
+  },
+  "snapshot_hash": "2d00084f2c563a7754f02725e23b7565b7be9132f6c82a894f60770b336a2d8c",
+  "source_url": "https://www.genre-manuals.com/en_aortic_dilatation.htm",
+  "state": "parsed",
+  "warnings": [
+    "incremental_content_updated",
+    "missing_field:risk_factors",
+    "missing_field:prevention",
+    "missing_field:when_to_seek_care",
+    "ai_normalization_not_required",
+    "deterministic_full_content:summary",
+    "deterministic_full_content:prognosis",
+    "deterministic_full_content:aliases",
+    "deterministic_full_content:causes",
+    "deterministic_full_content:symptoms",
+    "deterministic_full_content:diagnosis",
+    "deterministic_full_content:treatment"
+  ]
+}

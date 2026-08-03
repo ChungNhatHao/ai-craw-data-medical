@@ -24,9 +24,11 @@ STAGE_LABELS = (
     (RunStageName.AUTHENTICATE, "Đăng nhập & session"),
     (RunStageName.NAVIGATE, "Tìm trang bệnh"),
     (RunStageName.DISCOVER, "Tìm & xác minh bệnh"),
+    (RunStageName.PROFILE, "Quét cấu trúc nguồn"),
     (RunStageName.FETCH, "Tải dữ liệu gốc"),
     (RunStageName.CLEAN, "Làm sạch & Markdown"),
     (RunStageName.PARSE, "Structured JSON"),
+    (RunStageName.COVERAGE, "Kiểm tra độ đầy đủ"),
     (RunStageName.REPORT, "Report & output"),
 )
 

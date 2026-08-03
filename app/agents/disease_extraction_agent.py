@@ -10,7 +10,7 @@ from app.agents.protocol import (
 from app.models.agentic import CleanContent, DiseaseDraft, EvidenceValue
 from app.models.content import assert_safe_content_payload
 
-PROMPT_VERSION = "1.1.0"
+PROMPT_VERSION = "1.2.0"
 GROUNDING_RETRY_INSTRUCTION = """
 GROUNDING REPAIR RETRY:
 The previous structured draft was rejected because at least one source_quote

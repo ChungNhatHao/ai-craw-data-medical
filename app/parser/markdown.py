@@ -122,14 +122,17 @@ class MarkdownConverter:
                 [
                     self._clean_inline(
                         self._inline_children(cell, base_url)
-                    ).replace("|", "\\|").replace("\n", "<br>")
+                    ).replace("|", "\\|").replace("\n", " / ")
                     for cell in cells
                 ]
             )
             header_flags.append(all(cell.name == "th" for cell in cells))
         if not rows:
-            self.warnings.append("table_preserved_as_html")
-            return str(node)
+            fallback = self._clean_inline(node.get_text("\n", strip=True))
+            self.warnings.append(
+                "table_rendered_as_text" if fallback else "empty_table_omitted"
+            )
+            return fallback
         width = max(len(row) for row in rows)
         padded = [row + [""] * (width - len(row)) for row in rows]
         if not header_flags[0]:

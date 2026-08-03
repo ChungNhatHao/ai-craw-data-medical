@@ -16,7 +16,12 @@ from app.models.tabs import DiseaseTabContent, RawDiseaseTab
 
 SAFE_SLUG = re.compile(r"[^a-z0-9]+")
 AUXILIARY_JSON_FILES = frozenset(
-    {"disease-decision.json", "disease-draft.json", "normalization.json"}
+    {
+        "coverage.json",
+        "disease-decision.json",
+        "disease-draft.json",
+        "normalization.json",
+    }
 )
 
 
@@ -79,6 +84,25 @@ class ArtifactStore:
         except (OSError, TypeError, ValueError):
             return None
         return payload if isinstance(payload, dict) else None
+
+    def persist_job_json(
+        self,
+        job_id: str,
+        file_name: str,
+        payload: object,
+    ) -> Path:
+        if not file_name.endswith(".json") or Path(file_name).name != file_name:
+            raise ValueError("Job artifact must be a plain JSON file name")
+        path = self.output_root / "jobs" / job_id / file_name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        content = json.dumps(
+            payload,
+            ensure_ascii=False,
+            indent=2,
+            sort_keys=True,
+        ).encode("utf-8")
+        self._atomic_write(path, content)
+        return path
 
     def persist_raw(
         self,
@@ -374,6 +398,32 @@ class ArtifactStore:
         if document.source.content_hash != manifest.content_hash:
             return None
         return manifest, document, relative
+
+    def read_disease_document(
+        self,
+        job_id: str,
+        item: DiscoveredItem,
+    ) -> DiseaseDocument | None:
+        manifest = self.load_item_manifest(job_id, item)
+        if (
+            manifest is None
+            or manifest.state != "parsed"
+            or "disease_json" not in manifest.artifacts
+        ):
+            return None
+        directory, _ = self.item_directory(job_id, item)
+        if not self._validate_artifacts(
+            directory,
+            manifest,
+            ("disease_json",),
+        ):
+            return None
+        try:
+            return DiseaseDocument.model_validate_json(
+                (directory / "disease.json").read_bytes()
+            )
+        except (OSError, ValueError):
+            return None
 
     def reuse_valid_document(
         self,

@@ -1,0 +1,122 @@
+{
+  "ambiguous_fields": [],
+  "changed_fields": [
+    "summary",
+    "prognosis",
+    "aliases",
+    "causes",
+    "symptoms",
+    "diagnosis",
+    "treatment"
+  ],
+  "normalized_draft": {
+    "aliases": [
+      {
+        "source_quote": "Abdominal aortic aneurysm",
+        "source_section": "Deterministic source extraction",
+        "value": "Abdominal aortic aneurysm"
+      },
+      {
+        "source_quote": "Aortic dissection",
+        "source_section": "Deterministic source extraction",
+        "value": "Aortic dissection"
+      },
+      {
+        "source_quote": "Ascending aortic aneurysm",
+        "source_section": "Deterministic source extraction",
+        "value": "Ascending aortic aneurysm"
+      },
+      {
+        "source_quote": "Dilatation ascending aorta",
+        "source_section": "Deterministic source extraction",
+        "value": "Dilatation ascending aorta"
+      },
+      {
+        "source_quote": "Dissecting aneurysm",
+        "source_section": "Deterministic source extraction",
+        "value": "Dissecting aneurysm"
+      },
+      {
+        "source_quote": "Mycotic aneurysm",
+        "source_section": "Deterministic source extraction",
+        "value": "Mycotic aneurysm"
+      },
+      {
+        "source_quote": "Peripheral aortic aneurysm",
+        "source_section": "Deterministic source extraction",
+        "value": "Peripheral aortic aneurysm"
+      },
+      {
+        "source_quote": "Peripheral vascular aneurysm",
+        "source_section": "Deterministic source extraction",
+        "value": "Peripheral vascular aneurysm"
+      },
+      {
+        "source_quote": "Thoracic aortic aneurysm",
+        "source_section": "Deterministic source extraction",
+        "value": "Thoracic aortic aneurysm"
+      },
+      {
+        "source_quote": "Thoracoabdominal aneurysm",
+        "source_section": "Deterministic source extraction",
+        "value": "Thoracoabdominal aneurysm"
+      }
+    ],
+    "causes": [
+      {
+        "source_quote": "Presence of hypertension, obesity, hyperlipidemia, connective tissue disorders, atherosclerosis, advanced age. About 20% are hereditary.",
+        "source_section": "Deterministic source extraction",
+        "value": "Presence of hypertension, obesity, hyperlipidemia, connective tissue disorders, atherosclerosis, advanced age. About 20% are hereditary."
+      }
+    ],
+    "diagnosis": [
+      {
+        "source_quote": "Cardiological report with follow-up / Cardiac CT / MRI or coronary angiography (invasive) / Echocardiography (transthoracic or transoesophageal) / Resting ECG / Blood pressure",
+        "source_section": "Deterministic source extraction",
+        "value": "Cardiological report with follow-up / Cardiac CT / MRI or coronary angiography (invasive) / Echocardiography (transthoracic or transoesophageal) / Resting ECG / Blood pressure"
+      }
+    ],
+    "name": {
+      "source_quote": "Aortic dilatation",
+      "source_section": null,
+      "value": "Aortic dilatation"
+    },
+    "prevention": [],
+    "prognosis": {
+      "source_quote": "Dilatations smaller than 4 cm are generally considered low-risk for rupture. They can be monitored annually without immediate intervention. Dilatations over 4 cm require close monitoring and, in certain cases, intervention to prevent complications such as dissection or rupture. The prognosis is worse if the dilatation is over 4.5 cm [1, 2, 3]. Hereditary aortic disease is associated with greater risk including rate of progression.",
+      "source_section": "Deterministic source extraction",
+      "value": "Dilatations smaller than 4 cm are generally considered low-risk for rupture. They can be monitored annually without immediate intervention. Dilatations over 4 cm require close monitoring and, in certain cases, intervention to prevent complications such as dissection or rupture. The prognosis is worse if the dilatation is over 4.5 cm [1, 2, 3]. Hereditary aortic disease is associated with greater risk including rate of progression."
+    },
+    "risk_factors": [],
+    "summary": {
+      "source_quote": "Aortic dilatation refers to the abnormal enlargement of the aorta, the largest blood vessel in the body. Aortic dissection is a serious condition where a tear occurs in the inner layer of the aorta.\n\nThe aorta has distinct sections: aortic root, ascending aorta, aortic arch, descending thoracic aorta and abdominal aorta.",
+      "source_section": "Deterministic source extraction",
+      "value": "Aortic dilatation refers to the abnormal enlargement of the aorta, the largest blood vessel in the body. Aortic dissection is a serious condition where a tear occurs in the inner layer of the aorta.\n\nThe aorta has distinct sections: aortic root, ascending aorta, aortic arch, descending thoracic aorta and abdominal aorta."
+    },
+    "symptoms": [
+      {
+        "source_quote": "Symptoms may include back pain, cough, shortness of breath, chest pain. However, most cases are asymptomatic until dissection occurs.",
+        "source_section": "Deterministic source extraction",
+        "value": "Symptoms may include back pain, cough, shortness of breath, chest pain. However, most cases are asymptomatic until dissection occurs."
+      }
+    ],
+    "treatment": [
+      {
+        "source_quote": "Medication: beta blockers, angiotensin receptor blockers, statins. Surgery and/or procedures: open chest surgery, aortic root surgery, valve aortic root repair",
+        "source_section": "Deterministic source extraction",
+        "value": "Medication: beta blockers, angiotensin receptor blockers, statins. Surgery and/or procedures: open chest surgery, aortic root surgery, valve aortic root repair"
+      }
+    ],
+    "when_to_seek_care": []
+  },
+  "warnings": [
+    "ai_normalization_not_required",
+    "deterministic_full_content:summary",
+    "deterministic_full_content:prognosis",
+    "deterministic_full_content:aliases",
+    "deterministic_full_content:causes",
+    "deterministic_full_content:symptoms",
+    "deterministic_full_content:diagnosis",
+    "deterministic_full_content:treatment"
+  ]
+}

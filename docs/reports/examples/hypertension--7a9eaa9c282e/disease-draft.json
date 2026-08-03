@@ -1,0 +1,76 @@
+{
+  "aliases": [
+    {
+      "source_quote": "24 hour blood pressure",
+      "source_section": null,
+      "value": "24 hour blood pressure"
+    },
+    {
+      "source_quote": "Ambulatory blood pressure",
+      "source_section": null,
+      "value": "Ambulatory blood pressure"
+    },
+    {
+      "source_quote": "Home blood pressure measurements",
+      "source_section": null,
+      "value": "Home blood pressure measurements"
+    },
+    {
+      "source_quote": "Hypertensive retinopathy",
+      "source_section": null,
+      "value": "Hypertensive retinopathy"
+    }
+  ],
+  "causes": [
+    {
+      "source_quote": "Primary, essential or idiopathic hypertension: Various factors appear to play a role: Heredity, environmental factors (salt intake, obesity, occupation, family size, crowding), metabolic disturbances. Secondary hypertension: Renal disorders (renal hypertension), hormonal disturbances (endocrine hypertension e.g. Cushing’s syndrome), coarctation of the aorta.",
+      "source_section": null,
+      "value": "Primary, essential or idiopathic hypertension: Various factors appear to play a role: Heredity, environmental factors (salt intake, obesity, occupation, family size, crowding), metabolic disturbances. Secondary hypertension: Renal disorders (renal hypertension), hormonal disturbances (endocrine hypertension e.g. Cushing’s syndrome), coarctation of the aorta."
+    }
+  ],
+  "diagnosis": [
+    {
+      "source_quote": "[Blood pressure readings](https://www.genre-manuals.com/en_blood_pressure_readings.htm) / [Retinal changes (Keith, Wagener and Barker classification)](https://www.genre-manuals.com/retinal_changes_keith_wagener_and_barker_classification_.htm) / Increasingly home measurements are taken or a 24-hour blood pressure monitor recording performed. How these are interpreted is important as they will be different to readings performed at a Doctor’s clinic. The readings will be lower in the vast majority of cases so different levels are used to judge severity.",
+      "source_section": null,
+      "value": "[Blood pressure readings](https://www.genre-manuals.com/en_blood_pressure_readings.htm) / [Retinal changes (Keith, Wagener and Barker classification)](https://www.genre-manuals.com/retinal_changes_keith_wagener_and_barker_classification_.htm) / Increasingly home measurements are taken or a 24-hour blood pressure monitor recording performed. How these are interpreted is important as they will be different to readings performed at a Doctor’s clinic. The readings will be lower in the vast majority of cases so different levels are used to judge severity."
+    }
+  ],
+  "name": {
+    "source_quote": "Hypertension",
+    "source_section": null,
+    "value": "Hypertension"
+  },
+  "prevention": [],
+  "prognosis": {
+    "source_quote": "Depending on cause, degree of severity, response to treatment and complications. Favourable prognosis for successful treatment before onset of complications.",
+    "source_section": null,
+    "value": "Depending on cause, degree of severity, response to treatment and complications. Favourable prognosis for successful treatment before onset of complications."
+  },
+  "risk_factors": [
+    {
+      "source_quote": "Additional risk factors (hyperlipidaemia, diabetes mellitus, smoking, overweight) increase the probability of complications.",
+      "source_section": null,
+      "value": "hyperlipidaemia, diabetes mellitus, smoking, overweight"
+    }
+  ],
+  "summary": {
+    "source_quote": "The elevation of the systolic and/or the diastolic blood pressure. Hypertension is one of the classic risk factors for vascular disease. Persistent hypertension can result in complications in various organs. Additional risk factors (hyperlipidaemia, diabetes mellitus, smoking, overweight) increase the probability of complications. Hypertension can be essential or secondary.",
+    "source_section": null,
+    "value": "The elevation of the systolic and/or the diastolic blood pressure. Hypertension is one of the classic risk factors for vascular disease. Persistent hypertension can result in complications in various organs. Additional risk factors (hyperlipidaemia, diabetes mellitus, smoking, overweight) increase the probability of complications. Hypertension can be essential or secondary."
+  },
+  "symptoms": [
+    {
+      "source_quote": "Primary hypertension is usually asymptomatic unless severe. It is common for those diagnosed to relate symptoms of headaches, dizziness, fatigue, epistaxis, nervousness to the elevated blood pressure.",
+      "source_section": null,
+      "value": "Primary hypertension is usually asymptomatic unless severe. It is common for those diagnosed to relate symptoms of headaches, dizziness, fatigue, epistaxis, nervousness to the elevated blood pressure."
+    }
+  ],
+  "treatment": [
+    {
+      "source_quote": "Medication with primary hypertension. With secondary hypertension, medication; medical or surgical treatment of underlying cause.",
+      "source_section": null,
+      "value": "Medication with primary hypertension. With secondary hypertension, medication; medical or surgical treatment of underlying cause."
+    }
+  ],
+  "when_to_seek_care": []
+}

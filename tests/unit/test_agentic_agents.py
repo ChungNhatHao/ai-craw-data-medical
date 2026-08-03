@@ -23,7 +23,7 @@ from app.models.agentic import (
     ObservedLink,
     PageObservation,
 )
-from app.services.agentic_parsing import _backfill_source_explicit_fields
+from app.services.agentic_parsing import _merge_source_explicit_fields
 
 T = TypeVar("T", bound=BaseModel)
 CONTENT_HASH = "a" * 64
@@ -125,7 +125,7 @@ def disease_draft() -> DiseaseDraft:
     )
 
 
-def test_agentic_draft_backfills_only_source_explicit_missing_fields() -> None:
+def test_agentic_draft_prefers_complete_source_explicit_fields() -> None:
     draft = DiseaseDraft(
         name=EvidenceValue(
             value="Example disease",
@@ -133,8 +133,8 @@ def test_agentic_draft_backfills_only_source_explicit_missing_fields() -> None:
         ),
         symptoms=(
             EvidenceValue(
-                value="Model symptom",
-                source_quote="Model symptom",
+                value="Deterministic symptom",
+                source_quote="Deterministic symptom",
             ),
         ),
     )
@@ -148,13 +148,13 @@ Source summary.
 
 | Column 1 | Column 2 |
 | --- | --- |
-| Symptoms | Deterministic symptom |
+| Symptoms | Deterministic symptom with full details |
 | Supportive evidence | Source report<br>Source test |
 """
 
-    completed, changed = _backfill_source_explicit_fields(draft, markdown)
+    completed, changed = _merge_source_explicit_fields(draft, markdown)
 
-    assert changed == ("summary", "aliases", "diagnosis")
+    assert changed == ("summary", "aliases", "symptoms", "diagnosis")
     assert completed.summary is not None
     assert completed.summary.value == "Source summary."
     assert tuple(value.value for value in completed.aliases) == ("ED",)
@@ -162,7 +162,90 @@ Source summary.
         "Source report",
         "Source test",
     )
-    assert tuple(value.value for value in completed.symptoms) == ("Model symptom",)
+    assert tuple(value.value for value in completed.symptoms) == (
+        "Deterministic symptom with full details",
+    )
+
+
+def test_agentic_source_merge_preserves_full_content_for_every_field() -> None:
+    markdown = """# Complete disease
+
+CD
+
+Complete summary sentence one.
+
+Complete summary sentence two with details.
+
+| Field | Content |
+| --- | --- |
+| Causes | Complete cause with qualification. |
+| Risk factors | Complete risk factor with duration. |
+| Symptoms | Complete symptom with severity and timing. |
+| Diagnosis | Complete diagnosis with clinical evidence. |
+| Treatment | Complete treatment with dose and follow-up. |
+| Prevention | Complete prevention with every recommendation. |
+| Prognosis | Complete prognosis with favourable and adverse factors. |
+| When to seek care | Complete urgent-care instruction with warning signs. |
+"""
+
+    def evidence(value: str) -> EvidenceValue:
+        return EvidenceValue(value=value, source_quote=value)
+
+    draft = DiseaseDraft(
+        name=evidence("Complete disease"),
+        aliases=(evidence("CD"),),
+        summary=evidence("Complete summary sentence one."),
+        causes=(evidence("Complete cause"),),
+        risk_factors=(evidence("Complete risk factor"),),
+        symptoms=(evidence("Complete symptom"),),
+        diagnosis=(evidence("Complete diagnosis"),),
+        treatment=(evidence("Complete treatment"),),
+        prevention=(evidence("Complete prevention"),),
+        prognosis=evidence("Complete prognosis"),
+        when_to_seek_care=(evidence("Complete urgent-care instruction"),),
+    )
+
+    completed, changed = _merge_source_explicit_fields(draft, markdown)
+
+    assert changed == (
+        "summary",
+        "prognosis",
+        "aliases",
+        "causes",
+        "risk_factors",
+        "symptoms",
+        "diagnosis",
+        "treatment",
+        "prevention",
+        "when_to_seek_care",
+    )
+    assert completed.summary is not None
+    assert completed.summary.value == (
+        "Complete summary sentence one.\n\n"
+        "Complete summary sentence two with details."
+    )
+    assert completed.prognosis is not None
+    assert completed.prognosis.value == (
+        "Complete prognosis with favourable and adverse factors."
+    )
+    expected_lists = {
+        "aliases": ("CD",),
+        "causes": ("Complete cause with qualification.",),
+        "risk_factors": ("Complete risk factor with duration.",),
+        "symptoms": ("Complete symptom with severity and timing.",),
+        "diagnosis": ("Complete diagnosis with clinical evidence.",),
+        "treatment": ("Complete treatment with dose and follow-up.",),
+        "prevention": (
+            "Complete prevention with every recommendation.",
+        ),
+        "when_to_seek_care": (
+            "Complete urgent-care instruction with warning signs.",
+        ),
+    }
+    for field_name, expected in expected_lists.items():
+        assert tuple(
+            value.value for value in getattr(completed, field_name)
+        ) == expected
 
 
 def test_navigation_agent_allows_only_observed_unvisited_candidate() -> None:

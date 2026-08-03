@@ -3,9 +3,11 @@ const stageDefaults = [
   ["authenticate", "Đăng nhập & session"],
   ["navigate", "Tìm trang bệnh"],
   ["discover", "Tìm & xác minh bệnh"],
+  ["profile", "Quét cấu trúc nguồn"],
   ["fetch", "Tải dữ liệu gốc"],
   ["clean", "Làm sạch & Markdown"],
   ["parse", "Structured JSON"],
+  ["coverage", "Kiểm tra độ đầy đủ"],
   ["report", "Report & output"],
 ];
 
@@ -19,6 +21,7 @@ const artifactLabels = {
   "disease_json": ["JSON", "disease.json"],
   "disease_draft": ["Draft", "disease-draft.json"],
   "normalization": ["Normalize", "normalization.json"],
+  "coverage": ["Coverage", "coverage.json"],
   "screenshot": ["PNG", "screenshot.png"],
 };
 
@@ -265,6 +268,10 @@ async function loadReport(jobId) {
   document.querySelector("#unchangedItems").textContent = report.unchanged_items || 0;
   document.querySelector("#missingFieldItems").textContent =
     report.items_with_missing_fields || 0;
+  document.querySelector("#coverageStatus").textContent =
+    report.coverage_complete
+      ? "Đạt"
+      : `Thiếu (${report.coverage_failed_items || 0})`;
   document.querySelector("#finalStatus").textContent = stateLabel(report.status);
   document.querySelector("#reportLink").href = `/api/v1/jobs/${jobId}/report`;
   document.querySelector("#discoveryLink").href =
@@ -286,6 +293,15 @@ async function loadReport(jobId) {
     `/api/v1/jobs/${jobId}/artifacts/category-expansion.json`;
   const categoryResponse = await fetch(categoryExpansionLink.href);
   categoryExpansionLink.hidden = !categoryResponse.ok;
+  const siteProfileLink = document.querySelector("#siteProfileLink");
+  siteProfileLink.href = `/api/v1/jobs/${jobId}/artifacts/site-profile.json`;
+  const siteProfileResponse = await fetch(siteProfileLink.href);
+  siteProfileLink.hidden = !siteProfileResponse.ok;
+  const coverageReportLink = document.querySelector("#coverageReportLink");
+  coverageReportLink.href =
+    `/api/v1/jobs/${jobId}/artifacts/coverage-report.json`;
+  const coverageResponse = await fetch(coverageReportLink.href);
+  coverageReportLink.hidden = !coverageResponse.ok;
 
   renderCategoryWarnings(report);
   document.querySelector("#resultRows").innerHTML = renderReportRows(
@@ -529,11 +545,18 @@ function renderCategoryWarnings(report) {
   const limitWarnings = [...new Set(warnings.filter(value =>
     /category_(depth|node|disease)_limit|category.*limit/i.test(value),
   ))];
-  warningBox.hidden = limitWarnings.length === 0;
-  warningBox.innerHTML = limitWarnings.length
-    ? `<strong>Kết quả một phần do đã chạm giới hạn mở rộng menu.</strong>
-       <span>${limitWarnings.map(escapeHtml).join(" · ")}</span>`
-    : "";
+  const coverageIncomplete = report.coverage_complete !== true;
+  warningBox.hidden = !coverageIncomplete && limitWarnings.length === 0;
+  warningBox.innerHTML = [
+    coverageIncomplete
+      ? `<strong>Coverage chưa đạt — job không được coi là hoàn tất đầy đủ.</strong>
+         <span>${Number(report.coverage_failed_items || 0)} item bị từ chối.</span>`
+      : "",
+    limitWarnings.length
+      ? `<strong>Kết quả một phần do đã chạm giới hạn mở rộng menu.</strong>
+         <span>${limitWarnings.map(escapeHtml).join(" · ")}</span>`
+      : "",
+  ].filter(Boolean).join("<br>");
 }
 
 function renderDisease(diseaseDocument) {
@@ -585,7 +608,40 @@ function renderDisease(diseaseDocument) {
         <span>${tabs.filter(tab => tab.available).length}/${tabs.length} tab có dữ liệu</span>
       </div>
       ${tabs.map(tab => {
-        const tables = (tab.tables || []).map(table => {
+        const classification = tab.classification_table;
+        const classificationRows = classification?.rows || [];
+        const ratingHeaders = (classification?.headers || []).filter(header =>
+          header && header.toLocaleLowerCase() !== "classification"
+        );
+        const hierarchyTable = classificationRows.length ? `
+          <div class="source-table-scroll">
+            <table class="source-table classification-table">
+              <thead><tr>
+                <th>Cấp</th>
+                <th>Cha trực tiếp</th>
+                <th>Phân loại</th>
+                <th>Đường dẫn đầy đủ</th>
+                ${ratingHeaders.map(header => `<th>${escapeHtml(header)}</th>`).join("")}
+              </tr></thead>
+              <tbody>${classificationRows.map(row => `<tr>
+                <td class="classification-level">${Number(row.level) + 1}</td>
+                <td>${escapeHtml(row.parent_classification || "—")}</td>
+                <td>
+                  <span class="classification-name" style="--hierarchy-level: ${Number(row.level) || 0}">
+                    ${escapeHtml(row.classification || "")}
+                  </span>
+                </td>
+                <td class="classification-path">${(row.classification_path || [])
+                  .map(value => escapeHtml(value)).join(" › ")}</td>
+                ${ratingHeaders.map(header => `<td>${escapeHtml(
+                  header.toLocaleLowerCase() === "code"
+                    ? (row.code || "")
+                    : (row.ratings?.[header] || "")
+                )}</td>`).join("")}
+              </tr>`).join("")}</tbody>
+            </table>
+          </div>` : "";
+        const tables = classificationRows.length ? "" : (tab.tables || []).map(table => {
           const rows = table.rows || [];
           if (!rows.length) return "";
           return `<div class="source-table-scroll"><table class="source-table"><tbody>${
@@ -620,6 +676,7 @@ function renderDisease(diseaseDocument) {
             <div class="source-tab-body">
               ${tab.available
                 ? `<p>${escapeHtml(tab.plain_text || "Tab không có nội dung văn bản.")}</p>
+                   ${hierarchyTable}
                    ${tables}
                    ${relatedDetails
                      ? `<div class="related-details">

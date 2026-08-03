@@ -140,12 +140,15 @@ new website request.
 output/jobs/{job_id}/
 ├── job.json
 ├── report.json
+├── site-profile.json
+├── coverage-report.json
 └── items/{slug}--{item_id_12}/
     ├── manifest.json
     ├── raw.html
     ├── content.html
     ├── markdown.md
     ├── disease.json
+    ├── coverage.json
     └── screenshot.png
 ```
 
@@ -163,6 +166,13 @@ pytest
 The fixture E2E test exercises three items: two complete exports and one
 controlled page-type failure. The failed item remains visible in `report.json`
 without stopping successful items.
+
+Before a batch fetch, the runner now profiles one confirmed representative
+detail page and refuses to continue when the required content root or source
+tabs cannot be demonstrated. After parsing, a fail-closed coverage gate checks
+main content, required tabs, tables, classification hierarchy, related detail
+pages and required structured fields. An incomplete item is changed to
+`COVERAGE_INCOMPLETE`; it cannot contribute to a `completed` job.
 
 ## Recovery behavior
 
@@ -183,6 +193,10 @@ without stopping successful items.
 - The MVP uses deterministic rule parsing by default. A real model provider
   must implement `StructuredModelClient` and be validated before enablement.
 - CAPTCHA/MFA requires operator action; the crawler does not bypass controls.
+- Structure profiling and coverage validation are generic building blocks, but
+  authentication and navigation are still selected through the
+  `genre_manuals` plugin. A new domain must not be enabled until its adaptive
+  or reviewed site plugin passes the same profile and coverage gates.
 - Vision fallback, incremental version history, Docker packaging and
   crash-injection hardening are V2 work.
 - One upstream LangGraph pending-deprecation warning is currently present.

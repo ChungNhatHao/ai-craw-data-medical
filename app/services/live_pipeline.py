@@ -16,10 +16,11 @@ from app.core.config import Credentials, Settings
 from app.core.errors import CrawlerError, ErrorCode
 from app.models.artifacts import RawFetchPolicy
 from app.models.batch import BatchPolicy
+from app.models.coverage import ItemCoverageResult, JobCoverageReport
 from app.models.crawl import JobStatus
 from app.models.discovery import DiscoveredItem, DiscoveryPolicy
 from app.models.disease import ParsingPolicy
-from app.models.navigation import NavigationPolicy
+from app.models.navigation import NavigationCandidate, NavigationPolicy, PageType
 from app.models.run import RunRequest, RunStageName, StageState
 from app.parser.extractor import ContentExtractor
 from app.parser.structured import RuleBasedStructuredClient
@@ -34,7 +35,8 @@ from app.services.agentic_discovery import AgenticDiscoveryService
 from app.services.agentic_parsing import AgenticParsingService
 from app.services.batch import BatchFetchService
 from app.services.category_expansion import CategoryExpansionPolicy
-from app.services.cleaning import CleaningService
+from app.services.cleaning import CLEANER_VERSION, CleaningService
+from app.services.coverage import CoverageValidator
 from app.services.detail_fetch import DetailFetchService
 from app.services.import_discovery import ImportedDiseaseDiscoveryService
 from app.services.intelligent_discovery import IntelligentDiscoveryService
@@ -43,6 +45,7 @@ from app.services.page_observer import PageObserver
 from app.services.parsing import StructuredParsingService
 from app.services.reporting import ReportingService
 from app.services.session import SessionService
+from app.services.structure_discovery import SiteStructureProfiler
 from app.storage.artifacts import ArtifactStore
 
 ProgressEmitter = Callable[
@@ -205,6 +208,14 @@ class LivePipelineRunner:
                         max_items=request.max_items,
                         emit=emit,
                     )
+                await self._profile_site(
+                    page=page,
+                    plugin=plugin,
+                    artifacts=artifacts,
+                    job_id=job_id,
+                    representative=discovered[0] if discovered else None,
+                    emit=emit,
+                )
                 await self._fetch(
                     page=page,
                     plugin=plugin,
@@ -238,6 +249,13 @@ class LivePipelineRunner:
             use_ai_normalization=request.ai_normalization,
             emit=emit,
         )
+        await self._validate_coverage(
+            plugin=plugin,
+            items=items,
+            artifacts=artifacts,
+            job_id=job_id,
+            emit=emit,
+        )
         counts = await items.count_by_status(job_id)
         terminal = (
             JobStatus.COMPLETED_WITH_ERRORS
@@ -265,6 +283,77 @@ class LivePipelineRunner:
                 f"{report.failed_items} lỗi, "
                 f"{report.items_with_missing_fields} bệnh thiếu field "
                 f"({report.missing_field_count} field)"
+            ),
+            1,
+            1,
+        )
+
+    async def _profile_site(
+        self,
+        *,
+        page: Page,
+        plugin: GenreManualsPlugin,
+        artifacts: ArtifactStore,
+        job_id: str,
+        representative: DiscoveredItem | None,
+        emit: ProgressEmitter,
+    ) -> None:
+        await emit(
+            RunStageName.PROFILE,
+            StageState.RUNNING,
+            "Đang quét cấu trúc trang đại diện trước khi crawl hàng loạt",
+            0,
+            1,
+        )
+        if representative is None:
+            raise CrawlerError(
+                ErrorCode.SITE_PROFILE_INCOMPLETE,
+                "Không có trang đại diện để tạo site profile",
+            )
+        target = str(representative.canonical_url)
+        await plugin.navigate_to_candidate(
+            page,
+            NavigationCandidate(
+                key=target,
+                action="goto",
+                target=target,
+                label=representative.title_hint,
+                url=representative.canonical_url,
+            ),
+        )
+        await plugin.dismiss_known_popups(page)
+        classification = await plugin.classify_page(page)
+        if classification.page_type is not PageType.DISEASE_DETAIL:
+            raise CrawlerError(
+                ErrorCode.SITE_PROFILE_INCOMPLETE,
+                "Trang đại diện không còn là disease detail",
+            )
+        await plugin.wait_for_detail_content(page)
+        html = await page.content()
+        tabs = await plugin.capture_detail_tabs(page)
+        profile = SiteStructureProfiler().build_profile(
+            plugin=plugin.name,
+            html=html,
+            url=target,
+            tabs=tabs,
+            required_tabs=("info", "life_dd_tpd", "ip", "health"),
+        )
+        artifacts.persist_job_json(
+            job_id,
+            "site-profile.json",
+            profile.model_dump(mode="json"),
+        )
+        if not profile.ready:
+            raise CrawlerError(
+                ErrorCode.SITE_PROFILE_INCOMPLETE,
+                "Site profile chưa đạt: " + ", ".join(profile.blockers),
+            )
+        await emit(
+            RunStageName.PROFILE,
+            StageState.COMPLETED,
+            (
+                f"Profile hợp lệ: {len(profile.structure.tables)} table, "
+                f"{len(profile.captured_tabs)} tab nguồn"
             ),
             1,
             1,
@@ -674,6 +763,100 @@ class LivePipelineRunner:
             item_count,
         )
 
+    async def _validate_coverage(
+        self,
+        *,
+        plugin: GenreManualsPlugin,
+        items: ItemRepository,
+        artifacts: ArtifactStore,
+        job_id: str,
+        emit: ProgressEmitter,
+    ) -> None:
+        candidates = await items.list_by_status(job_id, ("parsed",))
+        await emit(
+            RunStageName.COVERAGE,
+            StageState.RUNNING,
+            f"Đang đối chiếu nguồn và output cho {len(candidates)} item",
+            0,
+            len(candidates),
+        )
+        validator = CoverageValidator()
+        results: list[ItemCoverageResult] = []
+        for index, item in enumerate(candidates, start=1):
+            try:
+                document = artifacts.read_disease_document(job_id, item)
+                if document is None:
+                    raise CrawlerError(
+                        ErrorCode.COVERAGE_INCOMPLETE,
+                        "Disease document không đọc được để kiểm tra coverage",
+                    )
+                result = validator.validate(
+                    plugin=plugin,
+                    item=item,
+                    raw_html=artifacts.read_raw_html(job_id, item),
+                    raw_tabs=artifacts.read_raw_tabs(job_id, item),
+                    clean_tabs=artifacts.read_tabs(
+                        job_id,
+                        item,
+                        cleaner_version=CLEANER_VERSION,
+                    ),
+                    document=document,
+                )
+            except CrawlerError as exc:
+                result = ItemCoverageResult(
+                    item_id=item.item_id,
+                    source_url=item.canonical_url,
+                    complete=False,
+                    checks={"artifacts_readable": False},
+                    blockers=(f"coverage_validation_error:{exc.code.value}",),
+                )
+            artifacts.persist_auxiliary_json(
+                job_id=job_id,
+                item=item,
+                file_name="coverage.json",
+                payload=result.model_dump(mode="json"),
+            )
+            results.append(result)
+            if not result.complete:
+                await items.mark_parse_failed(
+                    job_id,
+                    item.item_id,
+                    ErrorCode.COVERAGE_INCOMPLETE.value,
+                )
+            await emit(
+                RunStageName.COVERAGE,
+                StageState.RUNNING,
+                (
+                    f"Coverage {index}/{len(candidates)}: "
+                    f"{'đủ' if result.complete else 'thiếu — từ chối hoàn tất'}"
+                ),
+                index,
+                len(candidates),
+            )
+        complete_count = sum(result.complete for result in results)
+        job_coverage = JobCoverageReport(
+            job_id=job_id,
+            complete=bool(results) and complete_count == len(results),
+            checked_items=len(results),
+            complete_items=complete_count,
+            failed_items=len(results) - complete_count,
+            results=tuple(results),
+        )
+        artifacts.persist_job_json(
+            job_id,
+            "coverage-report.json",
+            job_coverage.model_dump(mode="json"),
+        )
+        await emit(
+            RunStageName.COVERAGE,
+            StageState.COMPLETED,
+            (
+                f"Coverage: {complete_count}/{len(results)} item đạt; "
+                "item thiếu đã bị chuyển sang lỗi"
+            ),
+            len(results),
+            len(results),
+        )
     async def _clean(
         self,
         *,
@@ -779,6 +962,7 @@ class LivePipelineRunner:
                 artifacts=artifacts,
                 language="en",
                 policy=policy,
+                canonicalize_url=plugin.canonicalize_url,
             )
         completed = 0
         for item in candidates:

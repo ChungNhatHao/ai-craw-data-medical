@@ -197,9 +197,11 @@ UI hiển thị tiến độ của từng checkpoint:
 | `authenticate` | Đăng nhập hoặc tái sử dụng session hợp lệ |
 | `navigate` | Đi tới vùng/trang phù hợp |
 | `discover` | Tìm, đánh giá và xác minh trang bệnh |
+| `profile` | Quét trang đại diện và khóa contract cấu trúc nguồn |
 | `fetch` | Lưu HTML, ảnh và nội dung raw của các tab |
 | `clean` | BeautifulSoup/extractor làm sạch HTML và tạo Markdown |
 | `parse` | Tạo structured disease JSON bằng rule parser hoặc Gemini |
+| `coverage` | Đối chiếu nguồn–output; thiếu dữ liệu thì từ chối hoàn tất |
 | `report` | Tổng hợp trạng thái, artifact và audit |
 
 Không đóng tab UI hoặc tắt backend khi job đang chạy. Nếu tab UI bị reload,
@@ -210,6 +212,11 @@ Các trạng thái kết thúc:
 - `completed`: tất cả item hoàn tất;
 - `completed_with_errors`: một số item thành công, một số item lỗi;
 - `failed`: lỗi ở cấp job, ví dụ không đăng nhập được hoặc browser không chạy.
+
+`completed` chỉ được sử dụng khi site profile hợp lệ và mọi item đã parse đều
+vượt coverage gate. Thiếu tab, table, hierarchy, related detail hoặc structured
+field sẽ sinh `COVERAGE_INCOMPLETE` và chuyển job sang
+`completed_with_errors`.
 
 ## 8. Hiểu kết quả chống crawl lặp
 
@@ -263,12 +270,16 @@ Các audit cấp job:
 - **Nhật ký import**: candidate, kết quả chọn và lý do;
 - **Nhật ký menu cha-con**: node đã duyệt và provenance;
 - **Report JSON**: kết quả tổng hợp của toàn job.
+- **Site profile**: cấu trúc content root, tab, table, form và dấu hiệu dynamic;
+- **Coverage**: đối chiếu từng thành phần nguồn với output của từng item.
 
 File vật lý được lưu tại:
 
 ```text
 output/jobs/{job_id}/
 ├── report.json
+├── site-profile.json
+├── coverage-report.json
 ├── import-search.json
 ├── category-expansion.json
 └── items/{disease}--{item_id}/
@@ -279,7 +290,8 @@ output/jobs/{job_id}/
     ├── markdown.md
     ├── tabs-raw.json
     ├── tabs.json
-    └── disease.json
+    ├── disease.json
+    └── coverage.json
 ```
 
 Một số file audit chỉ tồn tại khi chế độ tương ứng được sử dụng.

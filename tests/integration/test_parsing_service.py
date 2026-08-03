@@ -129,6 +129,9 @@ def test_parsing_service_persists_schema_and_reuses_checkpoint(
         assert resumed.reused_artifacts
         assert first.document == resumed.document
         assert first.document.disease.name == "Complex disease"
+        assert tuple(
+            value.label for value in first.document.menu_hierarchy
+        ) == ("Home", "Medical", "Complex disease")
         assert first.document.disease.summary is None
         assert first.document.disease.causes == ()
         assert first.document.source.language == "en"
@@ -145,7 +148,7 @@ def test_parsing_service_persists_schema_and_reuses_checkpoint(
         disease_bytes = (directory / "disease.json").read_bytes()
         payload = json.loads(disease_bytes)
         manifest = json.loads((directory / "manifest.json").read_text(encoding="utf-8"))
-        assert payload["schema_version"] == "1.1"
+        assert payload["schema_version"] == "1.2"
         assert manifest["state"] == "parsed"
         assert manifest["schema_hash"] == first.schema_hash
         assert manifest["parser_version"] == PARSER_VERSION
