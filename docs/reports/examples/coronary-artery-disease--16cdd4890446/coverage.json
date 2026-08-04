@@ -1,0 +1,21 @@
+{
+  "blockers": [],
+  "checks": {
+    "classification_hierarchy_preserved": true,
+    "main_content_present": true,
+    "related_details_preserved": true,
+    "required_tabs_captured": true,
+    "structured_fields_complete": true,
+    "tables_preserved": true,
+    "tabs_mapped_to_output": true
+  },
+  "complete": true,
+  "item_id": "16cdd4890446c6590d2702036e49bde2dc7184f3679504540baa02a4ae1aa6a8",
+  "schema_version": "1.0",
+  "source_url": "https://www.genre-manuals.com/cad.htm",
+  "warnings": [
+    "field_not_present_in_source:risk_factors",
+    "field_not_present_in_source:prevention",
+    "field_not_present_in_source:when_to_seek_care"
+  ]
+}

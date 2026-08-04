@@ -1,0 +1,101 @@
+{
+  "artifacts": {
+    "content_html": {
+      "name": "content.html",
+      "sha256": "a77617ef96383f80f21446fd8eaaa120e9ee9a89ccb304c5048e5bd8d46f4066",
+      "size": 4290
+    },
+    "coverage": {
+      "name": "coverage.json",
+      "sha256": "912af62355c39cc0e3e56d350a288576baedcb320e50e202e060a32ecbdb409a",
+      "size": 678
+    },
+    "disease_draft": {
+      "name": "disease-draft.json",
+      "sha256": "c77a6996527c7c8bcf6224bb61e34e7120329253eb06b0ffb2bf059a144c9213",
+      "size": 3525
+    },
+    "disease_json": {
+      "name": "disease.json",
+      "sha256": "21b453852549d10a606cdf1d5124705b31dc04efb5dee2a9b2b70e5b03fa4069",
+      "size": 447396
+    },
+    "markdown": {
+      "name": "markdown.md",
+      "sha256": "f487a0795e319155fd604fb3faeafed5d925c92bd24183dcdae5362461534022",
+      "size": 3628
+    },
+    "normalization": {
+      "name": "normalization.json",
+      "sha256": "2e6b3c780a951468366b838ec8a6b9140bf23f622fab7d42d2f3e3b9a623918d",
+      "size": 4205
+    },
+    "raw_html": {
+      "name": "raw.html",
+      "sha256": "28dcf11e4406a35fb5684802d2ee51fb3a6aaf665be2a91f99f5183a4aeafa77",
+      "size": 35442
+    },
+    "screenshot": {
+      "name": "screenshot.png",
+      "sha256": "5e4ec28d3b2c0cf6a76f8bcba84c1a1e2b84f226df64943482e3ac213a6d75b8",
+      "size": 464527
+    },
+    "tabs": {
+      "name": "tabs.json",
+      "sha256": "a17ccfb95d52da00cd06098a92cf1b6ce42447edb933dc1c9f826e6d73e9de04",
+      "size": 425630
+    },
+    "tabs_raw": {
+      "name": "tabs-raw.json",
+      "sha256": "179b9fba7831e8954e5e8452f57d3873232e688c5b86a464448da756bbcd6e59",
+      "size": 161485
+    }
+  },
+  "baseline_job_id": "60269863-1866-4498-9b49-a1052df3317e",
+  "change_status": "updated",
+  "changed_components": [
+    "main",
+    "tab:health",
+    "tab:info",
+    "tab:ip",
+    "tab:life_dd_tpd"
+  ],
+  "cleaner_version": "1.2.0",
+  "confidence": 1.0,
+  "content_hash": "f487a0795e319155fd604fb3faeafed5d925c92bd24183dcdae5362461534022",
+  "item_id": "4e858250a0be88c9e892419954df14e8e03c22f111f5a00613db25ff8945c321",
+  "job_id": "0633dcfa-9054-4d59-8262-07401ea45760",
+  "model_version": "gemini-3.5-flash-lite",
+  "page_type": "disease_detail",
+  "parser_version": "agentic-1.4.0",
+  "plugin": "genre_manuals",
+  "previous_snapshot_hash": "4de32a4879e9f7569fdd11f003e7723fb8ec8aa3bbcbda0452a004ee1403621f",
+  "prompt_version": "agentic-1.2.0",
+  "retrieved_at": "2026-08-03T03:44:26.550442Z",
+  "schema_hash": "51f60377307277f7e425cd9698d22dc6fe881e3996323564ada789ac1d709a90",
+  "schema_version": "1.0",
+  "snapshot_components": {
+    "main": "f487a0795e319155fd604fb3faeafed5d925c92bd24183dcdae5362461534022",
+    "tab:health": "700733ffc252b9902f027e3c0641febf2df861131dd633eea1d412b090d3c59e",
+    "tab:info": "76ed42bee2179b92a2b1968304537dcc45faed79c2ea550ec770bda521177afe",
+    "tab:ip": "70b204f9a204e9f462e945615d46978c6da1af425a9858391bbe3c4373a69249",
+    "tab:life_dd_tpd": "1735368da56f024605e6f31d2abe6334bc13427eeacd00223d8c2079e410f6da"
+  },
+  "snapshot_hash": "cf8d55967741c0910917097e5e0fa5cf13eba86b871b1bb68ded9b1d69e6a4bd",
+  "source_url": "https://www.genre-manuals.com/en_mitral_valve_insufficiency.htm",
+  "state": "parsed",
+  "warnings": [
+    "incremental_content_updated",
+    "missing_field:risk_factors",
+    "missing_field:prevention",
+    "missing_field:when_to_seek_care",
+    "ai_normalization_not_required",
+    "deterministic_full_content:summary",
+    "deterministic_full_content:prognosis",
+    "deterministic_full_content:aliases",
+    "deterministic_full_content:causes",
+    "deterministic_full_content:symptoms",
+    "deterministic_full_content:diagnosis",
+    "deterministic_full_content:treatment"
+  ]
+}

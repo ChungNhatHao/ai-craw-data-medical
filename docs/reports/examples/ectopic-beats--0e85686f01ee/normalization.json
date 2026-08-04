@@ -1,0 +1,107 @@
+{
+  "ambiguous_fields": [],
+  "changed_fields": [
+    "summary",
+    "prognosis",
+    "aliases",
+    "causes",
+    "symptoms",
+    "diagnosis",
+    "treatment"
+  ],
+  "normalized_draft": {
+    "aliases": [
+      {
+        "source_quote": "Premature ventricular contractions",
+        "source_section": "Deterministic source extraction",
+        "value": "Premature ventricular contractions"
+      },
+      {
+        "source_quote": "PVC's",
+        "source_section": "Deterministic source extraction",
+        "value": "PVC's"
+      },
+      {
+        "source_quote": "Extrasystoles",
+        "source_section": "Deterministic source extraction",
+        "value": "Extrasystoles"
+      },
+      {
+        "source_quote": "ES",
+        "source_section": "Deterministic source extraction",
+        "value": "ES"
+      },
+      {
+        "source_quote": "Ventricular extrasystoles",
+        "source_section": "Deterministic source extraction",
+        "value": "Ventricular extrasystoles"
+      },
+      {
+        "source_quote": "VES",
+        "source_section": "Deterministic source extraction",
+        "value": "VES"
+      },
+      {
+        "source_quote": "Supraventricular extrasystoles",
+        "source_section": "Deterministic source extraction",
+        "value": "Supraventricular extrasystoles"
+      }
+    ],
+    "causes": [
+      {
+        "source_quote": "Previous myocardial infarction, organic heart disease, mitral prolapse. PVC's also occur in individuals without heart disease.",
+        "source_section": "Deterministic source extraction",
+        "value": "Previous myocardial infarction, organic heart disease, mitral prolapse. PVC's also occur in individuals without heart disease."
+      }
+    ],
+    "diagnosis": [
+      {
+        "source_quote": "Resting ECG / Blood pressure",
+        "source_section": "Deterministic source extraction",
+        "value": "Resting ECG / Blood pressure"
+      }
+    ],
+    "name": {
+      "source_quote": "Ectopic beats",
+      "source_section": "Ectopic beats",
+      "value": "Ectopic beats"
+    },
+    "prevention": [],
+    "prognosis": {
+      "source_quote": "Depending on cause, PVC's in young individuals and supraventricular extrasystoles are usually harmless with a favourable prognosis; ventricular extrasystoles are more prone to have an organic cause.",
+      "source_section": "Deterministic source extraction",
+      "value": "Depending on cause, PVC's in young individuals and supraventricular extrasystoles are usually harmless with a favourable prognosis; ventricular extrasystoles are more prone to have an organic cause."
+    },
+    "risk_factors": [],
+    "summary": {
+      "source_quote": "A premature ventricular contraction (PVC) of the heart that is independent of the normal rhythm and arises in response to an impulse in some part of the heart other than the SA node. Supraventricular extrasystoles originate in the atrium or AV node whilst ventricular extrasystoles originate in the ventricular muscle, sometimes in rapid succession.\n\nExtrasystoles of multifocal origin must be regarded more adversely, since cardiac disease is a frequent cause, whereas unifocal ectopic beats are more likely to be benign. PVC's are recognised by wide QRS complexes that are not preceded by P waves. PVC's may occur singly, in patterns of bigeminy in which every normal beat is followed by a PVC; in trigeminy in which two normal beats are followed by a PVC. Two successive PVC's are called pairs or couplets, while three or more consecutive PVC's are called ventricular tachycardia.",
+      "source_section": "Deterministic source extraction",
+      "value": "A premature ventricular contraction (PVC) of the heart that is independent of the normal rhythm and arises in response to an impulse in some part of the heart other than the SA node. Supraventricular extrasystoles originate in the atrium or AV node whilst ventricular extrasystoles originate in the ventricular muscle, sometimes in rapid succession.\n\nExtrasystoles of multifocal origin must be regarded more adversely, since cardiac disease is a frequent cause, whereas unifocal ectopic beats are more likely to be benign. PVC's are recognised by wide QRS complexes that are not preceded by P waves. PVC's may occur singly, in patterns of bigeminy in which every normal beat is followed by a PVC; in trigeminy in which two normal beats are followed by a PVC. Two successive PVC's are called pairs or couplets, while three or more consecutive PVC's are called ventricular tachycardia."
+    },
+    "symptoms": [
+      {
+        "source_quote": "Palpitations, syncope, dyspnea",
+        "source_section": "Deterministic source extraction",
+        "value": "Palpitations, syncope, dyspnea"
+      }
+    ],
+    "treatment": [
+      {
+        "source_quote": "Catheter ablation, β-blockers, nondihydropyridine calcium channel blocker, antiarrhythmic drugs.",
+        "source_section": "Deterministic source extraction",
+        "value": "Catheter ablation, β-blockers, nondihydropyridine calcium channel blocker, antiarrhythmic drugs."
+      }
+    ],
+    "when_to_seek_care": []
+  },
+  "warnings": [
+    "ai_normalization_not_required",
+    "deterministic_full_content:summary",
+    "deterministic_full_content:prognosis",
+    "deterministic_full_content:aliases",
+    "deterministic_full_content:causes",
+    "deterministic_full_content:symptoms",
+    "deterministic_full_content:diagnosis",
+    "deterministic_full_content:treatment"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "aliases": [
+    {
+      "source_quote": "Thyrotoxicosis",
+      "source_section": "Hyperthyroidism",
+      "value": "Thyrotoxicosis"
+    },
+    {
+      "source_quote": "Graves' disease",
+      "source_section": "Hyperthyroidism",
+      "value": "Graves' disease"
+    },
+    {
+      "source_quote": "Basedow's disease",
+      "source_section": "Hyperthyroidism",
+      "value": "Basedow's disease"
+    }
+  ],
+  "causes": [
+    {
+      "source_quote": "Autoimmune disorders (Graves' disease / Basedow's disease), inflammation of the gland (thyroiditis), toxic adenoma, carcinoma of the thyroid, hypothalamic-pituitary disease",
+      "source_section": "Hyperthyroidism",
+      "value": "Autoimmune disorders (Graves' disease / Basedow's disease), inflammation of the gland (thyroiditis), toxic adenoma, carcinoma of the thyroid, hypothalamic-pituitary disease"
+    }
+  ],
+  "diagnosis": [
+    {
+      "source_quote": "Doctor’s report / T3 / T4 and TSH measurements",
+      "source_section": "Hyperthyroidism",
+      "value": "Doctor’s report / T3 / T4 and TSH measurements"
+    }
+  ],
+  "name": {
+    "source_quote": "Hyperthyroidism",
+    "source_section": "Hyperthyroidism",
+    "value": "Hyperthyroidism"
+  },
+  "prevention": [],
+  "prognosis": {
+    "source_quote": "Mostly good; poor with thyrotoxic crisis.",
+    "source_section": "Hyperthyroidism",
+    "value": "Mostly good; poor with thyrotoxic crisis."
+  },
+  "risk_factors": [],
+  "summary": {
+    "source_quote": "Overactivity of the thyroid gland (Graves' disease) resulting in excessive secretion of thyroid hormones. The disease can originate from outside the thyroid.",
+    "source_section": "Hyperthyroidism",
+    "value": "Overactivity of the thyroid gland (Graves' disease) resulting in excessive secretion of thyroid hormones. The disease can originate from outside the thyroid."
+  },
+  "symptoms": [
+    {
+      "source_quote": "Goitre, abnormal basal metabolic rate, anxiety, nervous irritability, sweating, tremor, tachycardia, palpitations, exophthalmos, weight loss. / Graves' disease / Basedow's disease: Graves' ophthalmopathy, infiltrative dermopathy (localized or pretibial myxedema).",
+      "source_section": "Hyperthyroidism",
+      "value": "Goitre, abnormal basal metabolic rate, anxiety, nervous irritability, sweating, tremor, tachycardia, palpitations, exophthalmos, weight loss. / Graves' disease / Basedow's disease: Graves' ophthalmopathy, infiltrative dermopathy (localized or pretibial myxedema)."
+    }
+  ],
+  "treatment": [
+    {
+      "source_quote": "Medication, surgical removal of gland, radioiodine therapy.",
+      "source_section": "Hyperthyroidism",
+      "value": "Medication, surgical removal of gland, radioiodine therapy."
+    }
+  ],
+  "when_to_seek_care": []
+}

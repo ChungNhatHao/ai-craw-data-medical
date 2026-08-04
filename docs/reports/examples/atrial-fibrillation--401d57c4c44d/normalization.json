@@ -1,0 +1,97 @@
+{
+  "ambiguous_fields": [],
+  "changed_fields": [
+    "summary",
+    "prognosis",
+    "aliases",
+    "causes",
+    "symptoms",
+    "diagnosis",
+    "treatment"
+  ],
+  "normalized_draft": {
+    "aliases": [
+      {
+        "source_quote": "AF",
+        "source_section": "Deterministic source extraction",
+        "value": "AF"
+      },
+      {
+        "source_quote": "Absolute arrhythmia",
+        "source_section": "Deterministic source extraction",
+        "value": "Absolute arrhythmia"
+      },
+      {
+        "source_quote": "Tachyarrhythmia absoluta",
+        "source_section": "Deterministic source extraction",
+        "value": "Tachyarrhythmia absoluta"
+      },
+      {
+        "source_quote": "Holiday heart syndrome",
+        "source_section": "Deterministic source extraction",
+        "value": "Holiday heart syndrome"
+      },
+      {
+        "source_quote": "Chronic atrial fibrillation",
+        "source_section": "Deterministic source extraction",
+        "value": "Chronic atrial fibrillation"
+      }
+    ],
+    "causes": [
+      {
+        "source_quote": "Organic heart damage (coronary artery disease, mitral stenosis or incompetence, inflammatory and degenerative changes in the heart muscle, hyperthyroidism or toxic effects of alcohol excess). In some cases no cause is found (i.e. lone AF) It may be seen in normal subjects, particularly during emotional stress or following surgery, exercise, or acute alcoholic intoxication.",
+        "source_section": "Deterministic source extraction",
+        "value": "Organic heart damage (coronary artery disease, mitral stenosis or incompetence, inflammatory and degenerative changes in the heart muscle, hyperthyroidism or toxic effects of alcohol excess). In some cases no cause is found (i.e. lone AF) It may be seen in normal subjects, particularly during emotional stress or following surgery, exercise, or acute alcoholic intoxication."
+      }
+    ],
+    "diagnosis": [
+      {
+        "source_quote": "Cardiological report with follow-up / Echocardiography (transthoracic or transoesophageal) / Resting ECG / Blood pressure",
+        "source_section": "Deterministic source extraction",
+        "value": "Cardiological report with follow-up / Echocardiography (transthoracic or transoesophageal) / Resting ECG / Blood pressure"
+      }
+    ],
+    "name": {
+      "source_quote": "Atrial fibrillation",
+      "source_section": "Atrial fibrillation",
+      "value": "Atrial fibrillation"
+    },
+    "prevention": [],
+    "prognosis": {
+      "source_quote": "Depending on cause.",
+      "source_section": "Deterministic source extraction",
+      "value": "Depending on cause."
+    },
+    "risk_factors": [],
+    "summary": {
+      "source_quote": "Atrial fibrillation (AF) is characterised by disorganised atrial activity. When an abnormally high atrial rate develops, irregular transmission of stimuli to the ventricles occurs resulting in a rapid, irregular heart rate. AF is a common cardiac rhythm disturbance. It may occur as a brief symptom- free episode with transient bouts of irregular heart beat or as a sustained form of arrhythmia (paroxysmal AF or transient AF). Episodes of AF may spontaneously revert to normal sinus rhythm or may enter a chronic stage. Although AF may present as a transient episode in otherwise fit subjects it usually is an indication of associated cardiac disease.",
+      "source_section": "Deterministic source extraction",
+      "value": "Atrial fibrillation (AF) is characterised by disorganised atrial activity. When an abnormally high atrial rate develops, irregular transmission of stimuli to the ventricles occurs resulting in a rapid, irregular heart rate. AF is a common cardiac rhythm disturbance. It may occur as a brief symptom- free episode with transient bouts of irregular heart beat or as a sustained form of arrhythmia (paroxysmal AF or transient AF). Episodes of AF may spontaneously revert to normal sinus rhythm or may enter a chronic stage. Although AF may present as a transient episode in otherwise fit subjects it usually is an indication of associated cardiac disease."
+    },
+    "symptoms": [
+      {
+        "source_quote": "Palpitations, nausea, weakness, lightheadedness, irregular pulse. AF may be present in the absence of symptoms.",
+        "source_section": "Deterministic source extraction",
+        "value": "Palpitations, nausea, weakness, lightheadedness, irregular pulse. AF may be present in the absence of symptoms."
+      }
+    ],
+    "treatment": [
+      {
+        "source_quote": "Anti-arrhythmic drug therapy, electrical cardioversion or radio-frequency ablation for sinus rhythm to be restored.",
+        "source_section": "Deterministic source extraction",
+        "value": "Anti-arrhythmic drug therapy, electrical cardioversion or radio-frequency ablation for sinus rhythm to be restored."
+      }
+    ],
+    "when_to_seek_care": []
+  },
+  "warnings": [
+    "ai_normalization_not_required",
+    "deterministic_full_content:summary",
+    "deterministic_full_content:prognosis",
+    "deterministic_full_content:aliases",
+    "deterministic_full_content:causes",
+    "deterministic_full_content:symptoms",
+    "deterministic_full_content:diagnosis",
+    "deterministic_full_content:treatment"
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "artifacts": {
+    "content_html": {
+      "name": "content.html",
+      "sha256": "f5b4001d6435e3a3317801a810a92ac1b2e69eae23847cb6e264722237f40107",
+      "size": 6585
+    },
+    "coverage": {
+      "name": "coverage.json",
+      "sha256": "360cddaa3fa1b49febdead8d28f4e2b85bac33111eda6806ab4dd147fb3c50b2",
+      "size": 652
+    },
+    "disease_draft": {
+      "name": "disease-draft.json",
+      "sha256": "58052376fb332ebcbee7a8bc696c2897c4598ff2cac994c987982984a361ee77",
+      "size": 7738
+    },
+    "disease_json": {
+      "name": "disease.json",
+      "sha256": "eaf15837847fc4df34874168cc701c9e02e150df832255c60de8028869d6ca06",
+      "size": 319481
+    },
+    "markdown": {
+      "name": "markdown.md",
+      "sha256": "4a8bef9594e81436738434b85349ff7a310d3a13876701ec762a6af9531e54f7",
+      "size": 5905
+    },
+    "normalization": {
+      "name": "normalization.json",
+      "sha256": "554bfe9ce5f8333c0d17ccb8a1a0b7d3edb0e68c95b71f6f7a397ee57f6e9f14",
+      "size": 9892
+    },
+    "raw_html": {
+      "name": "raw.html",
+      "sha256": "5b05348b2b48a4a798983332eb0680fce4567358863cbf4c0e33ede0e826b350",
+      "size": 36658
+    },
+    "screenshot": {
+      "name": "screenshot.png",
+      "sha256": "7e4c9972cdbf4e83ab1b973a814940028fe1bc6f4db6bbf8c19dd72fef1c7bd1",
+      "size": 361552
+    },
+    "tabs": {
+      "name": "tabs.json",
+      "sha256": "c0a08f80f6c7e9b9671e184d457525e1f10b0f75977a2a021ddf22165b19c321",
+      "size": 298907
+    },
+    "tabs_raw": {
+      "name": "tabs-raw.json",
+      "sha256": "dc7e8087de757e9de5435b1bf8c81674b1c0a229e37b56493ead262a8b1f6caa",
+      "size": 134944
+    }
+  },
+  "baseline_job_id": "60269863-1866-4498-9b49-a1052df3317e",
+  "change_status": "updated",
+  "changed_components": [
+    "main",
+    "tab:health",
+    "tab:info",
+    "tab:ip",
+    "tab:life_dd_tpd"
+  ],
+  "cleaner_version": "1.2.0",
+  "confidence": 1.0,
+  "content_hash": "4a8bef9594e81436738434b85349ff7a310d3a13876701ec762a6af9531e54f7",
+  "item_id": "16cdd4890446c6590d2702036e49bde2dc7184f3679504540baa02a4ae1aa6a8",
+  "job_id": "0633dcfa-9054-4d59-8262-07401ea45760",
+  "model_version": "gemini-3.5-flash-lite",
+  "page_type": "disease_detail",
+  "parser_version": "agentic-1.4.0",
+  "plugin": "genre_manuals",
+  "previous_snapshot_hash": "64fd9d926c24b85aa82b5f3f324d379601520d90c956178329ed3571acf1c104",
+  "prompt_version": "agentic-1.2.0",
+  "retrieved_at": "2026-08-03T03:42:15.796997Z",
+  "schema_hash": "51f60377307277f7e425cd9698d22dc6fe881e3996323564ada789ac1d709a90",
+  "schema_version": "1.0",
+  "snapshot_components": {
+    "main": "4a8bef9594e81436738434b85349ff7a310d3a13876701ec762a6af9531e54f7",
+    "tab:health": "4a147e1b090284d32d9e92ea019ec2ce889c4d1176d0f219fad781b86285e3db",
+    "tab:info": "282c3294223e6b3a3cf2ff1a7dfc12e621f4400905d685d9a26cc277e1ebf828",
+    "tab:ip": "df376cc939529a11ed0b32f7a9473b3dc1d3ac4e796e995d77556d35bb78f660",
+    "tab:life_dd_tpd": "b6a78de23ad0fb3a0fbc8f606a3328d1dc17dc9e83f0850cdd3eca408e6465f4"
+  },
+  "snapshot_hash": "9c3ce32ccc4ab78511fea572f9f42ca55c2c470643f7adcea992cfa8f4d84503",
+  "source_url": "https://www.genre-manuals.com/cad.htm",
+  "state": "parsed",
+  "warnings": [
+    "incremental_content_updated",
+    "missing_field:risk_factors",
+    "missing_field:prevention",
+    "missing_field:when_to_seek_care",
+    "ai_normalization_not_required",
+    "deterministic_full_content:summary",
+    "deterministic_full_content:prognosis",
+    "deterministic_full_content:aliases",
+    "deterministic_full_content:causes",
+    "deterministic_full_content:symptoms",
+    "deterministic_full_content:diagnosis",
+    "deterministic_full_content:treatment"
+  ]
+}

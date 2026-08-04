@@ -1,0 +1,85 @@
+{
+  "aliases": [
+    {
+      "source_quote": "Premature ventricular contractions",
+      "source_section": "Ectopic beats",
+      "value": "Premature ventricular contractions"
+    },
+    {
+      "source_quote": "PVC's",
+      "source_section": "Ectopic beats",
+      "value": "PVC's"
+    },
+    {
+      "source_quote": "Extrasystoles",
+      "source_section": "Ectopic beats",
+      "value": "Extrasystoles"
+    },
+    {
+      "source_quote": "ES",
+      "source_section": "Ectopic beats",
+      "value": "ES"
+    },
+    {
+      "source_quote": "Ventricular extrasystoles",
+      "source_section": "Ectopic beats",
+      "value": "Ventricular extrasystoles"
+    },
+    {
+      "source_quote": "VES",
+      "source_section": "Ectopic beats",
+      "value": "VES"
+    },
+    {
+      "source_quote": "Supraventricular extrasystoles",
+      "source_section": "Ectopic beats",
+      "value": "Supraventricular extrasystoles"
+    }
+  ],
+  "causes": [
+    {
+      "source_quote": "Previous myocardial infarction, organic heart disease, mitral prolapse. PVC's also occur in individuals without heart disease.",
+      "source_section": "Ectopic beats",
+      "value": "Previous myocardial infarction, organic heart disease, mitral prolapse. PVC's also occur in individuals without heart disease."
+    }
+  ],
+  "diagnosis": [
+    {
+      "source_quote": "Resting ECG / Blood pressure",
+      "source_section": "Ectopic beats",
+      "value": "Resting ECG / Blood pressure"
+    }
+  ],
+  "name": {
+    "source_quote": "Ectopic beats",
+    "source_section": "Ectopic beats",
+    "value": "Ectopic beats"
+  },
+  "prevention": [],
+  "prognosis": {
+    "source_quote": "Depending on cause, PVC's in young individuals and supraventricular extrasystoles are usually harmless with a favourable prognosis; ventricular extrasystoles are more prone to have an organic cause.",
+    "source_section": "Ectopic beats",
+    "value": "Depending on cause, PVC's in young individuals and supraventricular extrasystoles are usually harmless with a favourable prognosis; ventricular extrasystoles are more prone to have an organic cause."
+  },
+  "risk_factors": [],
+  "summary": {
+    "source_quote": "A premature ventricular contraction (PVC) of the heart that is independent of the normal rhythm and arises in response to an impulse in some part of the heart other than the SA node. Supraventricular extrasystoles originate in the atrium or AV node whilst ventricular extrasystoles originate in the ventricular muscle, sometimes in rapid succession.",
+    "source_section": "Ectopic beats",
+    "value": "A premature ventricular contraction (PVC) of the heart that is independent of the normal rhythm and arises in response to an impulse in some part of the heart other than the SA node. Supraventricular extrasystoles originate in the atrium or AV node whilst ventricular extrasystoles originate in the ventricular muscle, sometimes in rapid succession."
+  },
+  "symptoms": [
+    {
+      "source_quote": "Palpitations, syncope, dyspnea",
+      "source_section": "Ectopic beats",
+      "value": "Palpitations, syncope, dyspnea"
+    }
+  ],
+  "treatment": [
+    {
+      "source_quote": "Catheter ablation, β-blockers, nondihydropyridine calcium channel blocker, antiarrhythmic drugs.",
+      "source_section": "Ectopic beats",
+      "value": "Catheter ablation, β-blockers, nondihydropyridine calcium channel blocker, antiarrhythmic drugs."
+    }
+  ],
+  "when_to_seek_care": []
+}
