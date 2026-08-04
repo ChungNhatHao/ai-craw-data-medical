@@ -1,0 +1,101 @@
+{
+  "artifacts": {
+    "content_html": {
+      "name": "content.html",
+      "sha256": "ce3a8b02f893a36e7bde7cf4600cda0b8826ffd139a8ff278d9d4ba6f466d755",
+      "size": 3124
+    },
+    "coverage": {
+      "name": "coverage.json",
+      "sha256": "d92b17495b3c48581f81341b88ff51028bac4949c5a349b27d519745aa45a7ce",
+      "size": 671
+    },
+    "disease_draft": {
+      "name": "disease-draft.json",
+      "sha256": "d546eb45ab8b1a86b9752119e4485015da5c33a4c5cf6eca8bd4e95580322ce4",
+      "size": 4388
+    },
+    "disease_json": {
+      "name": "disease.json",
+      "sha256": "e6f3146e6ed8ff70d25b1d743967623fac091323d72fb099bd2d8a395ead6c74",
+      "size": 292012
+    },
+    "markdown": {
+      "name": "markdown.md",
+      "sha256": "6571e5bb20392f1aab6d20c45ba7d1ae9fcab08f00dbf16b184621510cb2e36e",
+      "size": 2615
+    },
+    "normalization": {
+      "name": "normalization.json",
+      "sha256": "93c43e33e60af4052da1441110133854362622d83a509a17743b64b684054613",
+      "size": 5258
+    },
+    "raw_html": {
+      "name": "raw.html",
+      "sha256": "15fa098af64016758418f8dcba8169aa58cfdb7e289d256117c840d04d9d66b8",
+      "size": 32086
+    },
+    "screenshot": {
+      "name": "screenshot.png",
+      "sha256": "ae26646b636b0594f21fe5c341af45ceee86d84028aacdc665506c05f854e90d",
+      "size": 376766
+    },
+    "tabs": {
+      "name": "tabs.json",
+      "sha256": "fc76c18c0ba1b36a0182c9ecdffb0cd159873dd1b05f5e337e19e2ea409e9216",
+      "size": 275888
+    },
+    "tabs_raw": {
+      "name": "tabs-raw.json",
+      "sha256": "3e7dad0789c8e247986682c00a6d676bde65409f5107a44969343dbf676dbd8a",
+      "size": 122840
+    }
+  },
+  "baseline_job_id": "60269863-1866-4498-9b49-a1052df3317e",
+  "change_status": "updated",
+  "changed_components": [
+    "main",
+    "tab:health",
+    "tab:info",
+    "tab:ip",
+    "tab:life_dd_tpd"
+  ],
+  "cleaner_version": "1.2.0",
+  "confidence": 1.0,
+  "content_hash": "6571e5bb20392f1aab6d20c45ba7d1ae9fcab08f00dbf16b184621510cb2e36e",
+  "item_id": "401d57c4c44d22493df9fe8740cb0487a15dd48592fe431466b232a9a22cf0a6",
+  "job_id": "0633dcfa-9054-4d59-8262-07401ea45760",
+  "model_version": "gemini-3.5-flash-lite",
+  "page_type": "disease_detail",
+  "parser_version": "agentic-1.4.0",
+  "plugin": "genre_manuals",
+  "previous_snapshot_hash": "98dc876a145e4181d6af9efe3a765f9c156b0a4924f00fd929a8ffed965ca627",
+  "prompt_version": "agentic-1.2.0",
+  "retrieved_at": "2026-08-03T03:43:02.583595Z",
+  "schema_hash": "51f60377307277f7e425cd9698d22dc6fe881e3996323564ada789ac1d709a90",
+  "schema_version": "1.0",
+  "snapshot_components": {
+    "main": "6571e5bb20392f1aab6d20c45ba7d1ae9fcab08f00dbf16b184621510cb2e36e",
+    "tab:health": "f81a8650d55679135f1014766b8f3c774f86918fb211ba5213de850fda4b50e4",
+    "tab:info": "30abd3c5001514c6167fbe77dd10669261c9d2ededee6ce30e37eb5537ae5e2c",
+    "tab:ip": "80f43f36be1726460c25d8564165df6d7fe403a8ff53b67a10ec94677b3c5bd8",
+    "tab:life_dd_tpd": "d47e2e756b2c9cb8a00a00f55467feb9a211840e335a9d0f2269182962946625"
+  },
+  "snapshot_hash": "d9eae84183dccc00e3d3e08f9090936eb37c92261266e3ef755a6aed80b7a3df",
+  "source_url": "https://www.genre-manuals.com/en_atrial_fibrillation.htm",
+  "state": "parsed",
+  "warnings": [
+    "incremental_content_updated",
+    "missing_field:risk_factors",
+    "missing_field:prevention",
+    "missing_field:when_to_seek_care",
+    "ai_normalization_not_required",
+    "deterministic_full_content:summary",
+    "deterministic_full_content:prognosis",
+    "deterministic_full_content:aliases",
+    "deterministic_full_content:causes",
+    "deterministic_full_content:symptoms",
+    "deterministic_full_content:diagnosis",
+    "deterministic_full_content:treatment"
+  ]
+}

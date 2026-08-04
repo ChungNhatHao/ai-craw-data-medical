@@ -1,0 +1,60 @@
+{
+  "aliases": [
+    {
+      "source_quote": "Mitral incompetence * Mitral regurgitation * Mitral valve insufficiency",
+      "source_section": "Mitral valve insufficiency",
+      "value": "Mitral incompetence"
+    },
+    {
+      "source_quote": "Mitral incompetence * Mitral regurgitation * Mitral valve insufficiency",
+      "source_section": "Mitral valve insufficiency",
+      "value": "Mitral regurgitation"
+    }
+  ],
+  "causes": [
+    {
+      "source_quote": "Rheumatic fever, infective endocarditis, endomyocardial fibrosis, mitral valve prolapse.",
+      "source_section": "Causes",
+      "value": "Rheumatic fever, infective endocarditis, endomyocardial fibrosis, mitral valve prolapse."
+    }
+  ],
+  "diagnosis": [
+    {
+      "source_quote": "Cardiological or medical report with follow-up / Echocardiography (transthoracic or transoesophageal) / Resting ECG",
+      "source_section": "Supportive evidence",
+      "value": "Cardiological or medical report with follow-up / Echocardiography (transthoracic or transoesophageal) / Resting ECG"
+    }
+  ],
+  "name": {
+    "source_quote": "Mitral valve insufficiency",
+    "source_section": "Mitral valve insufficiency",
+    "value": "Mitral valve insufficiency"
+  },
+  "prevention": [],
+  "prognosis": {
+    "source_quote": "Depending on extent of cardiac damage and response to treatment [1, 2, 3]. Severe mitral valve insufficiency in symptomatic individuals carries a poor prognosis if left untreated, often leading to progressive heart failure and reduced life expectancy. [1, 2, 3].",
+    "source_section": "Prognosis",
+    "value": "Depending on extent of cardiac damage and response to treatment [1, 2, 3]. Severe mitral valve insufficiency in symptomatic individuals carries a poor prognosis if left untreated, often leading to progressive heart failure and reduced life expectancy. [1, 2, 3]."
+  },
+  "risk_factors": [],
+  "summary": {
+    "source_quote": "The result of deformity of the leaflets or the annulus (ring) of the mitral valve. Normally this valve is closed during systole. An incompetent valve allows blood to reflux into the left atrium during systole. Mitral insufficiency may cause left ventricular dilatation, which in turn causes more incompetence.",
+    "source_section": "Mitral valve insufficiency",
+    "value": "The result of deformity of the leaflets or the annulus (ring) of the mitral valve. Normally this valve is closed during systole. An incompetent valve allows blood to reflux into the left atrium during systole. Mitral insufficiency may cause left ventricular dilatation, which in turn causes more incompetence."
+  },
+  "symptoms": [
+    {
+      "source_quote": "Recurring symptoms such as syncope, dizziness, shortness of breath, and/or chest pain linked to heart valve insufficiency - tend to emerge primarily in advanced stages of the condition, indicating more significant cardiac impairment.",
+      "source_section": "Symptoms",
+      "value": "Recurring symptoms such as syncope, dizziness, shortness of breath, and/or chest pain linked to heart valve insufficiency - tend to emerge primarily in advanced stages of the condition, indicating more significant cardiac impairment."
+    }
+  ],
+  "treatment": [
+    {
+      "source_quote": "Surgical or catheter-based valve replacement, repair or reconstruction (mitral annuloplasty).",
+      "source_section": "Treatment",
+      "value": "Surgical or catheter-based valve replacement, repair or reconstruction (mitral annuloplasty)."
+    }
+  ],
+  "when_to_seek_care": []
+}

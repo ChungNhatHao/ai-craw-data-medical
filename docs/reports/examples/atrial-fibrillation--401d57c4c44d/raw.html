@@ -1,0 +1,673 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de"><head><link rel="canonical" href="http://test.genre-manuals.com/en_atrial_fibrillation.htm"><link rel="alternate" hreflang="en" href="http://test.genre-manuals.com/en_atrial_fibrillation.htm">
+<link rel="alternate" hreflang="ru" href="http://test.genre-manuals.com/ru_atrial_fibrillation.htm">
+<link rel="alternate" hreflang="it" href="http://test.genre-manuals.com/it_atrial_fibrillation.htm">
+<link rel="alternate" hreflang="fr" href="http://test.genre-manuals.com/fr_atrial_fibrillation.htm">
+<link rel="alternate" hreflang="zh" href="http://test.genre-manuals.com/zh_atrial_fibrillation.htm">
+<link rel="alternate" hreflang="nl" href="http://test.genre-manuals.com/nl_atrial_fibrillation.htm">
+<link rel="alternate" hreflang="es" href="http://test.genre-manuals.com/es_atrial_fibrillation.htm">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="/modules/genre-web-templates/css/print.css" media="print">
+	<title>Atrial fibrillation</title>
+
+<script type="application/json" id="jahia-data-ctx">{"contextPath":"","lang":"en","uilang":"de","siteUuid":"6debec8f-2ebe-4404-af00-c6a642485242","wcag":false,"ckeCfg":""}</script>
+<script type="application/json" id="jahia-data-ck">{"path":"/modules/ckeditor/javascript/","lng":"en_US"}</script>
+<script src="/javascript/initJahiaContext.js"></script>
+<link id="staticAssetCSS0" rel="stylesheet" href="/generated-resources/7d07ac830e02485dff4cbe9ba58708b.min.css" media="screen" type="text/css">
+<link id="staticAssetCSS1" rel="stylesheet" href="/generated-resources/9e36893f076cb2ca86140cde79add1e.min.css" media="all" type="text/css">
+<script id="staticAssetJavascript0" src="/generated-resources/73f3dbd887dd5d7028e896f34374b374.min.js"></script>
+<script>
+		$(document).ready(styleAll);
+
+		function styleAll() {
+			generatePopups();
+			styleTable();
+		}
+
+		function generatePopups() {
+			$('.genrePopup').each(function() {
+				var $dialog = $('<div><\/div>');
+				var $link = $(this).one('click', function() {
+					$dialog.load($link.attr('href') + ' .intro').dialog({
+						title : $link.attr('title'),
+						minWidth: screen.width / 2
+					});
+					$link.click(function() {
+						$dialog.dialog('open');
+						return false;
+					});
+					return false;
+				});
+			});
+		}
+		/* GK: set classes for alternating row colors */
+		function styleTable() {
+			$('.conditionTableCss tbody tr:nth-child(2n+1)').addClass('odd');
+			if (typeof tablecloth !== 'undefined') {
+				tablecloth();
+			}
+		}
+		/* Sort Tree Levels */
+		/* KL: sort Level 3 to 7  */
+		$(function() {
+			  var $list = $(".level_7");
+
+			  $list.children().detach().sort(function(a, b) {
+			    return $(a).text().localeCompare($(b).text(), "en");
+			  }).appendTo($list);
+		});
+
+		$(function() {
+			  var $list = $(".level_6");
+
+			  $list.children().detach().sort(function(a, b) {
+			    return $(a).text().localeCompare($(b).text(), "en");
+			  }).appendTo($list);
+		});
+
+		$(function() {
+			  var $list = $(".level_5");
+
+			  $list.children().detach().sort(function(a, b) {
+			    return $(a).text().localeCompare($(b).text(), "en");
+			  }).appendTo($list);
+		});
+		
+		$(function() {
+			  var $list = $(".level_4");
+
+			  $list.children().detach().sort(function(a, b) {
+			    return $(a).text().localeCompare($(b).text(), "en");
+			  }).appendTo($list);
+
+		});
+		
+		$(function() {
+			  var $list = $(".level_3");
+
+			  $list.children().detach().sort(function(a, b) {
+			    return $(a).text().localeCompare($(b).text(), "en");
+			  }).appendTo($list);
+
+		});
+	</script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+      var renderItem = function(ul, item) {
+        var link = $("<a>", {
+          "html" : item.label
+        });
+
+        return $("<li>", {
+          "class" : typeof item.cssClass === "string" ? "ui-item-icon ui-item-icon-" + item.cssClass : ""
+        }).data("item.autocomplete", item).append(link).appendTo(ul);
+      };
+
+      $("#searchTerm").autocomplete({
+        create : function(e, ui) {
+          var self = $(this).data('uiAutocomplete');
+
+          self.__renderItem = self._renderItem;
+          self._renderItem = renderItem;
+        },
+        source: function (request, response) {
+          I = this;
+          I.recentSearchTime = Date.now();
+          $.ajax({
+            url: "/cms/render/live/en/sites/CLUE/home/absolute-right/simplesearch2.typeahead-ajax.json",
+            dataType: "json",
+            data: $("#searchTerm").closest("form").serialize(),
+            headers : {'X-Autocomplete-Time' : I.recentSearchTime},
+            success: function (data) {
+              if (I.recentSearchTime == this.headers['X-Autocomplete-Time']) {
+                response(data);
+              }
+            },
+            error : function(jqXHR, textStatus, errorThrown) {
+              console.debug(jqXHR);
+              console.debug(textStatus);
+              console.debug(errorThrown);
+            }
+          });
+        },
+        focus: function (event, ui) {
+          $("#searchTerm").val(ui.item.value);
+          return false;
+        },
+        select: function (event, ui) {
+          location.href = ui.item.link;
+          return false;
+        },
+        minLength: 2,
+        open: function () {
+          $(this).removeClass("ui-corner-all").addClass("ui-corner-top");
+        },
+        close: function () {
+          $(this).removeClass("ui-corner-top").addClass("ui-corner-all");
+        }
+      });
+    });
+  </script>
+
+<script type="application/json" id="jahia-data-aggregatedjs">{"scripts":["/modules/assets/javascript/textsizer.js","/modules/jquery/javascript/jquery-1.12.4.min.js","/modules/assets/javascript/jquery.jahia.min.js","/modules/assets/javascript/jquery-ui.min.js","/modules/default-overrides/javascript/superfish.js","/modules/assets/javascript/jquery.treeview.min.js","/modules/default-overrides/javascript/ajaxreplace.genre.js"]}</script>
+
+<script type="text/javascript" src="/modules/CsrfServlet"></script>
+</head>
+
+<body>
+
+<div class="bodywrapper">
+	<div id="header"><div class="container_16">
+    <!--start grid_2-->
+        <div class="grid_2">
+            <a href="/sites/CLUE/home.html" target="_self" title="Home">
+    <img src="/files/live/sites/CLUE/files/contributed/Gen%20Re-Clue%20Logo%20small.png" alt="icon" height="54" width="175">
+    </a><div class="clear"></div>
+        </div>
+        <!--stop grid_2-->
+    <!--start grid_9-->
+        <div class="grid_9">
+            
+
+<div id="genre-shortcuts" class="shortcuts-inline">
+    <ul>
+        <li class="currentUser">thanh&nbsp;vo.c1@generali-life.com.vn</li>
+            <li class="shortcuts-login">
+                <a href="/cms/logout?redirect=%2Fcms%2Frender%2Flive%2Fen%2Fsites%2FCLUE%2Fhome.html"><span>Logout</span></a>
+                </li>
+            </ul>
+</div><div class="clear"></div>
+        </div>
+        <!--stop grid_9-->
+    <!--start grid_5-->
+        <div class="grid_5">
+            
+<div class="columns2"><!--start 2columns -->
+    <div class="column-item">
+            <div class="spacer">
+                
+
+
+
+
+
+
+<form method="get" name="searchForm" action="/search_result.htm" id="searchForm" class="simplesearchform">
+    <input type="hidden" name="jcrMethodToCall" value="get">
+    <input type="hidden" name="src_originSiteKey" value="CLUE">
+    <label for="searchTerm">SimpleSearch:&nbsp;</label>
+    <input onblur="if(this.value=='')this.value='Start Searching ...';" onfocus="if(this.value=='Start Searching ...')this.value='';" name="src_terms[0].term" id="searchTerm" type="text" class="text-input ui-autocomplete-input" value="Start Searching ..." autocomplete="off">
+<input type="hidden" name="src_terms[0].applyFilter" value="true">
+<input type="hidden" name="src_terms[0].match" value="all_words">
+<input type="hidden" name="src_terms[0].fields.siteContent" value="true">
+<input type="hidden" name="src_terms[0].fields.tags" value="true">
+<input type="hidden" name="src_sites.values" value="CLUE"><input type="hidden" name="src_sitesForReferences.values" value="systemsite">
+<input type="hidden" name="src_languages.values" value="en"><input class="searchsubmit" type="submit" title="Search" value="">
+
+  </form><br class="clear"></div>
+        </div>
+    <div class="column-item">
+            <div class="spacer">
+                <!-- Version 1.1 all languages included -->
+
+<select id="lgselectBox" name="lgselectBox" onchange="window.location = this.value;">
+	<option value="/ru_atrial_fibrillation.htm">Русский</option>
+			<option selected="" value="">English</option>
+			<option value="/it_atrial_fibrillation.htm">Italiano</option>
+			<option value="/fr_atrial_fibrillation.htm">Français</option>
+			<option value="/zh_atrial_fibrillation.htm">中文</option>
+			<option value="/nl_atrial_fibrillation.htm">Nederlands</option>
+			<option value="/es_atrial_fibrillation.htm">Español</option>
+			</select></div>
+        </div>
+    <div class="clear"></div>
+</div><div class="clear"></div>
+        </div>
+        <!--stop grid_5-->
+    <div class="clear"></div>
+    </div>
+</div><div id="headerBottom"><div class="container_16">
+    <!--start grid_16-->
+        <div class="grid_16">
+            
+
+
+
+<script> 
+		jQuery(function(){
+			jQuery('div.navigationN1 div.navbar ul.level_1').superfish({
+					dropShadows:   false,
+					speed : 1 
+			});    
+		});
+	</script>
+    <div class="navigationN1">
+    <div class="navbar">
+    <ul class="sf-menu level_1 sf-js-enabled">
+        <li class="noChildren firstInLevel">
+                            <a href="/sites/CLUE/home.html">Home</a></li>
+                    <li class="hasChildren">
+                            <a href="/calculator-home-page.html" class="sf-with-ul">Calculators<span class="sf-sub-indicator"> »</span></a>
+
+
+
+<ul class="sf-menu level_2" style="display: none; visibility: hidden;">
+        <li class="noChildren firstInLevel">
+                            <a href="/cvdcalc.htm">Cardiovascular calculator</a></li>
+                    <li class="noChildren">
+                            <a href="/mi_rating.htm">MI / CAD calculator</a></li>
+                    <li class="noChildren">
+                            <a href="/en_depression">Depression calculator</a></li>
+                    <li class="noChildren">
+                            <a href="/lftcalc.htm">LFTs calculator</a></li>
+                    <li class="noChildren">
+                            <a href="/en_hiv_calc.html">HIV calculator</a></li>
+                    <li class="noChildren">
+                            <a href="/cancercalc.htm">Tumour calculator</a></li>
+                    <li class="noChildren">
+                            <a href="/en_breast_cancercalc.htm">Breast cancer calculator</a></li>
+                    <li class="noChildren">
+                            <a href="/en_gastric_cancercalc.htm">Gastric cancer calculator</a></li>
+                    <li class="noChildren">
+                            <a href="/en_prostate">Prostate cancer calculator</a></li>
+                    <li class="noChildren">
+                            <a href="/en_financial_calculator.htm">Financial calculator</a></li>
+                    <li class="noChildren">
+                            <a href="/en_isco.html">Occupations calculator</a></li>
+                    <li class="noChildren lastInLevel">
+                            <a href="/foreigntravel.htm">Travel and Residence calculator</a></li>
+                    </ul></li>
+                    <li class="hasChildren inPath">
+                            <a href="/sites/CLUE/home/page7.html" class="sf-with-ul">Medical<span class="sf-sub-indicator"> »</span></a>
+
+
+
+<ul class="sf-menu level_2" style="display: none; visibility: hidden;">
+        <li class="noChildren inPath firstInLevel">
+                            <a href="/sites/CLUE/home/page7/page8.html">Ratings</a></li>
+                    <li class="noChildren">
+                            <a href="/rare_diseases.htm">Rare diseases</a></li>
+                    <li class="noChildren">
+                            <a href="/sites/CLUE/home/page7/questionnaires.html">Questionnaires</a></li>
+                    <li class="noChildren">
+                            <a href="/sites/CLUE/home/page7/icd-10-who-version-2019.html">ICD-10 WHO (Version: 2019)</a></li>
+                    <li class="noChildren lastInLevel">
+                            <a href="/en_supportive_evidence.htm">Supportive evidence</a></li>
+                    </ul></li>
+                    <li class="hasChildren">
+                            <a href="/sites/CLUE/home/financial.html" class="sf-with-ul">Financial<span class="sf-sub-indicator"> »</span></a>
+
+
+
+<ul class="sf-menu level_2" style="display: none; visibility: hidden;">
+        <li class="noChildren firstInLevel">
+                            <a href="/en_fin_aim_fin_risk_assessment.htm">Aim of financial risk assessment</a></li>
+                    <li class="noChildren">
+                            <a href="/en_fin_insurable_interest.htm">Insurable interest</a></li>
+                    <li class="noChildren">
+                            <a href="/en_fin_income.htm">Income</a></li>
+                    <li class="noChildren">
+                            <a href="/en_fin_calculations.htm">Calculations</a></li>
+                    <li class="noChildren lastInLevel">
+                            <a href="/en_fin_questionnaires.htm">Questionnaires</a></li>
+                    </ul></li>
+                    <li class="hasChildren">
+                            <a href="/occupations.htm" class="sf-with-ul">Occupations<span class="sf-sub-indicator"> »</span></a>
+
+
+
+<ul class="sf-menu level_2" style="display: none; visibility: hidden;">
+        <li class="noChildren firstInLevel">
+                            <a href="/en_occs_ratings.htm">Ratings</a></li>
+                    <li class="noChildren">
+                            <a href="/en_general_considerations_occupations.htm">General Considerations - Occupations</a></li>
+                    <li class="noChildren lastInLevel">
+                            <a href="/getpdffboccup.htm">Questionnaires</a></li>
+                    </ul></li>
+                    <li class="hasChildren">
+                            <a href="/sites/CLUE/home/page6992.html" class="sf-with-ul">Hobbies, Pastimes and Pursuits<span class="sf-sub-indicator"> »</span></a>
+
+
+
+<ul class="sf-menu level_2" style="display: none; visibility: hidden;">
+        <li class="noChildren firstInLevel">
+                            <a href="/hobbies_pursuits_ratings.htm">Ratings</a></li>
+                    <li class="noChildren">
+                            <a href="/en_general_considerations_sport.htm">General Considerations - Sport</a></li>
+                    <li class="noChildren">
+                            <a href="/en_hobbies_questionnaires.htm">Questionnaires</a></li>
+                    </ul></li>
+                    <li class="hasChildren">
+                            <a href="/travel_entry.htm" class="sf-with-ul">Travel and Residence<span class="sf-sub-indicator"> »</span></a>
+
+
+
+<ul class="sf-menu level_2" style="display: none; visibility: hidden;">
+        <li class="noChildren firstInLevel">
+                            <a href="/general_considerations_residence_and_travel.htm">General Considerations - Travel and Residence</a></li>
+                    <li class="noChildren">
+                            <a href="/en_travel_questionnaires.htm">Questionnaire</a></li>
+                    <li class="noChildren lastInLevel">
+                            <a href="/sites/CLUE/home/page7020/page7025.html">Countries</a></li>
+                    </ul></li>
+                    <li class="hasChildren">
+                            <a href="/sites/CLUE/home/page7236.html" class="sf-with-ul">General<span class="sf-sub-indicator"> »</span></a>
+
+
+
+<ul class="sf-menu level_2" style="display: none; visibility: hidden;">
+        <li class="noChildren">
+                            <a href="/abbreviations.htm">Abbreviations</a></li>
+                    <li class="noChildren">
+                            <a href="/sites/CLUE/home/page7236/contacts.html">Contacts</a></li>
+                    <li class="noChildren">
+                            <a href="/copyright_clue.htm">Copyright</a></li>
+                    <li class="noChildren">
+                            <a href="/agreement.htm">License Agreement</a></li>
+                    <li class="noChildren">
+                            <a href="/history.htm">History</a></li>
+                    <li class="noChildren">
+                            <a href="/internet_links.htm">Internet Links</a></li>
+                    <li class="noChildren">
+                            <a href="/publications.htm">Publications</a></li>
+                    <li class="noChildren">
+                            <a href="/gen_re_online.htm">Gen Re Online</a></li>
+                    <li class="noChildren">
+                            <a href="/sites/CLUE/home/page7236/page7272.html">Product aspects</a></li>
+                    <li class="noChildren">
+                            <a href="/sites/CLUE/home/page7236/updates.html">Updates</a></li>
+                    <li class="noChildren">
+                            <a href="/sites/CLUE/home/page7236/user-settings.html">User Settings</a></li>
+                    </ul></li>
+                    <li class="noChildren">
+                            <a href="/sites/CLUE/home/rating-sheet.html">Rating Sheet</a></li>
+                    </ul>
+    </div>
+    </div><div class="clear"></div>
+        </div>
+        <!--stop grid_16-->
+    <div class="clear"></div>
+    </div>
+</div><div class="" id="content">
+     <div class="container_16">
+    <!--start grid_6-->
+        <div class="grid_6">
+            <ul class="breadcrumb">
+        <li>
+                    <a href="/sites/CLUE/home.html">
+                                Home</a>
+                        </li>
+            <li>
+                    <a href="/sites/CLUE/home/page7.html">
+                                Medical</a>
+                        </li>
+            <li>
+                    <a href="/sites/CLUE/home/page7/page8.html">
+                                Ratings</a>
+                        </li>
+            <li>
+                    <a href="/sites/CLUE/home/page7/page8/circulatory-system.html">
+                                Circulatory system</a>
+                        </li>
+            <li>
+                    <a href="/sites/CLUE/home/page7/page8/circulatory-system/heart.html">
+                                Heart</a>
+                        </li>
+            <li>
+                    <a href="/en_cardiac_arrhythmias.htm">
+                                Cardiac arrhythmias</a>
+                        </li>
+            <li>
+                    Atrial fibrillation</li>
+            </ul>
+
+
+
+<script type="text/javascript">
+			$(document).ready(function() {
+			    $('#sidemenutree ul').not(':has(li)').remove();
+				$("#sidemenutree").treeview({
+					collapsed : false,
+					persist : "location" 
+				});
+			});	
+		</script>
+	<div class="">
+		<div id="sidemenutree" class="treeview">
+		<div class="navbar">
+	<ul class="level_1">
+		<li><a href="/sites/CLUE/home.html">Home</a></li>
+				<li><a href="/calculator-home-page.html">Calculators</a></li>
+				<li class="collapsable"><div class="hitarea collapsable-hitarea"></div><a href="/sites/CLUE/home/page7.html">Medical</a>
+
+
+
+<ul class="level_2">
+		<li class="collapsable"><div class="hitarea collapsable-hitarea"></div><a href="/sites/CLUE/home/page7/page8.html">Ratings</a>
+
+
+
+<ul class="level_3">
+		
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<li><a href="/sites/CLUE/home/page7/page8/blood-and-immune-mechanism.html">Blood and immune mechanism</a></li><li class="collapsable"><div class="hitarea collapsable-hitarea"></div><a href="/sites/CLUE/home/page7/page8/circulatory-system.html">Circulatory system</a>
+
+
+
+<ul class="level_4">
+		
+				
+				
+				
+				
+				<li><a href="/sites/CLUE/home/page7/page8/circulatory-system/arteries-arterioles-and-capillar.html">Arteries, arterioles and capillaries</a></li><li><a href="/sites/CLUE/home/page7/page8/circulatory-system/cerebrovascular-diseases.html">Cerebrovascular diseases</a></li><li class="collapsable"><div class="hitarea collapsable-hitarea"></div><a href="/sites/CLUE/home/page7/page8/circulatory-system/heart.html">Heart</a>
+
+
+
+<ul class="level_5">
+		
+				
+				
+				
+				
+				
+				<li class="collapsable"><div class="hitarea collapsable-hitarea"></div><a href="/en_cardiac_arrhythmias.htm">Cardiac arrhythmias</a>
+
+
+
+<ul class="level_6">
+		
+				
+				
+				
+				
+				
+				
+				<li><a href="/en_atrial_fibrillation.htm" class="selected">Atrial fibrillation</a>
+
+
+
+</li><li><a href="/brugada_syndrome.htm">Brugada syndrome / Brugada pattern ECG</a></li><li><a href="/en_etopic_beats.htm">Ectopic beats</a></li><li><a href="/en_paroxysmal_supraventricular_tachycardia.htm">Paroxysmal supraventricular tachycardia</a></li><li><a href="/sinusarrhythmia.htm">Sinus arrhythmia</a></li><li><a href="/ventricularflutter.htm">Ventricular fibrillation</a></li><li class="last"><a href="/ventricular_tachycardia.htm">Ventricular tachycardia</a></li></ul></li><li><a href="/sites/CLUE/home/page7/page8/circulatory-system/heart/cardiomyopathies.html">Cardiomyopathies</a></li><li><a href="/conductiondefects-1.htm">Conduction disorders</a></li><li><a href="/heartvalvedisorders.htm">Heart valve disorders</a></li><li><a href="/sites/CLUE/home/page7/page8/circulatory-system/heart/ischaemic-heart-disease.html">Ischaemic heart disease</a></li><li class="last"><a href="/sites/CLUE/home/page7/page8/circulatory-system/heart/other-heart-disorders.html">Other heart disorders</a></li></ul></li><li><a href="/sites/CLUE/home/page7/page8/circulatory-system/other-circulatory-system-disorde.html">Other circulatory system disorders</a></li><li class="last"><a href="/sites/CLUE/home/page7/page8/circulatory-system/veins-lymphatic-vessels-and-lymp.html">Veins, lymphatic vessels and lymph nodes</a></li></ul></li><li><a href="/en_congenital_malformations_and_chromosomal_abnormalities.htm">Congenital malformations and chromosomal abnormalities</a></li><li><a href="/sites/CLUE/home/page7/page8/digestive-system.html">Digestive system</a></li><li><a href="/sites/CLUE/home/page7/page8/ear-and-mastoid-process.html">Ear and mastoid process</a></li><li><a href="/sites/CLUE/home/page7/page8/endocrine-system-and-metabolism.html">Endocrine system and metabolism</a></li><li><a href="/sites/CLUE/home/page7/page8/eye-and-adnexa.html">Eye and adnexa</a></li><li><a href="/sites/CLUE/home/page7/page8/factors-influencing-health-statu.html">Factors influencing health status</a></li><li><a href="/sites/CLUE/home/page7/page8/genitourinary-system.html">Genitourinary system</a></li><li><a href="/en_infectous_parasitic_diseases.htm">Infectious and parasitic diseases</a></li><li><a href="/en_injuries_poisoning_ext_causes.htm">Injury, poisoning and external causes</a></li><li><a href="/mental_disorders.htm">Mental and behavioural disorders</a></li><li><a href="/en_musculoscelettal_system.htm">Musculoskeletal system and connective tissue</a></li><li><a href="/en_neoplasms.htm">Neoplasms</a></li><li><a href="/sites/CLUE/home/page7/page8/nervous-system.html">Nervous system</a></li><li><a href="/sites/CLUE/home/page7/page8/pregnancy-and-childbirth.html">Pregnancy and childbirth</a></li><li><a href="/sites/CLUE/home/page7/page8/respiratory-system.html">Respiratory system</a></li><li><a href="/sites/CLUE/home/page7/page8/skin-and-subcutaneous-tissue.html">Skin and subcutaneous tissue</a></li><li class="last"><a href="/sites/CLUE/home/page7/page8/symptoms-signs-and-abnormal-find.html">Symptoms, signs and abnormal findings</a></li></ul></li>
+				<li><a href="/rare_diseases.htm">Rare diseases</a></li>
+				<li><a href="/sites/CLUE/home/page7/questionnaires.html">Questionnaires</a></li>
+				<li><a href="/sites/CLUE/home/page7/icd-10-who-version-2019.html">ICD-10 WHO (Version: 2019)</a></li>
+				<li class="last"><a href="/en_supportive_evidence.htm">Supportive evidence</a></li>
+				</ul></li>
+				<li><a href="/sites/CLUE/home/financial.html">Financial</a></li>
+				<li><a href="/occupations.htm">Occupations</a></li>
+				<li><a href="/sites/CLUE/home/page6992.html">Hobbies, Pastimes and Pursuits</a></li>
+				<li><a href="/travel_entry.htm">Travel and Residence</a></li>
+				<li><a href="/sites/CLUE/home/page7236.html">General</a></li>
+				<li class="last"><a href="/sites/CLUE/home/rating-sheet.html">Rating Sheet</a></li>
+				</ul>
+</div>
+</div>
+	</div><div class="clear"></div>
+        </div>
+        <!--stop grid_6-->
+    <!--start grid_10-->
+        <div class="grid_10">
+            <h2 class="pageTitle">Atrial fibrillation</h2>
+
+
+
+<div id="tabstab30">
+    <div class="idTabsContainer"><!--start idTabsContainer-->
+
+        <ul class="idTabs">
+            <li>
+                            <a class="selected"><span>Info</span></a>
+                        </li>
+                    <li>
+                                    <a onclick="jreplace('tabstab30', '/sites/CLUE/home/page7/page8/circulatory-system/heart/cardiac-arrhythmias/atrial-fibrillation/maincontent/tab30.html.ajax',{displayTab:'contentList32',mainResource:'/sites/CLUE/home/page7/page8/circulatory-system/heart/cardiac-arrhythmias/atrial-fibrillation.html'},styleAll,true);"><span>Life/DD/TPD</span></a>
+                                </li>
+                            <li>
+                                    <a onclick="jreplace('tabstab30', '/sites/CLUE/home/page7/page8/circulatory-system/heart/cardiac-arrhythmias/atrial-fibrillation/maincontent/tab30.html.ajax',{displayTab:'copyOfIP',mainResource:'/sites/CLUE/home/page7/page8/circulatory-system/heart/cardiac-arrhythmias/atrial-fibrillation.html'},styleAll,true);"><span>IP</span></a>
+                                </li>
+                            <li>
+                                    <a onclick="jreplace('tabstab30', '/sites/CLUE/home/page7/page8/circulatory-system/heart/cardiac-arrhythmias/atrial-fibrillation/maincontent/tab30.html.ajax',{displayTab:'copyOfHealth',mainResource:'/sites/CLUE/home/page7/page8/circulatory-system/heart/cardiac-arrhythmias/atrial-fibrillation.html'},styleAll,true);"><span>Health</span></a>
+                                </li>
+                            </ul>
+    </div>
+    <div class="tabContainer"><!--start tabContainer-->
+            
+<div class="genrearticle">
+<div class="synonyms">I48 * I48.0 * I48.1 * I48.2 * I48.3 * I48.4 * I48.9</div>
+<div class="intro"></div>
+
+</div>
+<div class="genrearticle">
+<div class="synonyms">AF * Absolute arrhythmia * Tachyarrhythmia absoluta * Holiday heart syndrome * Chronic atrial fibrillation</div>
+<div class="intro"><p>Atrial fibrillation (AF) is characterised by disorganised atrial activity. When an abnormally high atrial rate develops, irregular transmission of stimuli to the ventricles occurs resulting in a rapid, irregular heart rate. AF is a common cardiac rhythm disturbance. It may occur as a brief symptom- free episode with transient bouts of irregular heart beat or as a sustained form of arrhythmia (paroxysmal AF or transient AF). Episodes of AF may spontaneously revert to normal sinus rhythm or may enter a chronic stage. Although AF may present as a transient episode in otherwise fit subjects it usually is an indication of associated cardiac disease.</p>
+
+<table border="0" cellpadding="1" cellspacing="1">
+	<tbody>
+		<tr valign="top">
+			<td style="width: 20%;">
+			<p class="Body_Text_Table"><strong>Causes</strong></p>
+			</td>
+			<td style="width: 80%;">
+			<p class="Body_Text_Table">Organic heart damage (coronary artery disease, mitral stenosis or incompetence, inflammatory and degenerative changes in the heart muscle, hyperthyroidism or toxic effects of alcohol excess). In some cases no cause is found (i.e. lone AF) It may be seen in normal subjects, particularly during emotional stress or following surgery, exercise, or acute alcoholic intoxication.</p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td>
+			<p class="Body_Text_Table"><strong>Symptoms</strong></p>
+			</td>
+			<td>
+			<p class="Body_Text_Table">Palpitations, nausea, weakness, lightheadedness, irregular pulse. AF may be present in the absence of symptoms.</p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td style="width: 20%;">
+			<p class="Body_Text_Table"><strong>Complications</strong></p>
+			</td>
+			<td>
+			<p class="Body_Text_Table">Episodes of AF, even of short duration are associated with a predisposition to pulmonary and peripheral embolism and an increased incidence of embolic stroke.</p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td>
+			<p class="Body_Text_Table"><strong>Treatment</strong></p>
+			</td>
+			<td>
+			<p class="Body_Text_Table">Anti-arrhythmic drug therapy, electrical cardioversion or radio-frequency ablation for sinus rhythm to be restored.</p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td>
+			<p class="Body_Text_Table"><strong>Prognosis</strong></p>
+			</td>
+			<td>
+			<p class="Body_Text_Table">Depending on cause.</p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td>
+			<p class="Body_Text_Table"><strong>Disability</strong></p>
+			</td>
+			<td>
+			<p class="Body_Text_Table">May occur. The morbidity associated with AF is related to excessive ventricular rate, which may lead to hypotension, pulmonary congestion or angina pectoris; the pause following cessation of AF, which can cause syncope; systemic embolisation, which occurs most commonly in patients with rheumatic heart disease; loss of the contribution of atrial contraction to cardiac output, which may cause fatigue; and anxiety secondary to palpitations. If on chronic anticoagulation therapy, restriction from working with dangerous machinery, working at heights or hazardous work may be considered.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+</div>
+<div class="genrearticle">
+<div class="intro"><table cellpadding="1" cellspacing="1" width="100%">
+	<tbody>
+		<tr valign="top">
+		</tr>
+		<tr valign="top">
+			<td width="20%">
+			<p class="Body_Text_TableB"><a href="en_supportive_evidence.htm" title="Supportive evidence">Supportive evidence</a></p>
+			</td>
+			<td width="80%">
+			<p class="Body_Text_Table">Cardiological report with follow-up</p>
+
+			<p class="Body_Text_Table">Echocardiography (transthoracic or transoesophageal)</p>
+
+			<p class="Body_Text_Table">Resting ECG</p>
+
+			<p class="Body_Text_Table">Blood pressure</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+</div>
+
+</div><div class="clear"></div>
+        </div>
+    <!--stop tabContainer-->
+</div><div class="clear"></div>
+        </div>
+        <!--stop grid_10-->
+    <div class="clear"></div>
+    </div></div><div id="footerTop"><div class="container_16">
+    <div class=" noprint"><!--start grid_11-->
+        <div class="grid_11">
+            
+<div class="genrearticle">
+<div class="intro"></div>
+
+</div><div class="clear"></div>
+        </div>
+        <!--stop grid_11-->
+    <!--start grid_5-->
+        <div class="grid_5">
+            <p><a href="/sites/CLUE/home/page7236/page7241/privacy-notice-for-users-of-gen-.html" target="_blank" title="Privacy Notice for Users of Gen Re’s manuals">Privacy Policy</a>&nbsp;|&nbsp;<a href="http://www.genre.com/imprint/?c=n" target="_blank">Imprint</a></p><p>© General Re Corporation 2026. All Rights Reserved.</p><div class="clear"></div>
+        </div>
+        <!--stop grid_5-->
+    <div class="clear"></div>
+    </div></div>
+</div></div>
+
+
+
+
+
+
+
+<ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" style="display: none;"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div></body></html>

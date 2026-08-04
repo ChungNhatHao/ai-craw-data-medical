@@ -1,0 +1,101 @@
+{
+  "artifacts": {
+    "content_html": {
+      "name": "content.html",
+      "sha256": "f4c10b923676c55f9dcb338c18bae1f239fca88b498b9bfd790b81dd4b9a1d0a",
+      "size": 1684
+    },
+    "coverage": {
+      "name": "coverage.json",
+      "sha256": "31b3c694b1a7d74ff686070c478a8a387fd51cdeba02d8b1102c8f0020e81a84",
+      "size": 667
+    },
+    "disease_draft": {
+      "name": "disease-draft.json",
+      "sha256": "e2be333736c9be0651005bc702fefd54ee44da81eef4546453675bcc11f9d076",
+      "size": 2774
+    },
+    "disease_json": {
+      "name": "disease.json",
+      "sha256": "e9b2f2c34e41a7e7c2763f7fc03cbd80fa8a40124b52ca0fdf368e6bc148b9dc",
+      "size": 195496
+    },
+    "markdown": {
+      "name": "markdown.md",
+      "sha256": "146acb0d06cfc0c35503e397081b9be025825463ce71d35689f0c10a6a6b67ac",
+      "size": 1225
+    },
+    "normalization": {
+      "name": "normalization.json",
+      "sha256": "c124bebf3974559e642388da5ef61d1371819cfddce38d90c53ae6edf9a97fcc",
+      "size": 3594
+    },
+    "raw_html": {
+      "name": "raw.html",
+      "sha256": "ade4a33847af3f634a5da1ec2e831b406789eca51eea9e00def5ddfea7575f94",
+      "size": 31469
+    },
+    "screenshot": {
+      "name": "screenshot.png",
+      "sha256": "22beabad38a6ced4c28e5200f6724980112b71ca4b22677f5083ce1ad454932f",
+      "size": 327532
+    },
+    "tabs": {
+      "name": "tabs.json",
+      "sha256": "dd64c0bc9a2438c4c8c044f53b75ee447a28410ae6797cd3b4a432bb0f05fc6f",
+      "size": 186005
+    },
+    "tabs_raw": {
+      "name": "tabs-raw.json",
+      "sha256": "afdb91b406ef67f6da6f08f2e43c0ebb45655443f7d51d3cd64a415cf1a9f663",
+      "size": 101672
+    }
+  },
+  "baseline_job_id": "60269863-1866-4498-9b49-a1052df3317e",
+  "change_status": "updated",
+  "changed_components": [
+    "main",
+    "tab:health",
+    "tab:info",
+    "tab:ip",
+    "tab:life_dd_tpd"
+  ],
+  "cleaner_version": "1.2.0",
+  "confidence": 1.0,
+  "content_hash": "146acb0d06cfc0c35503e397081b9be025825463ce71d35689f0c10a6a6b67ac",
+  "item_id": "17ca67ed5f78df090b64df923b71a692df09a0b15fdfd15b21f1b875cae86a69",
+  "job_id": "0633dcfa-9054-4d59-8262-07401ea45760",
+  "model_version": "gemini-3.5-flash-lite",
+  "page_type": "disease_detail",
+  "parser_version": "agentic-1.4.0",
+  "plugin": "genre_manuals",
+  "previous_snapshot_hash": "06f1d5bb972c5394a13f453a4d75eed281c289b943677e596ac95db54a003d46",
+  "prompt_version": "agentic-1.2.0",
+  "retrieved_at": "2026-08-03T03:44:10.089080Z",
+  "schema_hash": "51f60377307277f7e425cd9698d22dc6fe881e3996323564ada789ac1d709a90",
+  "schema_version": "1.0",
+  "snapshot_components": {
+    "main": "146acb0d06cfc0c35503e397081b9be025825463ce71d35689f0c10a6a6b67ac",
+    "tab:health": "36801fa1abce3e90de5a8afe3a2b32b0afd6ce7ffb8e702651d4992aed21f64f",
+    "tab:info": "68f63572fde89521cc5898edd36c734a2ddc8d521337b4195ca4f3c3b5edc344",
+    "tab:ip": "60640ae5f771268c8399696ab172472edc085065aecdb54ea5cda901c032d58f",
+    "tab:life_dd_tpd": "b9c279295c16126c46deb448cb5fb6f09a549d63152bbea54b5dfc5b457dd3d8"
+  },
+  "snapshot_hash": "992e16e8beb08e314a4b7908ac25a746368e860b5302c772faee7ba9f15eaca7",
+  "source_url": "https://www.genre-manuals.com/en_hyperthyroidism.htm",
+  "state": "parsed",
+  "warnings": [
+    "incremental_content_updated",
+    "missing_field:risk_factors",
+    "missing_field:prevention",
+    "missing_field:when_to_seek_care",
+    "ai_normalization_not_required",
+    "deterministic_full_content:summary",
+    "deterministic_full_content:prognosis",
+    "deterministic_full_content:aliases",
+    "deterministic_full_content:causes",
+    "deterministic_full_content:symptoms",
+    "deterministic_full_content:diagnosis",
+    "deterministic_full_content:treatment"
+  ]
+}
