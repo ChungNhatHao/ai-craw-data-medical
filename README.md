@@ -37,7 +37,10 @@ Important runtime limits:
 | `CRAWL_MAX_ITEMS` | 1000 | Maximum discovered items |
 | `CRAWL_MAX_PAGES` | 100 | Maximum listing pages |
 | `FETCH_MAX_ATTEMPTS` | 3 | Per-item network attempts |
-| `PARSE_TIMEOUT_SECONDS` | 30 | Structured parsing timeout |
+| `PARSE_TIMEOUT_SECONDS` | 90 | Timeout for each agentic parsing attempt |
+| `PARSE_MAX_ATTEMPTS` | 3 | Agentic parsing attempts before deterministic fallback |
+| `PARSE_RETRY_BASE_SECONDS` | 2 | Initial delay between parsing attempts |
+| `PARSE_RETRY_MAX_SECONDS` | 10 | Maximum delay between parsing attempts |
 | `PARSE_MAX_MODEL_CALLS` | 40 | Maximum chunk/model calls |
 | `PARSE_MAX_INPUT_CHARS` | 200000 | Parser input budget |
 | `CAPTURE_SCREENSHOT` | true | Save masked evidence PNG |

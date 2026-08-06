@@ -9,6 +9,7 @@ from app.core.config import Settings
 from app.core.errors import CrawlerError, ErrorCode
 from app.models.discovery import DiscoveredItem
 from app.models.disease import PartialDiseaseFields
+from app.models.tabs import RawDiseaseTab, RawTabRelatedDetail
 from app.parser.chunks import MarkdownChunk
 from app.parser.extractor import ContentExtractor
 from app.parser.structured import PARSER_VERSION, RuleBasedStructuredClient
@@ -97,6 +98,51 @@ async def prepare_cleaned(
         html=FIXTURE_HTML,
         screenshot=None,
         confidence=1,
+        tabs=(
+            RawDiseaseTab(
+                key="info",
+                label="Info",
+                source_url=item.canonical_url,
+                html=(
+                    '<div class="genrearticle">'
+                    '<div class="synonyms">A00 * A01.1</div>'
+                    '<div class="intro"></div></div>'
+                    '<div class="genrearticle">'
+                    '<div class="synonyms">Complex disease * CD</div>'
+                    '<div class="intro">'
+                    '<p>Source summary for output chunking.</p>'
+                    '<table><tr><td>Symptoms</td><td>Example</td></tr></table>'
+                    '</div></div>'
+                ),
+            ),
+            RawDiseaseTab(
+                key="life_dd_tpd",
+                label="Life/DD/TPD",
+                source_url=item.canonical_url,
+                html=(
+                    '<table class="floatThead-table"><tr>'
+                    '<th>Classification</th><th>Life</th><th>Code</th>'
+                    '</tr></table><table id="conditionTable"><tr>'
+                    '<th class="level-0">With '
+                    '<a class="genrePopup" href="en_hereditarythoraort.htm">'
+                    'Hereditary thoracic aortic disease</a></th>'
+                    '<td>D</td><td>I71.9</td></tr></table>'
+                ),
+                related_details=(
+                    RawTabRelatedDetail(
+                        label="Hereditary thoracic aortic disease",
+                        url=(
+                            "https://www.genre-manuals.com/"
+                            "en_hereditarythoraort.htm"
+                        ),
+                        html=(
+                            "<article><h1>Hereditary thoracic aortic disease</h1>"
+                            "<p>Syndromic (e.g. Marfan syndrome).</p></article>"
+                        ),
+                    ),
+                ),
+            ),
+        ),
     )
     await items.mark_fetched(str(job.id), item.item_id, artifact_dir)
     await CleaningService(
@@ -148,7 +194,31 @@ def test_parsing_service_persists_schema_and_reuses_checkpoint(
         disease_bytes = (directory / "disease.json").read_bytes()
         payload = json.loads(disease_bytes)
         manifest = json.loads((directory / "manifest.json").read_text(encoding="utf-8"))
-        assert payload["schema_version"] == "1.2"
+        assert payload["schema_version"] == "1.3"
+        assert payload["tabs"][0]["tables"][0]["rows"] == [
+            ["Codes", "A00 * A01.1"],
+            ["Aliases", "Complex disease * CD"],
+            ["Summary", "Source summary for output chunking."],
+        ]
+        assert payload["tabs"][0]["tables"][1]["rows"] == [
+            ["Symptoms", "Example"]
+        ]
+        life_tab = next(
+            tab for tab in payload["tabs"] if tab["key"] == "life_dd_tpd"
+        )
+        hereditary_row = life_tab["classification_table"]["rows"][0]
+        assert hereditary_row["classification"] == (
+            "With Hereditary thoracic aortic disease"
+        )
+        assert hereditary_row["related_details"][0]["label"] == (
+            "Hereditary thoracic aortic disease"
+        )
+        assert "Marfan syndrome" in (
+            hereditary_row["related_details"][0]["plain_text"]
+        )
+        assert life_tab["related_details"][0]["label"] == (
+            "Hereditary thoracic aortic disease"
+        )
         assert manifest["state"] == "parsed"
         assert manifest["schema_hash"] == first.schema_hash
         assert manifest["parser_version"] == PARSER_VERSION

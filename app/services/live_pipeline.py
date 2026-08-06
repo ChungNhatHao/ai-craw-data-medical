@@ -43,6 +43,7 @@ from app.services.intelligent_discovery import IntelligentDiscoveryService
 from app.services.navigation import NavigationDetectionLoop
 from app.services.page_observer import PageObserver
 from app.services.parsing import StructuredParsingService
+from app.services.parsing_retry import RetryingAgenticParsingService
 from app.services.reporting import ReportingService
 from app.services.session import SessionService
 from app.services.structure_discovery import SiteStructureProfiler
@@ -114,6 +115,8 @@ class LivePipelineRunner:
             self._build_agent_adapter(job_id)
             if (
                 request.agentic_discovery
+                or request.agentic_parsing
+                or request.ai_normalization
                 or (
                     request.discovery_mode == "import"
                     and self.settings.gemini_api_key is not None
@@ -245,7 +248,7 @@ class LivePipelineRunner:
             artifacts=artifacts,
             job_id=job_id,
             adapter=agent_adapter,
-            use_agentic=request.agentic_discovery,
+            use_agentic=request.agentic_parsing,
             use_ai_normalization=request.ai_normalization,
             emit=emit,
         )
@@ -927,6 +930,9 @@ class LivePipelineRunner:
         )
         policy = ParsingPolicy(
             timeout_seconds=self.settings.parse_timeout_seconds,
+            max_attempts=self.settings.parse_max_attempts,
+            retry_base_seconds=self.settings.parse_retry_base_seconds,
+            retry_max_seconds=self.settings.parse_retry_max_seconds,
             max_model_calls=self.settings.parse_max_model_calls,
             max_input_chars=self.settings.parse_max_input_chars,
         )
@@ -936,21 +942,38 @@ class LivePipelineRunner:
                     ErrorCode.GEMINI_AUTH_FAILED,
                     "Gemini adapter is required for disease extraction",
                 )
-            service: StructuredParsingService | AgenticParsingService = (
-                AgenticParsingService(
-                    extraction_agent=DiseaseExtractionAgent(adapter),
-                    normalization_agent=(
-                        NormalizationAgent(adapter)
-                        if use_ai_normalization
-                        else None
-                    ),
-                    plugin=plugin,
-                    items=items,
-                    attempts=attempts,
-                    artifacts=artifacts,
-                    extractor=ContentExtractor(minimum_chars=50),
-                    language="en",
-                    model_version=self.settings.gemini_extraction_model,
+            agentic_service = AgenticParsingService(
+                extraction_agent=DiseaseExtractionAgent(adapter),
+                normalization_agent=(
+                    NormalizationAgent(adapter)
+                    if use_ai_normalization
+                    else None
+                ),
+                plugin=plugin,
+                items=items,
+                attempts=attempts,
+                artifacts=artifacts,
+                extractor=ContentExtractor(minimum_chars=50),
+                language="en",
+                model_version=self.settings.gemini_extraction_model,
+                policy=policy,
+            )
+            fallback_service = StructuredParsingService(
+                client=RuleBasedStructuredClient(),
+                items=items,
+                attempts=attempts,
+                artifacts=artifacts,
+                language="en",
+                policy=policy,
+                canonicalize_url=plugin.canonicalize_url,
+                additional_warnings=(
+                    "agentic_extraction_fallback:transient_failure",
+                ),
+            )
+            service: StructuredParsingService | RetryingAgenticParsingService = (
+                RetryingAgenticParsingService(
+                    agentic=agentic_service,
+                    fallback=fallback_service,
                     policy=policy,
                 )
             )

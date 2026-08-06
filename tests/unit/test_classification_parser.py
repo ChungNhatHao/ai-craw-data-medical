@@ -1,3 +1,4 @@
+from app.models.tabs import TabRelatedDetail
 from app.parser.classification import extract_classification_table
 
 
@@ -106,3 +107,37 @@ def test_classification_parser_reports_and_repairs_invalid_level_jump() -> None:
     assert table.rows[1].level == 1
     assert "classification_level_jump" in table.warnings
     assert "classification_level_invalid" in table.warnings
+
+
+def test_classification_row_contains_detail_for_its_popup_link() -> None:
+    html = """
+    <table class="floatThead-table">
+      <tr><th>Classification</th><th>Life</th><th>Code</th></tr>
+    </table>
+    <table id="conditionTable">
+      <tr>
+        <th class="level-0">With
+          <a class="genrePopup" href="en_hereditarythoraort.htm">
+            Hereditary thoracic aortic disease
+          </a>
+        </th>
+        <td>D</td><td>I71.9</td>
+      </tr>
+    </table>
+    """
+    detail = TabRelatedDetail(
+        label="Hereditary thoracic aortic disease",
+        url="https://www.genre-manuals.com/en_hereditarythoraort.htm",
+        plain_text="Syndromic (e.g. Marfan syndrome).",
+    )
+
+    table = extract_classification_table(
+        html,
+        related_details=(detail,),
+    )
+
+    assert table is not None
+    assert table.rows[0].classification == (
+        "With Hereditary thoracic aortic disease"
+    )
+    assert table.rows[0].related_details == (detail,)

@@ -23,6 +23,9 @@ def test_health_endpoints(settings: Settings) -> None:
             "database": "ok",
             "artifact_store": "ok",
             "gemini_agentic": "disabled",
+            "agentic_discovery_enabled": False,
+            "agentic_parsing_enabled": False,
+            "ai_normalization_enabled": False,
         }
 
     asyncio.run(scenario())

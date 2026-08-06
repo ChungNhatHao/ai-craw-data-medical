@@ -97,10 +97,11 @@
       "deterministic_full_content:causes",
       "deterministic_full_content:symptoms",
       "deterministic_full_content:diagnosis",
-      "deterministic_full_content:treatment"
+      "deterministic_full_content:treatment",
+      "incremental_unchanged_reused"
     ]
   },
-  "schema_version": "1.2",
+  "schema_version": "1.3",
   "sections": [
     {
       "heading": "Ectopic beats",
@@ -114,7 +115,7 @@
     "content_hash": "8c9390da709104e2acdd30f65b6f6698f5272faf9644c28697bf9e4901141b05",
     "language": "en",
     "plugin": "genre_manuals",
-    "retrieved_at": "2026-08-03T03:43:22.529186Z",
+    "retrieved_at": "2026-08-05T09:03:11.074169Z",
     "url": "https://www.genre-manuals.com/en_etopic_beats.htm"
   },
   "tabs": [
@@ -129,6 +130,22 @@
       "related_details": [],
       "source_url": "https://www.genre-manuals.com/en_etopic_beats.htm",
       "tables": [
+        {
+          "rows": [
+            [
+              "Codes",
+              "I49.4"
+            ],
+            [
+              "Aliases",
+              "Premature ventricular contractions * PVC's * Extrasystoles * ES * Ventricular extrasystoles * VES * Supraventricular extrasystoles"
+            ],
+            [
+              "Summary",
+              "A premature ventricular contraction (PVC) of the heart that is independent of the normal rhythm and arises in response to an impulse in some part of the heart other than the SA node. Supraventricular extrasystoles originate in the atrium or AV node whilst ventricular extrasystoles originate in the ventricular muscle, sometimes in rapid succession.\n\nExtrasystoles of multifocal origin must be regarded more adversely, since cardiac disease is a frequent cause, whereas unifocal ectopic beats are more likely to be benign. PVC's are recognised by wide QRS complexes that are not preceded by P waves. PVC's may occur singly, in patterns of bigeminy in which every normal beat is followed by a PVC; in trigeminy in which two normal beats are followed by a PVC. Two successive PVC's are called pairs or couplets, while three or more consecutive PVC's are called ventricular tachycardia."
+            ]
+          ]
+        },
         {
           "rows": [
             [
@@ -209,7 +226,8 @@
               "+0",
               "+0",
               "I49.4"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Ventricular extrasystoles",
@@ -241,7 +259,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Isolated PVC diagnosis",
@@ -274,6 +293,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "8917783c199f158d91600391b3ccedd15d334bdae7c9e58d504dfacb7c01cfdf",
+                "label": "Isolated PVC diagnosis",
+                "markdown": "# Premature ventricular contraction (PVC) diagnosis\n\n| Column 1 | Column 2 |\n| --- | --- |\n| **Isolated PVC diagnosis** | Isolated PVCs = Average of 2 or less on 10 sec 12 lead ECG tracing / For 24-hour recording: < 45 PVCs per hour (< 1000 per day) |\n| **Frequent PVC diagnosis** | Frequent PVCs**=**Average of ≥ 3 on 10 sec 12 lead ECG tracing / For 24-hour recording: > 45 PVCs per hour (> 1000 per day) |\n\n## Premature ventricular contraction (PVC) diagnosis\n\n| Column 1 | Column 2 |\n| --- | --- |\n| **Isolated PVC diagnosis** | Isolated PVCs = Average of 2 or less on 10 sec 12 lead ECG tracing / For 24-hour recording: < 45 PVCs per hour (< 1000 per day) |\n| **Frequent PVC diagnosis** | Frequent PVCs**=**Average of ≥ 3 on 10 sec 12 lead ECG tracing / For 24-hour recording: > 45 PVCs per hour (> 1000 per day) |\n",
+                "plain_text": "Premature ventricular contraction (PVC) diagnosis\nIsolated PVC diagnosis\nIsolated PVCs = Average of 2 or less on 10 sec 12 lead ECG tracing\nFor 24-hour recording: < 45 PVCs per hour (< 1000 per day)\nFrequent PVC diagnosis\nFrequent PVCs\n=\nAverage of ≥ 3 on 10 sec 12 lead ECG tracing\nFor 24-hour recording: > 45 PVCs per hour (> 1000 per day)\nPremature ventricular contraction (PVC) diagnosis\nIsolated PVC diagnosis\nIsolated PVCs = Average of 2 or less on 10 sec 12 lead ECG tracing\nFor 24-hour recording: < 45 PVCs per hour (< 1000 per day)\nFrequent PVC diagnosis\nFrequent PVCs\n=\nAverage of ≥ 3 on 10 sec 12 lead ECG tracing\nFor 24-hour recording: > 45 PVCs per hour (> 1000 per day)",
+                "url": "https://www.genre-manuals.com/en_pvc_diagnosis.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -308,6 +338,17 @@
               "RFC",
               "RFC",
               "I49.3"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "038042a23f0e182bc50444e2d15db2d2d08444534fd9fec2338b17870dc43667",
+                "label": "comorbidities",
+                "markdown": "# Comorbities\n\n**Non-cardiac conditions:**\n\n- COPD\n- Sleep apnoea syndrome\n- Hypertension\n- Diabetes\n\n## Comorbities\n\n**Non-cardiac conditions:**\n\n- COPD\n- Sleep apnoea syndrome\n- Hypertension\n- Diabetes\n",
+                "plain_text": "Comorbities\nNon-cardiac conditions:\nCOPD\nSleep apnoea syndrome\nHypertension\nDiabetes\nComorbities\nNon-cardiac conditions:\nCOPD\nSleep apnoea syndrome\nHypertension\nDiabetes",
+                "url": "https://www.genre-manuals.com/en_ectopic_beats_comorbidities.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -342,6 +383,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "038042a23f0e182bc50444e2d15db2d2d08444534fd9fec2338b17870dc43667",
+                "label": "comorbidities",
+                "markdown": "# Comorbities\n\n**Non-cardiac conditions:**\n\n- COPD\n- Sleep apnoea syndrome\n- Hypertension\n- Diabetes\n\n## Comorbities\n\n**Non-cardiac conditions:**\n\n- COPD\n- Sleep apnoea syndrome\n- Hypertension\n- Diabetes\n",
+                "plain_text": "Comorbities\nNon-cardiac conditions:\nCOPD\nSleep apnoea syndrome\nHypertension\nDiabetes\nComorbities\nNon-cardiac conditions:\nCOPD\nSleep apnoea syndrome\nHypertension\nDiabetes",
+                "url": "https://www.genre-manuals.com/en_ectopic_beats_comorbidities.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -377,6 +429,17 @@
               "+0",
               "+0",
               "I49.3"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "f4dd19334f54702599cd078f08fa369cbc482a50ec8242962e8d3b065be12cd7",
+                "label": "symptoms",
+                "markdown": "# Ectopic beats: Symptoms\n\n- Palpitations\n- Syncope\n- Dyspnoea\n\n## Ectopic beats: Symptoms\n\n- Palpitations\n- Syncope\n- Dyspnoea\n",
+                "plain_text": "Ectopic beats: Symptoms\nPalpitations\nSyncope\nDyspnoea\nEctopic beats: Symptoms\nPalpitations\nSyncope\nDyspnoea",
+                "url": "https://www.genre-manuals.com/en_ectopic_beats_symptoms.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -412,6 +475,17 @@
               "+25",
               "+10",
               "I49.3"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "f4dd19334f54702599cd078f08fa369cbc482a50ec8242962e8d3b065be12cd7",
+                "label": "symptoms",
+                "markdown": "# Ectopic beats: Symptoms\n\n- Palpitations\n- Syncope\n- Dyspnoea\n\n## Ectopic beats: Symptoms\n\n- Palpitations\n- Syncope\n- Dyspnoea\n",
+                "plain_text": "Ectopic beats: Symptoms\nPalpitations\nSyncope\nDyspnoea\nEctopic beats: Symptoms\nPalpitations\nSyncope\nDyspnoea",
+                "url": "https://www.genre-manuals.com/en_ectopic_beats_symptoms.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -445,7 +519,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With monomorphic extrasystoles",
@@ -479,7 +554,8 @@
               "+50",
               "+30",
               "I49.3"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With polymorphic extrasystoles",
@@ -513,7 +589,8 @@
               "CMO",
               "D",
               "I49.3"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Debits",
@@ -545,6 +622,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "76cedd1aaca108e002fc16e81687b38df0be66ae7de8c9154bbc981262dbfa0a",
+                "label": "Debits",
+                "markdown": "# debits--credits\n\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\n\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\n\nTo account for these risk factors, the assessment is modified accordingly:\n\n- In case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (**credit**).\n\n- In case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (**debit**).\n\n- In case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\n\n- The total loading cannot be < +0.\n\n## debits--credits\n\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\n\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\n\nTo account for these risk factors, the assessment is modified accordingly:\n\n- In case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (**credit**).\n\n- In case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (**debit**).\n\n- In case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\n\n- The total loading cannot be < +0.\n",
+                "plain_text": "debits--credits\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\nTo account for these risk factors, the assessment is modified accordingly:\nIn case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (\ncredit\n).\nIn case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (\ndebit\n).\nIn case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\nThe total loading cannot be < +0.\ndebits--credits\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\nTo account for these risk factors, the assessment is modified accordingly:\nIn case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (\ncredit\n).\nIn case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (\ndebit\n).\nIn case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\nThe total loading cannot be < +0.",
+                "url": "https://www.genre-manuals.com/gen_debits_credits.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -578,6 +666,17 @@
               "Add rating",
               "Add rating",
               "I49.3"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "847ff6e49a4091a4d2f5c1dd7d0b3a0d77e40a9d08cbe9a1084fd3a8342d2b8d",
+                "label": "cardiovascular disease",
+                "markdown": "# Cardiovascular disease\n\n**Cardiac conditions:**\n\n- Coronary heart (artery) disease\n- Myocardial structural abnormalities\n\n## Cardiovascular disease\n\n**Cardiac conditions:**\n\n- Coronary heart (artery) disease\n- Myocardial structural abnormalities\n",
+                "plain_text": "Cardiovascular disease\nCardiac conditions:\nCoronary heart (artery) disease\nMyocardial structural abnormalities\nCardiovascular disease\nCardiac conditions:\nCoronary heart (artery) disease\nMyocardial structural abnormalities",
+                "url": "https://www.genre-manuals.com/en_ectopic_beats_cvd.htm",
+                "warnings": []
+              }
             ]
           }
         ],
@@ -1179,7 +1278,8 @@
               "+0",
               "+0",
               "I49.4"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Ventricular extrasystoles",
@@ -1203,7 +1303,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Isolated PVC diagnosis",
@@ -1228,6 +1329,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "8917783c199f158d91600391b3ccedd15d334bdae7c9e58d504dfacb7c01cfdf",
+                "label": "Isolated PVC diagnosis",
+                "markdown": "# Premature ventricular contraction (PVC) diagnosis\n\n| Column 1 | Column 2 |\n| --- | --- |\n| **Isolated PVC diagnosis** | Isolated PVCs = Average of 2 or less on 10 sec 12 lead ECG tracing / For 24-hour recording: < 45 PVCs per hour (< 1000 per day) |\n| **Frequent PVC diagnosis** | Frequent PVCs**=**Average of ≥ 3 on 10 sec 12 lead ECG tracing / For 24-hour recording: > 45 PVCs per hour (> 1000 per day) |\n\n## Premature ventricular contraction (PVC) diagnosis\n\n| Column 1 | Column 2 |\n| --- | --- |\n| **Isolated PVC diagnosis** | Isolated PVCs = Average of 2 or less on 10 sec 12 lead ECG tracing / For 24-hour recording: < 45 PVCs per hour (< 1000 per day) |\n| **Frequent PVC diagnosis** | Frequent PVCs**=**Average of ≥ 3 on 10 sec 12 lead ECG tracing / For 24-hour recording: > 45 PVCs per hour (> 1000 per day) |\n",
+                "plain_text": "Premature ventricular contraction (PVC) diagnosis\nIsolated PVC diagnosis\nIsolated PVCs = Average of 2 or less on 10 sec 12 lead ECG tracing\nFor 24-hour recording: < 45 PVCs per hour (< 1000 per day)\nFrequent PVC diagnosis\nFrequent PVCs\n=\nAverage of ≥ 3 on 10 sec 12 lead ECG tracing\nFor 24-hour recording: > 45 PVCs per hour (> 1000 per day)\nPremature ventricular contraction (PVC) diagnosis\nIsolated PVC diagnosis\nIsolated PVCs = Average of 2 or less on 10 sec 12 lead ECG tracing\nFor 24-hour recording: < 45 PVCs per hour (< 1000 per day)\nFrequent PVC diagnosis\nFrequent PVCs\n=\nAverage of ≥ 3 on 10 sec 12 lead ECG tracing\nFor 24-hour recording: > 45 PVCs per hour (> 1000 per day)",
+                "url": "https://www.genre-manuals.com/en_pvc_diagnosis.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -1254,6 +1366,17 @@
               "RFC",
               "RFC",
               "I49.3"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "038042a23f0e182bc50444e2d15db2d2d08444534fd9fec2338b17870dc43667",
+                "label": "comorbidities",
+                "markdown": "# Comorbities\n\n**Non-cardiac conditions:**\n\n- COPD\n- Sleep apnoea syndrome\n- Hypertension\n- Diabetes\n\n## Comorbities\n\n**Non-cardiac conditions:**\n\n- COPD\n- Sleep apnoea syndrome\n- Hypertension\n- Diabetes\n",
+                "plain_text": "Comorbities\nNon-cardiac conditions:\nCOPD\nSleep apnoea syndrome\nHypertension\nDiabetes\nComorbities\nNon-cardiac conditions:\nCOPD\nSleep apnoea syndrome\nHypertension\nDiabetes",
+                "url": "https://www.genre-manuals.com/en_ectopic_beats_comorbidities.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -1280,6 +1403,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "038042a23f0e182bc50444e2d15db2d2d08444534fd9fec2338b17870dc43667",
+                "label": "comorbidities",
+                "markdown": "# Comorbities\n\n**Non-cardiac conditions:**\n\n- COPD\n- Sleep apnoea syndrome\n- Hypertension\n- Diabetes\n\n## Comorbities\n\n**Non-cardiac conditions:**\n\n- COPD\n- Sleep apnoea syndrome\n- Hypertension\n- Diabetes\n",
+                "plain_text": "Comorbities\nNon-cardiac conditions:\nCOPD\nSleep apnoea syndrome\nHypertension\nDiabetes\nComorbities\nNon-cardiac conditions:\nCOPD\nSleep apnoea syndrome\nHypertension\nDiabetes",
+                "url": "https://www.genre-manuals.com/en_ectopic_beats_comorbidities.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -1307,6 +1441,17 @@
               "+0",
               "+0",
               "I49.3"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "f4dd19334f54702599cd078f08fa369cbc482a50ec8242962e8d3b065be12cd7",
+                "label": "symptoms",
+                "markdown": "# Ectopic beats: Symptoms\n\n- Palpitations\n- Syncope\n- Dyspnoea\n\n## Ectopic beats: Symptoms\n\n- Palpitations\n- Syncope\n- Dyspnoea\n",
+                "plain_text": "Ectopic beats: Symptoms\nPalpitations\nSyncope\nDyspnoea\nEctopic beats: Symptoms\nPalpitations\nSyncope\nDyspnoea",
+                "url": "https://www.genre-manuals.com/en_ectopic_beats_symptoms.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -1334,6 +1479,17 @@
               "+50",
               "+50",
               "I49.3"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "f4dd19334f54702599cd078f08fa369cbc482a50ec8242962e8d3b065be12cd7",
+                "label": "symptoms",
+                "markdown": "# Ectopic beats: Symptoms\n\n- Palpitations\n- Syncope\n- Dyspnoea\n\n## Ectopic beats: Symptoms\n\n- Palpitations\n- Syncope\n- Dyspnoea\n",
+                "plain_text": "Ectopic beats: Symptoms\nPalpitations\nSyncope\nDyspnoea\nEctopic beats: Symptoms\nPalpitations\nSyncope\nDyspnoea",
+                "url": "https://www.genre-manuals.com/en_ectopic_beats_symptoms.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -1359,7 +1515,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With monomorphic extrasystoles",
@@ -1385,7 +1542,8 @@
               "+100",
               "+75",
               "I49.3"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With polymorphic extrasystoles",
@@ -1411,7 +1569,8 @@
               "D",
               "D",
               "I49.3"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Debits",
@@ -1435,6 +1594,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "76cedd1aaca108e002fc16e81687b38df0be66ae7de8c9154bbc981262dbfa0a",
+                "label": "Debits",
+                "markdown": "# debits--credits\n\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\n\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\n\nTo account for these risk factors, the assessment is modified accordingly:\n\n- In case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (**credit**).\n\n- In case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (**debit**).\n\n- In case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\n\n- The total loading cannot be < +0.\n\n## debits--credits\n\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\n\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\n\nTo account for these risk factors, the assessment is modified accordingly:\n\n- In case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (**credit**).\n\n- In case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (**debit**).\n\n- In case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\n\n- The total loading cannot be < +0.\n",
+                "plain_text": "debits--credits\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\nTo account for these risk factors, the assessment is modified accordingly:\nIn case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (\ncredit\n).\nIn case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (\ndebit\n).\nIn case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\nThe total loading cannot be < +0.\ndebits--credits\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\nTo account for these risk factors, the assessment is modified accordingly:\nIn case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (\ncredit\n).\nIn case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (\ndebit\n).\nIn case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\nThe total loading cannot be < +0.",
+                "url": "https://www.genre-manuals.com/gen_debits_credits.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -1460,6 +1630,17 @@
               "Add rating",
               "Add rating",
               "I49.3"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "847ff6e49a4091a4d2f5c1dd7d0b3a0d77e40a9d08cbe9a1084fd3a8342d2b8d",
+                "label": "cardiovascular disease",
+                "markdown": "# Cardiovascular disease\n\n**Cardiac conditions:**\n\n- Coronary heart (artery) disease\n- Myocardial structural abnormalities\n\n## Cardiovascular disease\n\n**Cardiac conditions:**\n\n- Coronary heart (artery) disease\n- Myocardial structural abnormalities\n",
+                "plain_text": "Cardiovascular disease\nCardiac conditions:\nCoronary heart (artery) disease\nMyocardial structural abnormalities\nCardiovascular disease\nCardiac conditions:\nCoronary heart (artery) disease\nMyocardial structural abnormalities",
+                "url": "https://www.genre-manuals.com/en_ectopic_beats_cvd.htm",
+                "warnings": []
+              }
             ]
           }
         ],
@@ -1919,7 +2100,8 @@
               "+0",
               "+0",
               "I49.4"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Ventricular extrasystoles",
@@ -1945,7 +2127,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Isolated PVC diagnosis",
@@ -1972,6 +2155,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "8917783c199f158d91600391b3ccedd15d334bdae7c9e58d504dfacb7c01cfdf",
+                "label": "Isolated PVC diagnosis",
+                "markdown": "# Premature ventricular contraction (PVC) diagnosis\n\n| Column 1 | Column 2 |\n| --- | --- |\n| **Isolated PVC diagnosis** | Isolated PVCs = Average of 2 or less on 10 sec 12 lead ECG tracing / For 24-hour recording: < 45 PVCs per hour (< 1000 per day) |\n| **Frequent PVC diagnosis** | Frequent PVCs**=**Average of ≥ 3 on 10 sec 12 lead ECG tracing / For 24-hour recording: > 45 PVCs per hour (> 1000 per day) |\n\n## Premature ventricular contraction (PVC) diagnosis\n\n| Column 1 | Column 2 |\n| --- | --- |\n| **Isolated PVC diagnosis** | Isolated PVCs = Average of 2 or less on 10 sec 12 lead ECG tracing / For 24-hour recording: < 45 PVCs per hour (< 1000 per day) |\n| **Frequent PVC diagnosis** | Frequent PVCs**=**Average of ≥ 3 on 10 sec 12 lead ECG tracing / For 24-hour recording: > 45 PVCs per hour (> 1000 per day) |\n",
+                "plain_text": "Premature ventricular contraction (PVC) diagnosis\nIsolated PVC diagnosis\nIsolated PVCs = Average of 2 or less on 10 sec 12 lead ECG tracing\nFor 24-hour recording: < 45 PVCs per hour (< 1000 per day)\nFrequent PVC diagnosis\nFrequent PVCs\n=\nAverage of ≥ 3 on 10 sec 12 lead ECG tracing\nFor 24-hour recording: > 45 PVCs per hour (> 1000 per day)\nPremature ventricular contraction (PVC) diagnosis\nIsolated PVC diagnosis\nIsolated PVCs = Average of 2 or less on 10 sec 12 lead ECG tracing\nFor 24-hour recording: < 45 PVCs per hour (< 1000 per day)\nFrequent PVC diagnosis\nFrequent PVCs\n=\nAverage of ≥ 3 on 10 sec 12 lead ECG tracing\nFor 24-hour recording: > 45 PVCs per hour (> 1000 per day)",
+                "url": "https://www.genre-manuals.com/en_pvc_diagnosis.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -2000,6 +2194,17 @@
               "RFC",
               "RFC",
               "I49.3"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "038042a23f0e182bc50444e2d15db2d2d08444534fd9fec2338b17870dc43667",
+                "label": "comorbidities",
+                "markdown": "# Comorbities\n\n**Non-cardiac conditions:**\n\n- COPD\n- Sleep apnoea syndrome\n- Hypertension\n- Diabetes\n\n## Comorbities\n\n**Non-cardiac conditions:**\n\n- COPD\n- Sleep apnoea syndrome\n- Hypertension\n- Diabetes\n",
+                "plain_text": "Comorbities\nNon-cardiac conditions:\nCOPD\nSleep apnoea syndrome\nHypertension\nDiabetes\nComorbities\nNon-cardiac conditions:\nCOPD\nSleep apnoea syndrome\nHypertension\nDiabetes",
+                "url": "https://www.genre-manuals.com/en_ectopic_beats_comorbidities.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -2028,6 +2233,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "038042a23f0e182bc50444e2d15db2d2d08444534fd9fec2338b17870dc43667",
+                "label": "comorbidities",
+                "markdown": "# Comorbities\n\n**Non-cardiac conditions:**\n\n- COPD\n- Sleep apnoea syndrome\n- Hypertension\n- Diabetes\n\n## Comorbities\n\n**Non-cardiac conditions:**\n\n- COPD\n- Sleep apnoea syndrome\n- Hypertension\n- Diabetes\n",
+                "plain_text": "Comorbities\nNon-cardiac conditions:\nCOPD\nSleep apnoea syndrome\nHypertension\nDiabetes\nComorbities\nNon-cardiac conditions:\nCOPD\nSleep apnoea syndrome\nHypertension\nDiabetes",
+                "url": "https://www.genre-manuals.com/en_ectopic_beats_comorbidities.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -2057,6 +2273,17 @@
               "+0",
               "+0",
               "I49.3"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "f4dd19334f54702599cd078f08fa369cbc482a50ec8242962e8d3b065be12cd7",
+                "label": "symptoms",
+                "markdown": "# Ectopic beats: Symptoms\n\n- Palpitations\n- Syncope\n- Dyspnoea\n\n## Ectopic beats: Symptoms\n\n- Palpitations\n- Syncope\n- Dyspnoea\n",
+                "plain_text": "Ectopic beats: Symptoms\nPalpitations\nSyncope\nDyspnoea\nEctopic beats: Symptoms\nPalpitations\nSyncope\nDyspnoea",
+                "url": "https://www.genre-manuals.com/en_ectopic_beats_symptoms.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -2086,6 +2313,17 @@
               "CMO",
               "CMO",
               "I49.3"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "f4dd19334f54702599cd078f08fa369cbc482a50ec8242962e8d3b065be12cd7",
+                "label": "symptoms",
+                "markdown": "# Ectopic beats: Symptoms\n\n- Palpitations\n- Syncope\n- Dyspnoea\n\n## Ectopic beats: Symptoms\n\n- Palpitations\n- Syncope\n- Dyspnoea\n",
+                "plain_text": "Ectopic beats: Symptoms\nPalpitations\nSyncope\nDyspnoea\nEctopic beats: Symptoms\nPalpitations\nSyncope\nDyspnoea",
+                "url": "https://www.genre-manuals.com/en_ectopic_beats_symptoms.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -2113,7 +2351,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With monomorphic extrasystoles",
@@ -2141,7 +2380,8 @@
               "CMO",
               "CMO",
               "I49.3"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With polymorphic extrasystoles",
@@ -2169,7 +2409,8 @@
               "D",
               "D",
               "I49.3"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Debits",
@@ -2195,6 +2436,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "76cedd1aaca108e002fc16e81687b38df0be66ae7de8c9154bbc981262dbfa0a",
+                "label": "Debits",
+                "markdown": "# debits--credits\n\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\n\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\n\nTo account for these risk factors, the assessment is modified accordingly:\n\n- In case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (**credit**).\n\n- In case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (**debit**).\n\n- In case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\n\n- The total loading cannot be < +0.\n\n## debits--credits\n\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\n\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\n\nTo account for these risk factors, the assessment is modified accordingly:\n\n- In case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (**credit**).\n\n- In case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (**debit**).\n\n- In case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\n\n- The total loading cannot be < +0.\n",
+                "plain_text": "debits--credits\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\nTo account for these risk factors, the assessment is modified accordingly:\nIn case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (\ncredit\n).\nIn case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (\ndebit\n).\nIn case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\nThe total loading cannot be < +0.\ndebits--credits\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\nTo account for these risk factors, the assessment is modified accordingly:\nIn case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (\ncredit\n).\nIn case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (\ndebit\n).\nIn case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\nThe total loading cannot be < +0.",
+                "url": "https://www.genre-manuals.com/gen_debits_credits.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -2222,6 +2474,17 @@
               "Add rating",
               "Add rating",
               "I49.3"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "847ff6e49a4091a4d2f5c1dd7d0b3a0d77e40a9d08cbe9a1084fd3a8342d2b8d",
+                "label": "cardiovascular disease",
+                "markdown": "# Cardiovascular disease\n\n**Cardiac conditions:**\n\n- Coronary heart (artery) disease\n- Myocardial structural abnormalities\n\n## Cardiovascular disease\n\n**Cardiac conditions:**\n\n- Coronary heart (artery) disease\n- Myocardial structural abnormalities\n",
+                "plain_text": "Cardiovascular disease\nCardiac conditions:\nCoronary heart (artery) disease\nMyocardial structural abnormalities\nCardiovascular disease\nCardiac conditions:\nCoronary heart (artery) disease\nMyocardial structural abnormalities",
+                "url": "https://www.genre-manuals.com/en_ectopic_beats_cvd.htm",
+                "warnings": []
+              }
             ]
           }
         ],

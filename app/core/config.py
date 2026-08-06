@@ -39,11 +39,15 @@ class Settings(BaseSettings):
     fetch_retry_base_seconds: float = Field(default=2, ge=0)
     fetch_retry_max_seconds: float = Field(default=60, ge=0)
     capture_screenshot: bool = True
-    parse_timeout_seconds: float = Field(default=30, gt=0)
+    parse_timeout_seconds: float = Field(default=90, gt=0)
+    parse_max_attempts: PositiveInt = Field(default=3)
+    parse_retry_base_seconds: float = Field(default=2, ge=0)
+    parse_retry_max_seconds: float = Field(default=10, ge=0)
     parse_max_model_calls: PositiveInt = Field(default=40)
     parse_max_input_chars: PositiveInt = Field(default=200_000)
 
     agentic_discovery_enabled: bool = False
+    agentic_parsing_enabled: bool = False
     ai_normalization_enabled: bool = False
     gemini_api_key: SecretStr | None = None
     gemini_navigation_model: str = "gemini-3.5-flash-lite"

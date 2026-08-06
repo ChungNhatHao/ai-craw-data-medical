@@ -45,6 +45,16 @@ def test_run_manager_rejects_unapproved_or_external_target(
                     agentic_discovery=True,
                 )
             )
+        with pytest.raises(ValueError, match="Agentic Parsing"):
+            await manager.start(
+                RunRequest(
+                    url="https://www.genre-manuals.com/sites/CLUE/home.html",
+                    username="user",
+                    password="secret",
+                    authorization_confirmed=True,
+                    agentic_parsing=True,
+                )
+            )
 
         assert "secret" not in repr(
             RunRequest(

@@ -106,10 +106,11 @@
       "deterministic_full_content:causes",
       "deterministic_full_content:symptoms",
       "deterministic_full_content:diagnosis",
-      "deterministic_full_content:treatment"
+      "deterministic_full_content:treatment",
+      "incremental_unchanged_reused"
     ]
   },
-  "schema_version": "1.2",
+  "schema_version": "1.3",
   "sections": [
     {
       "heading": "Coronary artery disease",
@@ -123,7 +124,7 @@
     "content_hash": "4a8bef9594e81436738434b85349ff7a310d3a13876701ec762a6af9531e54f7",
     "language": "en",
     "plugin": "genre_manuals",
-    "retrieved_at": "2026-08-03T03:42:15.796997Z",
+    "retrieved_at": "2026-08-05T09:01:58.582685Z",
     "url": "https://www.genre-manuals.com/cad.htm"
   },
   "tabs": [
@@ -148,6 +149,22 @@
       ],
       "source_url": "https://www.genre-manuals.com/cad.htm",
       "tables": [
+        {
+          "rows": [
+            [
+              "Codes",
+              "I20 * I20.0 * I20.1 * I20.8 * I20.9 * I24.8 * I24.9 * I25.1* I25.8 * I25.9"
+            ],
+            [
+              "Aliases",
+              "Ischaemic heart disease * Coronary artery insufficiency * Chronic coronary syndrome * Angina pectoris * CAD * Non-obstructive coronary artery disease * Atherosclerosis"
+            ],
+            [
+              "Summary",
+              "Coronary artery disease (CAD) is the pathological process of plaque accumulation causing narrowing of the coronary arteries (stenosis). The disease course is chronic and usually progressive, but modifiable by control of risk factors and preventive treatment.\n\nSevere narrowing of arteries can lead to an inadequate blood supply to part of the heart and cause an imbalance between the demand of the muscles for oxygen and the supply by the coronary arteries (ischaemia). Stenoses can also progress to a total occlusion of a coronary artery (heart attack).\n\nIn non-obstructive CAD, the major risks are slow progression to obstructive disease and sudden occurrence of plaque rupture, consequent formation of blood clots in the artery and subsequent further narrowing or total occlusion."
+            ]
+          ]
+        },
         {
           "rows": [
             [
@@ -248,6 +265,17 @@
               "See CAD/MI calculator",
               "See CAD/MI calculator",
               "I25.1"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "d7c1b746671602b49db6f3f63effc0c2fe78bd88edcc6f42b977137fea7ba9cd",
+                "label": "Obstructive CAD",
+                "markdown": "# Severity levels: Coronary artery disease\n\nThe severity level categorisation is adapted from the CAD-RADS Reporting and Data System considering the highest-grade stenosis of all vessels greater than 1.5mm in diameter [5].\n\n| Column 1 | Column 2 | Column 3 |\n| --- | --- | --- |\n| **Severity level** | **Highest-graded coronary artery stenosis** | **CAD-RADS category** |\n| Non-obstructive CAD |  |  |\n| Minimal non-obstructive CAD | 1 to < 25% / or presence of plaque with no evidence of stenosis | CAD-RADS 1 |\n| Mild non-obstructive CAD | ≥ 25 to < 50% | CAD-RADS 2 |\n| Obstructive CAD | ≥ 50% | CAD-RADS 3 to 5 |\n\nReferences\n\n| Column 1 | Column 2 |\n| --- | --- |\n| [5] | Cury, R. C., Abbara, S., Achenbach, S., Agatston, A., Berman, D. S., Budoff, M. J., Dill, K. E., Jacobs, J. E., Maroules, C. D., Rubin, G. D., Rybicki, F. J., Schoepf, U. J., Shaw, L. J., Stillman, A. E., White, C. S., Woodard, P. K., & Leipsic, J. A. (2016). CAD-RADS™: Coronary Artery Disease - Reporting and Data System: An Expert Consensus Document of the Society of Cardiovascular Computed Tomography (SCCT), the American College of Radiology (ACR) and the North American Society for Cardiovascular Imaging (NASCI). Endorsed by the American College of Cardiology. Journal of the American College of Radiology : JACR, 13(12 Pt A), 1458–1466.e9. https://doi.org/10.1016/j.jacr.2016.04.024 |\n\n## Severity levels: Coronary artery disease\n\nThe severity level categorisation is adapted from the CAD-RADS Reporting and Data System considering the highest-grade stenosis of all vessels greater than 1.5mm in diameter [5].\n\n| Column 1 | Column 2 | Column 3 |\n| --- | --- | --- |\n| **Severity level** | **Highest-graded coronary artery stenosis** | **CAD-RADS category** |\n| Non-obstructive CAD |  |  |\n| Minimal non-obstructive CAD | 1 to < 25% / or presence of plaque with no evidence of stenosis | CAD-RADS 1 |\n| Mild non-obstructive CAD | ≥ 25 to < 50% | CAD-RADS 2 |\n| Obstructive CAD | ≥ 50% | CAD-RADS 3 to 5 |\n\nReferences\n\n| Column 1 | Column 2 |\n| --- | --- |\n| [5] | Cury, R. C., Abbara, S., Achenbach, S., Agatston, A., Berman, D. S., Budoff, M. J., Dill, K. E., Jacobs, J. E., Maroules, C. D., Rubin, G. D., Rybicki, F. J., Schoepf, U. J., Shaw, L. J., Stillman, A. E., White, C. S., Woodard, P. K., & Leipsic, J. A. (2016). CAD-RADS™: Coronary Artery Disease - Reporting and Data System: An Expert Consensus Document of the Society of Cardiovascular Computed Tomography (SCCT), the American College of Radiology (ACR) and the North American Society for Cardiovascular Imaging (NASCI). Endorsed by the American College of Cardiology. Journal of the American College of Radiology : JACR, 13(12 Pt A), 1458–1466.e9. https://doi.org/10.1016/j.jacr.2016.04.024 |\n",
+                "plain_text": "Severity levels: Coronary artery disease\nThe severity level categorisation is adapted from the CAD-RADS Reporting and Data System considering the highest-grade stenosis of all vessels greater than 1.5mm in diameter [5].\nSeverity level\nHighest-graded coronary artery stenosis\nCAD-RADS category\nNon-obstructive CAD\nMinimal non-obstructive CAD\n1 to < 25%\nor presence of plaque with no evidence of stenosis\nCAD-RADS 1\nMild non-obstructive CAD\n≥ 25 to < 50%\nCAD-RADS 2\nObstructive CAD\n≥ 50%\nCAD-RADS 3 to 5\nReferences\n[5]\nCury, R. C., Abbara, S., Achenbach, S., Agatston, A., Berman, D. S., Budoff, M. J., Dill, K. E., Jacobs, J. E., Maroules, C. D., Rubin, G. D., Rybicki, F. J., Schoepf, U. J., Shaw, L. J., Stillman, A. E., White, C. S., Woodard, P. K., & Leipsic, J. A. (2016). CAD-RADS™: Coronary Artery Disease - Reporting and Data System: An Expert Consensus Document of the Society of Cardiovascular Computed Tomography (SCCT), the American College of Radiology (ACR) and the North American Society for Cardiovascular Imaging (NASCI). Endorsed by the American College of Cardiology. Journal of the American College of Radiology : JACR, 13(12 Pt A), 1458–1466.e9. https://doi.org/10.1016/j.jacr.2016.04.024\nSeverity levels: Coronary artery disease\nThe severity level categorisation is adapted from the CAD-RADS Reporting and Data System considering the highest-grade stenosis of all vessels greater than 1.5mm in diameter [5].\nSeverity level\nHighest-graded coronary artery stenosis\nCAD-RADS category\nNon-obstructive CAD\nMinimal non-obstructive CAD\n1 to < 25%\nor presence of plaque with no evidence of stenosis\nCAD-RADS 1\nMild non-obstructive CAD\n≥ 25 to < 50%\nCAD-RADS 2\nObstructive CAD\n≥ 50%\nCAD-RADS 3 to 5\nReferences\n[5]\nCury, R. C., Abbara, S., Achenbach, S., Agatston, A., Berman, D. S., Budoff, M. J., Dill, K. E., Jacobs, J. E., Maroules, C. D., Rubin, G. D., Rybicki, F. J., Schoepf, U. J., Shaw, L. J., Stillman, A. E., White, C. S., Woodard, P. K., & Leipsic, J. A. (2016). CAD-RADS™: Coronary Artery Disease - Reporting and Data System: An Expert Consensus Document of the Society of Cardiovascular Computed Tomography (SCCT), the American College of Radiology (ACR) and the North American Society for Cardiovascular Imaging (NASCI). Endorsed by the American College of Cardiology. Journal of the American College of Radiology : JACR, 13(12 Pt A), 1458–1466.e9. https://doi.org/10.1016/j.jacr.2016.04.024",
+                "url": "https://www.genre-manuals.com/en_severity_levels_CAD.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -280,7 +308,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With current symptoms, such as angina pectoris or exertional dyspnoea",
@@ -313,7 +342,8 @@
               "+0",
               "D",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Without current symptoms, such as angina pectoris or exertional dyspnoea",
@@ -346,7 +376,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Minimal non-obstructive CAD",
@@ -380,7 +411,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Age at diagnosis",
@@ -415,7 +447,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≤ 54 years",
@@ -451,7 +484,8 @@
               "+0",
               "+20",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "55 - ≤ 64 years",
@@ -487,7 +521,8 @@
               "+0",
               "+20",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "65 - ≤ 84 years",
@@ -523,7 +558,8 @@
               "+0",
               "+20",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≥ 85 years",
@@ -559,7 +595,8 @@
               "+0",
               "+10",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Mild non-obstructive CAD",
@@ -593,7 +630,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Age at diagnosis",
@@ -628,7 +666,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≤ 54 years",
@@ -664,7 +703,8 @@
               "+0",
               "+20",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "55 - ≤ 64 years",
@@ -700,7 +740,8 @@
               "+0",
               "+20",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "65 - ≤ 84 years",
@@ -736,7 +777,8 @@
               "+0",
               "+20",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≥ 85 years",
@@ -772,7 +814,8 @@
               "+0",
               "+10",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Credits",
@@ -806,6 +849,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "76cedd1aaca108e002fc16e81687b38df0be66ae7de8c9154bbc981262dbfa0a",
+                "label": "Credits",
+                "markdown": "# debits--credits\n\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\n\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\n\nTo account for these risk factors, the assessment is modified accordingly:\n\n- In case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (**credit**).\n\n- In case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (**debit**).\n\n- In case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\n\n- The total loading cannot be < +0.\n\n## debits--credits\n\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\n\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\n\nTo account for these risk factors, the assessment is modified accordingly:\n\n- In case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (**credit**).\n\n- In case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (**debit**).\n\n- In case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\n\n- The total loading cannot be < +0.\n",
+                "plain_text": "debits--credits\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\nTo account for these risk factors, the assessment is modified accordingly:\nIn case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (\ncredit\n).\nIn case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (\ndebit\n).\nIn case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\nThe total loading cannot be < +0.\ndebits--credits\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\nTo account for these risk factors, the assessment is modified accordingly:\nIn case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (\ncredit\n).\nIn case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (\ndebit\n).\nIn case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\nThe total loading cannot be < +0.",
+                "url": "https://www.genre-manuals.com/gen_debits_credits.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -841,7 +895,8 @@
               "+/-0",
               "Credit -10",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Debits",
@@ -875,7 +930,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With additional cardiovascular risk factors",
@@ -910,6 +966,17 @@
               "Add rating from CVD calculator",
               "Add rating from CVD calculator",
               "I25.1"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "e0c91fe0e767fa52037bb8febc0b9fc98f9473ef55e3253b9bce63e0c65046b1",
+                "label": "additional cardiovascular risk factors",
+                "markdown": "# Additional cardiovascular risk factors\n\nNicotine consumption, abnormal BMI, elevated blood pressure, elevated blood lipids, and/or elevated blood sugar or diabetes.\n\n## Additional cardiovascular risk factors\n\nNicotine consumption, abnormal BMI, elevated blood pressure, elevated blood lipids, and/or elevated blood sugar or diabetes.\n",
+                "plain_text": "Additional cardiovascular risk factors\nNicotine consumption, abnormal BMI, elevated blood pressure, elevated blood lipids, and/or elevated blood sugar or diabetes.\nAdditional cardiovascular risk factors\nNicotine consumption, abnormal BMI, elevated blood pressure, elevated blood lipids, and/or elevated blood sugar or diabetes.",
+                "url": "https://www.genre-manuals.com/en_cad_additional_cvd_risk_factors.htm",
+                "warnings": []
+              }
             ]
           }
         ],
@@ -1491,7 +1558,7 @@
         {
           "available": true,
           "content_hash": "76cedd1aaca108e002fc16e81687b38df0be66ae7de8c9154bbc981262dbfa0a",
-          "label": "Debits",
+          "label": "Credits",
           "markdown": "# debits--credits\n\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\n\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\n\nTo account for these risk factors, the assessment is modified accordingly:\n\n- In case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (**credit**).\n\n- In case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (**debit**).\n\n- In case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\n\n- The total loading cannot be < +0.\n\n## debits--credits\n\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\n\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\n\nTo account for these risk factors, the assessment is modified accordingly:\n\n- In case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (**credit**).\n\n- In case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (**debit**).\n\n- In case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\n\n- The total loading cannot be < +0.\n",
           "plain_text": "debits--credits\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\nTo account for these risk factors, the assessment is modified accordingly:\nIn case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (\ncredit\n).\nIn case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (\ndebit\n).\nIn case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\nThe total loading cannot be < +0.\ndebits--credits\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\nTo account for these risk factors, the assessment is modified accordingly:\nIn case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (\ncredit\n).\nIn case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (\ndebit\n).\nIn case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\nThe total loading cannot be < +0.",
           "url": "https://www.genre-manuals.com/gen_debits_credits.htm",
@@ -1805,6 +1872,17 @@
               "See CAD/MI calculator",
               "See CAD/MI calculator",
               "I25.1"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "d7c1b746671602b49db6f3f63effc0c2fe78bd88edcc6f42b977137fea7ba9cd",
+                "label": "Obstructive CAD",
+                "markdown": "# Severity levels: Coronary artery disease\n\nThe severity level categorisation is adapted from the CAD-RADS Reporting and Data System considering the highest-grade stenosis of all vessels greater than 1.5mm in diameter [5].\n\n| Column 1 | Column 2 | Column 3 |\n| --- | --- | --- |\n| **Severity level** | **Highest-graded coronary artery stenosis** | **CAD-RADS category** |\n| Non-obstructive CAD |  |  |\n| Minimal non-obstructive CAD | 1 to < 25% / or presence of plaque with no evidence of stenosis | CAD-RADS 1 |\n| Mild non-obstructive CAD | ≥ 25 to < 50% | CAD-RADS 2 |\n| Obstructive CAD | ≥ 50% | CAD-RADS 3 to 5 |\n\nReferences\n\n| Column 1 | Column 2 |\n| --- | --- |\n| [5] | Cury, R. C., Abbara, S., Achenbach, S., Agatston, A., Berman, D. S., Budoff, M. J., Dill, K. E., Jacobs, J. E., Maroules, C. D., Rubin, G. D., Rybicki, F. J., Schoepf, U. J., Shaw, L. J., Stillman, A. E., White, C. S., Woodard, P. K., & Leipsic, J. A. (2016). CAD-RADS™: Coronary Artery Disease - Reporting and Data System: An Expert Consensus Document of the Society of Cardiovascular Computed Tomography (SCCT), the American College of Radiology (ACR) and the North American Society for Cardiovascular Imaging (NASCI). Endorsed by the American College of Cardiology. Journal of the American College of Radiology : JACR, 13(12 Pt A), 1458–1466.e9. https://doi.org/10.1016/j.jacr.2016.04.024 |\n\n## Severity levels: Coronary artery disease\n\nThe severity level categorisation is adapted from the CAD-RADS Reporting and Data System considering the highest-grade stenosis of all vessels greater than 1.5mm in diameter [5].\n\n| Column 1 | Column 2 | Column 3 |\n| --- | --- | --- |\n| **Severity level** | **Highest-graded coronary artery stenosis** | **CAD-RADS category** |\n| Non-obstructive CAD |  |  |\n| Minimal non-obstructive CAD | 1 to < 25% / or presence of plaque with no evidence of stenosis | CAD-RADS 1 |\n| Mild non-obstructive CAD | ≥ 25 to < 50% | CAD-RADS 2 |\n| Obstructive CAD | ≥ 50% | CAD-RADS 3 to 5 |\n\nReferences\n\n| Column 1 | Column 2 |\n| --- | --- |\n| [5] | Cury, R. C., Abbara, S., Achenbach, S., Agatston, A., Berman, D. S., Budoff, M. J., Dill, K. E., Jacobs, J. E., Maroules, C. D., Rubin, G. D., Rybicki, F. J., Schoepf, U. J., Shaw, L. J., Stillman, A. E., White, C. S., Woodard, P. K., & Leipsic, J. A. (2016). CAD-RADS™: Coronary Artery Disease - Reporting and Data System: An Expert Consensus Document of the Society of Cardiovascular Computed Tomography (SCCT), the American College of Radiology (ACR) and the North American Society for Cardiovascular Imaging (NASCI). Endorsed by the American College of Cardiology. Journal of the American College of Radiology : JACR, 13(12 Pt A), 1458–1466.e9. https://doi.org/10.1016/j.jacr.2016.04.024 |\n",
+                "plain_text": "Severity levels: Coronary artery disease\nThe severity level categorisation is adapted from the CAD-RADS Reporting and Data System considering the highest-grade stenosis of all vessels greater than 1.5mm in diameter [5].\nSeverity level\nHighest-graded coronary artery stenosis\nCAD-RADS category\nNon-obstructive CAD\nMinimal non-obstructive CAD\n1 to < 25%\nor presence of plaque with no evidence of stenosis\nCAD-RADS 1\nMild non-obstructive CAD\n≥ 25 to < 50%\nCAD-RADS 2\nObstructive CAD\n≥ 50%\nCAD-RADS 3 to 5\nReferences\n[5]\nCury, R. C., Abbara, S., Achenbach, S., Agatston, A., Berman, D. S., Budoff, M. J., Dill, K. E., Jacobs, J. E., Maroules, C. D., Rubin, G. D., Rybicki, F. J., Schoepf, U. J., Shaw, L. J., Stillman, A. E., White, C. S., Woodard, P. K., & Leipsic, J. A. (2016). CAD-RADS™: Coronary Artery Disease - Reporting and Data System: An Expert Consensus Document of the Society of Cardiovascular Computed Tomography (SCCT), the American College of Radiology (ACR) and the North American Society for Cardiovascular Imaging (NASCI). Endorsed by the American College of Cardiology. Journal of the American College of Radiology : JACR, 13(12 Pt A), 1458–1466.e9. https://doi.org/10.1016/j.jacr.2016.04.024\nSeverity levels: Coronary artery disease\nThe severity level categorisation is adapted from the CAD-RADS Reporting and Data System considering the highest-grade stenosis of all vessels greater than 1.5mm in diameter [5].\nSeverity level\nHighest-graded coronary artery stenosis\nCAD-RADS category\nNon-obstructive CAD\nMinimal non-obstructive CAD\n1 to < 25%\nor presence of plaque with no evidence of stenosis\nCAD-RADS 1\nMild non-obstructive CAD\n≥ 25 to < 50%\nCAD-RADS 2\nObstructive CAD\n≥ 50%\nCAD-RADS 3 to 5\nReferences\n[5]\nCury, R. C., Abbara, S., Achenbach, S., Agatston, A., Berman, D. S., Budoff, M. J., Dill, K. E., Jacobs, J. E., Maroules, C. D., Rubin, G. D., Rybicki, F. J., Schoepf, U. J., Shaw, L. J., Stillman, A. E., White, C. S., Woodard, P. K., & Leipsic, J. A. (2016). CAD-RADS™: Coronary Artery Disease - Reporting and Data System: An Expert Consensus Document of the Society of Cardiovascular Computed Tomography (SCCT), the American College of Radiology (ACR) and the North American Society for Cardiovascular Imaging (NASCI). Endorsed by the American College of Cardiology. Journal of the American College of Radiology : JACR, 13(12 Pt A), 1458–1466.e9. https://doi.org/10.1016/j.jacr.2016.04.024",
+                "url": "https://www.genre-manuals.com/en_severity_levels_CAD.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -1829,7 +1907,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With current symptoms, such as angina pectoris or exertional dyspnoea",
@@ -1854,7 +1933,8 @@
               "D",
               "D",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Without current symptoms, such as angina pectoris or exertional dyspnoea",
@@ -1879,7 +1959,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Minimal non-obstructive CAD",
@@ -1905,7 +1986,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Age at diagnosis",
@@ -1932,7 +2014,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≤ 54 years",
@@ -1960,7 +2043,8 @@
               "+125",
               "+125",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "55 - ≤ 64 years",
@@ -1988,7 +2072,8 @@
               "+100",
               "+100",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "65 - ≤ 84 years",
@@ -2016,7 +2101,8 @@
               "+75",
               "+75",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≥ 85 years",
@@ -2044,7 +2130,8 @@
               "D",
               "D",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Mild non-obstructive CAD",
@@ -2070,7 +2157,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Age at diagnosis",
@@ -2097,7 +2185,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≤ 54 years",
@@ -2125,7 +2214,8 @@
               "+150",
               "+150",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "55 - ≤ 64 years",
@@ -2153,7 +2243,8 @@
               "+125",
               "+125",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "65 - ≤ 84 years",
@@ -2181,7 +2272,8 @@
               "+100",
               "+100",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≥ 85 years",
@@ -2209,7 +2301,8 @@
               "D",
               "D",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Credits",
@@ -2235,6 +2328,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "76cedd1aaca108e002fc16e81687b38df0be66ae7de8c9154bbc981262dbfa0a",
+                "label": "Credits",
+                "markdown": "# debits--credits\n\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\n\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\n\nTo account for these risk factors, the assessment is modified accordingly:\n\n- In case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (**credit**).\n\n- In case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (**debit**).\n\n- In case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\n\n- The total loading cannot be < +0.\n\n## debits--credits\n\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\n\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\n\nTo account for these risk factors, the assessment is modified accordingly:\n\n- In case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (**credit**).\n\n- In case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (**debit**).\n\n- In case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\n\n- The total loading cannot be < +0.\n",
+                "plain_text": "debits--credits\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\nTo account for these risk factors, the assessment is modified accordingly:\nIn case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (\ncredit\n).\nIn case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (\ndebit\n).\nIn case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\nThe total loading cannot be < +0.\ndebits--credits\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\nTo account for these risk factors, the assessment is modified accordingly:\nIn case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (\ncredit\n).\nIn case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (\ndebit\n).\nIn case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\nThe total loading cannot be < +0.",
+                "url": "https://www.genre-manuals.com/gen_debits_credits.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -2262,7 +2366,8 @@
               "Credit -25",
               "Credit -25",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Debits",
@@ -2288,7 +2393,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With additional cardiovascular risk factors",
@@ -2315,6 +2421,17 @@
               "Add rating from CVD calculator",
               "Add rating from CVD calculator",
               "I25.1"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "e0c91fe0e767fa52037bb8febc0b9fc98f9473ef55e3253b9bce63e0c65046b1",
+                "label": "additional cardiovascular risk factors",
+                "markdown": "# Additional cardiovascular risk factors\n\nNicotine consumption, abnormal BMI, elevated blood pressure, elevated blood lipids, and/or elevated blood sugar or diabetes.\n\n## Additional cardiovascular risk factors\n\nNicotine consumption, abnormal BMI, elevated blood pressure, elevated blood lipids, and/or elevated blood sugar or diabetes.\n",
+                "plain_text": "Additional cardiovascular risk factors\nNicotine consumption, abnormal BMI, elevated blood pressure, elevated blood lipids, and/or elevated blood sugar or diabetes.\nAdditional cardiovascular risk factors\nNicotine consumption, abnormal BMI, elevated blood pressure, elevated blood lipids, and/or elevated blood sugar or diabetes.",
+                "url": "https://www.genre-manuals.com/en_cad_additional_cvd_risk_factors.htm",
+                "warnings": []
+              }
             ]
           }
         ],
@@ -2771,7 +2888,7 @@
         {
           "available": true,
           "content_hash": "76cedd1aaca108e002fc16e81687b38df0be66ae7de8c9154bbc981262dbfa0a",
-          "label": "Debits",
+          "label": "Credits",
           "markdown": "# debits--credits\n\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\n\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\n\nTo account for these risk factors, the assessment is modified accordingly:\n\n- In case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (**credit**).\n\n- In case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (**debit**).\n\n- In case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\n\n- The total loading cannot be < +0.\n\n## debits--credits\n\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\n\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\n\nTo account for these risk factors, the assessment is modified accordingly:\n\n- In case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (**credit**).\n\n- In case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (**debit**).\n\n- In case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\n\n- The total loading cannot be < +0.\n",
           "plain_text": "debits--credits\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\nTo account for these risk factors, the assessment is modified accordingly:\nIn case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (\ncredit\n).\nIn case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (\ndebit\n).\nIn case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\nThe total loading cannot be < +0.\ndebits--credits\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\nTo account for these risk factors, the assessment is modified accordingly:\nIn case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (\ncredit\n).\nIn case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (\ndebit\n).\nIn case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\nThe total loading cannot be < +0.",
           "url": "https://www.genre-manuals.com/gen_debits_credits.htm",
@@ -3004,6 +3121,17 @@
               "See CAD/MI calculator",
               "See CAD/MI calculator",
               "I25.1"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "d7c1b746671602b49db6f3f63effc0c2fe78bd88edcc6f42b977137fea7ba9cd",
+                "label": "Obstructive CAD",
+                "markdown": "# Severity levels: Coronary artery disease\n\nThe severity level categorisation is adapted from the CAD-RADS Reporting and Data System considering the highest-grade stenosis of all vessels greater than 1.5mm in diameter [5].\n\n| Column 1 | Column 2 | Column 3 |\n| --- | --- | --- |\n| **Severity level** | **Highest-graded coronary artery stenosis** | **CAD-RADS category** |\n| Non-obstructive CAD |  |  |\n| Minimal non-obstructive CAD | 1 to < 25% / or presence of plaque with no evidence of stenosis | CAD-RADS 1 |\n| Mild non-obstructive CAD | ≥ 25 to < 50% | CAD-RADS 2 |\n| Obstructive CAD | ≥ 50% | CAD-RADS 3 to 5 |\n\nReferences\n\n| Column 1 | Column 2 |\n| --- | --- |\n| [5] | Cury, R. C., Abbara, S., Achenbach, S., Agatston, A., Berman, D. S., Budoff, M. J., Dill, K. E., Jacobs, J. E., Maroules, C. D., Rubin, G. D., Rybicki, F. J., Schoepf, U. J., Shaw, L. J., Stillman, A. E., White, C. S., Woodard, P. K., & Leipsic, J. A. (2016). CAD-RADS™: Coronary Artery Disease - Reporting and Data System: An Expert Consensus Document of the Society of Cardiovascular Computed Tomography (SCCT), the American College of Radiology (ACR) and the North American Society for Cardiovascular Imaging (NASCI). Endorsed by the American College of Cardiology. Journal of the American College of Radiology : JACR, 13(12 Pt A), 1458–1466.e9. https://doi.org/10.1016/j.jacr.2016.04.024 |\n\n## Severity levels: Coronary artery disease\n\nThe severity level categorisation is adapted from the CAD-RADS Reporting and Data System considering the highest-grade stenosis of all vessels greater than 1.5mm in diameter [5].\n\n| Column 1 | Column 2 | Column 3 |\n| --- | --- | --- |\n| **Severity level** | **Highest-graded coronary artery stenosis** | **CAD-RADS category** |\n| Non-obstructive CAD |  |  |\n| Minimal non-obstructive CAD | 1 to < 25% / or presence of plaque with no evidence of stenosis | CAD-RADS 1 |\n| Mild non-obstructive CAD | ≥ 25 to < 50% | CAD-RADS 2 |\n| Obstructive CAD | ≥ 50% | CAD-RADS 3 to 5 |\n\nReferences\n\n| Column 1 | Column 2 |\n| --- | --- |\n| [5] | Cury, R. C., Abbara, S., Achenbach, S., Agatston, A., Berman, D. S., Budoff, M. J., Dill, K. E., Jacobs, J. E., Maroules, C. D., Rubin, G. D., Rybicki, F. J., Schoepf, U. J., Shaw, L. J., Stillman, A. E., White, C. S., Woodard, P. K., & Leipsic, J. A. (2016). CAD-RADS™: Coronary Artery Disease - Reporting and Data System: An Expert Consensus Document of the Society of Cardiovascular Computed Tomography (SCCT), the American College of Radiology (ACR) and the North American Society for Cardiovascular Imaging (NASCI). Endorsed by the American College of Cardiology. Journal of the American College of Radiology : JACR, 13(12 Pt A), 1458–1466.e9. https://doi.org/10.1016/j.jacr.2016.04.024 |\n",
+                "plain_text": "Severity levels: Coronary artery disease\nThe severity level categorisation is adapted from the CAD-RADS Reporting and Data System considering the highest-grade stenosis of all vessels greater than 1.5mm in diameter [5].\nSeverity level\nHighest-graded coronary artery stenosis\nCAD-RADS category\nNon-obstructive CAD\nMinimal non-obstructive CAD\n1 to < 25%\nor presence of plaque with no evidence of stenosis\nCAD-RADS 1\nMild non-obstructive CAD\n≥ 25 to < 50%\nCAD-RADS 2\nObstructive CAD\n≥ 50%\nCAD-RADS 3 to 5\nReferences\n[5]\nCury, R. C., Abbara, S., Achenbach, S., Agatston, A., Berman, D. S., Budoff, M. J., Dill, K. E., Jacobs, J. E., Maroules, C. D., Rubin, G. D., Rybicki, F. J., Schoepf, U. J., Shaw, L. J., Stillman, A. E., White, C. S., Woodard, P. K., & Leipsic, J. A. (2016). CAD-RADS™: Coronary Artery Disease - Reporting and Data System: An Expert Consensus Document of the Society of Cardiovascular Computed Tomography (SCCT), the American College of Radiology (ACR) and the North American Society for Cardiovascular Imaging (NASCI). Endorsed by the American College of Cardiology. Journal of the American College of Radiology : JACR, 13(12 Pt A), 1458–1466.e9. https://doi.org/10.1016/j.jacr.2016.04.024\nSeverity levels: Coronary artery disease\nThe severity level categorisation is adapted from the CAD-RADS Reporting and Data System considering the highest-grade stenosis of all vessels greater than 1.5mm in diameter [5].\nSeverity level\nHighest-graded coronary artery stenosis\nCAD-RADS category\nNon-obstructive CAD\nMinimal non-obstructive CAD\n1 to < 25%\nor presence of plaque with no evidence of stenosis\nCAD-RADS 1\nMild non-obstructive CAD\n≥ 25 to < 50%\nCAD-RADS 2\nObstructive CAD\n≥ 50%\nCAD-RADS 3 to 5\nReferences\n[5]\nCury, R. C., Abbara, S., Achenbach, S., Agatston, A., Berman, D. S., Budoff, M. J., Dill, K. E., Jacobs, J. E., Maroules, C. D., Rubin, G. D., Rybicki, F. J., Schoepf, U. J., Shaw, L. J., Stillman, A. E., White, C. S., Woodard, P. K., & Leipsic, J. A. (2016). CAD-RADS™: Coronary Artery Disease - Reporting and Data System: An Expert Consensus Document of the Society of Cardiovascular Computed Tomography (SCCT), the American College of Radiology (ACR) and the North American Society for Cardiovascular Imaging (NASCI). Endorsed by the American College of Cardiology. Journal of the American College of Radiology : JACR, 13(12 Pt A), 1458–1466.e9. https://doi.org/10.1016/j.jacr.2016.04.024",
+                "url": "https://www.genre-manuals.com/en_severity_levels_CAD.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -3030,7 +3158,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With current symptoms, such as angina pectoris or exertional dyspnoea",
@@ -3057,7 +3186,8 @@
               "D",
               "D",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Without current symptoms, such as angina pectoris or exertional dyspnoea",
@@ -3084,7 +3214,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Minimal non-obstructive CAD",
@@ -3112,7 +3243,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Age at diagnosis",
@@ -3141,7 +3273,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≤ 54 years",
@@ -3171,7 +3304,8 @@
               "D",
               "D",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "55 - ≤ 64 years",
@@ -3201,7 +3335,8 @@
               "D",
               "D",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "65 - ≤ 84 years",
@@ -3231,7 +3366,8 @@
               "D",
               "D",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≥ 85 years",
@@ -3261,7 +3397,8 @@
               "D",
               "D",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Mild non-obstructive CAD",
@@ -3289,7 +3426,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Age at diagnosis",
@@ -3318,7 +3456,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≤ 54 years",
@@ -3348,7 +3487,8 @@
               "D",
               "D",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "55 - ≤ 64 years",
@@ -3378,7 +3518,8 @@
               "D",
               "D",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "65 - ≤ 84 years",
@@ -3408,7 +3549,8 @@
               "D",
               "D",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≥ 85 years",
@@ -3438,7 +3580,8 @@
               "D",
               "D",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Credits",
@@ -3466,6 +3609,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "76cedd1aaca108e002fc16e81687b38df0be66ae7de8c9154bbc981262dbfa0a",
+                "label": "Credits",
+                "markdown": "# debits--credits\n\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\n\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\n\nTo account for these risk factors, the assessment is modified accordingly:\n\n- In case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (**credit**).\n\n- In case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (**debit**).\n\n- In case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\n\n- The total loading cannot be < +0.\n\n## debits--credits\n\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\n\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\n\nTo account for these risk factors, the assessment is modified accordingly:\n\n- In case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (**credit**).\n\n- In case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (**debit**).\n\n- In case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\n\n- The total loading cannot be < +0.\n",
+                "plain_text": "debits--credits\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\nTo account for these risk factors, the assessment is modified accordingly:\nIn case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (\ncredit\n).\nIn case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (\ndebit\n).\nIn case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\nThe total loading cannot be < +0.\ndebits--credits\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\nTo account for these risk factors, the assessment is modified accordingly:\nIn case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (\ncredit\n).\nIn case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (\ndebit\n).\nIn case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\nThe total loading cannot be < +0.",
+                "url": "https://www.genre-manuals.com/gen_debits_credits.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -3495,7 +3649,8 @@
               "D",
               "D",
               "I25.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Debits",
@@ -3523,7 +3678,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With additional cardiovascular risk factors",
@@ -3552,6 +3708,17 @@
               "Add rating from CVD calculator",
               "Add rating from CVD calculator",
               "I25.1"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "e0c91fe0e767fa52037bb8febc0b9fc98f9473ef55e3253b9bce63e0c65046b1",
+                "label": "additional cardiovascular risk factors",
+                "markdown": "# Additional cardiovascular risk factors\n\nNicotine consumption, abnormal BMI, elevated blood pressure, elevated blood lipids, and/or elevated blood sugar or diabetes.\n\n## Additional cardiovascular risk factors\n\nNicotine consumption, abnormal BMI, elevated blood pressure, elevated blood lipids, and/or elevated blood sugar or diabetes.\n",
+                "plain_text": "Additional cardiovascular risk factors\nNicotine consumption, abnormal BMI, elevated blood pressure, elevated blood lipids, and/or elevated blood sugar or diabetes.\nAdditional cardiovascular risk factors\nNicotine consumption, abnormal BMI, elevated blood pressure, elevated blood lipids, and/or elevated blood sugar or diabetes.",
+                "url": "https://www.genre-manuals.com/en_cad_additional_cvd_risk_factors.htm",
+                "warnings": []
+              }
             ]
           }
         ],
@@ -4055,7 +4222,7 @@
         {
           "available": true,
           "content_hash": "76cedd1aaca108e002fc16e81687b38df0be66ae7de8c9154bbc981262dbfa0a",
-          "label": "Debits",
+          "label": "Credits",
           "markdown": "# debits--credits\n\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\n\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\n\nTo account for these risk factors, the assessment is modified accordingly:\n\n- In case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (**credit**).\n\n- In case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (**debit**).\n\n- In case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\n\n- The total loading cannot be < +0.\n\n## debits--credits\n\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\n\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\n\nTo account for these risk factors, the assessment is modified accordingly:\n\n- In case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (**credit**).\n\n- In case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (**debit**).\n\n- In case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\n\n- The total loading cannot be < +0.\n",
           "plain_text": "debits--credits\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\nTo account for these risk factors, the assessment is modified accordingly:\nIn case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (\ncredit\n).\nIn case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (\ndebit\n).\nIn case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\nThe total loading cannot be < +0.\ndebits--credits\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\nTo account for these risk factors, the assessment is modified accordingly:\nIn case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (\ncredit\n).\nIn case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (\ndebit\n).\nIn case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\nThe total loading cannot be < +0.",
           "url": "https://www.genre-manuals.com/gen_debits_credits.htm",

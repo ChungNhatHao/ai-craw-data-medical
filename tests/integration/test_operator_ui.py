@@ -118,6 +118,7 @@ def test_operator_ui_and_progress_api(settings: Settings) -> None:
         assert 'type="password"' in page.text
         assert 'id="diseaseViewer"' in page.text
         assert 'id="agenticDiscovery"' in page.text
+        assert 'id="agenticParsing"' in page.text
         assert 'id="aiNormalization"' in page.text
         assert 'id="automaticModeTab"' in page.text
         assert 'id="importModeTab"' in page.text
@@ -145,6 +146,7 @@ def test_operator_ui_and_progress_api(settings: Settings) -> None:
         assert "Đường dẫn đầy đủ" in script.text
         assert "parent_classification" in script.text
         assert "agentic_discovery" in script.text
+        assert "agentic_parsing" in script.text
         assert "ai_normalization" in script.text
         assert "discovery_mode" in script.text
         assert "disease_names" in script.text

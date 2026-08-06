@@ -264,13 +264,22 @@ class RunManager:
                 raise ValueError(
                     "GEMINI_API_KEY chưa được cấu hình ở backend"
                 )
+        if request.agentic_parsing:
+            if not self.settings.agentic_parsing_enabled:
+                raise ValueError(
+                    "Agentic Parsing chưa được bật ở cấu hình backend"
+                )
+            if self.settings.gemini_api_key is None:
+                raise ValueError(
+                    "GEMINI_API_KEY chưa được cấu hình ở backend"
+                )
         if request.ai_normalization and not self.settings.ai_normalization_enabled:
             raise ValueError(
                 "AI Normalization chưa được bật ở cấu hình backend"
             )
-        if request.ai_normalization and not request.agentic_discovery:
+        if request.ai_normalization and not request.agentic_parsing:
             raise ValueError(
-                "AI Normalization yêu cầu bật Gemini Agentic Discovery"
+                "AI Normalization yêu cầu bật Gemini Agentic Parsing"
             )
         if request.ai_normalization and self.settings.gemini_api_key is None:
             raise ValueError(

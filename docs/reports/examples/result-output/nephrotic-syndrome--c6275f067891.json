@@ -1,30 +1,31 @@
 {
   "disease": {
-    "aliases": [
-      "Thyrotoxicosis",
-      "Graves' disease",
-      "Basedow's disease"
-    ],
+    "aliases": [],
     "causes": [
-      "Autoimmune disorders (Graves' disease / Basedow's disease), inflammation of the gland (thyroiditis), toxic adenoma, carcinoma of the thyroid, hypothalamic-pituitary disease"
+      "Minimal change disease",
+      "Focal segmental glomerulosclerosis",
+      "Membranous nephropathy",
+      "IgA nephropathy",
+      "Diabetic nephropathy (Kimmelstiel-Wilson disease)"
     ],
     "diagnosis": [
-      "Doctor’s report / T3 / T4 and TSH measurements"
+      "[Kidney disorders questionnaire](https://www.genre-manuals.com/files/live/sites/CLUE/files/contributed/pdf/en/Questionnaire/ma_kidney_disorders%20FINAL.pdf)"
     ],
-    "name": "Hyperthyroidism",
+    "name": "Nephrotic syndrome",
     "prevention": [],
-    "prognosis": "Mostly good; poor with thyrotoxic crisis.",
+    "prognosis": "Important to note that kidney function has a poor outcome when nephrotic syndrome is present or advanced.",
     "risk_factors": [],
-    "summary": "Overactivity of the thyroid gland (Graves' disease) resulting in excessive secretion of thyroid hormones. The disease can originate from outside the thyroid.",
+    "summary": "Nephrotic syndrome is caused by the podocyte damage followed by symptoms with the presence of very high protein in the urine but minimal to no blood in the urine. Proteinuria > 3.5g per day, Hypoalbuminemia (< 30 g/L), edema, hypertension. Risk for thromboembolism and infections are high when suffering from this syndrome. Important to note that kidney function has a poor outcome when nephrotic syndrome is present or advanced.\n\nSome diseases that may cause nephrotic syndrome:\n\n- Minimal change disease\n- Focal segmental glomerulosclerosis\n- Membranous nephropathy\n- IgA nephropathy\n- Diabetic nephropathy (Kimmelstiel-Wilson disease)",
     "symptoms": [
-      "Goitre, abnormal basal metabolic rate, anxiety, nervous irritability, sweating, tremor, tachycardia, palpitations, exophthalmos, weight loss. / Graves' disease / Basedow's disease: Graves' ophthalmopathy, infiltrative dermopathy (localized or pretibial myxedema)."
+      "Proteinuria > 3.5g per day",
+      "Hypoalbuminemia (< 30 g/L)",
+      "edema",
+      "hypertension"
     ],
-    "treatment": [
-      "Medication, surgical removal of gland, radioiodine therapy."
-    ],
+    "treatment": [],
     "when_to_seek_care": []
   },
-  "document_id": "17ca67ed5f78df090b64df923b71a692df09a0b15fdfd15b21f1b875cae86a69",
+  "document_id": "c6275f067891af81d1bac671bdb82b522cf012c4f62f7d6cc0e9d721e2ed92d5",
   "menu_hierarchy": [
     {
       "distance_from_disease": 6,
@@ -50,30 +51,30 @@
     {
       "distance_from_disease": 3,
       "is_current": false,
-      "label": "Endocrine system and metabolism",
+      "label": "Genitourinary system",
       "level": 3,
-      "url": "https://www.genre-manuals.com/sites/CLUE/home/page7/page8/endocrine-system-and-metabolism.html"
+      "url": "https://www.genre-manuals.com/sites/CLUE/home/page7/page8/genitourinary-system.html"
     },
     {
       "distance_from_disease": 2,
       "is_current": false,
-      "label": "Endocrine glands",
+      "label": "Kidney and ureter",
       "level": 4,
-      "url": "https://www.genre-manuals.com/sites/CLUE/home/page7/page8/endocrine-system-and-metabolism/endocrine-glands.html"
+      "url": "https://www.genre-manuals.com/sites/CLUE/home/page7/page8/genitourinary-system/kidney-and-ureter.html"
     },
     {
       "distance_from_disease": 1,
       "is_current": false,
-      "label": "Thyroid gland",
+      "label": "Glomerular diseases",
       "level": 5,
-      "url": "https://www.genre-manuals.com/sites/CLUE/home/page7/page8/endocrine-system-and-metabolism/endocrine-glands/thyroid-gland.html"
+      "url": "https://www.genre-manuals.com/sites/CLUE/home/page7/page8/genitourinary-system/kidney-and-ureter/glomerular-diseases.html"
     },
     {
       "distance_from_disease": 0,
       "is_current": true,
-      "label": "Hyperthyroidism",
+      "label": "Nephrotic syndrome",
       "level": 6,
-      "url": "https://www.genre-manuals.com/en_hyperthyroidism.htm"
+      "url": "https://www.genre-manuals.com/en_nephrotic_syndrome.htm"
     }
   ],
   "parse_metadata": {
@@ -83,77 +84,62 @@
     "parser_version": "agentic-1.4.0",
     "prompt_version": "agentic-1.2.0",
     "warnings": [
+      "missing_field:aliases",
       "missing_field:risk_factors",
+      "missing_field:treatment",
       "missing_field:prevention",
       "missing_field:when_to_seek_care",
       "ai_normalization_not_required",
       "deterministic_full_content:summary",
-      "deterministic_full_content:prognosis",
-      "deterministic_full_content:aliases",
-      "deterministic_full_content:causes",
-      "deterministic_full_content:symptoms",
-      "deterministic_full_content:diagnosis",
-      "deterministic_full_content:treatment"
+      "deterministic_full_content:diagnosis"
     ]
   },
-  "schema_version": "1.2",
+  "schema_version": "1.3",
   "sections": [
     {
-      "heading": "Hyperthyroidism",
+      "heading": "Nephrotic syndrome",
       "level": 1,
-      "markdown": "# Hyperthyroidism\n\nE05 * E05.0 * E05.1 * E05.2 * E05.3 * E05.4 * E05.8 * E05.9\n\nThyrotoxicosis * Graves' disease * Basedow's disease\n\nOveractivity of the thyroid gland (Graves' disease) resulting in excessive secretion of thyroid hormones. The disease can originate from outside the thyroid.\n\n| Column 1 | Column 2 |\n| --- | --- |\n| Causes | Autoimmune disorders (Graves' disease / Basedow's disease), inflammation of the gland (thyroiditis), toxic adenoma, carcinoma of the thyroid, hypothalamic-pituitary disease |\n| Symptoms | Goitre, abnormal basal metabolic rate, anxiety, nervous irritability, sweating, tremor, tachycardia, palpitations, exophthalmos, weight loss. / Graves' disease / Basedow's disease: Graves' ophthalmopathy, infiltrative dermopathy (localized or pretibial myxedema). |\n| Complications | Thyrotoxic coma/crisis with acute hyperthyroidism, cardiac arrhythmias (atrial fibrillation). |\n| Treatment | Medication, surgical removal of gland, radioiodine therapy. |\n| Prognosis | Mostly good; poor with thyrotoxic crisis. |\n| Disability | May occur, depending on severity of symptoms and complications. |\n| Supportive evidence | Doctor’s report / T3 / T4 and TSH measurements |\n\n**Last updated:** 2018",
+      "markdown": "# Nephrotic syndrome\n\nN04 * N04.0 * N04.1 * N04.2 * N04.3 * N04.4 * N04.5 * N04.6 * N04.7 * N04.8 * N04.9\n\nNephrotic syndrome is caused by the podocyte damage followed by symptoms with the presence of very high protein in the urine but minimal to no blood in the urine. Proteinuria > 3.5g per day, Hypoalbuminemia (< 30 g/L), edema, hypertension. Risk for thromboembolism and infections are high when suffering from this syndrome. Important to note that kidney function has a poor outcome when nephrotic syndrome is present or advanced.\n\nSome diseases that may cause nephrotic syndrome:\n\n- Minimal change disease\n- Focal segmental glomerulosclerosis\n- Membranous nephropathy\n- IgA nephropathy\n- Diabetic nephropathy (Kimmelstiel-Wilson disease)\n\n| Column 1 | Column 2 |\n| --- | --- |\n| Supportive evidence | [Kidney disorders questionnaire](https://www.genre-manuals.com/files/live/sites/CLUE/files/contributed/pdf/en/Questionnaire/ma_kidney_disorders%20FINAL.pdf) |\n\n[](https://www.genre-manuals.com/files/live/sites/CLUE/files/contributed/pdf/en/Publications/CLUE_Appendix_2022-Genitourinary-system-en.pdf)\n\n**Last updated:** 2022",
       "order": 1
     }
   ],
   "source": {
-    "canonical_url": "https://www.genre-manuals.com/en_hyperthyroidism.htm",
-    "content_hash": "146acb0d06cfc0c35503e397081b9be025825463ce71d35689f0c10a6a6b67ac",
+    "canonical_url": "https://www.genre-manuals.com/en_nephrotic_syndrome.htm",
+    "content_hash": "342e3b9ac003d6225d87dfe7aa4fb169731a671097ab6a7072e286775a8f4e4e",
     "language": "en",
     "plugin": "genre_manuals",
-    "retrieved_at": "2026-08-03T03:44:10.089080Z",
-    "url": "https://www.genre-manuals.com/en_hyperthyroidism.htm"
+    "retrieved_at": "2026-08-05T09:20:18.235451Z",
+    "url": "https://www.genre-manuals.com/en_nephrotic_syndrome.htm"
   },
   "tabs": [
     {
       "available": true,
       "classification_table": null,
-      "content_hash": "ee41592cacd2ffb936a552e1e975eb3e3c19c4c776726b17dc600dd49e14a046",
+      "content_hash": "ce5acbc831a66bcafe0686439fca71671dfbce0128ace193839edf7726ff6906",
       "key": "info",
       "label": "Info",
-      "markdown": "E05 * E05.0 * E05.1 * E05.2 * E05.3 * E05.4 * E05.8 * E05.9\n\nThyrotoxicosis * Graves' disease * Basedow's disease\n\nOveractivity of the thyroid gland (Graves' disease) resulting in excessive secretion of thyroid hormones. The disease can originate from outside the thyroid.\n\n| Column 1 | Column 2 |\n| --- | --- |\n| Causes | Autoimmune disorders (Graves' disease / Basedow's disease), inflammation of the gland (thyroiditis), toxic adenoma, carcinoma of the thyroid, hypothalamic-pituitary disease |\n| Symptoms | Goitre, abnormal basal metabolic rate, anxiety, nervous irritability, sweating, tremor, tachycardia, palpitations, exophthalmos, weight loss. / Graves' disease / Basedow's disease: Graves' ophthalmopathy, infiltrative dermopathy (localized or pretibial myxedema). |\n| Complications | Thyrotoxic coma/crisis with acute hyperthyroidism, cardiac arrhythmias (atrial fibrillation). |\n| Treatment | Medication, surgical removal of gland, radioiodine therapy. |\n| Prognosis | Mostly good; poor with thyrotoxic crisis. |\n| Disability | May occur, depending on severity of symptoms and complications. |\n| Supportive evidence | Doctor’s report / T3 / T4 and TSH measurements |\n\n**Last updated:** 2018\n",
-      "plain_text": "E05 * E05.0 * E05.1 * E05.2 * E05.3 * E05.4 * E05.8 * E05.9\nThyrotoxicosis * Graves' disease * Basedow's disease\nOveractivity of the thyroid gland (Graves' disease) resulting in excessive secretion of thyroid hormones. The disease can originate from outside the thyroid.\nCauses\nAutoimmune disorders (Graves' disease / Basedow's disease), inflammation of the gland (thyroiditis), toxic adenoma, carcinoma of the thyroid, hypothalamic-pituitary disease\nSymptoms\nGoitre, abnormal basal metabolic rate, anxiety, nervous irritability, sweating, tremor, tachycardia, palpitations, exophthalmos, weight loss.\nGraves' disease / Basedow's disease: Graves' ophthalmopathy, infiltrative dermopathy (localized or pretibial myxedema).\nComplications\nThyrotoxic coma/crisis with acute hyperthyroidism, cardiac arrhythmias (atrial fibrillation).\nTreatment\nMedication, surgical removal of gland, radioiodine therapy.\nPrognosis\nMostly good; poor with thyrotoxic crisis.\nDisability\nMay occur, depending on severity of symptoms and complications.\nSupportive evidence\nDoctor’s report\nT3 / T4 and TSH measurements\nLast updated:\n2018",
+      "markdown": "N04 * N04.0 * N04.1 * N04.2 * N04.3 * N04.4 * N04.5 * N04.6 * N04.7 * N04.8 * N04.9\n\nNephrotic syndrome is caused by the podocyte damage followed by symptoms with the presence of very high protein in the urine but minimal to no blood in the urine. Proteinuria > 3.5g per day, Hypoalbuminemia (< 30 g/L), edema, hypertension. Risk for thromboembolism and infections are high when suffering from this syndrome. Important to note that kidney function has a poor outcome when nephrotic syndrome is present or advanced.\n\nSome diseases that may cause nephrotic syndrome:\n\n- Minimal change disease\n- Focal segmental glomerulosclerosis\n- Membranous nephropathy\n- IgA nephropathy\n- Diabetic nephropathy (Kimmelstiel-Wilson disease)\n\n| Column 1 | Column 2 |\n| --- | --- |\n| Supportive evidence | [Kidney disorders questionnaire](https://www.genre-manuals.com/files/live/sites/CLUE/files/contributed/pdf/en/Questionnaire/ma_kidney_disorders%20FINAL.pdf) |\n\n[](https://www.genre-manuals.com/files/live/sites/CLUE/files/contributed/pdf/en/Publications/CLUE_Appendix_2022-Genitourinary-system-en.pdf)\n\n**Last updated:** 2022\n",
+      "plain_text": "N04 * N04.0 * N04.1 * N04.2 * N04.3 * N04.4 * N04.5 * N04.6 * N04.7 * N04.8 * N04.9\nNephrotic syndrome is caused by the podocyte damage followed by symptoms with the presence of very high protein in the urine but minimal to no blood in the urine. Proteinuria > 3.5g per day, Hypoalbuminemia (< 30 g/L), edema, hypertension. Risk for thromboembolism and infections are high when suffering from this syndrome. Important to note that kidney function has a poor outcome when nephrotic syndrome is present or advanced.\nSome diseases that may cause nephrotic syndrome:\nMinimal change disease\nFocal segmental glomerulosclerosis\nMembranous nephropathy\nIgA nephropathy\nDiabetic nephropathy (Kimmelstiel-Wilson disease)\nSupportive evidence\nKidney disorders questionnaire\nLast updated:\n2022",
       "related_details": [],
-      "source_url": "https://www.genre-manuals.com/en_hyperthyroidism.htm",
+      "source_url": "https://www.genre-manuals.com/en_nephrotic_syndrome.htm",
       "tables": [
         {
           "rows": [
             [
-              "Causes",
-              "Autoimmune disorders (Graves' disease / Basedow's disease), inflammation of the gland (thyroiditis), toxic adenoma, carcinoma of the thyroid, hypothalamic-pituitary disease"
+              "Codes",
+              "N04 * N04.0 * N04.1 * N04.2 * N04.3 * N04.4 * N04.5 * N04.6 * N04.7 * N04.8 * N04.9"
             ],
             [
-              "Symptoms",
-              "Goitre, abnormal basal metabolic rate, anxiety, nervous irritability, sweating, tremor, tachycardia, palpitations, exophthalmos, weight loss. Graves' disease / Basedow's disease: Graves' ophthalmopathy, infiltrative dermopathy (localized or pretibial myxedema)."
-            ],
-            [
-              "Complications",
-              "Thyrotoxic coma/crisis with acute hyperthyroidism, cardiac arrhythmias (atrial fibrillation)."
-            ],
-            [
-              "Treatment",
-              "Medication, surgical removal of gland, radioiodine therapy."
-            ],
-            [
-              "Prognosis",
-              "Mostly good; poor with thyrotoxic crisis."
-            ],
-            [
-              "Disability",
-              "May occur, depending on severity of symptoms and complications."
-            ],
+              "Summary",
+              "Nephrotic syndrome is caused by the podocyte damage followed by symptoms with the presence of very high protein in the urine but minimal to no blood in the urine. Proteinuria > 3.5g per day, Hypoalbuminemia (< 30 g/L), edema, hypertension. Risk for thromboembolism and infections are high when suffering from this syndrome. Important to note that kidney function has a poor outcome when nephrotic syndrome is present or advanced.\n\nSome diseases that may cause nephrotic syndrome:"
+            ]
+          ]
+        },
+        {
+          "rows": [
             [
               "Supportive evidence",
-              "Doctor’s report T3 / T4 and TSH measurements"
+              "Kidney disorders questionnaire"
             ]
           ]
         }
@@ -176,595 +162,125 @@
         ],
         "rows": [
           {
-            "classification": "With thyroid malignancy",
-            "classification_id": "6f2eb3776d5222d31c416988d6e1390522a10af34a1dff5aff464914cae14f4e",
+            "classification": "Cause known",
+            "classification_id": "e3d065116dfb90d719712be7df96cc82d6ff8aff99c035f307830c3a4545bd0f",
             "classification_path": [
-              "With thyroid malignancy"
+              "Cause known"
             ],
-            "code": "E05.9",
+            "code": "N04.9",
             "is_group": false,
             "level": 0,
             "parent_classification": null,
             "parent_classification_id": null,
             "ratings": {
-              "ADB": "See Malignant Tumour Thyroid",
-              "ADism": "See Malignant Tumour Thyroid",
-              "DD/CI": "See Malignant Tumour Thyroid",
-              "LTC": "See Malignant Tumour Thyroid",
-              "Life": "See Malignant Tumour Thyroid",
-              "TPD any": "See Malignant Tumour Thyroid",
-              "TPD own": "See Malignant Tumour Thyroid"
+              "ADB": "RFC",
+              "ADism": "RFC",
+              "DD/CI": "RFC",
+              "LTC": "RFC",
+              "Life": "RFC",
+              "TPD any": "RFC",
+              "TPD own": "RFC"
             },
             "raw_cells": [
-              "With thyroid malignancy",
-              "See Malignant Tumour Thyroid",
-              "See Malignant Tumour Thyroid",
-              "See Malignant Tumour Thyroid",
-              "See Malignant Tumour Thyroid",
-              "See Malignant Tumour Thyroid",
-              "See Malignant Tumour Thyroid",
-              "See Malignant Tumour Thyroid",
-              "E05.9"
-            ]
+              "Cause known",
+              "RFC",
+              "RFC",
+              "RFC",
+              "RFC",
+              "RFC",
+              "RFC",
+              "RFC",
+              "N04.9"
+            ],
+            "related_details": []
           },
           {
-            "classification": "No thyroid malignancy",
-            "classification_id": "75a54af53e2af35c1dbe09bcd256311ceb3b4e77ca0dac327b4bb786bab1cec7",
+            "classification": "Cause unknown",
+            "classification_id": "dee1d100e02063e3aa305aa989cdfe69ddd91846afaa3aae438b1382745a1d60",
             "classification_path": [
-              "No thyroid malignancy"
+              "Cause unknown"
             ],
-            "code": null,
-            "is_group": true,
+            "code": "N04.9",
+            "is_group": false,
             "level": 0,
             "parent_classification": null,
             "parent_classification_id": null,
             "ratings": {
-              "ADB": "",
-              "ADism": "",
-              "DD/CI": "",
-              "LTC": "",
-              "Life": "",
-              "TPD any": "",
-              "TPD own": ""
-            },
-            "raw_cells": [
-              "No thyroid malignancy",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ]
-          },
-          {
-            "classification": "With surgery or radioiodine therapy",
-            "classification_id": "3ab75ea970c1c0a750f083deee9dd0af87f6fd476043d6604e2833219ed41a6c",
-            "classification_path": [
-              "No thyroid malignancy",
-              "With surgery or radioiodine therapy"
-            ],
-            "code": "E05.9",
-            "is_group": false,
-            "level": 1,
-            "parent_classification": "No thyroid malignancy",
-            "parent_classification_id": "75a54af53e2af35c1dbe09bcd256311ceb3b4e77ca0dac327b4bb786bab1cec7",
-            "ratings": {
-              "ADB": "See Thyroidectomy",
-              "ADism": "See Thyroidectomy",
-              "DD/CI": "See Thyroidectomy",
-              "LTC": "See Thyroidectomy",
-              "Life": "See Thyroidectomy",
-              "TPD any": "See Thyroidectomy",
-              "TPD own": "See Thyroidectomy"
-            },
-            "raw_cells": [
-              "With surgery or radioiodine therapy",
-              "See Thyroidectomy",
-              "See Thyroidectomy",
-              "See Thyroidectomy",
-              "See Thyroidectomy",
-              "See Thyroidectomy",
-              "See Thyroidectomy",
-              "See Thyroidectomy",
-              "E05.9"
-            ]
-          },
-          {
-            "classification": "Without surgery or radioiodine therapy",
-            "classification_id": "3324e742d9210df3bc572496ddc0ddaa3fcc0007efbf75a9eecad2c48a47dc80",
-            "classification_path": [
-              "No thyroid malignancy",
-              "Without surgery or radioiodine therapy"
-            ],
-            "code": null,
-            "is_group": true,
-            "level": 1,
-            "parent_classification": "No thyroid malignancy",
-            "parent_classification_id": "75a54af53e2af35c1dbe09bcd256311ceb3b4e77ca0dac327b4bb786bab1cec7",
-            "ratings": {
-              "ADB": "",
-              "ADism": "",
-              "DD/CI": "",
-              "LTC": "",
-              "Life": "",
-              "TPD any": "",
-              "TPD own": ""
-            },
-            "raw_cells": [
-              "Without surgery or radioiodine therapy",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ]
-          },
-          {
-            "classification": "Well controlled (no symptoms, no atrial fibrillation)",
-            "classification_id": "0e832bf80e039d891bc2591404bd55c59647955941d89e5fdd351f72d30871a9",
-            "classification_path": [
-              "No thyroid malignancy",
-              "Without surgery or radioiodine therapy",
-              "Well controlled (no symptoms, no atrial fibrillation)"
-            ],
-            "code": null,
-            "is_group": true,
-            "level": 2,
-            "parent_classification": "Without surgery or radioiodine therapy",
-            "parent_classification_id": "3324e742d9210df3bc572496ddc0ddaa3fcc0007efbf75a9eecad2c48a47dc80",
-            "ratings": {
-              "ADB": "",
-              "ADism": "",
-              "DD/CI": "",
-              "LTC": "",
-              "Life": "",
-              "TPD any": "",
-              "TPD own": ""
-            },
-            "raw_cells": [
-              "Well controlled (no symptoms, no atrial fibrillation)",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ]
-          },
-          {
-            "classification": "Graves' disease / Dysthyroid exophthalmos",
-            "classification_id": "355b1d91912d9f05040cf976407a65f6f5d07d46521d8ae0008f1c6bb5ced330",
-            "classification_path": [
-              "No thyroid malignancy",
-              "Without surgery or radioiodine therapy",
-              "Well controlled (no symptoms, no atrial fibrillation)",
-              "Graves' disease / Dysthyroid exophthalmos"
-            ],
-            "code": "E05.0",
-            "is_group": false,
-            "level": 3,
-            "parent_classification": "Well controlled (no symptoms, no atrial fibrillation)",
-            "parent_classification_id": "0e832bf80e039d891bc2591404bd55c59647955941d89e5fdd351f72d30871a9",
-            "ratings": {
               "ADB": "+0",
               "ADism": "+0",
-              "DD/CI": "+0",
-              "LTC": "+0",
-              "Life": "+0",
-              "TPD any": "+25 / EX",
-              "TPD own": "EX"
-            },
-            "raw_cells": [
-              "Graves' disease / Dysthyroid exophthalmos",
-              "+0",
-              "+0",
-              "EX",
-              "+25 / EX",
-              "+0",
-              "+0",
-              "+0",
-              "E05.0"
-            ]
-          },
-          {
-            "classification": "Other types",
-            "classification_id": "ad56c233b78d46e69370bf39ce1294155110ab5ec48d81ae3b239e9ed0643ad7",
-            "classification_path": [
-              "No thyroid malignancy",
-              "Without surgery or radioiodine therapy",
-              "Well controlled (no symptoms, no atrial fibrillation)",
-              "Other types"
-            ],
-            "code": "E05.9",
-            "is_group": false,
-            "level": 3,
-            "parent_classification": "Well controlled (no symptoms, no atrial fibrillation)",
-            "parent_classification_id": "0e832bf80e039d891bc2591404bd55c59647955941d89e5fdd351f72d30871a9",
-            "ratings": {
-              "ADB": "+0",
-              "ADism": "+0",
-              "DD/CI": "+0",
-              "LTC": "+0",
-              "Life": "+0",
-              "TPD any": "+0",
-              "TPD own": "+0"
-            },
-            "raw_cells": [
-              "Other types",
-              "+0",
-              "+0",
-              "+0",
-              "+0",
-              "+0",
-              "+0",
-              "+0",
-              "E05.9"
-            ]
-          },
-          {
-            "classification": "Uncontrolled",
-            "classification_id": "148f69d6390b8761690939fb3c160fa88198ecd67a85319d276b652091f4c072",
-            "classification_path": [
-              "No thyroid malignancy",
-              "Without surgery or radioiodine therapy",
-              "Uncontrolled"
-            ],
-            "code": null,
-            "is_group": true,
-            "level": 2,
-            "parent_classification": "Without surgery or radioiodine therapy",
-            "parent_classification_id": "3324e742d9210df3bc572496ddc0ddaa3fcc0007efbf75a9eecad2c48a47dc80",
-            "ratings": {
-              "ADB": "",
-              "ADism": "",
-              "DD/CI": "",
-              "LTC": "",
-              "Life": "",
-              "TPD any": "",
-              "TPD own": ""
-            },
-            "raw_cells": [
-              "Uncontrolled",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ]
-          },
-          {
-            "classification": "With symptoms",
-            "classification_id": "ebf988c97e037357074488984c0ebda9be2ebb30e9b3b4d85c90f1d1b4e31734",
-            "classification_path": [
-              "No thyroid malignancy",
-              "Without surgery or radioiodine therapy",
-              "Uncontrolled",
-              "With symptoms"
-            ],
-            "code": "E05.9",
-            "is_group": false,
-            "level": 3,
-            "parent_classification": "Uncontrolled",
-            "parent_classification_id": "148f69d6390b8761690939fb3c160fa88198ecd67a85319d276b652091f4c072",
-            "ratings": {
-              "ADB": "CMO",
-              "ADism": "CMO",
-              "DD/CI": "CMO",
-              "LTC": "CMO",
+              "DD/CI": "D",
+              "LTC": "D",
               "Life": "CMO",
-              "TPD any": "CMO",
-              "TPD own": "CMO"
+              "TPD any": "D",
+              "TPD own": "D"
             },
             "raw_cells": [
-              "With symptoms",
+              "Cause unknown",
               "CMO",
-              "CMO",
-              "CMO",
-              "CMO",
-              "CMO",
-              "CMO",
-              "CMO",
-              "E05.9"
-            ]
-          },
-          {
-            "classification": "With atrial fibrillation",
-            "classification_id": "26ec9626e11588a655601ad70b1e6a0339791e4baacec277daf6ce7a8c4513c1",
-            "classification_path": [
-              "No thyroid malignancy",
-              "Without surgery or radioiodine therapy",
-              "Uncontrolled",
-              "With atrial fibrillation"
+              "D",
+              "D",
+              "D",
+              "+0",
+              "+0",
+              "D",
+              "N04.9"
             ],
-            "code": "E05.9",
-            "is_group": false,
-            "level": 3,
-            "parent_classification": "Uncontrolled",
-            "parent_classification_id": "148f69d6390b8761690939fb3c160fa88198ecd67a85319d276b652091f4c072",
-            "ratings": {
-              "ADB": "Add rating for Atrial fibrillation",
-              "ADism": "Add rating for Atrial fibrillation",
-              "DD/CI": "Add rating for Atrial fibrillation",
-              "LTC": "Add rating for Atrial fibrillation",
-              "Life": "Add rating for Atrial fibrillation",
-              "TPD any": "Add rating for Atrial fibrillation",
-              "TPD own": "Add rating for Atrial fibrillation"
-            },
-            "raw_cells": [
-              "With atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "E05.9"
-            ]
+            "related_details": []
           }
         ],
         "tree": [
           {
             "children": [],
-            "classification": "With thyroid malignancy",
-            "classification_id": "6f2eb3776d5222d31c416988d6e1390522a10af34a1dff5aff464914cae14f4e",
+            "classification": "Cause known",
+            "classification_id": "e3d065116dfb90d719712be7df96cc82d6ff8aff99c035f307830c3a4545bd0f",
             "classification_path": [
-              "With thyroid malignancy"
+              "Cause known"
             ],
-            "code": "E05.9",
+            "code": "N04.9",
             "is_group": false,
             "level": 0,
             "parent_classification": null,
             "parent_classification_id": null,
             "ratings": {
-              "ADB": "See Malignant Tumour Thyroid",
-              "ADism": "See Malignant Tumour Thyroid",
-              "DD/CI": "See Malignant Tumour Thyroid",
-              "LTC": "See Malignant Tumour Thyroid",
-              "Life": "See Malignant Tumour Thyroid",
-              "TPD any": "See Malignant Tumour Thyroid",
-              "TPD own": "See Malignant Tumour Thyroid"
+              "ADB": "RFC",
+              "ADism": "RFC",
+              "DD/CI": "RFC",
+              "LTC": "RFC",
+              "Life": "RFC",
+              "TPD any": "RFC",
+              "TPD own": "RFC"
             }
           },
           {
-            "children": [
-              {
-                "children": [],
-                "classification": "With surgery or radioiodine therapy",
-                "classification_id": "3ab75ea970c1c0a750f083deee9dd0af87f6fd476043d6604e2833219ed41a6c",
-                "classification_path": [
-                  "No thyroid malignancy",
-                  "With surgery or radioiodine therapy"
-                ],
-                "code": "E05.9",
-                "is_group": false,
-                "level": 1,
-                "parent_classification": "No thyroid malignancy",
-                "parent_classification_id": "75a54af53e2af35c1dbe09bcd256311ceb3b4e77ca0dac327b4bb786bab1cec7",
-                "ratings": {
-                  "ADB": "See Thyroidectomy",
-                  "ADism": "See Thyroidectomy",
-                  "DD/CI": "See Thyroidectomy",
-                  "LTC": "See Thyroidectomy",
-                  "Life": "See Thyroidectomy",
-                  "TPD any": "See Thyroidectomy",
-                  "TPD own": "See Thyroidectomy"
-                }
-              },
-              {
-                "children": [
-                  {
-                    "children": [
-                      {
-                        "children": [],
-                        "classification": "Graves' disease / Dysthyroid exophthalmos",
-                        "classification_id": "355b1d91912d9f05040cf976407a65f6f5d07d46521d8ae0008f1c6bb5ced330",
-                        "classification_path": [
-                          "No thyroid malignancy",
-                          "Without surgery or radioiodine therapy",
-                          "Well controlled (no symptoms, no atrial fibrillation)",
-                          "Graves' disease / Dysthyroid exophthalmos"
-                        ],
-                        "code": "E05.0",
-                        "is_group": false,
-                        "level": 3,
-                        "parent_classification": "Well controlled (no symptoms, no atrial fibrillation)",
-                        "parent_classification_id": "0e832bf80e039d891bc2591404bd55c59647955941d89e5fdd351f72d30871a9",
-                        "ratings": {
-                          "ADB": "+0",
-                          "ADism": "+0",
-                          "DD/CI": "+0",
-                          "LTC": "+0",
-                          "Life": "+0",
-                          "TPD any": "+25 / EX",
-                          "TPD own": "EX"
-                        }
-                      },
-                      {
-                        "children": [],
-                        "classification": "Other types",
-                        "classification_id": "ad56c233b78d46e69370bf39ce1294155110ab5ec48d81ae3b239e9ed0643ad7",
-                        "classification_path": [
-                          "No thyroid malignancy",
-                          "Without surgery or radioiodine therapy",
-                          "Well controlled (no symptoms, no atrial fibrillation)",
-                          "Other types"
-                        ],
-                        "code": "E05.9",
-                        "is_group": false,
-                        "level": 3,
-                        "parent_classification": "Well controlled (no symptoms, no atrial fibrillation)",
-                        "parent_classification_id": "0e832bf80e039d891bc2591404bd55c59647955941d89e5fdd351f72d30871a9",
-                        "ratings": {
-                          "ADB": "+0",
-                          "ADism": "+0",
-                          "DD/CI": "+0",
-                          "LTC": "+0",
-                          "Life": "+0",
-                          "TPD any": "+0",
-                          "TPD own": "+0"
-                        }
-                      }
-                    ],
-                    "classification": "Well controlled (no symptoms, no atrial fibrillation)",
-                    "classification_id": "0e832bf80e039d891bc2591404bd55c59647955941d89e5fdd351f72d30871a9",
-                    "classification_path": [
-                      "No thyroid malignancy",
-                      "Without surgery or radioiodine therapy",
-                      "Well controlled (no symptoms, no atrial fibrillation)"
-                    ],
-                    "code": null,
-                    "is_group": true,
-                    "level": 2,
-                    "parent_classification": "Without surgery or radioiodine therapy",
-                    "parent_classification_id": "3324e742d9210df3bc572496ddc0ddaa3fcc0007efbf75a9eecad2c48a47dc80",
-                    "ratings": {
-                      "ADB": "",
-                      "ADism": "",
-                      "DD/CI": "",
-                      "LTC": "",
-                      "Life": "",
-                      "TPD any": "",
-                      "TPD own": ""
-                    }
-                  },
-                  {
-                    "children": [
-                      {
-                        "children": [],
-                        "classification": "With symptoms",
-                        "classification_id": "ebf988c97e037357074488984c0ebda9be2ebb30e9b3b4d85c90f1d1b4e31734",
-                        "classification_path": [
-                          "No thyroid malignancy",
-                          "Without surgery or radioiodine therapy",
-                          "Uncontrolled",
-                          "With symptoms"
-                        ],
-                        "code": "E05.9",
-                        "is_group": false,
-                        "level": 3,
-                        "parent_classification": "Uncontrolled",
-                        "parent_classification_id": "148f69d6390b8761690939fb3c160fa88198ecd67a85319d276b652091f4c072",
-                        "ratings": {
-                          "ADB": "CMO",
-                          "ADism": "CMO",
-                          "DD/CI": "CMO",
-                          "LTC": "CMO",
-                          "Life": "CMO",
-                          "TPD any": "CMO",
-                          "TPD own": "CMO"
-                        }
-                      },
-                      {
-                        "children": [],
-                        "classification": "With atrial fibrillation",
-                        "classification_id": "26ec9626e11588a655601ad70b1e6a0339791e4baacec277daf6ce7a8c4513c1",
-                        "classification_path": [
-                          "No thyroid malignancy",
-                          "Without surgery or radioiodine therapy",
-                          "Uncontrolled",
-                          "With atrial fibrillation"
-                        ],
-                        "code": "E05.9",
-                        "is_group": false,
-                        "level": 3,
-                        "parent_classification": "Uncontrolled",
-                        "parent_classification_id": "148f69d6390b8761690939fb3c160fa88198ecd67a85319d276b652091f4c072",
-                        "ratings": {
-                          "ADB": "Add rating for Atrial fibrillation",
-                          "ADism": "Add rating for Atrial fibrillation",
-                          "DD/CI": "Add rating for Atrial fibrillation",
-                          "LTC": "Add rating for Atrial fibrillation",
-                          "Life": "Add rating for Atrial fibrillation",
-                          "TPD any": "Add rating for Atrial fibrillation",
-                          "TPD own": "Add rating for Atrial fibrillation"
-                        }
-                      }
-                    ],
-                    "classification": "Uncontrolled",
-                    "classification_id": "148f69d6390b8761690939fb3c160fa88198ecd67a85319d276b652091f4c072",
-                    "classification_path": [
-                      "No thyroid malignancy",
-                      "Without surgery or radioiodine therapy",
-                      "Uncontrolled"
-                    ],
-                    "code": null,
-                    "is_group": true,
-                    "level": 2,
-                    "parent_classification": "Without surgery or radioiodine therapy",
-                    "parent_classification_id": "3324e742d9210df3bc572496ddc0ddaa3fcc0007efbf75a9eecad2c48a47dc80",
-                    "ratings": {
-                      "ADB": "",
-                      "ADism": "",
-                      "DD/CI": "",
-                      "LTC": "",
-                      "Life": "",
-                      "TPD any": "",
-                      "TPD own": ""
-                    }
-                  }
-                ],
-                "classification": "Without surgery or radioiodine therapy",
-                "classification_id": "3324e742d9210df3bc572496ddc0ddaa3fcc0007efbf75a9eecad2c48a47dc80",
-                "classification_path": [
-                  "No thyroid malignancy",
-                  "Without surgery or radioiodine therapy"
-                ],
-                "code": null,
-                "is_group": true,
-                "level": 1,
-                "parent_classification": "No thyroid malignancy",
-                "parent_classification_id": "75a54af53e2af35c1dbe09bcd256311ceb3b4e77ca0dac327b4bb786bab1cec7",
-                "ratings": {
-                  "ADB": "",
-                  "ADism": "",
-                  "DD/CI": "",
-                  "LTC": "",
-                  "Life": "",
-                  "TPD any": "",
-                  "TPD own": ""
-                }
-              }
-            ],
-            "classification": "No thyroid malignancy",
-            "classification_id": "75a54af53e2af35c1dbe09bcd256311ceb3b4e77ca0dac327b4bb786bab1cec7",
+            "children": [],
+            "classification": "Cause unknown",
+            "classification_id": "dee1d100e02063e3aa305aa989cdfe69ddd91846afaa3aae438b1382745a1d60",
             "classification_path": [
-              "No thyroid malignancy"
+              "Cause unknown"
             ],
-            "code": null,
-            "is_group": true,
+            "code": "N04.9",
+            "is_group": false,
             "level": 0,
             "parent_classification": null,
             "parent_classification_id": null,
             "ratings": {
-              "ADB": "",
-              "ADism": "",
-              "DD/CI": "",
-              "LTC": "",
-              "Life": "",
-              "TPD any": "",
-              "TPD own": ""
+              "ADB": "+0",
+              "ADism": "+0",
+              "DD/CI": "D",
+              "LTC": "D",
+              "Life": "CMO",
+              "TPD any": "D",
+              "TPD own": "D"
             }
           }
         ],
         "warnings": []
       },
-      "content_hash": "54517a52c43b02c39368c46482ccb5d907746f8f84b59f56a23e9033be863f09",
+      "content_hash": "17a081e7ebd39a35205c70f2a2ab476d138997333e39ddcc31e824d9a833a251",
       "key": "life_dd_tpd",
       "label": "Life/DD/TPD",
-      "markdown": "| Classification | [Life](https://www.genre-manuals.com/life_insurance.htm) | [DD/CI](https://www.genre-manuals.com/dreaddisease.htm) | [TPD own](https://www.genre-manuals.com/total_and_permanent_disability.htm) | [TPD any](https://www.genre-manuals.com/total_and_permanent_disability.htm) | [ADism](https://www.genre-manuals.com/accidental_dismemberment_adism_.htm) | [ADB](https://www.genre-manuals.com/accidentaldeathbenefit_adb_.htm) | [LTC](https://www.genre-manuals.com/long_term_care.htm) | Code |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n\n|  |  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| With thyroid malignancy | See [Malignant Tumour Thyroid](https://www.genre-manuals.com/tumoursthyroidgland.htm) | See [Malignant Tumour Thyroid](https://www.genre-manuals.com/tumoursthyroidgland.htm) | See [Malignant Tumour Thyroid](https://www.genre-manuals.com/tumoursthyroidgland.htm) | See [Malignant Tumour Thyroid](https://www.genre-manuals.com/tumoursthyroidgland.htm) | See [Malignant Tumour Thyroid](https://www.genre-manuals.com/tumoursthyroidgland.htm) | See [Malignant Tumour Thyroid](https://www.genre-manuals.com/tumoursthyroidgland.htm) | See [Malignant Tumour Thyroid](https://www.genre-manuals.com/tumoursthyroidgland.htm) | E05.9 |  |\n| No thyroid malignancy |  |  |  |  |  |  |  |  |  |\n| With surgery or radioiodine therapy | See [Thyroidectomy](https://www.genre-manuals.com/thyroidectomy.htm) | See [Thyroidectomy](https://www.genre-manuals.com/thyroidectomy.htm) | See [Thyroidectomy](https://www.genre-manuals.com/thyroidectomy.htm) | See [Thyroidectomy](https://www.genre-manuals.com/thyroidectomy.htm) | See [Thyroidectomy](https://www.genre-manuals.com/thyroidectomy.htm) | See [Thyroidectomy](https://www.genre-manuals.com/thyroidectomy.htm) | See [Thyroidectomy](https://www.genre-manuals.com/thyroidectomy.htm) | E05.9 |  |\n| Without surgery or radioiodine therapy |  |  |  |  |  |  |  |  |  |\n| Well controlled (no symptoms, no atrial fibrillation) |  |  |  |  |  |  |  |  |  |\n| Graves' disease / Dysthyroid exophthalmos | +0 | +0 | [EX](https://www.genre-manuals.com/exclusion_impairedthyroidgland_tpd.htm) | +25 / [EX](https://www.genre-manuals.com/exclusion_impairedthyroidgland_tpd.htm) | +0 | +0 | +0 | E05.0 |  |\n| Other types | +0 | +0 | +0 | +0 | +0 | +0 | +0 | E05.9 |  |\n| Uncontrolled |  |  |  |  |  |  |  |  |  |\n| With symptoms | CMO | CMO | CMO | CMO | CMO | CMO | CMO | E05.9 |  |\n| With atrial fibrillation | Add rating for [Atrial fibrillation](https://www.genre-manuals.com/en_atrial_fibrillation.htm) | Add rating for [Atrial fibrillation](https://www.genre-manuals.com/en_atrial_fibrillation.htm) | Add rating for [Atrial fibrillation](https://www.genre-manuals.com/en_atrial_fibrillation.htm) | Add rating for [Atrial fibrillation](https://www.genre-manuals.com/en_atrial_fibrillation.htm) | Add rating for [Atrial fibrillation](https://www.genre-manuals.com/en_atrial_fibrillation.htm) | Add rating for [Atrial fibrillation](https://www.genre-manuals.com/en_atrial_fibrillation.htm) | Add rating for [Atrial fibrillation](https://www.genre-manuals.com/en_atrial_fibrillation.htm) | E05.9 |  |\n",
-      "plain_text": "Classification\nLife\nDD/CI\nTPD own\nTPD any\nADism\nADB\nLTC\nCode\nWith thyroid malignancy\nSee\nMalignant Tumour Thyroid\nSee\nMalignant Tumour Thyroid\nSee\nMalignant Tumour Thyroid\nSee\nMalignant Tumour Thyroid\nSee\nMalignant Tumour Thyroid\nSee\nMalignant Tumour Thyroid\nSee\nMalignant Tumour Thyroid\nE05.9\nNo thyroid malignancy\nWith surgery or radioiodine therapy\nSee\nThyroidectomy\nSee\nThyroidectomy\nSee\nThyroidectomy\nSee\nThyroidectomy\nSee\nThyroidectomy\nSee\nThyroidectomy\nSee\nThyroidectomy\nE05.9\nWithout surgery or radioiodine therapy\nWell controlled (no symptoms, no atrial fibrillation)\nGraves' disease / Dysthyroid exophthalmos\n+0\n+0\nEX\n+25 /\nEX\n+0\n+0\n+0\nE05.0\nOther types\n+0\n+0\n+0\n+0\n+0\n+0\n+0\nE05.9\nUncontrolled\nWith symptoms\nCMO\nCMO\nCMO\nCMO\nCMO\nCMO\nCMO\nE05.9\nWith atrial fibrillation\nAdd rating for\nAtrial fibrillation\nAdd rating for\nAtrial fibrillation\nAdd rating for\nAtrial fibrillation\nAdd rating for\nAtrial fibrillation\nAdd rating for\nAtrial fibrillation\nAdd rating for\nAtrial fibrillation\nAdd rating for\nAtrial fibrillation\nE05.9",
+      "markdown": "| Classification | [Life](https://www.genre-manuals.com/life_insurance.htm) | [DD/CI](https://www.genre-manuals.com/dreaddisease.htm) | [TPD own](https://www.genre-manuals.com/total_and_permanent_disability.htm) | [TPD any](https://www.genre-manuals.com/total_and_permanent_disability.htm) | [ADism](https://www.genre-manuals.com/accidental_dismemberment_adism_.htm) | [ADB](https://www.genre-manuals.com/accidentaldeathbenefit_adb_.htm) | [LTC](https://www.genre-manuals.com/long_term_care.htm) | Code |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n\n|  |  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| Cause known | RFC | RFC | RFC | RFC | RFC | RFC | RFC | N04.9 |  |\n| Cause unknown | CMO | D | D | D | +0 | +0 | D | N04.9 |  |\n",
+      "plain_text": "Classification\nLife\nDD/CI\nTPD own\nTPD any\nADism\nADB\nLTC\nCode\nCause known\nRFC\nRFC\nRFC\nRFC\nRFC\nRFC\nRFC\nN04.9\nCause unknown\nCMO\nD\nD\nD\n+0\n+0\nD\nN04.9",
       "related_details": [
         {
           "available": true,
@@ -819,18 +335,9 @@
           "plain_text": "LTC\nLong Term Care (LTC) insurance provides cover against the risk of becoming too frail to care for oneself without physical assistance from another person even when using assistive devices.\nAn internationally recognised, and widely used, definition for LTC insurance is based on six Activities of Daily Living (ADLs): dressing, feeding, washing, continence, mobility and transferring. Here “transferring” means the ability to get into an upright position from a bed or a chair; “feeding” does not include the ability to prepare meals.\nTo claim, the insured person must be incapable of performing a defined number of ADLs even when using special equipment. Instead, they require continuous physical assistance from another person and are very likely to require help for the next six months. This means, for example, that a person who can use a wheelchair to move from one room to another will not fail the ADL “mobility”.\nPeople suffering from dementia also require help and support, but they may remain physically capable of performing ADLs so would not qualify for benefit based on ADL assessment alone. For this reason, many products consider dementia as an alternative claims trigger based on the individual’s need for continuous supervision by another person.\nFor practical reasons, if a public scheme exists, private insurance products often copy the local definition, sometimes in addition to the ADL trigger.\nLTC\nLong Term Care (LTC) insurance provides cover against the risk of becoming too frail to care for oneself without physical assistance from another person even when using assistive devices.\nAn internationally recognised, and widely used, definition for LTC insurance is based on six Activities of Daily Living (ADLs): dressing, feeding, washing, continence, mobility and transferring. Here “transferring” means the ability to get into an upright position from a bed or a chair; “feeding” does not include the ability to prepare meals.\nTo claim, the insured person must be incapable of performing a defined number of ADLs even when using special equipment. Instead, they require continuous physical assistance from another person and are very likely to require help for the next six months. This means, for example, that a person who can use a wheelchair to move from one room to another will not fail the ADL “mobility”.\nPeople suffering from dementia also require help and support, but they may remain physically capable of performing ADLs so would not qualify for benefit based on ADL assessment alone. For this reason, many products consider dementia as an alternative claims trigger based on the individual’s need for continuous supervision by another person.\nFor practical reasons, if a public scheme exists, private insurance products often copy the local definition, sometimes in addition to the ADL trigger.",
           "url": "https://www.genre-manuals.com/long_term_care.htm",
           "warnings": []
-        },
-        {
-          "available": true,
-          "content_hash": "8c6e91d50ee5ecf2fd3c90e0e5859a37a11a0b9fbf109089eb3985670c5c2403",
-          "label": "EX",
-          "markdown": "# Exclusion clauses: Impaired thyroid gland and eye disorder (160, 161)\n\n| Column 1 | Column 2 |\n| --- | --- |\n| IP / TPD | No benefits shall be payable under this policy for any disability, illness or incapacity which is caused wholly or partly, directly or indirectly, by **any disease of the eyes that is associated with a dysfunction of the thyroid gland, e.g. Graves’ disease or Dysthyroid exophthalmos including impaired vision and****blindness** or any complication thereof. |\n| Health | No benefits shall be payable under this policy for any investigation or treatment, whether surgical, medical or otherwise, directly or indirectly intended for the palliation and correction of **any disease of the eyes that is associated with a dysfunction of the thyroid gland, e.g. Graves’ disease or Dysthyroid exophthalmos**or any visual impairment or blindness. |\n\n## Exclusion clauses: Impaired thyroid gland and eye disorder (160, 161)\n\n| Column 1 | Column 2 |\n| --- | --- |\n| IP / TPD | No benefits shall be payable under this policy for any disability, illness or incapacity which is caused wholly or partly, directly or indirectly, by **any disease of the eyes that is associated with a dysfunction of the thyroid gland, e.g. Graves’ disease or Dysthyroid exophthalmos including impaired vision and****blindness** or any complication thereof. |\n| Health | No benefits shall be payable under this policy for any investigation or treatment, whether surgical, medical or otherwise, directly or indirectly intended for the palliation and correction of **any disease of the eyes that is associated with a dysfunction of the thyroid gland, e.g. Graves’ disease or Dysthyroid exophthalmos**or any visual impairment or blindness. |\n",
-          "plain_text": "Exclusion clauses: Impaired thyroid gland and eye disorder (160, 161)\nIP / TPD\nNo benefits shall be payable under this policy for any disability, illness or incapacity which is caused wholly or partly, directly or indirectly, by\nany disease of the eyes that is associated with a dysfunction of the thyroid gland, e.g. Graves’ disease or Dysthyroid exophthalmos including impaired vision and\nblindness\nor any complication thereof.\nHealth\nNo benefits shall be payable under this policy for any investigation or treatment, whether surgical, medical or otherwise, directly or indirectly intended for the palliation and correction of\nany disease of the eyes that is associated with a dysfunction of the thyroid gland, e.g. Graves’ disease or Dysthyroid exophthalmos\nor any visual impairment or blindness.\nExclusion clauses: Impaired thyroid gland and eye disorder (160, 161)\nIP / TPD\nNo benefits shall be payable under this policy for any disability, illness or incapacity which is caused wholly or partly, directly or indirectly, by\nany disease of the eyes that is associated with a dysfunction of the thyroid gland, e.g. Graves’ disease or Dysthyroid exophthalmos including impaired vision and\nblindness\nor any complication thereof.\nHealth\nNo benefits shall be payable under this policy for any investigation or treatment, whether surgical, medical or otherwise, directly or indirectly intended for the palliation and correction of\nany disease of the eyes that is associated with a dysfunction of the thyroid gland, e.g. Graves’ disease or Dysthyroid exophthalmos\nor any visual impairment or blindness.",
-          "url": "https://www.genre-manuals.com/exclusion_impairedthyroidgland_tpd.htm",
-          "warnings": []
         }
       ],
-      "source_url": "https://www.genre-manuals.com/sites/CLUE/home/page7/page8/endocrine-system-and-metabolism/endocrine-glands/thyroid-gland/page_hyperthyroidism/maincontent/tab30.html.ajax",
+      "source_url": "https://www.genre-manuals.com/sites/CLUE/home/page7/page8/genitourinary-system/kidney-and-ureter/glomerular-diseases/nephrotic-syndrome/maincontent/tab30.html.ajax",
       "tables": [
         {
           "rows": [
@@ -851,123 +358,27 @@
         {
           "rows": [
             [
-              "With thyroid malignancy",
-              "See Malignant Tumour Thyroid",
-              "See Malignant Tumour Thyroid",
-              "See Malignant Tumour Thyroid",
-              "See Malignant Tumour Thyroid",
-              "See Malignant Tumour Thyroid",
-              "See Malignant Tumour Thyroid",
-              "See Malignant Tumour Thyroid",
-              "E05.9",
+              "Cause known",
+              "RFC",
+              "RFC",
+              "RFC",
+              "RFC",
+              "RFC",
+              "RFC",
+              "RFC",
+              "N04.9",
               ""
             ],
             [
-              "No thyroid malignancy",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "With surgery or radioiodine therapy",
-              "See Thyroidectomy",
-              "See Thyroidectomy",
-              "See Thyroidectomy",
-              "See Thyroidectomy",
-              "See Thyroidectomy",
-              "See Thyroidectomy",
-              "See Thyroidectomy",
-              "E05.9",
-              ""
-            ],
-            [
-              "Without surgery or radioiodine therapy",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Well controlled (no symptoms, no atrial fibrillation)",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Graves' disease / Dysthyroid exophthalmos",
-              "+0",
-              "+0",
-              "EX",
-              "+25 / EX",
-              "+0",
-              "+0",
-              "+0",
-              "E05.0",
-              ""
-            ],
-            [
-              "Other types",
-              "+0",
-              "+0",
-              "+0",
-              "+0",
-              "+0",
-              "+0",
-              "+0",
-              "E05.9",
-              ""
-            ],
-            [
-              "Uncontrolled",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "With symptoms",
+              "Cause unknown",
               "CMO",
-              "CMO",
-              "CMO",
-              "CMO",
-              "CMO",
-              "CMO",
-              "CMO",
-              "E05.9",
-              ""
-            ],
-            [
-              "With atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "E05.9",
+              "D",
+              "D",
+              "D",
+              "+0",
+              "+0",
+              "D",
+              "N04.9",
               ""
             ]
           ]
@@ -987,475 +398,101 @@
         ],
         "rows": [
           {
-            "classification": "With thyroid malignancy",
-            "classification_id": "6f2eb3776d5222d31c416988d6e1390522a10af34a1dff5aff464914cae14f4e",
+            "classification": "Cause known",
+            "classification_id": "e3d065116dfb90d719712be7df96cc82d6ff8aff99c035f307830c3a4545bd0f",
             "classification_path": [
-              "With thyroid malignancy"
+              "Cause known"
             ],
-            "code": "E05.9",
+            "code": "N04.9",
             "is_group": false,
             "level": 0,
             "parent_classification": null,
             "parent_classification_id": null,
             "ratings": {
-              "D13/52": "See Malignant Tumour Thyroid",
-              "D2/52": "See Malignant Tumour Thyroid",
-              "D4/52": "See Malignant Tumour Thyroid"
+              "D13/52": "RFC",
+              "D2/52": "RFC",
+              "D4/52": "RFC"
             },
             "raw_cells": [
-              "With thyroid malignancy",
-              "See Malignant Tumour Thyroid",
-              "See Malignant Tumour Thyroid",
-              "See Malignant Tumour Thyroid",
-              "E05.9"
-            ]
+              "Cause known",
+              "RFC",
+              "RFC",
+              "RFC",
+              "N04.9"
+            ],
+            "related_details": []
           },
           {
-            "classification": "No thyroid malignancy",
-            "classification_id": "75a54af53e2af35c1dbe09bcd256311ceb3b4e77ca0dac327b4bb786bab1cec7",
+            "classification": "Cause unknown",
+            "classification_id": "dee1d100e02063e3aa305aa989cdfe69ddd91846afaa3aae438b1382745a1d60",
             "classification_path": [
-              "No thyroid malignancy"
+              "Cause unknown"
             ],
-            "code": null,
-            "is_group": true,
+            "code": "N04.9",
+            "is_group": false,
             "level": 0,
             "parent_classification": null,
             "parent_classification_id": null,
             "ratings": {
-              "D13/52": "",
-              "D2/52": "",
-              "D4/52": ""
+              "D13/52": "D",
+              "D2/52": "D",
+              "D4/52": "D"
             },
             "raw_cells": [
-              "No thyroid malignancy",
-              "",
-              "",
-              "",
-              ""
-            ]
-          },
-          {
-            "classification": "With surgery or radioiodine therapy",
-            "classification_id": "3ab75ea970c1c0a750f083deee9dd0af87f6fd476043d6604e2833219ed41a6c",
-            "classification_path": [
-              "No thyroid malignancy",
-              "With surgery or radioiodine therapy"
+              "Cause unknown",
+              "D",
+              "D",
+              "D",
+              "N04.9"
             ],
-            "code": "E05.9",
-            "is_group": false,
-            "level": 1,
-            "parent_classification": "No thyroid malignancy",
-            "parent_classification_id": "75a54af53e2af35c1dbe09bcd256311ceb3b4e77ca0dac327b4bb786bab1cec7",
-            "ratings": {
-              "D13/52": "See Thyroidectomy",
-              "D2/52": "See Thyroidectomy",
-              "D4/52": "See Thyroidectomy"
-            },
-            "raw_cells": [
-              "With surgery or radioiodine therapy",
-              "See Thyroidectomy",
-              "See Thyroidectomy",
-              "See Thyroidectomy",
-              "E05.9"
-            ]
-          },
-          {
-            "classification": "Without surgery or radioiodine therapy",
-            "classification_id": "3324e742d9210df3bc572496ddc0ddaa3fcc0007efbf75a9eecad2c48a47dc80",
-            "classification_path": [
-              "No thyroid malignancy",
-              "Without surgery or radioiodine therapy"
-            ],
-            "code": null,
-            "is_group": true,
-            "level": 1,
-            "parent_classification": "No thyroid malignancy",
-            "parent_classification_id": "75a54af53e2af35c1dbe09bcd256311ceb3b4e77ca0dac327b4bb786bab1cec7",
-            "ratings": {
-              "D13/52": "",
-              "D2/52": "",
-              "D4/52": ""
-            },
-            "raw_cells": [
-              "Without surgery or radioiodine therapy",
-              "",
-              "",
-              "",
-              ""
-            ]
-          },
-          {
-            "classification": "Well controlled (no symptoms, no atrial fibrillation)",
-            "classification_id": "0e832bf80e039d891bc2591404bd55c59647955941d89e5fdd351f72d30871a9",
-            "classification_path": [
-              "No thyroid malignancy",
-              "Without surgery or radioiodine therapy",
-              "Well controlled (no symptoms, no atrial fibrillation)"
-            ],
-            "code": null,
-            "is_group": true,
-            "level": 2,
-            "parent_classification": "Without surgery or radioiodine therapy",
-            "parent_classification_id": "3324e742d9210df3bc572496ddc0ddaa3fcc0007efbf75a9eecad2c48a47dc80",
-            "ratings": {
-              "D13/52": "",
-              "D2/52": "",
-              "D4/52": ""
-            },
-            "raw_cells": [
-              "Well controlled (no symptoms, no atrial fibrillation)",
-              "",
-              "",
-              "",
-              ""
-            ]
-          },
-          {
-            "classification": "Graves' disease / Dysthyroid exophthalmos",
-            "classification_id": "355b1d91912d9f05040cf976407a65f6f5d07d46521d8ae0008f1c6bb5ced330",
-            "classification_path": [
-              "No thyroid malignancy",
-              "Without surgery or radioiodine therapy",
-              "Well controlled (no symptoms, no atrial fibrillation)",
-              "Graves' disease / Dysthyroid exophthalmos"
-            ],
-            "code": "E05.0",
-            "is_group": false,
-            "level": 3,
-            "parent_classification": "Well controlled (no symptoms, no atrial fibrillation)",
-            "parent_classification_id": "0e832bf80e039d891bc2591404bd55c59647955941d89e5fdd351f72d30871a9",
-            "ratings": {
-              "D13/52": "EX",
-              "D2/52": "EX",
-              "D4/52": "EX"
-            },
-            "raw_cells": [
-              "Graves' disease / Dysthyroid exophthalmos",
-              "EX",
-              "EX",
-              "EX",
-              "E05.0"
-            ]
-          },
-          {
-            "classification": "Other types",
-            "classification_id": "ad56c233b78d46e69370bf39ce1294155110ab5ec48d81ae3b239e9ed0643ad7",
-            "classification_path": [
-              "No thyroid malignancy",
-              "Without surgery or radioiodine therapy",
-              "Well controlled (no symptoms, no atrial fibrillation)",
-              "Other types"
-            ],
-            "code": "E05.9",
-            "is_group": false,
-            "level": 3,
-            "parent_classification": "Well controlled (no symptoms, no atrial fibrillation)",
-            "parent_classification_id": "0e832bf80e039d891bc2591404bd55c59647955941d89e5fdd351f72d30871a9",
-            "ratings": {
-              "D13/52": "+0",
-              "D2/52": "+0",
-              "D4/52": "+0"
-            },
-            "raw_cells": [
-              "Other types",
-              "+0",
-              "+0",
-              "+0",
-              "E05.9"
-            ]
-          },
-          {
-            "classification": "Uncontrolled",
-            "classification_id": "148f69d6390b8761690939fb3c160fa88198ecd67a85319d276b652091f4c072",
-            "classification_path": [
-              "No thyroid malignancy",
-              "Without surgery or radioiodine therapy",
-              "Uncontrolled"
-            ],
-            "code": null,
-            "is_group": true,
-            "level": 2,
-            "parent_classification": "Without surgery or radioiodine therapy",
-            "parent_classification_id": "3324e742d9210df3bc572496ddc0ddaa3fcc0007efbf75a9eecad2c48a47dc80",
-            "ratings": {
-              "D13/52": "",
-              "D2/52": "",
-              "D4/52": ""
-            },
-            "raw_cells": [
-              "Uncontrolled",
-              "",
-              "",
-              "",
-              ""
-            ]
-          },
-          {
-            "classification": "With symptoms",
-            "classification_id": "ebf988c97e037357074488984c0ebda9be2ebb30e9b3b4d85c90f1d1b4e31734",
-            "classification_path": [
-              "No thyroid malignancy",
-              "Without surgery or radioiodine therapy",
-              "Uncontrolled",
-              "With symptoms"
-            ],
-            "code": "E05.9",
-            "is_group": false,
-            "level": 3,
-            "parent_classification": "Uncontrolled",
-            "parent_classification_id": "148f69d6390b8761690939fb3c160fa88198ecd67a85319d276b652091f4c072",
-            "ratings": {
-              "D13/52": "CMO",
-              "D2/52": "CMO",
-              "D4/52": "CMO"
-            },
-            "raw_cells": [
-              "With symptoms",
-              "CMO",
-              "CMO",
-              "CMO",
-              "E05.9"
-            ]
-          },
-          {
-            "classification": "With atrial fibrillation",
-            "classification_id": "26ec9626e11588a655601ad70b1e6a0339791e4baacec277daf6ce7a8c4513c1",
-            "classification_path": [
-              "No thyroid malignancy",
-              "Without surgery or radioiodine therapy",
-              "Uncontrolled",
-              "With atrial fibrillation"
-            ],
-            "code": "E05.9",
-            "is_group": false,
-            "level": 3,
-            "parent_classification": "Uncontrolled",
-            "parent_classification_id": "148f69d6390b8761690939fb3c160fa88198ecd67a85319d276b652091f4c072",
-            "ratings": {
-              "D13/52": "Add rating for Atrial fibrillation",
-              "D2/52": "Add rating for Atrial fibrillation",
-              "D4/52": "Add rating for Atrial fibrillation"
-            },
-            "raw_cells": [
-              "With atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "E05.9"
-            ]
+            "related_details": []
           }
         ],
         "tree": [
           {
             "children": [],
-            "classification": "With thyroid malignancy",
-            "classification_id": "6f2eb3776d5222d31c416988d6e1390522a10af34a1dff5aff464914cae14f4e",
+            "classification": "Cause known",
+            "classification_id": "e3d065116dfb90d719712be7df96cc82d6ff8aff99c035f307830c3a4545bd0f",
             "classification_path": [
-              "With thyroid malignancy"
+              "Cause known"
             ],
-            "code": "E05.9",
+            "code": "N04.9",
             "is_group": false,
             "level": 0,
             "parent_classification": null,
             "parent_classification_id": null,
             "ratings": {
-              "D13/52": "See Malignant Tumour Thyroid",
-              "D2/52": "See Malignant Tumour Thyroid",
-              "D4/52": "See Malignant Tumour Thyroid"
+              "D13/52": "RFC",
+              "D2/52": "RFC",
+              "D4/52": "RFC"
             }
           },
           {
-            "children": [
-              {
-                "children": [],
-                "classification": "With surgery or radioiodine therapy",
-                "classification_id": "3ab75ea970c1c0a750f083deee9dd0af87f6fd476043d6604e2833219ed41a6c",
-                "classification_path": [
-                  "No thyroid malignancy",
-                  "With surgery or radioiodine therapy"
-                ],
-                "code": "E05.9",
-                "is_group": false,
-                "level": 1,
-                "parent_classification": "No thyroid malignancy",
-                "parent_classification_id": "75a54af53e2af35c1dbe09bcd256311ceb3b4e77ca0dac327b4bb786bab1cec7",
-                "ratings": {
-                  "D13/52": "See Thyroidectomy",
-                  "D2/52": "See Thyroidectomy",
-                  "D4/52": "See Thyroidectomy"
-                }
-              },
-              {
-                "children": [
-                  {
-                    "children": [
-                      {
-                        "children": [],
-                        "classification": "Graves' disease / Dysthyroid exophthalmos",
-                        "classification_id": "355b1d91912d9f05040cf976407a65f6f5d07d46521d8ae0008f1c6bb5ced330",
-                        "classification_path": [
-                          "No thyroid malignancy",
-                          "Without surgery or radioiodine therapy",
-                          "Well controlled (no symptoms, no atrial fibrillation)",
-                          "Graves' disease / Dysthyroid exophthalmos"
-                        ],
-                        "code": "E05.0",
-                        "is_group": false,
-                        "level": 3,
-                        "parent_classification": "Well controlled (no symptoms, no atrial fibrillation)",
-                        "parent_classification_id": "0e832bf80e039d891bc2591404bd55c59647955941d89e5fdd351f72d30871a9",
-                        "ratings": {
-                          "D13/52": "EX",
-                          "D2/52": "EX",
-                          "D4/52": "EX"
-                        }
-                      },
-                      {
-                        "children": [],
-                        "classification": "Other types",
-                        "classification_id": "ad56c233b78d46e69370bf39ce1294155110ab5ec48d81ae3b239e9ed0643ad7",
-                        "classification_path": [
-                          "No thyroid malignancy",
-                          "Without surgery or radioiodine therapy",
-                          "Well controlled (no symptoms, no atrial fibrillation)",
-                          "Other types"
-                        ],
-                        "code": "E05.9",
-                        "is_group": false,
-                        "level": 3,
-                        "parent_classification": "Well controlled (no symptoms, no atrial fibrillation)",
-                        "parent_classification_id": "0e832bf80e039d891bc2591404bd55c59647955941d89e5fdd351f72d30871a9",
-                        "ratings": {
-                          "D13/52": "+0",
-                          "D2/52": "+0",
-                          "D4/52": "+0"
-                        }
-                      }
-                    ],
-                    "classification": "Well controlled (no symptoms, no atrial fibrillation)",
-                    "classification_id": "0e832bf80e039d891bc2591404bd55c59647955941d89e5fdd351f72d30871a9",
-                    "classification_path": [
-                      "No thyroid malignancy",
-                      "Without surgery or radioiodine therapy",
-                      "Well controlled (no symptoms, no atrial fibrillation)"
-                    ],
-                    "code": null,
-                    "is_group": true,
-                    "level": 2,
-                    "parent_classification": "Without surgery or radioiodine therapy",
-                    "parent_classification_id": "3324e742d9210df3bc572496ddc0ddaa3fcc0007efbf75a9eecad2c48a47dc80",
-                    "ratings": {
-                      "D13/52": "",
-                      "D2/52": "",
-                      "D4/52": ""
-                    }
-                  },
-                  {
-                    "children": [
-                      {
-                        "children": [],
-                        "classification": "With symptoms",
-                        "classification_id": "ebf988c97e037357074488984c0ebda9be2ebb30e9b3b4d85c90f1d1b4e31734",
-                        "classification_path": [
-                          "No thyroid malignancy",
-                          "Without surgery or radioiodine therapy",
-                          "Uncontrolled",
-                          "With symptoms"
-                        ],
-                        "code": "E05.9",
-                        "is_group": false,
-                        "level": 3,
-                        "parent_classification": "Uncontrolled",
-                        "parent_classification_id": "148f69d6390b8761690939fb3c160fa88198ecd67a85319d276b652091f4c072",
-                        "ratings": {
-                          "D13/52": "CMO",
-                          "D2/52": "CMO",
-                          "D4/52": "CMO"
-                        }
-                      },
-                      {
-                        "children": [],
-                        "classification": "With atrial fibrillation",
-                        "classification_id": "26ec9626e11588a655601ad70b1e6a0339791e4baacec277daf6ce7a8c4513c1",
-                        "classification_path": [
-                          "No thyroid malignancy",
-                          "Without surgery or radioiodine therapy",
-                          "Uncontrolled",
-                          "With atrial fibrillation"
-                        ],
-                        "code": "E05.9",
-                        "is_group": false,
-                        "level": 3,
-                        "parent_classification": "Uncontrolled",
-                        "parent_classification_id": "148f69d6390b8761690939fb3c160fa88198ecd67a85319d276b652091f4c072",
-                        "ratings": {
-                          "D13/52": "Add rating for Atrial fibrillation",
-                          "D2/52": "Add rating for Atrial fibrillation",
-                          "D4/52": "Add rating for Atrial fibrillation"
-                        }
-                      }
-                    ],
-                    "classification": "Uncontrolled",
-                    "classification_id": "148f69d6390b8761690939fb3c160fa88198ecd67a85319d276b652091f4c072",
-                    "classification_path": [
-                      "No thyroid malignancy",
-                      "Without surgery or radioiodine therapy",
-                      "Uncontrolled"
-                    ],
-                    "code": null,
-                    "is_group": true,
-                    "level": 2,
-                    "parent_classification": "Without surgery or radioiodine therapy",
-                    "parent_classification_id": "3324e742d9210df3bc572496ddc0ddaa3fcc0007efbf75a9eecad2c48a47dc80",
-                    "ratings": {
-                      "D13/52": "",
-                      "D2/52": "",
-                      "D4/52": ""
-                    }
-                  }
-                ],
-                "classification": "Without surgery or radioiodine therapy",
-                "classification_id": "3324e742d9210df3bc572496ddc0ddaa3fcc0007efbf75a9eecad2c48a47dc80",
-                "classification_path": [
-                  "No thyroid malignancy",
-                  "Without surgery or radioiodine therapy"
-                ],
-                "code": null,
-                "is_group": true,
-                "level": 1,
-                "parent_classification": "No thyroid malignancy",
-                "parent_classification_id": "75a54af53e2af35c1dbe09bcd256311ceb3b4e77ca0dac327b4bb786bab1cec7",
-                "ratings": {
-                  "D13/52": "",
-                  "D2/52": "",
-                  "D4/52": ""
-                }
-              }
-            ],
-            "classification": "No thyroid malignancy",
-            "classification_id": "75a54af53e2af35c1dbe09bcd256311ceb3b4e77ca0dac327b4bb786bab1cec7",
+            "children": [],
+            "classification": "Cause unknown",
+            "classification_id": "dee1d100e02063e3aa305aa989cdfe69ddd91846afaa3aae438b1382745a1d60",
             "classification_path": [
-              "No thyroid malignancy"
+              "Cause unknown"
             ],
-            "code": null,
-            "is_group": true,
+            "code": "N04.9",
+            "is_group": false,
             "level": 0,
             "parent_classification": null,
             "parent_classification_id": null,
             "ratings": {
-              "D13/52": "",
-              "D2/52": "",
-              "D4/52": ""
+              "D13/52": "D",
+              "D2/52": "D",
+              "D4/52": "D"
             }
           }
         ],
         "warnings": []
       },
-      "content_hash": "89663350ec49b42a842212850504f1984a8276a4ce71e04128bca07729fc887c",
+      "content_hash": "8443cace401b3cd99cef287b6146d56d293c912db2dbab6e1b9fe986d188d33b",
       "key": "ip",
       "label": "IP",
-      "markdown": "| Classification | [D2/52](https://www.genre-manuals.com/incomeprotection_ip_.htm) | [D4/52](https://www.genre-manuals.com/incomeprotection_ip_.htm) | [D13/52](https://www.genre-manuals.com/incomeprotection_ip_.htm) | Code |  |\n| --- | --- | --- | --- | --- | --- |\n\n|  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- |\n| With thyroid malignancy | See [Malignant Tumour Thyroid](https://www.genre-manuals.com/tumoursthyroidgland.htm) | See [Malignant Tumour Thyroid](https://www.genre-manuals.com/tumoursthyroidgland.htm) | See [Malignant Tumour Thyroid](https://www.genre-manuals.com/tumoursthyroidgland.htm) | E05.9 |  |\n| No thyroid malignancy |  |  |  |  |  |\n| With surgery or radioiodine therapy | See [Thyroidectomy](https://www.genre-manuals.com/thyroidectomy.htm) | See [Thyroidectomy](https://www.genre-manuals.com/thyroidectomy.htm) | See [Thyroidectomy](https://www.genre-manuals.com/thyroidectomy.htm) | E05.9 |  |\n| Without surgery or radioiodine therapy |  |  |  |  |  |\n| Well controlled (no symptoms, no atrial fibrillation) |  |  |  |  |  |\n| Graves' disease / Dysthyroid exophthalmos | [EX](https://www.genre-manuals.com/exclusion_impairedthyroidgland_tpd.htm) | [EX](https://www.genre-manuals.com/exclusion_impairedthyroidgland_tpd.htm) | [EX](https://www.genre-manuals.com/exclusion_impairedthyroidgland_tpd.htm) | E05.0 |  |\n| Other types | +0 | +0 | +0 | E05.9 |  |\n| Uncontrolled |  |  |  |  |  |\n| With symptoms | CMO | CMO | CMO | E05.9 |  |\n| With atrial fibrillation | Add rating for [Atrial fibrillation](https://www.genre-manuals.com/en_atrial_fibrillation.htm) | Add rating for [Atrial fibrillation](https://www.genre-manuals.com/en_atrial_fibrillation.htm) | Add rating for [Atrial fibrillation](https://www.genre-manuals.com/en_atrial_fibrillation.htm) | E05.9 |  |\n",
-      "plain_text": "Classification\nD2/52\nD4/52\nD13/52\nCode\nWith thyroid malignancy\nSee\nMalignant Tumour Thyroid\nSee\nMalignant Tumour Thyroid\nSee\nMalignant Tumour Thyroid\nE05.9\nNo thyroid malignancy\nWith surgery or radioiodine therapy\nSee\nThyroidectomy\nSee\nThyroidectomy\nSee\nThyroidectomy\nE05.9\nWithout surgery or radioiodine therapy\nWell controlled (no symptoms, no atrial fibrillation)\nGraves' disease / Dysthyroid exophthalmos\nEX\nEX\nEX\nE05.0\nOther types\n+0\n+0\n+0\nE05.9\nUncontrolled\nWith symptoms\nCMO\nCMO\nCMO\nE05.9\nWith atrial fibrillation\nAdd rating for\nAtrial fibrillation\nAdd rating for\nAtrial fibrillation\nAdd rating for\nAtrial fibrillation\nE05.9",
+      "markdown": "| Classification | [D2/52](https://www.genre-manuals.com/incomeprotection_ip_.htm) | [D4/52](https://www.genre-manuals.com/incomeprotection_ip_.htm) | [D13/52](https://www.genre-manuals.com/incomeprotection_ip_.htm) | Code |  |\n| --- | --- | --- | --- | --- | --- |\n\n|  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- |\n| Cause known | RFC | RFC | RFC | N04.9 |  |\n| Cause unknown | D | D | D | N04.9 |  |\n",
+      "plain_text": "Classification\nD2/52\nD4/52\nD13/52\nCode\nCause known\nRFC\nRFC\nRFC\nN04.9\nCause unknown\nD\nD\nD\nN04.9",
       "related_details": [
         {
           "available": true,
@@ -1465,18 +502,9 @@
           "plain_text": "Income Protection\nIncome Protection Insurance is designed to provide a regular payment of an insurance benefit to the insured to compensate for the loss of income suffered as a result of being disabled through sickness or injury and unable to work.\nA typical definition would be:\n\"The Insured must be unable to perform his or her usual occupation or any other occupation to which he/she may be suited due to their education, training, or experience”.\nThe vast majority of disability policies issued do not provide benefits immediately upon disablement. Instead, a period of time must elapse before benefits become payable and this period is known most commonly as Deferred Period or Waiting Period.\nDeferred periods can be as short as seven days or as long as two years. In some markets, deferred periods of two -\nD2/52\n- and four weeks -\nD4/52\n- are common. In other markets, longer deferred periods such as 13 weeks -\nD13/52\n- are more common and very short deferred periods are not generally offered or perhaps only to certain professions.\nExclusions: Income Protection\nUnderwriting Considerations\nUnderwriting IP tends to be more complex than life insurance as the policy benefits are triggered by morbidity rather than mortality. Key factors of IP underwriting include:\nMedical:\nThe relationship between medical disorders and the ability to remain at work until normal retirement age is at the heart of medical assessment of IP applicants. Underwriters must identify these links when assessing the available medical evidence.\nOverlap with a disorder and a particular job type or with the hazards known to be associated with that particular industry (e.g. respiratory conditions with dusty working environments)\nMedical conditions which worsen with age. Acceptance terms must reflect this increasing risk as the IP contract offers cover through to retirement age (e.g. degenerative joint disorders with manual occupations)\nOverlap between personality types and the stresses of a particular branch of employment (e.g. anxiety disorders with psychologically demanding jobs)\nOccupation:\nFor IP occupations are classified to reflect the different degrees of risk of claim. Among the factors that influence claims experience are the following:\nAccident and health hazards associated with that industry\nDegree of skills required to perform the job. These could be very low which could mean that the work is not especially interesting or financially rewarding. Alternatively skill levels could be very high resulting in a degree of specialisation that could be a risk in itself.\nAmount of physical work involved in the job. Where a job requires a demanding level of fitness then continued robust health will be required to perform the job over many years.\nStress levels may be high because of difficult working conditions or may be associated with that type of work. A person susceptible to stress could find these pressures become intolerable over a lifetime.\nClaims experience. Gen Re has gathered a great deal of experience from IP writers in many markets which demonstrate that certain jobs generate more claims than might be anticipated at first glance.\nOccupational risk classes\nIncentive to work:\nAll IP applicants will be in active employment at policy inception. The incentive to remain at work varies amongst different people especially once the fallback of an IP policy to cover income during absence is in place. The will to work may be linked to the following aspects:\nPersonal satisfaction gained from a job\nFinancial rewards\nWorking conditions\nLong-term employment prospects\nIncome Protection\nIncome Protection Insurance is designed to provide a regular payment of an insurance benefit to the insured to compensate for the loss of income suffered as a result of being disabled through sickness or injury and unable to work.\nA typical definition would be:\n\"The Insured must be unable to perform his or her usual occupation or any other occupation to which he/she may be suited due to their education, training, or experience”.\nThe vast majority of disability policies issued do not provide benefits immediately upon disablement. Instead, a period of time must elapse before benefits become payable and this period is known most commonly as Deferred Period or Waiting Period.\nDeferred periods can be as short as seven days or as long as two years. In some markets, deferred periods of two -\nD2/52\n- and four weeks -\nD4/52\n- are common. In other markets, longer deferred periods such as 13 weeks -\nD13/52\n- are more common and very short deferred periods are not generally offered or perhaps only to certain professions.\nExclusions: Income Protection\nUnderwriting Considerations\nUnderwriting IP tends to be more complex than life insurance as the policy benefits are triggered by morbidity rather than mortality. Key factors of IP underwriting include:\nMedical:\nThe relationship between medical disorders and the ability to remain at work until normal retirement age is at the heart of medical assessment of IP applicants. Underwriters must identify these links when assessing the available medical evidence.\nOverlap with a disorder and a particular job type or with the hazards known to be associated with that particular industry (e.g. respiratory conditions with dusty working environments)\nMedical conditions which worsen with age. Acceptance terms must reflect this increasing risk as the IP contract offers cover through to retirement age (e.g. degenerative joint disorders with manual occupations)\nOverlap between personality types and the stresses of a particular branch of employment (e.g. anxiety disorders with psychologically demanding jobs)\nOccupation:\nFor IP occupations are classified to reflect the different degrees of risk of claim. Among the factors that influence claims experience are the following:\nAccident and health hazards associated with that industry\nDegree of skills required to perform the job. These could be very low which could mean that the work is not especially interesting or financially rewarding. Alternatively skill levels could be very high resulting in a degree of specialisation that could be a risk in itself.\nAmount of physical work involved in the job. Where a job requires a demanding level of fitness then continued robust health will be required to perform the job over many years.\nStress levels may be high because of difficult working conditions or may be associated with that type of work. A person susceptible to stress could find these pressures become intolerable over a lifetime.\nClaims experience. Gen Re has gathered a great deal of experience from IP writers in many markets which demonstrate that certain jobs generate more claims than might be anticipated at first glance.\nOccupational risk classes\nIncentive to work:\nAll IP applicants will be in active employment at policy inception. The incentive to remain at work varies amongst different people especially once the fallback of an IP policy to cover income during absence is in place. The will to work may be linked to the following aspects:\nPersonal satisfaction gained from a job\nFinancial rewards\nWorking conditions\nLong-term employment prospects",
           "url": "https://www.genre-manuals.com/incomeprotection_ip_.htm",
           "warnings": []
-        },
-        {
-          "available": true,
-          "content_hash": "8c6e91d50ee5ecf2fd3c90e0e5859a37a11a0b9fbf109089eb3985670c5c2403",
-          "label": "EX",
-          "markdown": "# Exclusion clauses: Impaired thyroid gland and eye disorder (160, 161)\n\n| Column 1 | Column 2 |\n| --- | --- |\n| IP / TPD | No benefits shall be payable under this policy for any disability, illness or incapacity which is caused wholly or partly, directly or indirectly, by **any disease of the eyes that is associated with a dysfunction of the thyroid gland, e.g. Graves’ disease or Dysthyroid exophthalmos including impaired vision and****blindness** or any complication thereof. |\n| Health | No benefits shall be payable under this policy for any investigation or treatment, whether surgical, medical or otherwise, directly or indirectly intended for the palliation and correction of **any disease of the eyes that is associated with a dysfunction of the thyroid gland, e.g. Graves’ disease or Dysthyroid exophthalmos**or any visual impairment or blindness. |\n\n## Exclusion clauses: Impaired thyroid gland and eye disorder (160, 161)\n\n| Column 1 | Column 2 |\n| --- | --- |\n| IP / TPD | No benefits shall be payable under this policy for any disability, illness or incapacity which is caused wholly or partly, directly or indirectly, by **any disease of the eyes that is associated with a dysfunction of the thyroid gland, e.g. Graves’ disease or Dysthyroid exophthalmos including impaired vision and****blindness** or any complication thereof. |\n| Health | No benefits shall be payable under this policy for any investigation or treatment, whether surgical, medical or otherwise, directly or indirectly intended for the palliation and correction of **any disease of the eyes that is associated with a dysfunction of the thyroid gland, e.g. Graves’ disease or Dysthyroid exophthalmos**or any visual impairment or blindness. |\n",
-          "plain_text": "Exclusion clauses: Impaired thyroid gland and eye disorder (160, 161)\nIP / TPD\nNo benefits shall be payable under this policy for any disability, illness or incapacity which is caused wholly or partly, directly or indirectly, by\nany disease of the eyes that is associated with a dysfunction of the thyroid gland, e.g. Graves’ disease or Dysthyroid exophthalmos including impaired vision and\nblindness\nor any complication thereof.\nHealth\nNo benefits shall be payable under this policy for any investigation or treatment, whether surgical, medical or otherwise, directly or indirectly intended for the palliation and correction of\nany disease of the eyes that is associated with a dysfunction of the thyroid gland, e.g. Graves’ disease or Dysthyroid exophthalmos\nor any visual impairment or blindness.\nExclusion clauses: Impaired thyroid gland and eye disorder (160, 161)\nIP / TPD\nNo benefits shall be payable under this policy for any disability, illness or incapacity which is caused wholly or partly, directly or indirectly, by\nany disease of the eyes that is associated with a dysfunction of the thyroid gland, e.g. Graves’ disease or Dysthyroid exophthalmos including impaired vision and\nblindness\nor any complication thereof.\nHealth\nNo benefits shall be payable under this policy for any investigation or treatment, whether surgical, medical or otherwise, directly or indirectly intended for the palliation and correction of\nany disease of the eyes that is associated with a dysfunction of the thyroid gland, e.g. Graves’ disease or Dysthyroid exophthalmos\nor any visual impairment or blindness.",
-          "url": "https://www.genre-manuals.com/exclusion_impairedthyroidgland_tpd.htm",
-          "warnings": []
         }
       ],
-      "source_url": "https://www.genre-manuals.com/sites/CLUE/home/page7/page8/endocrine-system-and-metabolism/endocrine-glands/thyroid-gland/page_hyperthyroidism/maincontent/tab30.html.ajax",
+      "source_url": "https://www.genre-manuals.com/sites/CLUE/home/page7/page8/genitourinary-system/kidney-and-ureter/glomerular-diseases/nephrotic-syndrome/maincontent/tab30.html.ajax",
       "tables": [
         {
           "rows": [
@@ -1493,83 +521,19 @@
         {
           "rows": [
             [
-              "With thyroid malignancy",
-              "See Malignant Tumour Thyroid",
-              "See Malignant Tumour Thyroid",
-              "See Malignant Tumour Thyroid",
-              "E05.9",
+              "Cause known",
+              "RFC",
+              "RFC",
+              "RFC",
+              "N04.9",
               ""
             ],
             [
-              "No thyroid malignancy",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "With surgery or radioiodine therapy",
-              "See Thyroidectomy",
-              "See Thyroidectomy",
-              "See Thyroidectomy",
-              "E05.9",
-              ""
-            ],
-            [
-              "Without surgery or radioiodine therapy",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Well controlled (no symptoms, no atrial fibrillation)",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Graves' disease / Dysthyroid exophthalmos",
-              "EX",
-              "EX",
-              "EX",
-              "E05.0",
-              ""
-            ],
-            [
-              "Other types",
-              "+0",
-              "+0",
-              "+0",
-              "E05.9",
-              ""
-            ],
-            [
-              "Uncontrolled",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "With symptoms",
-              "CMO",
-              "CMO",
-              "CMO",
-              "E05.9",
-              ""
-            ],
-            [
-              "With atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "E05.9",
+              "Cause unknown",
+              "D",
+              "D",
+              "D",
+              "N04.9",
               ""
             ]
           ]
@@ -1590,505 +554,107 @@
         ],
         "rows": [
           {
-            "classification": "With thyroid malignancy",
-            "classification_id": "6f2eb3776d5222d31c416988d6e1390522a10af34a1dff5aff464914cae14f4e",
+            "classification": "Cause known",
+            "classification_id": "e3d065116dfb90d719712be7df96cc82d6ff8aff99c035f307830c3a4545bd0f",
             "classification_path": [
-              "With thyroid malignancy"
+              "Cause known"
             ],
-            "code": "E05.9",
+            "code": "N04.9",
             "is_group": false,
             "level": 0,
             "parent_classification": null,
             "parent_classification_id": null,
             "ratings": {
-              "Chronic Medication": "See Malignant Tumour Thyroid",
-              "Hospitalisation": "See Malignant Tumour Thyroid",
-              "OPD": "See Malignant Tumour Thyroid",
-              "Surgery": "See Malignant Tumour Thyroid"
+              "Chronic Medication": "RFC",
+              "Hospitalisation": "RFC",
+              "OPD": "RFC",
+              "Surgery": "RFC"
             },
             "raw_cells": [
-              "With thyroid malignancy",
-              "See Malignant Tumour Thyroid",
-              "See Malignant Tumour Thyroid",
-              "See Malignant Tumour Thyroid",
-              "See Malignant Tumour Thyroid",
-              "E05.9"
-            ]
+              "Cause known",
+              "RFC",
+              "RFC",
+              "RFC",
+              "RFC",
+              "N04.9"
+            ],
+            "related_details": []
           },
           {
-            "classification": "No thyroid malignancy",
-            "classification_id": "75a54af53e2af35c1dbe09bcd256311ceb3b4e77ca0dac327b4bb786bab1cec7",
+            "classification": "Cause unknown",
+            "classification_id": "dee1d100e02063e3aa305aa989cdfe69ddd91846afaa3aae438b1382745a1d60",
             "classification_path": [
-              "No thyroid malignancy"
+              "Cause unknown"
             ],
-            "code": null,
-            "is_group": true,
+            "code": "N04.9",
+            "is_group": false,
             "level": 0,
             "parent_classification": null,
             "parent_classification_id": null,
             "ratings": {
-              "Chronic Medication": "",
-              "Hospitalisation": "",
-              "OPD": "",
-              "Surgery": ""
+              "Chronic Medication": "D",
+              "Hospitalisation": "D",
+              "OPD": "D",
+              "Surgery": "D"
             },
             "raw_cells": [
-              "No thyroid malignancy",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ]
-          },
-          {
-            "classification": "With surgery or radioiodine therapy",
-            "classification_id": "3ab75ea970c1c0a750f083deee9dd0af87f6fd476043d6604e2833219ed41a6c",
-            "classification_path": [
-              "No thyroid malignancy",
-              "With surgery or radioiodine therapy"
+              "Cause unknown",
+              "D",
+              "D",
+              "D",
+              "D",
+              "N04.9"
             ],
-            "code": "E05.9",
-            "is_group": false,
-            "level": 1,
-            "parent_classification": "No thyroid malignancy",
-            "parent_classification_id": "75a54af53e2af35c1dbe09bcd256311ceb3b4e77ca0dac327b4bb786bab1cec7",
-            "ratings": {
-              "Chronic Medication": "See Thyroidectomy",
-              "Hospitalisation": "See Thyroidectomy",
-              "OPD": "See Thyroidectomy",
-              "Surgery": "See Thyroidectomy"
-            },
-            "raw_cells": [
-              "With surgery or radioiodine therapy",
-              "See Thyroidectomy",
-              "See Thyroidectomy",
-              "See Thyroidectomy",
-              "See Thyroidectomy",
-              "E05.9"
-            ]
-          },
-          {
-            "classification": "Without surgery or radioiodine therapy",
-            "classification_id": "3324e742d9210df3bc572496ddc0ddaa3fcc0007efbf75a9eecad2c48a47dc80",
-            "classification_path": [
-              "No thyroid malignancy",
-              "Without surgery or radioiodine therapy"
-            ],
-            "code": null,
-            "is_group": true,
-            "level": 1,
-            "parent_classification": "No thyroid malignancy",
-            "parent_classification_id": "75a54af53e2af35c1dbe09bcd256311ceb3b4e77ca0dac327b4bb786bab1cec7",
-            "ratings": {
-              "Chronic Medication": "",
-              "Hospitalisation": "",
-              "OPD": "",
-              "Surgery": ""
-            },
-            "raw_cells": [
-              "Without surgery or radioiodine therapy",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ]
-          },
-          {
-            "classification": "Well controlled (no symptoms, no atrial fibrillation)",
-            "classification_id": "0e832bf80e039d891bc2591404bd55c59647955941d89e5fdd351f72d30871a9",
-            "classification_path": [
-              "No thyroid malignancy",
-              "Without surgery or radioiodine therapy",
-              "Well controlled (no symptoms, no atrial fibrillation)"
-            ],
-            "code": null,
-            "is_group": true,
-            "level": 2,
-            "parent_classification": "Without surgery or radioiodine therapy",
-            "parent_classification_id": "3324e742d9210df3bc572496ddc0ddaa3fcc0007efbf75a9eecad2c48a47dc80",
-            "ratings": {
-              "Chronic Medication": "",
-              "Hospitalisation": "",
-              "OPD": "",
-              "Surgery": ""
-            },
-            "raw_cells": [
-              "Well controlled (no symptoms, no atrial fibrillation)",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ]
-          },
-          {
-            "classification": "Graves' disease / Dysthyroid exophthalmos",
-            "classification_id": "355b1d91912d9f05040cf976407a65f6f5d07d46521d8ae0008f1c6bb5ced330",
-            "classification_path": [
-              "No thyroid malignancy",
-              "Without surgery or radioiodine therapy",
-              "Well controlled (no symptoms, no atrial fibrillation)",
-              "Graves' disease / Dysthyroid exophthalmos"
-            ],
-            "code": "E05.0",
-            "is_group": false,
-            "level": 3,
-            "parent_classification": "Well controlled (no symptoms, no atrial fibrillation)",
-            "parent_classification_id": "0e832bf80e039d891bc2591404bd55c59647955941d89e5fdd351f72d30871a9",
-            "ratings": {
-              "Chronic Medication": "EX",
-              "Hospitalisation": "+10",
-              "OPD": "+10",
-              "Surgery": "+10"
-            },
-            "raw_cells": [
-              "Graves' disease / Dysthyroid exophthalmos",
-              "+10",
-              "+10",
-              "+10",
-              "EX",
-              "E05.0"
-            ]
-          },
-          {
-            "classification": "Other types",
-            "classification_id": "ad56c233b78d46e69370bf39ce1294155110ab5ec48d81ae3b239e9ed0643ad7",
-            "classification_path": [
-              "No thyroid malignancy",
-              "Without surgery or radioiodine therapy",
-              "Well controlled (no symptoms, no atrial fibrillation)",
-              "Other types"
-            ],
-            "code": "E05.9",
-            "is_group": false,
-            "level": 3,
-            "parent_classification": "Well controlled (no symptoms, no atrial fibrillation)",
-            "parent_classification_id": "0e832bf80e039d891bc2591404bd55c59647955941d89e5fdd351f72d30871a9",
-            "ratings": {
-              "Chronic Medication": "EX",
-              "Hospitalisation": "+0",
-              "OPD": "+0",
-              "Surgery": "+0"
-            },
-            "raw_cells": [
-              "Other types",
-              "+0",
-              "+0",
-              "+0",
-              "EX",
-              "E05.9"
-            ]
-          },
-          {
-            "classification": "Uncontrolled",
-            "classification_id": "148f69d6390b8761690939fb3c160fa88198ecd67a85319d276b652091f4c072",
-            "classification_path": [
-              "No thyroid malignancy",
-              "Without surgery or radioiodine therapy",
-              "Uncontrolled"
-            ],
-            "code": null,
-            "is_group": true,
-            "level": 2,
-            "parent_classification": "Without surgery or radioiodine therapy",
-            "parent_classification_id": "3324e742d9210df3bc572496ddc0ddaa3fcc0007efbf75a9eecad2c48a47dc80",
-            "ratings": {
-              "Chronic Medication": "",
-              "Hospitalisation": "",
-              "OPD": "",
-              "Surgery": ""
-            },
-            "raw_cells": [
-              "Uncontrolled",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ]
-          },
-          {
-            "classification": "With symptoms",
-            "classification_id": "ebf988c97e037357074488984c0ebda9be2ebb30e9b3b4d85c90f1d1b4e31734",
-            "classification_path": [
-              "No thyroid malignancy",
-              "Without surgery or radioiodine therapy",
-              "Uncontrolled",
-              "With symptoms"
-            ],
-            "code": "E05.9",
-            "is_group": false,
-            "level": 3,
-            "parent_classification": "Uncontrolled",
-            "parent_classification_id": "148f69d6390b8761690939fb3c160fa88198ecd67a85319d276b652091f4c072",
-            "ratings": {
-              "Chronic Medication": "CMO",
-              "Hospitalisation": "CMO",
-              "OPD": "CMO",
-              "Surgery": "CMO"
-            },
-            "raw_cells": [
-              "With symptoms",
-              "CMO",
-              "CMO",
-              "CMO",
-              "CMO",
-              "E05.9"
-            ]
-          },
-          {
-            "classification": "With atrial fibrillation",
-            "classification_id": "26ec9626e11588a655601ad70b1e6a0339791e4baacec277daf6ce7a8c4513c1",
-            "classification_path": [
-              "No thyroid malignancy",
-              "Without surgery or radioiodine therapy",
-              "Uncontrolled",
-              "With atrial fibrillation"
-            ],
-            "code": "E05.9",
-            "is_group": false,
-            "level": 3,
-            "parent_classification": "Uncontrolled",
-            "parent_classification_id": "148f69d6390b8761690939fb3c160fa88198ecd67a85319d276b652091f4c072",
-            "ratings": {
-              "Chronic Medication": "Add rating for Atrial fibrillation",
-              "Hospitalisation": "Add rating for Atrial fibrillation",
-              "OPD": "Add rating for Atrial fibrillation",
-              "Surgery": "Add rating for Atrial fibrillation"
-            },
-            "raw_cells": [
-              "With atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "E05.9"
-            ]
+            "related_details": []
           }
         ],
         "tree": [
           {
             "children": [],
-            "classification": "With thyroid malignancy",
-            "classification_id": "6f2eb3776d5222d31c416988d6e1390522a10af34a1dff5aff464914cae14f4e",
+            "classification": "Cause known",
+            "classification_id": "e3d065116dfb90d719712be7df96cc82d6ff8aff99c035f307830c3a4545bd0f",
             "classification_path": [
-              "With thyroid malignancy"
+              "Cause known"
             ],
-            "code": "E05.9",
+            "code": "N04.9",
             "is_group": false,
             "level": 0,
             "parent_classification": null,
             "parent_classification_id": null,
             "ratings": {
-              "Chronic Medication": "See Malignant Tumour Thyroid",
-              "Hospitalisation": "See Malignant Tumour Thyroid",
-              "OPD": "See Malignant Tumour Thyroid",
-              "Surgery": "See Malignant Tumour Thyroid"
+              "Chronic Medication": "RFC",
+              "Hospitalisation": "RFC",
+              "OPD": "RFC",
+              "Surgery": "RFC"
             }
           },
           {
-            "children": [
-              {
-                "children": [],
-                "classification": "With surgery or radioiodine therapy",
-                "classification_id": "3ab75ea970c1c0a750f083deee9dd0af87f6fd476043d6604e2833219ed41a6c",
-                "classification_path": [
-                  "No thyroid malignancy",
-                  "With surgery or radioiodine therapy"
-                ],
-                "code": "E05.9",
-                "is_group": false,
-                "level": 1,
-                "parent_classification": "No thyroid malignancy",
-                "parent_classification_id": "75a54af53e2af35c1dbe09bcd256311ceb3b4e77ca0dac327b4bb786bab1cec7",
-                "ratings": {
-                  "Chronic Medication": "See Thyroidectomy",
-                  "Hospitalisation": "See Thyroidectomy",
-                  "OPD": "See Thyroidectomy",
-                  "Surgery": "See Thyroidectomy"
-                }
-              },
-              {
-                "children": [
-                  {
-                    "children": [
-                      {
-                        "children": [],
-                        "classification": "Graves' disease / Dysthyroid exophthalmos",
-                        "classification_id": "355b1d91912d9f05040cf976407a65f6f5d07d46521d8ae0008f1c6bb5ced330",
-                        "classification_path": [
-                          "No thyroid malignancy",
-                          "Without surgery or radioiodine therapy",
-                          "Well controlled (no symptoms, no atrial fibrillation)",
-                          "Graves' disease / Dysthyroid exophthalmos"
-                        ],
-                        "code": "E05.0",
-                        "is_group": false,
-                        "level": 3,
-                        "parent_classification": "Well controlled (no symptoms, no atrial fibrillation)",
-                        "parent_classification_id": "0e832bf80e039d891bc2591404bd55c59647955941d89e5fdd351f72d30871a9",
-                        "ratings": {
-                          "Chronic Medication": "EX",
-                          "Hospitalisation": "+10",
-                          "OPD": "+10",
-                          "Surgery": "+10"
-                        }
-                      },
-                      {
-                        "children": [],
-                        "classification": "Other types",
-                        "classification_id": "ad56c233b78d46e69370bf39ce1294155110ab5ec48d81ae3b239e9ed0643ad7",
-                        "classification_path": [
-                          "No thyroid malignancy",
-                          "Without surgery or radioiodine therapy",
-                          "Well controlled (no symptoms, no atrial fibrillation)",
-                          "Other types"
-                        ],
-                        "code": "E05.9",
-                        "is_group": false,
-                        "level": 3,
-                        "parent_classification": "Well controlled (no symptoms, no atrial fibrillation)",
-                        "parent_classification_id": "0e832bf80e039d891bc2591404bd55c59647955941d89e5fdd351f72d30871a9",
-                        "ratings": {
-                          "Chronic Medication": "EX",
-                          "Hospitalisation": "+0",
-                          "OPD": "+0",
-                          "Surgery": "+0"
-                        }
-                      }
-                    ],
-                    "classification": "Well controlled (no symptoms, no atrial fibrillation)",
-                    "classification_id": "0e832bf80e039d891bc2591404bd55c59647955941d89e5fdd351f72d30871a9",
-                    "classification_path": [
-                      "No thyroid malignancy",
-                      "Without surgery or radioiodine therapy",
-                      "Well controlled (no symptoms, no atrial fibrillation)"
-                    ],
-                    "code": null,
-                    "is_group": true,
-                    "level": 2,
-                    "parent_classification": "Without surgery or radioiodine therapy",
-                    "parent_classification_id": "3324e742d9210df3bc572496ddc0ddaa3fcc0007efbf75a9eecad2c48a47dc80",
-                    "ratings": {
-                      "Chronic Medication": "",
-                      "Hospitalisation": "",
-                      "OPD": "",
-                      "Surgery": ""
-                    }
-                  },
-                  {
-                    "children": [
-                      {
-                        "children": [],
-                        "classification": "With symptoms",
-                        "classification_id": "ebf988c97e037357074488984c0ebda9be2ebb30e9b3b4d85c90f1d1b4e31734",
-                        "classification_path": [
-                          "No thyroid malignancy",
-                          "Without surgery or radioiodine therapy",
-                          "Uncontrolled",
-                          "With symptoms"
-                        ],
-                        "code": "E05.9",
-                        "is_group": false,
-                        "level": 3,
-                        "parent_classification": "Uncontrolled",
-                        "parent_classification_id": "148f69d6390b8761690939fb3c160fa88198ecd67a85319d276b652091f4c072",
-                        "ratings": {
-                          "Chronic Medication": "CMO",
-                          "Hospitalisation": "CMO",
-                          "OPD": "CMO",
-                          "Surgery": "CMO"
-                        }
-                      },
-                      {
-                        "children": [],
-                        "classification": "With atrial fibrillation",
-                        "classification_id": "26ec9626e11588a655601ad70b1e6a0339791e4baacec277daf6ce7a8c4513c1",
-                        "classification_path": [
-                          "No thyroid malignancy",
-                          "Without surgery or radioiodine therapy",
-                          "Uncontrolled",
-                          "With atrial fibrillation"
-                        ],
-                        "code": "E05.9",
-                        "is_group": false,
-                        "level": 3,
-                        "parent_classification": "Uncontrolled",
-                        "parent_classification_id": "148f69d6390b8761690939fb3c160fa88198ecd67a85319d276b652091f4c072",
-                        "ratings": {
-                          "Chronic Medication": "Add rating for Atrial fibrillation",
-                          "Hospitalisation": "Add rating for Atrial fibrillation",
-                          "OPD": "Add rating for Atrial fibrillation",
-                          "Surgery": "Add rating for Atrial fibrillation"
-                        }
-                      }
-                    ],
-                    "classification": "Uncontrolled",
-                    "classification_id": "148f69d6390b8761690939fb3c160fa88198ecd67a85319d276b652091f4c072",
-                    "classification_path": [
-                      "No thyroid malignancy",
-                      "Without surgery or radioiodine therapy",
-                      "Uncontrolled"
-                    ],
-                    "code": null,
-                    "is_group": true,
-                    "level": 2,
-                    "parent_classification": "Without surgery or radioiodine therapy",
-                    "parent_classification_id": "3324e742d9210df3bc572496ddc0ddaa3fcc0007efbf75a9eecad2c48a47dc80",
-                    "ratings": {
-                      "Chronic Medication": "",
-                      "Hospitalisation": "",
-                      "OPD": "",
-                      "Surgery": ""
-                    }
-                  }
-                ],
-                "classification": "Without surgery or radioiodine therapy",
-                "classification_id": "3324e742d9210df3bc572496ddc0ddaa3fcc0007efbf75a9eecad2c48a47dc80",
-                "classification_path": [
-                  "No thyroid malignancy",
-                  "Without surgery or radioiodine therapy"
-                ],
-                "code": null,
-                "is_group": true,
-                "level": 1,
-                "parent_classification": "No thyroid malignancy",
-                "parent_classification_id": "75a54af53e2af35c1dbe09bcd256311ceb3b4e77ca0dac327b4bb786bab1cec7",
-                "ratings": {
-                  "Chronic Medication": "",
-                  "Hospitalisation": "",
-                  "OPD": "",
-                  "Surgery": ""
-                }
-              }
-            ],
-            "classification": "No thyroid malignancy",
-            "classification_id": "75a54af53e2af35c1dbe09bcd256311ceb3b4e77ca0dac327b4bb786bab1cec7",
+            "children": [],
+            "classification": "Cause unknown",
+            "classification_id": "dee1d100e02063e3aa305aa989cdfe69ddd91846afaa3aae438b1382745a1d60",
             "classification_path": [
-              "No thyroid malignancy"
+              "Cause unknown"
             ],
-            "code": null,
-            "is_group": true,
+            "code": "N04.9",
+            "is_group": false,
             "level": 0,
             "parent_classification": null,
             "parent_classification_id": null,
             "ratings": {
-              "Chronic Medication": "",
-              "Hospitalisation": "",
-              "OPD": "",
-              "Surgery": ""
+              "Chronic Medication": "D",
+              "Hospitalisation": "D",
+              "OPD": "D",
+              "Surgery": "D"
             }
           }
         ],
         "warnings": []
       },
-      "content_hash": "0ba0a79f578995971140534a540de756b90775ea9a71acc25ce5ad60f943b794",
+      "content_hash": "59c4e953b127522f45e35776916e627bbdf8175098ac666b38999664899d977c",
       "key": "health",
       "label": "Health",
-      "markdown": "| Classification | [Hospitalisation](https://www.genre-manuals.com/hospitalisation.htm) | [Surgery](https://www.genre-manuals.com/surgery.htm) | [OPD](https://www.genre-manuals.com/out_patient.htm) | [Chronic Medication](https://www.genre-manuals.com/chronic_medication.htm) | Code |  |\n| --- | --- | --- | --- | --- | --- | --- |\n\n|  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- |\n| With thyroid malignancy | See [Malignant Tumour Thyroid](https://www.genre-manuals.com/tumoursthyroidgland.htm) | See [Malignant Tumour Thyroid](https://www.genre-manuals.com/tumoursthyroidgland.htm) | See [Malignant Tumour Thyroid](https://www.genre-manuals.com/tumoursthyroidgland.htm) | See [Malignant Tumour Thyroid](https://www.genre-manuals.com/tumoursthyroidgland.htm) | E05.9 |  |\n| No thyroid malignancy |  |  |  |  |  |  |\n| With surgery or radioiodine therapy | See [Thyroidectomy](https://www.genre-manuals.com/thyroidectomy.htm) | See [Thyroidectomy](https://www.genre-manuals.com/thyroidectomy.htm) | See [Thyroidectomy](https://www.genre-manuals.com/thyroidectomy.htm) | See [Thyroidectomy](https://www.genre-manuals.com/thyroidectomy.htm) | E05.9 |  |\n| Without surgery or radioiodine therapy |  |  |  |  |  |  |\n| Well controlled (no symptoms, no atrial fibrillation) |  |  |  |  |  |  |\n| Graves' disease / Dysthyroid exophthalmos | +10 | +10 | +10 | [EX](https://www.genre-manuals.com/en_excl_impaired_thyroid_gland.htm) | E05.0 |  |\n| Other types | +0 | +0 | +0 | [EX](https://www.genre-manuals.com/en_excl_impaired_thyroid_gland.htm) | E05.9 |  |\n| Uncontrolled |  |  |  |  |  |  |\n| With symptoms | CMO | CMO | CMO | CMO | E05.9 |  |\n| With atrial fibrillation | Add rating for [Atrial fibrillation](https://www.genre-manuals.com/en_atrial_fibrillation.htm) | Add rating for [Atrial fibrillation](https://www.genre-manuals.com/en_atrial_fibrillation.htm) | Add rating for [Atrial fibrillation](https://www.genre-manuals.com/en_atrial_fibrillation.htm) | Add rating for [Atrial fibrillation](https://www.genre-manuals.com/en_atrial_fibrillation.htm) | E05.9 |  |\n",
-      "plain_text": "Classification\nHospitalisation\nSurgery\nOPD\nChronic Medication\nCode\nWith thyroid malignancy\nSee\nMalignant Tumour Thyroid\nSee\nMalignant Tumour Thyroid\nSee\nMalignant Tumour Thyroid\nSee\nMalignant Tumour Thyroid\nE05.9\nNo thyroid malignancy\nWith surgery or radioiodine therapy\nSee\nThyroidectomy\nSee\nThyroidectomy\nSee\nThyroidectomy\nSee\nThyroidectomy\nE05.9\nWithout surgery or radioiodine therapy\nWell controlled (no symptoms, no atrial fibrillation)\nGraves' disease / Dysthyroid exophthalmos\n+10\n+10\n+10\nEX\nE05.0\nOther types\n+0\n+0\n+0\nEX\nE05.9\nUncontrolled\nWith symptoms\nCMO\nCMO\nCMO\nCMO\nE05.9\nWith atrial fibrillation\nAdd rating for\nAtrial fibrillation\nAdd rating for\nAtrial fibrillation\nAdd rating for\nAtrial fibrillation\nAdd rating for\nAtrial fibrillation\nE05.9",
+      "markdown": "| Classification | [Hospitalisation](https://www.genre-manuals.com/hospitalisation.htm) | [Surgery](https://www.genre-manuals.com/surgery.htm) | [OPD](https://www.genre-manuals.com/out_patient.htm) | [Chronic Medication](https://www.genre-manuals.com/chronic_medication.htm) | Code |  |\n| --- | --- | --- | --- | --- | --- | --- |\n\n|  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- |\n| Cause known | RFC | RFC | RFC | RFC | N04.9 |  |\n| Cause unknown | D | D | D | D | N04.9 |  |\n",
+      "plain_text": "Classification\nHospitalisation\nSurgery\nOPD\nChronic Medication\nCode\nCause known\nRFC\nRFC\nRFC\nRFC\nN04.9\nCause unknown\nD\nD\nD\nD\nN04.9",
       "related_details": [
         {
           "available": true,
@@ -2125,18 +691,9 @@
           "plain_text": "Chronic Medication\nDefinition\nThe\nChronic Medication\nbenefit is defined as insurance against the costs of\nspecific medication prescribed by an accredited physician, surgeon or sectional specialist in the management of a patient;\nfor a continuous period of not less than three months; and\nto permit, maintain or enhance quality of life and function which would otherwise be impaired were the prescribed medication not utilised or otherwise not made available on a regular long-term basis.\nNotes\nShort-term and “once-off” medications will be covered under the other benefits, primarily\nOut-Patient\nChronic medication should be of a long-term nature, e.g. medications for treatment of hypertension, diabetes mellitus, or epilepsy.\nChronic medication may be dispensed in hospitals (but would not – except in extreme cases of long-term hospitalisation – fall under the Hospitalisation benefit). It is more likely to be dispensed by Hospital Out Patient Departments (OPDs) and clinics, and may also be supplied by dispensing physicians and incorporated within the consultation charge. The latter possibility has been taken into account in the OPD ratings, but any policy which incorporates an OPD benefit for chronic medication should underwrite the risk in terms of the latter category as well.\nChronic Medication\nDefinition\nThe\nChronic Medication\nbenefit is defined as insurance against the costs of\nspecific medication prescribed by an accredited physician, surgeon or sectional specialist in the management of a patient;\nfor a continuous period of not less than three months; and\nto permit, maintain or enhance quality of life and function which would otherwise be impaired were the prescribed medication not utilised or otherwise not made available on a regular long-term basis.\nNotes\nShort-term and “once-off” medications will be covered under the other benefits, primarily\nOut-Patient\nChronic medication should be of a long-term nature, e.g. medications for treatment of hypertension, diabetes mellitus, or epilepsy.\nChronic medication may be dispensed in hospitals (but would not – except in extreme cases of long-term hospitalisation – fall under the Hospitalisation benefit). It is more likely to be dispensed by Hospital Out Patient Departments (OPDs) and clinics, and may also be supplied by dispensing physicians and incorporated within the consultation charge. The latter possibility has been taken into account in the OPD ratings, but any policy which incorporates an OPD benefit for chronic medication should underwrite the risk in terms of the latter category as well.",
           "url": "https://www.genre-manuals.com/chronic_medication.htm",
           "warnings": []
-        },
-        {
-          "available": true,
-          "content_hash": "8c6e91d50ee5ecf2fd3c90e0e5859a37a11a0b9fbf109089eb3985670c5c2403",
-          "label": "EX",
-          "markdown": "# Exclusion clauses: Impaired thyroid gland and eye disorder (160, 161)\n\n| Column 1 | Column 2 |\n| --- | --- |\n| IP / TPD | No benefits shall be payable under this policy for any disability, illness or incapacity which is caused wholly or partly, directly or indirectly, by **any disease of the eyes that is associated with a dysfunction of the thyroid gland, e.g. Graves’ disease or Dysthyroid exophthalmos including impaired vision and****blindness** or any complication thereof. |\n| Health | No benefits shall be payable under this policy for any investigation or treatment, whether surgical, medical or otherwise, directly or indirectly intended for the palliation and correction of **any disease of the eyes that is associated with a dysfunction of the thyroid gland, e.g. Graves’ disease or Dysthyroid exophthalmos**or any visual impairment or blindness. |\n\n## Exclusion clauses: Impaired thyroid gland and eye disorder (160, 161)\n\n| Column 1 | Column 2 |\n| --- | --- |\n| IP / TPD | No benefits shall be payable under this policy for any disability, illness or incapacity which is caused wholly or partly, directly or indirectly, by **any disease of the eyes that is associated with a dysfunction of the thyroid gland, e.g. Graves’ disease or Dysthyroid exophthalmos including impaired vision and****blindness** or any complication thereof. |\n| Health | No benefits shall be payable under this policy for any investigation or treatment, whether surgical, medical or otherwise, directly or indirectly intended for the palliation and correction of **any disease of the eyes that is associated with a dysfunction of the thyroid gland, e.g. Graves’ disease or Dysthyroid exophthalmos**or any visual impairment or blindness. |\n",
-          "plain_text": "Exclusion clauses: Impaired thyroid gland and eye disorder (160, 161)\nIP / TPD\nNo benefits shall be payable under this policy for any disability, illness or incapacity which is caused wholly or partly, directly or indirectly, by\nany disease of the eyes that is associated with a dysfunction of the thyroid gland, e.g. Graves’ disease or Dysthyroid exophthalmos including impaired vision and\nblindness\nor any complication thereof.\nHealth\nNo benefits shall be payable under this policy for any investigation or treatment, whether surgical, medical or otherwise, directly or indirectly intended for the palliation and correction of\nany disease of the eyes that is associated with a dysfunction of the thyroid gland, e.g. Graves’ disease or Dysthyroid exophthalmos\nor any visual impairment or blindness.\nExclusion clauses: Impaired thyroid gland and eye disorder (160, 161)\nIP / TPD\nNo benefits shall be payable under this policy for any disability, illness or incapacity which is caused wholly or partly, directly or indirectly, by\nany disease of the eyes that is associated with a dysfunction of the thyroid gland, e.g. Graves’ disease or Dysthyroid exophthalmos including impaired vision and\nblindness\nor any complication thereof.\nHealth\nNo benefits shall be payable under this policy for any investigation or treatment, whether surgical, medical or otherwise, directly or indirectly intended for the palliation and correction of\nany disease of the eyes that is associated with a dysfunction of the thyroid gland, e.g. Graves’ disease or Dysthyroid exophthalmos\nor any visual impairment or blindness.",
-          "url": "https://www.genre-manuals.com/en_excl_impaired_thyroid_gland.htm",
-          "warnings": []
         }
       ],
-      "source_url": "https://www.genre-manuals.com/sites/CLUE/home/page7/page8/endocrine-system-and-metabolism/endocrine-glands/thyroid-gland/page_hyperthyroidism/maincontent/tab30.html.ajax",
+      "source_url": "https://www.genre-manuals.com/sites/CLUE/home/page7/page8/genitourinary-system/kidney-and-ureter/glomerular-diseases/nephrotic-syndrome/maincontent/tab30.html.ajax",
       "tables": [
         {
           "rows": [
@@ -2154,93 +711,21 @@
         {
           "rows": [
             [
-              "With thyroid malignancy",
-              "See Malignant Tumour Thyroid",
-              "See Malignant Tumour Thyroid",
-              "See Malignant Tumour Thyroid",
-              "See Malignant Tumour Thyroid",
-              "E05.9",
+              "Cause known",
+              "RFC",
+              "RFC",
+              "RFC",
+              "RFC",
+              "N04.9",
               ""
             ],
             [
-              "No thyroid malignancy",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "With surgery or radioiodine therapy",
-              "See Thyroidectomy",
-              "See Thyroidectomy",
-              "See Thyroidectomy",
-              "See Thyroidectomy",
-              "E05.9",
-              ""
-            ],
-            [
-              "Without surgery or radioiodine therapy",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Well controlled (no symptoms, no atrial fibrillation)",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Graves' disease / Dysthyroid exophthalmos",
-              "+10",
-              "+10",
-              "+10",
-              "EX",
-              "E05.0",
-              ""
-            ],
-            [
-              "Other types",
-              "+0",
-              "+0",
-              "+0",
-              "EX",
-              "E05.9",
-              ""
-            ],
-            [
-              "Uncontrolled",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "With symptoms",
-              "CMO",
-              "CMO",
-              "CMO",
-              "CMO",
-              "E05.9",
-              ""
-            ],
-            [
-              "With atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "Add rating for Atrial fibrillation",
-              "E05.9",
+              "Cause unknown",
+              "D",
+              "D",
+              "D",
+              "D",
+              "N04.9",
               ""
             ]
           ]

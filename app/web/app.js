@@ -81,13 +81,9 @@ function setDiscoveryMode(mode) {
   document.querySelector("#importModePanel").hidden =
     discoveryMode !== "import";
   document.querySelector("#agenticOptionTitle").textContent =
-    discoveryMode === "import"
-      ? "Gemini extraction sau tìm kiếm"
-      : "Gemini Agentic Discovery";
+    "Gemini Agentic Discovery";
   document.querySelector("#agenticOptionDescription").textContent =
-    discoveryMode === "import"
-      ? "Tên bệnh được tìm chính xác bằng form website; Gemini xử lý extraction sau khi detector xác nhận trang."
-      : "AI chọn candidate và xác minh trang bệnh; browser vẫn do backend kiểm soát.";
+    "AI chọn candidate và xác minh trang bệnh; không quyết định chế độ parsing.";
   runButton.querySelector("span").textContent = discoveryMode === "import"
     ? "Tìm và crawl danh sách bệnh"
     : "Thực thi crawler tự động";
@@ -205,15 +201,29 @@ async function checkHealth() {
     dot.className = "health-dot ok";
     text.textContent = health.status === "ready" ? "Hệ thống sẵn sàng" : "Chưa sẵn sàng";
     const agentic = document.querySelector("#agenticDiscovery");
+    const parsing = document.querySelector("#agenticParsing");
     const normalization = document.querySelector("#aiNormalization");
-    const agenticReady = health.gemini_agentic === "ready";
+    const geminiReady = health.gemini_agentic === "ready";
+    const agenticReady = geminiReady && health.agentic_discovery_enabled;
+    const parsingReady = geminiReady && health.agentic_parsing_enabled;
+    const normalizationReady = geminiReady && health.ai_normalization_enabled;
     agentic.disabled = !agenticReady;
-    normalization.disabled = !agenticReady;
-    const reason = health.gemini_agentic === "disabled"
-      ? "Backend chưa bật AGENTIC_DISCOVERY_ENABLED"
-      : "Backend chưa cấu hình GEMINI_API_KEY";
-    agentic.title = agenticReady ? "" : reason;
-    normalization.title = agenticReady ? "" : reason;
+    parsing.disabled = !parsingReady;
+    normalization.disabled = !normalizationReady;
+    const geminiReason = geminiReady
+      ? ""
+      : health.gemini_agentic === "disabled"
+        ? "Backend chưa bật tính năng Gemini"
+        : "Backend chưa cấu hình GEMINI_API_KEY";
+    agentic.title = agenticReady
+      ? ""
+      : geminiReason || "Backend chưa bật AGENTIC_DISCOVERY_ENABLED";
+    parsing.title = parsingReady
+      ? ""
+      : geminiReason || "Backend chưa bật AGENTIC_PARSING_ENABLED";
+    normalization.title = normalizationReady
+      ? ""
+      : geminiReason || "Backend chưa bật AI_NORMALIZATION_ENABLED";
   } catch {
     dot.className = "health-dot error";
     text.textContent = "Không kết nối được backend";
@@ -769,6 +779,14 @@ form.addEventListener("submit", async event => {
     document.querySelector("#diseaseNames").focus();
     return;
   }
+  if (
+    document.querySelector("#aiNormalization").checked
+    && !document.querySelector("#agenticParsing").checked
+  ) {
+    formError.textContent = "AI Normalization yêu cầu bật Gemini Agentic Parsing.";
+    document.querySelector("#agenticParsing").focus();
+    return;
+  }
   runButton.disabled = true;
   runButton.querySelector("span").textContent = "Đang khởi tạo…";
   const payload = {
@@ -782,6 +800,7 @@ form.addEventListener("submit", async event => {
     disease_names: discoveryMode === "import" ? diseaseNames : [],
     authorization_confirmed: document.querySelector("#authorization").checked,
     agentic_discovery: document.querySelector("#agenticDiscovery").checked,
+    agentic_parsing: document.querySelector("#agenticParsing").checked,
     ai_normalization: document.querySelector("#aiNormalization").checked,
     expand_disease_categories: discoveryMode === "import"
       && document.querySelector("#expandDiseaseCategories").checked,

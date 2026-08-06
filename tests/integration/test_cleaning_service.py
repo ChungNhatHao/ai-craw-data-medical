@@ -144,7 +144,19 @@ def test_cleaning_preserves_all_tab_text_and_tables(
                 key="info",
                 label="Info",
                 source_url=source,
-                html="<div><p>Clinical information.</p></div>",
+                html=(
+                    '<div class="genrearticle">'
+                    '<div class="synonyms">A00 * A01.1</div>'
+                    '<div class="intro"></div></div>'
+                    '<div class="genrearticle">'
+                    '<div class="synonyms">Alpha disease * Alpha syndrome</div>'
+                    '<div class="intro">'
+                    '<p>Summary paragraph one.</p>'
+                    '<p>Summary paragraph two.</p>'
+                    '<table><tr><td>Causes</td><td>Unknown</td></tr></table>'
+                    '<p>Text after the first table is not summary.</p>'
+                    '</div></div>'
+                ),
             ),
             RawDiseaseTab(
                 key="life_dd_tpd",
@@ -156,7 +168,8 @@ def test_cleaning_preserves_all_tab_text_and_tables(
                     '<table id="conditionTable">'
                     '<tr><th class="level-0">All cases</th><td></td></tr>'
                     '<tr><th class="level" style="padding-left: 25px">'
-                    "Confirmed case</th><td>D</td></tr></table>"
+                    '<a class="genrePopup" href="confirmed-case.htm">'
+                    "Confirmed case</a></th><td>D</td></tr></table>"
                 ),
                 related_details=(
                     RawTabRelatedDetail(
@@ -165,6 +178,14 @@ def test_cleaning_preserves_all_tab_text_and_tables(
                         html=(
                             "<article><h1>Life Insurance</h1>"
                             "<p>Read-only underwriting guidance.</p></article>"
+                        ),
+                    ),
+                    RawTabRelatedDetail(
+                        label="Confirmed case",
+                        url=f"{source}/confirmed-case.htm",
+                        html=(
+                            "<article><h1>Confirmed case</h1>"
+                            "<p>Classification-specific guidance.</p></article>"
                         ),
                     ),
                 ),
@@ -207,6 +228,15 @@ def test_cleaning_preserves_all_tab_text_and_tables(
             "ip",
             "health",
         ]
+        assert tabs[0].tables[0].rows == (
+            ("Codes", "A00 * A01.1"),
+            ("Aliases", "Alpha disease * Alpha syndrome"),
+            (
+                "Summary",
+                "Summary paragraph one.\n\nSummary paragraph two.",
+            ),
+        )
+        assert tabs[0].tables[1].rows == (("Causes", "Unknown"),)
         assert tabs[1].tables[1].rows[1] == ("Confirmed case", "D")
         classification = tabs[1].classification_table
         assert classification is not None
@@ -222,6 +252,12 @@ def test_cleaning_preserves_all_tab_text_and_tables(
             == classification.rows[0].classification_id
         )
         assert classification.rows[1].ratings == {"Life": "D"}
+        assert classification.rows[1].related_details[0].label == (
+            "Confirmed case"
+        )
+        assert "Classification-specific guidance" in (
+            classification.rows[1].related_details[0].plain_text
+        )
         assert classification.tree[0].children[0].classification == (
             "Confirmed case"
         )

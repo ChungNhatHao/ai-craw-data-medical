@@ -37,6 +37,9 @@ def test_related_detail_targets_exclude_write_actions_and_external_urls() -> Non
     <div>
       <a class="genrePopup" href="/life_insurance.htm">Life</a>
       <a class="genrePopup" href="/life_insurance.htm">Life duplicate</a>
+      <a class="genrePopup" href="/en_hereditarythoraort.htm">
+        Hereditary thoracic aortic disease
+      </a>
       <a class="genrePopup" href="/edit.htm">Edit</a>
       <a class="genrePopup" href="/edit-note.htm">Edit note</a>
       <a class="genrePopup" href="https://example.org/other">External</a>
@@ -53,6 +56,10 @@ def test_related_detail_targets_exclude_write_actions_and_external_urls() -> Non
         (
             "https://www.genre-manuals.com/life_insurance.htm",
             "Life",
+        ),
+        (
+            "https://www.genre-manuals.com/en_hereditarythoraort.htm",
+            "Hereditary thoracic aortic disease",
         ),
     )
 

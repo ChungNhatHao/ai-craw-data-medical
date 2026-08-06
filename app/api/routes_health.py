@@ -15,6 +15,9 @@ class ReadyResponse(BaseModel):
     database: Literal["ok", "error"]
     artifact_store: Literal["ok", "error"]
     gemini_agentic: Literal["ready", "disabled", "misconfigured"]
+    agentic_discovery_enabled: bool
+    agentic_parsing_enabled: bool
+    ai_normalization_enabled: bool
 
 
 @router.get("/live", response_model=LiveResponse)
@@ -27,7 +30,14 @@ async def ready(request: Request, response: Response) -> ReadyResponse:
     database_ok = await request.app.state.database.ping()
     artifact_ok = request.app.state.settings.output_root.is_dir()
     settings = request.app.state.settings
-    if not settings.agentic_discovery_enabled:
+    any_gemini_feature = any(
+        (
+            settings.agentic_discovery_enabled,
+            settings.agentic_parsing_enabled,
+            settings.ai_normalization_enabled,
+        )
+    )
+    if not any_gemini_feature:
         gemini_agentic = "disabled"
     elif settings.gemini_api_key is None:
         gemini_agentic = "misconfigured"
@@ -41,4 +51,7 @@ async def ready(request: Request, response: Response) -> ReadyResponse:
         database="ok" if database_ok else "error",
         artifact_store="ok" if artifact_ok else "error",
         gemini_agentic=gemini_agentic,
+        agentic_discovery_enabled=settings.agentic_discovery_enabled,
+        agentic_parsing_enabled=settings.agentic_parsing_enabled,
+        ai_normalization_enabled=settings.ai_normalization_enabled,
     )

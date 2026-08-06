@@ -15,9 +15,7 @@
     "name": "Hypertrophic obstructive cardiomyopathy",
     "prevention": [],
     "prognosis": "There is a wide range of severity and each case deserves careful assessment. The prognosis depends on the ventricular wall dimensions, the degree of outflow obstruction as measured by the gradient within the left ventricle, the occurrence of any arrhythmias and any reported sudden death in the family history.",
-    "risk_factors": [
-      "A history of sudden death in the family history especially at a young age is an important factor in risk stratification."
-    ],
+    "risk_factors": [],
     "summary": "Hypertrophic cardiomyopathy is the most common inherited cardiomyopathy",
     "symptoms": [
       "Palpitations or episodes of syncope or faintness may signify potentially life-threatening arrhythmias. Symptoms of heart failure such as breathlessness may occur. / A history of sudden death in the family history especially at a young age is an important factor in risk stratification."
@@ -86,6 +84,7 @@
     "parser_version": "agentic-1.4.0",
     "prompt_version": "agentic-1.2.0",
     "warnings": [
+      "missing_field:risk_factors",
       "missing_field:prevention",
       "missing_field:when_to_seek_care",
       "ai_normalization_not_required",
@@ -94,10 +93,11 @@
       "deterministic_full_content:causes",
       "deterministic_full_content:symptoms",
       "deterministic_full_content:diagnosis",
-      "deterministic_full_content:treatment"
+      "deterministic_full_content:treatment",
+      "incremental_unchanged_reused"
     ]
   },
-  "schema_version": "1.2",
+  "schema_version": "1.3",
   "sections": [
     {
       "heading": "Hypertrophic obstructive cardiomyopathy",
@@ -111,7 +111,7 @@
     "content_hash": "ed0c968f55922afdeaeb8246d0fac2b3e6343499700ec76730edbbd3a1f0cb47",
     "language": "en",
     "plugin": "genre_manuals",
-    "retrieved_at": "2026-08-03T03:45:55.143812Z",
+    "retrieved_at": "2026-08-05T09:05:28.748034Z",
     "url": "https://www.genre-manuals.com/hypertrophic_obstructive_cardiomyopathy.htm"
   },
   "tabs": [
@@ -126,6 +126,22 @@
       "related_details": [],
       "source_url": "https://www.genre-manuals.com/hypertrophic_obstructive_cardiomyopathy.htm",
       "tables": [
+        {
+          "rows": [
+            [
+              "Codes",
+              "I42.1 * I42.2"
+            ],
+            [
+              "Aliases",
+              "Hypertrophic cardiomyopathy * HOCM * HCM"
+            ],
+            [
+              "Summary",
+              "Hypertrophic cardiomyopathy is the most common inherited cardiomyopathy"
+            ]
+          ]
+        },
         {
           "rows": [
             [
@@ -210,7 +226,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Left Ventricular End Systolic Dimension (LVESD)",
@@ -243,7 +260,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "< 23 mm",
@@ -277,7 +295,8 @@
               "+50",
               "+40",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≥ 23 - ≤ 28 mm",
@@ -311,7 +330,8 @@
               "+75",
               "+50",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "> 28 mm",
@@ -345,7 +365,8 @@
               "CMO",
               "+70",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "No measurement",
@@ -379,7 +400,8 @@
               "CMO",
               "CMO",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Gradient Left Ventricular Outflow Tract (LVOT)",
@@ -412,7 +434,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "< 30 mm Hg",
@@ -446,7 +469,8 @@
               "+/-0",
               "+/-0",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≥ 30 - ≤ 50 mm Hg",
@@ -480,7 +504,8 @@
               "Add +25",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "> 50 mm Hg",
@@ -514,7 +539,8 @@
               "CMO",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Ejection Fraction",
@@ -547,7 +573,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "EF > 50%",
@@ -581,7 +608,8 @@
               "+/-0",
               "+/-0",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "EF ≥ 40-50%",
@@ -615,7 +643,8 @@
               "+/-0",
               "Add +20",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "EF < 40%",
@@ -649,7 +678,8 @@
               "+/-0",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "No measurement",
@@ -683,7 +713,8 @@
               "+/-0",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Potential arrhythmias",
@@ -716,7 +747,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Family history of sudden death age < 65",
@@ -750,7 +782,8 @@
               "Add +25",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Episode(s) of syncope or non-sustained Ventricular tachycardia",
@@ -784,7 +817,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "No ICD implantation",
@@ -819,7 +853,8 @@
               "D",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "ICD implantation",
@@ -854,7 +889,8 @@
               "D",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Episode(s) of sustained Ventricular Tachycardia or Ventricular Fibrillation",
@@ -888,7 +924,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "No ICD implantation",
@@ -923,7 +960,8 @@
               "D",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "ICD implantation",
@@ -958,7 +996,8 @@
               "D",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Atrial fibrillation",
@@ -992,7 +1031,8 @@
               "CMO",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Exercise test",
@@ -1025,7 +1065,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Abnormal blood pressure response to maximum exercise (ABPRE), systolic rise < 25 mm Hg or fall > 10 mm Hg",
@@ -1059,7 +1100,8 @@
               "CMO",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Age at diagnosis ≥ 50 years",
@@ -1091,7 +1133,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Left Ventricular End Systolic Dimension (LVESD)",
@@ -1124,7 +1167,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "< 23 mm",
@@ -1158,7 +1202,8 @@
               "+50",
               "+40",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≥ 23 - ≤ 28 mm",
@@ -1192,7 +1237,8 @@
               "+75",
               "+50",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "> 28 mm",
@@ -1226,7 +1272,8 @@
               "CMO",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "No measurement",
@@ -1260,7 +1307,8 @@
               "CMO",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Gradient Left Ventricular Outflow Tract (LVOT)",
@@ -1293,7 +1341,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "< 30 mm Hg",
@@ -1327,7 +1376,8 @@
               "+/-0",
               "+/-0",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≥ 30 - ≤ 50 mm Hg",
@@ -1361,7 +1411,8 @@
               "Add +25",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "> 50 mm Hg",
@@ -1395,7 +1446,8 @@
               "CMO",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Ejection fraction",
@@ -1428,7 +1480,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "EF > 50%",
@@ -1462,7 +1515,8 @@
               "+/-0",
               "+/-0",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "EF ≥ 40 - ≤ 50%",
@@ -1496,7 +1550,8 @@
               "+/-0",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "EF < 40%",
@@ -1530,7 +1585,8 @@
               "+/-0",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "No measurement",
@@ -1564,7 +1620,8 @@
               "+/-0",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Potential arrhythmias",
@@ -1597,7 +1654,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Family history of sudden death age < 65",
@@ -1631,7 +1689,8 @@
               "CMO",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Episode(s) of syncope or non-sustained Ventricular Tachycardia or Ventricular Fibrillation",
@@ -1665,7 +1724,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "No ICD implantation",
@@ -1700,7 +1760,8 @@
               "D",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "ICD implantation",
@@ -1735,7 +1796,8 @@
               "D",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Episode(s) of sustained Ventricular Tachycardia or Ventricular Fibrillation",
@@ -1769,7 +1831,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "No ICD implantation",
@@ -1804,7 +1867,8 @@
               "D",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "ICD implantation",
@@ -1839,7 +1903,8 @@
               "D",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Atrial fibrillation",
@@ -1874,7 +1939,8 @@
               "CMO",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Exercise test",
@@ -1907,7 +1973,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Blood pressure response to maximum exercise, Systolic rise < 25 mm Hg or fall > 10 mm Hg",
@@ -1941,7 +2008,8 @@
               "CMO",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Diagnosed coronary artery disease",
@@ -1975,7 +2043,8 @@
               "Add CAD rating from MI / CAD calculator",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           }
         ],
         "tree": [
@@ -4020,7 +4089,8 @@
               "D",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           }
         ],
         "tree": [
@@ -4126,7 +4196,8 @@
               "D",
               "D",
               "I42.1"
-            ]
+            ],
+            "related_details": []
           }
         ],
         "tree": [

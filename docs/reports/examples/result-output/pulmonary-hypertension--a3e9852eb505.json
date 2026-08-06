@@ -95,10 +95,11 @@
       "deterministic_full_content:causes",
       "deterministic_full_content:symptoms",
       "deterministic_full_content:diagnosis",
-      "deterministic_full_content:treatment"
+      "deterministic_full_content:treatment",
+      "incremental_unchanged_reused"
     ]
   },
-  "schema_version": "1.2",
+  "schema_version": "1.3",
   "sections": [
     {
       "heading": "Pulmonary hypertension",
@@ -112,7 +113,7 @@
     "content_hash": "0c72d13999f51a53aa981cce1d54a4d207cffffce4c71b6ec05878a7ea394796",
     "language": "en",
     "plugin": "genre_manuals",
-    "retrieved_at": "2026-08-03T03:46:11.548431Z",
+    "retrieved_at": "2026-08-05T09:05:45.710230Z",
     "url": "https://www.genre-manuals.com/pulmonaryhypertension.htm"
   },
   "tabs": [
@@ -127,6 +128,22 @@
       "related_details": [],
       "source_url": "https://www.genre-manuals.com/pulmonaryhypertension.htm",
       "tables": [
+        {
+          "rows": [
+            [
+              "Codes",
+              "I27.0 * I27.2 * I27.8"
+            ],
+            [
+              "Aliases",
+              "Primary pulmonary hypertension * PPH * Secondary pulmonary hypertension * Idiopathic pulmonary hypertension"
+            ],
+            [
+              "Summary",
+              "Hypertension in the pulmonary circuit; may be primary idiopathic, or secondary to pulmonary or cardiac disease. In this condition pressure is increased in the pulmonary arteries. This causes increased resistance to the blood flow in the pulmonary arterial circulation."
+            ]
+          ]
+        },
         {
           "rows": [
             [
@@ -211,7 +228,8 @@
               "D",
               "D",
               "I27.0"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Secondary",
@@ -243,7 +261,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Cardiac disease",
@@ -276,7 +295,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Mild, non-progessive, mean PAP < 35 mmHg",
@@ -310,7 +330,8 @@
               "CMO",
               "D",
               "I27.2"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Otherwise",
@@ -344,7 +365,8 @@
               "D",
               "D",
               "I27.2"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Lung disease",
@@ -377,7 +399,8 @@
               "D",
               "D",
               "I27.2"
-            ]
+            ],
+            "related_details": []
           }
         ],
         "tree": [
@@ -715,7 +738,8 @@
               "D",
               "D",
               "I27.0"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Secondary",
@@ -739,7 +763,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Cardiac disease",
@@ -764,7 +789,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Mild, non-progessive, mean PAP < 35 mmHg",
@@ -790,7 +816,8 @@
               "D",
               "D",
               "I27.2"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Otherwise",
@@ -816,7 +843,8 @@
               "D",
               "D",
               "I27.2"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Lung disease",
@@ -841,7 +869,8 @@
               "D",
               "D",
               "I27.2"
-            ]
+            ],
+            "related_details": []
           }
         ],
         "tree": [
@@ -1085,7 +1114,8 @@
               "D",
               "D",
               "I27.0"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Secondary",
@@ -1111,7 +1141,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Cardiac disease",
@@ -1138,7 +1169,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Mild, non-progessive, mean PAP < 35 mmHg",
@@ -1166,7 +1198,8 @@
               "D",
               "D",
               "I27.2"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Otherwise",
@@ -1194,7 +1227,8 @@
               "D",
               "D",
               "I27.2"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Lung disease",
@@ -1221,7 +1255,8 @@
               "D",
               "D",
               "I27.2"
-            ]
+            ],
+            "related_details": []
           }
         ],
         "tree": [
