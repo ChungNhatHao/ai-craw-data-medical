@@ -27,6 +27,19 @@ class DiseaseTabTable(BaseModel):
     rows: tuple[tuple[str, ...], ...] = ()
 
 
+class TabRelatedDetail(BaseModel):
+    label: str = Field(min_length=1)
+    url: HttpUrl
+    available: bool = True
+    plain_text: str = ""
+    markdown: str = ""
+    content_hash: str | None = Field(
+        default=None,
+        pattern=r"^[0-9a-f]{64}$",
+    )
+    warnings: tuple[str, ...] = ()
+
+
 class ClassificationRow(BaseModel):
     classification_id: str = Field(pattern=r"^[0-9a-f]{64}$")
     parent_classification_id: str | None = Field(
@@ -41,6 +54,7 @@ class ClassificationRow(BaseModel):
     ratings: dict[str, str] = Field(default_factory=dict)
     code: str | None = None
     raw_cells: tuple[str, ...] = ()
+    related_details: tuple[TabRelatedDetail, ...] = ()
 
     @model_validator(mode="after")
     def path_matches_level(self) -> "ClassificationRow":
@@ -86,19 +100,6 @@ class DiseaseClassificationTable(BaseModel):
     headers: tuple[str, ...] = ()
     rows: tuple[ClassificationRow, ...] = ()
     tree: tuple[ClassificationNode, ...] = ()
-    warnings: tuple[str, ...] = ()
-
-
-class TabRelatedDetail(BaseModel):
-    label: str = Field(min_length=1)
-    url: HttpUrl
-    available: bool = True
-    plain_text: str = ""
-    markdown: str = ""
-    content_hash: str | None = Field(
-        default=None,
-        pattern=r"^[0-9a-f]{64}$",
-    )
     warnings: tuple[str, ...] = ()
 
 

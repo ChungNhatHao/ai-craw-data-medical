@@ -10,7 +10,8 @@
       "Peripheral aortic aneurysm",
       "Peripheral vascular aneurysm",
       "Thoracic aortic aneurysm",
-      "Thoracoabdominal aneurysm"
+      "Thoracoabdominal aneurysm",
+      "Aortic dilatation"
     ],
     "causes": [
       "Presence of hypertension, obesity, hyperlipidemia, connective tissue disorders, atherosclerosis, advanced age. About 20% are hereditary."
@@ -93,10 +94,11 @@
       "deterministic_full_content:causes",
       "deterministic_full_content:symptoms",
       "deterministic_full_content:diagnosis",
-      "deterministic_full_content:treatment"
+      "deterministic_full_content:treatment",
+      "incremental_unchanged_reused"
     ]
   },
-  "schema_version": "1.2",
+  "schema_version": "1.3",
   "sections": [
     {
       "heading": "Aortic dilatation",
@@ -110,7 +112,7 @@
     "content_hash": "deaa763e654abc4053c0f9daaa5f45e58758c1f5d2d25175a253571b31891448",
     "language": "en",
     "plugin": "genre_manuals",
-    "retrieved_at": "2026-08-03T03:42:44.163222Z",
+    "retrieved_at": "2026-08-05T09:02:30.448606Z",
     "url": "https://www.genre-manuals.com/en_aortic_dilatation.htm"
   },
   "tabs": [
@@ -125,6 +127,22 @@
       "related_details": [],
       "source_url": "https://www.genre-manuals.com/en_aortic_dilatation.htm",
       "tables": [
+        {
+          "rows": [
+            [
+              "Codes",
+              "I25.4 * I71 * I71.0 * I71.1 * I71.2 * I71.3 * I71.4 * I71.5 * I71.6 * I71.8 * I71.9 * I72.0 * I72.1 * I72.2 * I72.3 * I72.4 * I72.5 * I72.6 * I72.8 * I72.9 * Q25.4"
+            ],
+            [
+              "Aliases",
+              "Abdominal aortic aneurysm * Aortic dilatation * Aortic dissection * Ascending aortic aneurysm * Dilatation ascending aorta * Dissecting aneurysm * Mycotic aneurysm * Peripheral aortic aneurysm * Peripheral vascular aneurysm * Thoracic aortic aneurysm * Thoracoabdominal aneurysm"
+            ],
+            [
+              "Summary",
+              "Aortic dilatation refers to the abnormal enlargement of the aorta, the largest blood vessel in the body. Aortic dissection is a serious condition where a tear occurs in the inner layer of the aorta.\n\nThe aorta has distinct sections: aortic root, ascending aorta, aortic arch, descending thoracic aorta and abdominal aorta."
+            ]
+          ]
+        },
         {
           "rows": [
             [
@@ -217,7 +235,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With Hereditary thoracic aortic disease",
@@ -250,6 +269,17 @@
               "D",
               "D",
               "I71.9"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "758ff5bfab9229f1ca306d890ed4c4acdb31a0ad3b9d0f86c3a9ed442303147c",
+                "label": "Hereditary thoracic aortic disease",
+                "markdown": "# Hereditary thoracic aortic disease\n\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\n\n## Hereditary thoracic aortic disease\n\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\n",
+                "plain_text": "Hereditary thoracic aortic disease\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\nHereditary thoracic aortic disease\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).",
+                "url": "https://www.genre-manuals.com/en_hereditarythoraort.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -283,6 +313,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "758ff5bfab9229f1ca306d890ed4c4acdb31a0ad3b9d0f86c3a9ed442303147c",
+                "label": "Hereditary thoracic aortic disease",
+                "markdown": "# Hereditary thoracic aortic disease\n\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\n\n## Hereditary thoracic aortic disease\n\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\n",
+                "plain_text": "Hereditary thoracic aortic disease\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\nHereditary thoracic aortic disease\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).",
+                "url": "https://www.genre-manuals.com/en_hereditarythoraort.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -317,7 +358,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Without history of aortic dissection",
@@ -352,7 +394,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Without aortic surgery and without evidence of increase of thoracic aortic diameter > 0.2 cm/year",
@@ -388,6 +431,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "a459b2e2c0bb8d2be06eab9075c10eabac1c8723f292906655f9752254f19f5a",
+                "label": "aortic surgery",
+                "markdown": "# Aortic surgery\n\nOpen, endovascular and hybrid repairs of the aorta.\n\n## Aortic surgery\n\nOpen, endovascular and hybrid repairs of the aorta.\n",
+                "plain_text": "Aortic surgery\nOpen, endovascular and hybrid repairs of the aorta.\nAortic surgery\nOpen, endovascular and hybrid repairs of the aorta.",
+                "url": "https://www.genre-manuals.com/en_aorticsurgery.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -425,7 +479,8 @@
               "+0",
               "+0",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Size 4.1 - 4.3 cm",
@@ -462,7 +517,8 @@
               "+0",
               "+20",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Size > 4.3 cm",
@@ -499,7 +555,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≤ 1 measurement within past 4 years",
@@ -537,7 +594,8 @@
               "+0",
               "P until 2 measurements are available",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≥ 2 measurements within past 4 years",
@@ -575,7 +633,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "No evidence of size progression",
@@ -614,7 +673,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Size 4.4 - 4.5 cm",
@@ -654,7 +714,8 @@
               "+0",
               "+50",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Size > 4.5 cm - ≤ 5.0 cm",
@@ -694,6 +755,17 @@
               "+0",
               "D",
               "I71.9"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "8ae47018cf62f888e07c7ff1d788e0a0b1952f40a90bd85f99e394fa887c8af8",
+                "label": "vCMO",
+                "markdown": "# Virtual CMO: Aortic dilatation\n\nThe following comments should be of assistance when assessing the risk of aortic root or ascending thoracic aorta (size > 4.5 cm - < 5.0):\n\n| Column 1 | Column 2 | Column 3 |\n| --- | --- | --- |\n| Commentary | If **all** of the factors apply, the rate indicated below applies: / No symptoms (fatigue, chest pain, shortness of breath etc.) / No increase in thoracic aortic diameter > 0.2 cm/year / At least 2 imaging (echo, MRI or CT) measurements within past 2 years / No aortic surgery / No other cardiac disease (including bicuspid aortic valve, valvular disease mild to severe) / No heritable thoracic aortic disease diagnosed or suspected / No peripheral vascular aneurysm present / No positive family history of aneurysm (first-degree relatives) / No blood pressure > 130 (systolic) or > 90 (diastolic) in the last 12 months / No nicotine consumption for at least 12 months / No co-existing dilatation somewhere else in the aorta |  |\n| Likely ratings range | **< 30 years at application** | +300 |\n| **30 to 50 years at application** | +250 |  |\n| **> 50 years at application** | +200 |  |\n| If there is evidence of any factors mentioned above, it is important to refer to the CMO, which should most probably result in a decline or at least higher ratings than above. |  |  |\n\n## Virtual CMO: Aortic dilatation\n\nThe following comments should be of assistance when assessing the risk of aortic root or ascending thoracic aorta (size > 4.5 cm - < 5.0):\n\n| Column 1 | Column 2 | Column 3 |\n| --- | --- | --- |\n| Commentary | If **all** of the factors apply, the rate indicated below applies: / No symptoms (fatigue, chest pain, shortness of breath etc.) / No increase in thoracic aortic diameter > 0.2 cm/year / At least 2 imaging (echo, MRI or CT) measurements within past 2 years / No aortic surgery / No other cardiac disease (including bicuspid aortic valve, valvular disease mild to severe) / No heritable thoracic aortic disease diagnosed or suspected / No peripheral vascular aneurysm present / No positive family history of aneurysm (first-degree relatives) / No blood pressure > 130 (systolic) or > 90 (diastolic) in the last 12 months / No nicotine consumption for at least 12 months / No co-existing dilatation somewhere else in the aorta |  |\n| Likely ratings range | **< 30 years at application** | +300 |\n| **30 to 50 years at application** | +250 |  |\n| **> 50 years at application** | +200 |  |\n| If there is evidence of any factors mentioned above, it is important to refer to the CMO, which should most probably result in a decline or at least higher ratings than above. |  |  |\n",
+                "plain_text": "Virtual CMO: Aortic dilatation\nThe following comments should be of assistance when assessing the risk of aortic root or ascending thoracic aorta (size > 4.5 cm - < 5.0):\nCommentary\nIf\nall\nof the factors apply, the rate indicated below applies:\nNo symptoms (fatigue, chest pain, shortness of breath etc.)\nNo increase in thoracic aortic diameter > 0.2 cm/year\nAt least 2 imaging (echo, MRI or CT) measurements within past 2 years\nNo aortic surgery\nNo other cardiac disease (including bicuspid aortic valve, valvular disease mild to severe)\nNo heritable thoracic aortic disease diagnosed or suspected\nNo peripheral vascular aneurysm present\nNo positive family history of aneurysm (first-degree relatives)\nNo blood pressure > 130 (systolic) or > 90 (diastolic) in the last 12 months\nNo nicotine consumption for at least 12 months\nNo co-existing dilatation somewhere else in the aorta\nLikely ratings range\n< 30 years at application\n+300\n30 to 50 years at application\n+250\n> 50 years at application\n+200\nIf there is evidence of any factors mentioned above, it is important to refer to the CMO, which should most probably result in a decline or at least higher ratings than above.\nVirtual CMO: Aortic dilatation\nThe following comments should be of assistance when assessing the risk of aortic root or ascending thoracic aorta (size > 4.5 cm - < 5.0):\nCommentary\nIf\nall\nof the factors apply, the rate indicated below applies:\nNo symptoms (fatigue, chest pain, shortness of breath etc.)\nNo increase in thoracic aortic diameter > 0.2 cm/year\nAt least 2 imaging (echo, MRI or CT) measurements within past 2 years\nNo aortic surgery\nNo other cardiac disease (including bicuspid aortic valve, valvular disease mild to severe)\nNo heritable thoracic aortic disease diagnosed or suspected\nNo peripheral vascular aneurysm present\nNo positive family history of aneurysm (first-degree relatives)\nNo blood pressure > 130 (systolic) or > 90 (diastolic) in the last 12 months\nNo nicotine consumption for at least 12 months\nNo co-existing dilatation somewhere else in the aorta\nLikely ratings range\n< 30 years at application\n+300\n30 to 50 years at application\n+250\n> 50 years at application\n+200\nIf there is evidence of any factors mentioned above, it is important to refer to the CMO, which should most probably result in a decline or at least higher ratings than above.",
+                "url": "https://www.genre-manuals.com/en_aortic_dilatation_vCMO.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -734,7 +806,8 @@
               "+0",
               "D",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With evidence of size progression",
@@ -773,7 +846,8 @@
               "+0",
               "D",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With aortic surgery",
@@ -809,6 +883,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "a459b2e2c0bb8d2be06eab9075c10eabac1c8723f292906655f9752254f19f5a",
+                "label": "aortic surgery",
+                "markdown": "# Aortic surgery\n\nOpen, endovascular and hybrid repairs of the aorta.\n\n## Aortic surgery\n\nOpen, endovascular and hybrid repairs of the aorta.\n",
+                "plain_text": "Aortic surgery\nOpen, endovascular and hybrid repairs of the aorta.\nAortic surgery\nOpen, endovascular and hybrid repairs of the aorta.",
+                "url": "https://www.genre-manuals.com/en_aorticsurgery.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -846,7 +931,8 @@
               "+0",
               "D",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "> 2 years since surgery",
@@ -883,7 +969,8 @@
               "+0",
               "D",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With increase of thoracic aortic diameter > 0.2 cm/year",
@@ -919,7 +1006,8 @@
               "+0",
               "D",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With history of aortic dissection",
@@ -954,7 +1042,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Without surgery",
@@ -990,7 +1079,8 @@
               "+0",
               "D",
               "I71.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With surgery",
@@ -1026,7 +1116,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≤ 2 years since surgery",
@@ -1063,7 +1154,8 @@
               "+0",
               "D",
               "I71.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "> 2 years since surgery",
@@ -1100,7 +1192,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Without complications and recent report on state of the repair",
@@ -1138,6 +1231,17 @@
               "+0",
               "D",
               "I71.1"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "faa938a28d2cb73232936c2845284b2fcf284a2b006348f663bb80e7a872ff13",
+                "label": "recent report",
+                "markdown": "# Recent report\n\nReport no older than 1 year\n\n## Recent report\n\nReport no older than 1 year\n",
+                "plain_text": "Recent report\nReport no older than 1 year\nRecent report\nReport no older than 1 year",
+                "url": "https://www.genre-manuals.com/en_recent_report.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -1176,6 +1280,17 @@
               "+0",
               "D",
               "I71.1"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "faa938a28d2cb73232936c2845284b2fcf284a2b006348f663bb80e7a872ff13",
+                "label": "recent report",
+                "markdown": "# Recent report\n\nReport no older than 1 year\n\n## Recent report\n\nReport no older than 1 year\n",
+                "plain_text": "Recent report\nReport no older than 1 year\nRecent report\nReport no older than 1 year",
+                "url": "https://www.genre-manuals.com/en_recent_report.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -1210,7 +1325,8 @@
               "+0",
               "D",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Peripheral vascular aneurysm",
@@ -1242,7 +1358,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Present",
@@ -1275,7 +1392,8 @@
               "+0",
               "P",
               "I72.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "History",
@@ -1308,7 +1426,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≤ 1 year",
@@ -1342,7 +1461,8 @@
               "+0",
               "P",
               "I72.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "> 1 year",
@@ -1376,7 +1496,8 @@
               "+0",
               "+20",
               "I72.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Debits",
@@ -1408,6 +1529,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "76cedd1aaca108e002fc16e81687b38df0be66ae7de8c9154bbc981262dbfa0a",
+                "label": "Debits",
+                "markdown": "# debits--credits\n\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\n\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\n\nTo account for these risk factors, the assessment is modified accordingly:\n\n- In case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (**credit**).\n\n- In case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (**debit**).\n\n- In case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\n\n- The total loading cannot be < +0.\n\n## debits--credits\n\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\n\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\n\nTo account for these risk factors, the assessment is modified accordingly:\n\n- In case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (**credit**).\n\n- In case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (**debit**).\n\n- In case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\n\n- The total loading cannot be < +0.\n",
+                "plain_text": "debits--credits\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\nTo account for these risk factors, the assessment is modified accordingly:\nIn case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (\ncredit\n).\nIn case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (\ndebit\n).\nIn case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\nThe total loading cannot be < +0.\ndebits--credits\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\nTo account for these risk factors, the assessment is modified accordingly:\nIn case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (\ncredit\n).\nIn case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (\ndebit\n).\nIn case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\nThe total loading cannot be < +0.",
+                "url": "https://www.genre-manuals.com/gen_debits_credits.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -1441,6 +1573,17 @@
               "Add ratings",
               "Add ratings",
               "I71.9"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "d6ffc3ea321edb320fd487f54c70edb75e54d4ec7bd8a9a4e2d856c1b899a120",
+                "label": "other cardiac disease",
+                "markdown": "# Cardiac disease\n\nValvular heart disease (including bicuspid aortic valve (BAV)), coronary artery disease, cardiac arrhythmias.\n\n## Cardiac disease\n\nValvular heart disease (including bicuspid aortic valve (BAV)), coronary artery disease, cardiac arrhythmias.\n",
+                "plain_text": "Cardiac disease\nValvular heart disease (including bicuspid aortic valve (BAV)), coronary artery disease, cardiac arrhythmias.\nCardiac disease\nValvular heart disease (including bicuspid aortic valve (BAV)), coronary artery disease, cardiac arrhythmias.",
+                "url": "https://www.genre-manuals.com/en_Cardiacdiseaselink.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -1474,7 +1617,8 @@
               "Add ratings",
               "Add ratings",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           }
         ],
         "tree": [
@@ -2487,6 +2631,15 @@
         },
         {
           "available": true,
+          "content_hash": "758ff5bfab9229f1ca306d890ed4c4acdb31a0ad3b9d0f86c3a9ed442303147c",
+          "label": "Hereditary thoracic aortic disease",
+          "markdown": "# Hereditary thoracic aortic disease\n\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\n\n## Hereditary thoracic aortic disease\n\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\n",
+          "plain_text": "Hereditary thoracic aortic disease\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\nHereditary thoracic aortic disease\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).",
+          "url": "https://www.genre-manuals.com/en_hereditarythoraort.htm",
+          "warnings": []
+        },
+        {
+          "available": true,
           "content_hash": "a459b2e2c0bb8d2be06eab9075c10eabac1c8723f292906655f9752254f19f5a",
           "label": "aortic surgery",
           "markdown": "# Aortic surgery\n\nOpen, endovascular and hybrid repairs of the aorta.\n\n## Aortic surgery\n\nOpen, endovascular and hybrid repairs of the aorta.\n",
@@ -3021,7 +3174,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With Hereditary thoracic aortic disease",
@@ -3046,6 +3200,17 @@
               "D",
               "D",
               "I71.9"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "758ff5bfab9229f1ca306d890ed4c4acdb31a0ad3b9d0f86c3a9ed442303147c",
+                "label": "Hereditary thoracic aortic disease",
+                "markdown": "# Hereditary thoracic aortic disease\n\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\n\n## Hereditary thoracic aortic disease\n\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\n",
+                "plain_text": "Hereditary thoracic aortic disease\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\nHereditary thoracic aortic disease\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).",
+                "url": "https://www.genre-manuals.com/en_hereditarythoraort.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -3071,6 +3236,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "758ff5bfab9229f1ca306d890ed4c4acdb31a0ad3b9d0f86c3a9ed442303147c",
+                "label": "Hereditary thoracic aortic disease",
+                "markdown": "# Hereditary thoracic aortic disease\n\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\n\n## Hereditary thoracic aortic disease\n\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\n",
+                "plain_text": "Hereditary thoracic aortic disease\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\nHereditary thoracic aortic disease\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).",
+                "url": "https://www.genre-manuals.com/en_hereditarythoraort.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -3097,7 +3273,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Without history of aortic dissection",
@@ -3124,7 +3301,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Without aortic surgery and without evidence of increase of thoracic aortic diameter > 0.2 cm/year",
@@ -3152,6 +3330,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "a459b2e2c0bb8d2be06eab9075c10eabac1c8723f292906655f9752254f19f5a",
+                "label": "aortic surgery",
+                "markdown": "# Aortic surgery\n\nOpen, endovascular and hybrid repairs of the aorta.\n\n## Aortic surgery\n\nOpen, endovascular and hybrid repairs of the aorta.\n",
+                "plain_text": "Aortic surgery\nOpen, endovascular and hybrid repairs of the aorta.\nAortic surgery\nOpen, endovascular and hybrid repairs of the aorta.",
+                "url": "https://www.genre-manuals.com/en_aorticsurgery.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -3181,7 +3370,8 @@
               "+0",
               "+0",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Size 4.1 - 4.3 cm",
@@ -3210,7 +3400,8 @@
               "+75",
               "+75",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Size > 4.3 cm",
@@ -3239,7 +3430,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≤ 1 measurement within past 4 years",
@@ -3269,7 +3461,8 @@
               "P until 2 measurements are available",
               "P until 2 measurements are available",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≥ 2 measurements within past 4 years",
@@ -3299,7 +3492,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "No evidence of size progression",
@@ -3330,7 +3524,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Size 4.4 - 4.5 cm",
@@ -3362,7 +3557,8 @@
               "+150",
               "+150",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Size > 4.5 cm - ≤ 5.0 cm",
@@ -3394,7 +3590,8 @@
               "D",
               "D",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Size > 5.0 cm",
@@ -3426,7 +3623,8 @@
               "D",
               "D",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With evidence of size progression",
@@ -3457,7 +3655,8 @@
               "D",
               "D",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With aortic surgery",
@@ -3485,6 +3684,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "a459b2e2c0bb8d2be06eab9075c10eabac1c8723f292906655f9752254f19f5a",
+                "label": "aortic surgery",
+                "markdown": "# Aortic surgery\n\nOpen, endovascular and hybrid repairs of the aorta.\n\n## Aortic surgery\n\nOpen, endovascular and hybrid repairs of the aorta.\n",
+                "plain_text": "Aortic surgery\nOpen, endovascular and hybrid repairs of the aorta.\nAortic surgery\nOpen, endovascular and hybrid repairs of the aorta.",
+                "url": "https://www.genre-manuals.com/en_aorticsurgery.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -3514,7 +3724,8 @@
               "D",
               "D",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "> 2 years since surgery",
@@ -3543,7 +3754,8 @@
               "D",
               "D",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With increase of thoracic aortic diameter > 0.2 cm/year",
@@ -3571,7 +3783,8 @@
               "D",
               "D",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With history of aortic dissection",
@@ -3598,7 +3811,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Without surgery",
@@ -3626,7 +3840,8 @@
               "D",
               "D",
               "I71.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With surgery",
@@ -3654,7 +3869,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≤ 2 years since surgery",
@@ -3683,7 +3899,8 @@
               "D",
               "D",
               "I71.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "> 2 years since surgery",
@@ -3712,7 +3929,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Without complications and recent report on state of the repair",
@@ -3742,6 +3960,17 @@
               "D",
               "D",
               "I71.1"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "faa938a28d2cb73232936c2845284b2fcf284a2b006348f663bb80e7a872ff13",
+                "label": "recent report",
+                "markdown": "# Recent report\n\nReport no older than 1 year\n\n## Recent report\n\nReport no older than 1 year\n",
+                "plain_text": "Recent report\nReport no older than 1 year\nRecent report\nReport no older than 1 year",
+                "url": "https://www.genre-manuals.com/en_recent_report.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -3772,6 +4001,17 @@
               "D",
               "D",
               "I71.1"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "faa938a28d2cb73232936c2845284b2fcf284a2b006348f663bb80e7a872ff13",
+                "label": "recent report",
+                "markdown": "# Recent report\n\nReport no older than 1 year\n\n## Recent report\n\nReport no older than 1 year\n",
+                "plain_text": "Recent report\nReport no older than 1 year\nRecent report\nReport no older than 1 year",
+                "url": "https://www.genre-manuals.com/en_recent_report.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -3798,7 +4038,8 @@
               "D",
               "D",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Peripheral vascular aneurysm",
@@ -3822,7 +4063,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Present",
@@ -3847,7 +4089,8 @@
               "P",
               "P",
               "I72.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "History",
@@ -3872,7 +4115,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≤ 1 year",
@@ -3898,7 +4142,8 @@
               "P",
               "P",
               "I72.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "> 1 year",
@@ -3924,7 +4169,8 @@
               "+ 25",
               "+ 25",
               "I72.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Debits",
@@ -3948,6 +4194,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "76cedd1aaca108e002fc16e81687b38df0be66ae7de8c9154bbc981262dbfa0a",
+                "label": "Debits",
+                "markdown": "# debits--credits\n\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\n\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\n\nTo account for these risk factors, the assessment is modified accordingly:\n\n- In case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (**credit**).\n\n- In case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (**debit**).\n\n- In case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\n\n- The total loading cannot be < +0.\n\n## debits--credits\n\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\n\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\n\nTo account for these risk factors, the assessment is modified accordingly:\n\n- In case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (**credit**).\n\n- In case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (**debit**).\n\n- In case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\n\n- The total loading cannot be < +0.\n",
+                "plain_text": "debits--credits\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\nTo account for these risk factors, the assessment is modified accordingly:\nIn case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (\ncredit\n).\nIn case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (\ndebit\n).\nIn case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\nThe total loading cannot be < +0.\ndebits--credits\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\nTo account for these risk factors, the assessment is modified accordingly:\nIn case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (\ncredit\n).\nIn case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (\ndebit\n).\nIn case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\nThe total loading cannot be < +0.",
+                "url": "https://www.genre-manuals.com/gen_debits_credits.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -3973,6 +4230,17 @@
               "Add ratings",
               "Add ratings",
               "I71.9"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "d6ffc3ea321edb320fd487f54c70edb75e54d4ec7bd8a9a4e2d856c1b899a120",
+                "label": "other cardiac disease",
+                "markdown": "# Cardiac disease\n\nValvular heart disease (including bicuspid aortic valve (BAV)), coronary artery disease, cardiac arrhythmias.\n\n## Cardiac disease\n\nValvular heart disease (including bicuspid aortic valve (BAV)), coronary artery disease, cardiac arrhythmias.\n",
+                "plain_text": "Cardiac disease\nValvular heart disease (including bicuspid aortic valve (BAV)), coronary artery disease, cardiac arrhythmias.\nCardiac disease\nValvular heart disease (including bicuspid aortic valve (BAV)), coronary artery disease, cardiac arrhythmias.",
+                "url": "https://www.genre-manuals.com/en_Cardiacdiseaselink.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -3998,7 +4266,8 @@
               "Add ratings",
               "Add ratings",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           }
         ],
         "tree": [
@@ -4822,6 +5091,15 @@
         },
         {
           "available": true,
+          "content_hash": "758ff5bfab9229f1ca306d890ed4c4acdb31a0ad3b9d0f86c3a9ed442303147c",
+          "label": "Hereditary thoracic aortic disease",
+          "markdown": "# Hereditary thoracic aortic disease\n\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\n\n## Hereditary thoracic aortic disease\n\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\n",
+          "plain_text": "Hereditary thoracic aortic disease\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\nHereditary thoracic aortic disease\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).",
+          "url": "https://www.genre-manuals.com/en_hereditarythoraort.htm",
+          "warnings": []
+        },
+        {
+          "available": true,
           "content_hash": "a459b2e2c0bb8d2be06eab9075c10eabac1c8723f292906655f9752254f19f5a",
           "label": "aortic surgery",
           "markdown": "# Aortic surgery\n\nOpen, endovascular and hybrid repairs of the aorta.\n\n## Aortic surgery\n\nOpen, endovascular and hybrid repairs of the aorta.\n",
@@ -5202,7 +5480,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With Hereditary thoracic aortic disease",
@@ -5229,6 +5508,17 @@
               "D",
               "D",
               "I71.9"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "758ff5bfab9229f1ca306d890ed4c4acdb31a0ad3b9d0f86c3a9ed442303147c",
+                "label": "Hereditary thoracic aortic disease",
+                "markdown": "# Hereditary thoracic aortic disease\n\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\n\n## Hereditary thoracic aortic disease\n\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\n",
+                "plain_text": "Hereditary thoracic aortic disease\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\nHereditary thoracic aortic disease\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).",
+                "url": "https://www.genre-manuals.com/en_hereditarythoraort.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -5256,6 +5546,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "758ff5bfab9229f1ca306d890ed4c4acdb31a0ad3b9d0f86c3a9ed442303147c",
+                "label": "Hereditary thoracic aortic disease",
+                "markdown": "# Hereditary thoracic aortic disease\n\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\n\n## Hereditary thoracic aortic disease\n\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\n",
+                "plain_text": "Hereditary thoracic aortic disease\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\nHereditary thoracic aortic disease\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).",
+                "url": "https://www.genre-manuals.com/en_hereditarythoraort.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -5284,7 +5585,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Without history of aortic dissection",
@@ -5313,7 +5615,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Without aortic surgery and without evidence of increase of thoracic aortic diameter > 0.2 cm/year",
@@ -5343,6 +5646,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "a459b2e2c0bb8d2be06eab9075c10eabac1c8723f292906655f9752254f19f5a",
+                "label": "aortic surgery",
+                "markdown": "# Aortic surgery\n\nOpen, endovascular and hybrid repairs of the aorta.\n\n## Aortic surgery\n\nOpen, endovascular and hybrid repairs of the aorta.\n",
+                "plain_text": "Aortic surgery\nOpen, endovascular and hybrid repairs of the aorta.\nAortic surgery\nOpen, endovascular and hybrid repairs of the aorta.",
+                "url": "https://www.genre-manuals.com/en_aorticsurgery.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -5374,7 +5688,8 @@
               "+10",
               "+10",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Size 4.1 - 4.3 cm",
@@ -5405,7 +5720,8 @@
               "+20",
               "+20",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Size > 4.3 cm",
@@ -5436,7 +5752,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≤ 1 measurement within past 4 years",
@@ -5468,7 +5785,8 @@
               "D",
               "D",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≥ 2 measurements within past 4 years",
@@ -5500,7 +5818,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "No evidence of size progression",
@@ -5533,7 +5852,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Size 4.4 - 4.5 cm",
@@ -5567,7 +5887,8 @@
               "D",
               "D",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Size > 4.5 cm - ≤ 5.0 cm",
@@ -5601,7 +5922,8 @@
               "D",
               "D",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Size > 5.0 cm",
@@ -5635,7 +5957,8 @@
               "D",
               "D",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With evidence of size progression",
@@ -5668,7 +5991,8 @@
               "D",
               "D",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With aortic surgery",
@@ -5698,6 +6022,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "a459b2e2c0bb8d2be06eab9075c10eabac1c8723f292906655f9752254f19f5a",
+                "label": "aortic surgery",
+                "markdown": "# Aortic surgery\n\nOpen, endovascular and hybrid repairs of the aorta.\n\n## Aortic surgery\n\nOpen, endovascular and hybrid repairs of the aorta.\n",
+                "plain_text": "Aortic surgery\nOpen, endovascular and hybrid repairs of the aorta.\nAortic surgery\nOpen, endovascular and hybrid repairs of the aorta.",
+                "url": "https://www.genre-manuals.com/en_aorticsurgery.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -5729,7 +6064,8 @@
               "D",
               "D",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "> 2 years since surgery",
@@ -5760,7 +6096,8 @@
               "D",
               "D",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With increase of thoracic aortic diameter > 0.2 cm/year",
@@ -5790,7 +6127,8 @@
               "D",
               "D",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With history of aortic dissection",
@@ -5819,7 +6157,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Without surgery",
@@ -5849,7 +6188,8 @@
               "D",
               "D",
               "I71.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "With surgery",
@@ -5879,7 +6219,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≤ 2 years since surgery",
@@ -5910,7 +6251,8 @@
               "D",
               "D",
               "I71.1"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "> 2 years since surgery",
@@ -5941,7 +6283,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Without complications and recent report on state of the repair",
@@ -5973,6 +6316,17 @@
               "D",
               "D",
               "I71.1"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "faa938a28d2cb73232936c2845284b2fcf284a2b006348f663bb80e7a872ff13",
+                "label": "recent report",
+                "markdown": "# Recent report\n\nReport no older than 1 year\n\n## Recent report\n\nReport no older than 1 year\n",
+                "plain_text": "Recent report\nReport no older than 1 year\nRecent report\nReport no older than 1 year",
+                "url": "https://www.genre-manuals.com/en_recent_report.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -6005,6 +6359,17 @@
               "D",
               "D",
               "I71.1"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "faa938a28d2cb73232936c2845284b2fcf284a2b006348f663bb80e7a872ff13",
+                "label": "recent report",
+                "markdown": "# Recent report\n\nReport no older than 1 year\n\n## Recent report\n\nReport no older than 1 year\n",
+                "plain_text": "Recent report\nReport no older than 1 year\nRecent report\nReport no older than 1 year",
+                "url": "https://www.genre-manuals.com/en_recent_report.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -6033,7 +6398,8 @@
               "D",
               "D",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Peripheral vascular aneurysm",
@@ -6059,7 +6425,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Present",
@@ -6086,7 +6453,8 @@
               "P",
               "P",
               "I72.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "History",
@@ -6113,7 +6481,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≤ 1 year",
@@ -6141,7 +6510,8 @@
               "P",
               "P",
               "I72.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "> 1 year",
@@ -6169,7 +6539,8 @@
               "+10",
               "+10",
               "I72.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Debits",
@@ -6195,6 +6566,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "76cedd1aaca108e002fc16e81687b38df0be66ae7de8c9154bbc981262dbfa0a",
+                "label": "Debits",
+                "markdown": "# debits--credits\n\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\n\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\n\nTo account for these risk factors, the assessment is modified accordingly:\n\n- In case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (**credit**).\n\n- In case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (**debit**).\n\n- In case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\n\n- The total loading cannot be < +0.\n\n## debits--credits\n\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\n\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\n\nTo account for these risk factors, the assessment is modified accordingly:\n\n- In case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (**credit**).\n\n- In case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (**debit**).\n\n- In case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\n\n- The total loading cannot be < +0.\n",
+                "plain_text": "debits--credits\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\nTo account for these risk factors, the assessment is modified accordingly:\nIn case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (\ncredit\n).\nIn case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (\ndebit\n).\nIn case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\nThe total loading cannot be < +0.\ndebits--credits\nCredits and debits apply when factors exist that are not part of the medical condition itself but may nevertheless have significant impact on its course and outcome.\nDepending on the specific medical condition, positive factors can include the application of a method of treatment that has been proven to be especially effective or proof of good compliance, for example. On the contrary, examples for negative factors can be continuing nicotine consumption or the continuing exposure to allergens.\nTo account for these risk factors, the assessment is modified accordingly:\nIn case of a positive risk factor, the original assessment is reduced by the discount specified in the rating tables (\ncredit\n).\nIn case of a negative factor, an additional rating is added to the original rating or the original assessment is overwritten e.g. by D or CMO (\ndebit\n).\nIn case of multiple positive and/or negative factors, they are applied simultaneously, i.e. added up.\nThe total loading cannot be < +0.",
+                "url": "https://www.genre-manuals.com/gen_debits_credits.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -6222,6 +6604,17 @@
               "Add ratings",
               "Add ratings",
               "I71.9"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "d6ffc3ea321edb320fd487f54c70edb75e54d4ec7bd8a9a4e2d856c1b899a120",
+                "label": "other cardiac disease",
+                "markdown": "# Cardiac disease\n\nValvular heart disease (including bicuspid aortic valve (BAV)), coronary artery disease, cardiac arrhythmias.\n\n## Cardiac disease\n\nValvular heart disease (including bicuspid aortic valve (BAV)), coronary artery disease, cardiac arrhythmias.\n",
+                "plain_text": "Cardiac disease\nValvular heart disease (including bicuspid aortic valve (BAV)), coronary artery disease, cardiac arrhythmias.\nCardiac disease\nValvular heart disease (including bicuspid aortic valve (BAV)), coronary artery disease, cardiac arrhythmias.",
+                "url": "https://www.genre-manuals.com/en_Cardiacdiseaselink.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -6249,7 +6642,8 @@
               "Add ratings",
               "Add ratings",
               "I71.9"
-            ]
+            ],
+            "related_details": []
           }
         ],
         "tree": [
@@ -7132,6 +7526,15 @@
           "markdown": "# Chronic Medication\n\n**Definition**\n\nThe ***Chronic Medication*** benefit is defined as insurance against the costs of\n\n- specific medication prescribed by an accredited physician, surgeon or sectional specialist in the management of a patient;\n- for a continuous period of not less than three months; and\n- to permit, maintain or enhance quality of life and function which would otherwise be impaired were the prescribed medication not utilised or otherwise not made available on a regular long-term basis.\n\n**Notes**\n\nShort-term and “once-off” medications will be covered under the other benefits, primarily ***Out-Patient*** Chronic medication should be of a long-term nature, e.g. medications for treatment of hypertension, diabetes mellitus, or epilepsy.\n\nChronic medication may be dispensed in hospitals (but would not – except in extreme cases of long-term hospitalisation – fall under the Hospitalisation benefit). It is more likely to be dispensed by Hospital Out Patient Departments (OPDs) and clinics, and may also be supplied by dispensing physicians and incorporated within the consultation charge. The latter possibility has been taken into account in the OPD ratings, but any policy which incorporates an OPD benefit for chronic medication should underwrite the risk in terms of the latter category as well.\n\n## Chronic Medication\n\n**Definition**\n\nThe ***Chronic Medication*** benefit is defined as insurance against the costs of\n\n- specific medication prescribed by an accredited physician, surgeon or sectional specialist in the management of a patient;\n- for a continuous period of not less than three months; and\n- to permit, maintain or enhance quality of life and function which would otherwise be impaired were the prescribed medication not utilised or otherwise not made available on a regular long-term basis.\n\n**Notes**\n\nShort-term and “once-off” medications will be covered under the other benefits, primarily ***Out-Patient*** Chronic medication should be of a long-term nature, e.g. medications for treatment of hypertension, diabetes mellitus, or epilepsy.\n\nChronic medication may be dispensed in hospitals (but would not – except in extreme cases of long-term hospitalisation – fall under the Hospitalisation benefit). It is more likely to be dispensed by Hospital Out Patient Departments (OPDs) and clinics, and may also be supplied by dispensing physicians and incorporated within the consultation charge. The latter possibility has been taken into account in the OPD ratings, but any policy which incorporates an OPD benefit for chronic medication should underwrite the risk in terms of the latter category as well.\n",
           "plain_text": "Chronic Medication\nDefinition\nThe\nChronic Medication\nbenefit is defined as insurance against the costs of\nspecific medication prescribed by an accredited physician, surgeon or sectional specialist in the management of a patient;\nfor a continuous period of not less than three months; and\nto permit, maintain or enhance quality of life and function which would otherwise be impaired were the prescribed medication not utilised or otherwise not made available on a regular long-term basis.\nNotes\nShort-term and “once-off” medications will be covered under the other benefits, primarily\nOut-Patient\nChronic medication should be of a long-term nature, e.g. medications for treatment of hypertension, diabetes mellitus, or epilepsy.\nChronic medication may be dispensed in hospitals (but would not – except in extreme cases of long-term hospitalisation – fall under the Hospitalisation benefit). It is more likely to be dispensed by Hospital Out Patient Departments (OPDs) and clinics, and may also be supplied by dispensing physicians and incorporated within the consultation charge. The latter possibility has been taken into account in the OPD ratings, but any policy which incorporates an OPD benefit for chronic medication should underwrite the risk in terms of the latter category as well.\nChronic Medication\nDefinition\nThe\nChronic Medication\nbenefit is defined as insurance against the costs of\nspecific medication prescribed by an accredited physician, surgeon or sectional specialist in the management of a patient;\nfor a continuous period of not less than three months; and\nto permit, maintain or enhance quality of life and function which would otherwise be impaired were the prescribed medication not utilised or otherwise not made available on a regular long-term basis.\nNotes\nShort-term and “once-off” medications will be covered under the other benefits, primarily\nOut-Patient\nChronic medication should be of a long-term nature, e.g. medications for treatment of hypertension, diabetes mellitus, or epilepsy.\nChronic medication may be dispensed in hospitals (but would not – except in extreme cases of long-term hospitalisation – fall under the Hospitalisation benefit). It is more likely to be dispensed by Hospital Out Patient Departments (OPDs) and clinics, and may also be supplied by dispensing physicians and incorporated within the consultation charge. The latter possibility has been taken into account in the OPD ratings, but any policy which incorporates an OPD benefit for chronic medication should underwrite the risk in terms of the latter category as well.",
           "url": "https://www.genre-manuals.com/chronic_medication.htm",
+          "warnings": []
+        },
+        {
+          "available": true,
+          "content_hash": "758ff5bfab9229f1ca306d890ed4c4acdb31a0ad3b9d0f86c3a9ed442303147c",
+          "label": "Hereditary thoracic aortic disease",
+          "markdown": "# Hereditary thoracic aortic disease\n\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\n\n## Hereditary thoracic aortic disease\n\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\n",
+          "plain_text": "Hereditary thoracic aortic disease\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).\nHereditary thoracic aortic disease\nSyndromic (e.g. Marfan syndrome, Loeys-Dietz syndrome, vascular Ehlers-Danlos syndrome) and non-syndromic (familial thoracic aortic aneurysm/FTAA).",
+          "url": "https://www.genre-manuals.com/en_hereditarythoraort.htm",
           "warnings": []
         },
         {

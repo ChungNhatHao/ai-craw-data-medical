@@ -42,6 +42,7 @@ class RunRequest(BaseModel):
     disease_names: tuple[str, ...] = ()
     authorization_confirmed: bool
     agentic_discovery: bool = False
+    agentic_parsing: bool = False
     ai_normalization: bool = False
     expand_disease_categories: bool = True
     category_max_depth: int = Field(default=5, ge=1, le=8)

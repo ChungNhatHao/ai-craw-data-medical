@@ -1,3 +1,5 @@
+import re
+
 from bs4 import BeautifulSoup
 
 from app.core.errors import CrawlerError, ErrorCode
@@ -23,7 +25,8 @@ from app.services.incremental import (
 )
 from app.storage.artifacts import ArtifactStore
 
-CLEANER_VERSION = "1.2.0"
+CLEANER_VERSION = "1.4.0"
+ICD_CODE_PATTERN = re.compile(r"^[A-Z]\d[\dA-Z.]*$")
 
 
 class CleaningService:
@@ -293,6 +296,12 @@ class CleaningService:
                     )
                 )
                 continue
+            tables = self._extract_tables(extracted.html)
+            if tab.key == "info":
+                summary_table = self._extract_info_summary_table(tab.html)
+                if summary_table is not None:
+                    tables = (summary_table, *tables)
+            related_details = self._clean_related_details(tab.related_details)
             cleaned.append(
                 DiseaseTabContent(
                     key=tab.key,
@@ -300,17 +309,18 @@ class CleaningService:
                     source_url=tab.source_url,
                     plain_text=extracted.plain_text,
                     markdown=markdown,
-                    tables=self._extract_tables(extracted.html),
-                    classification_table=extract_classification_table(tab.html),
+                    tables=tables,
+                    classification_table=extract_classification_table(
+                        tab.html,
+                        related_details=related_details,
+                    ),
                     content_hash=content_hash(markdown),
                     warnings=tuple(
                         dict.fromkeys(
                             (*extracted.warnings, *markdown_warnings)
                         )
                     ),
-                    related_details=self._clean_related_details(
-                        tab.related_details
-                    ),
+                    related_details=related_details,
                 )
             )
         return tuple(cleaned)
@@ -386,3 +396,44 @@ class CleaningService:
             if rows:
                 tables.append(DiseaseTabTable(rows=tuple(rows)))
         return tuple(tables)
+
+    def _extract_info_summary_table(
+        self,
+        html: str,
+    ) -> DiseaseTabTable | None:
+        """Create chunk-friendly rows for the non-table Info preamble."""
+        soup = BeautifulSoup(html, "lxml")
+        rows: list[tuple[str, ...]] = []
+        synonym_blocks = [
+            " ".join(node.get_text(" ", strip=True).split())
+            for node in soup.select(".synonyms")
+            if node.get_text(" ", strip=True)
+        ]
+        codes: list[str] = []
+        aliases: list[str] = []
+        for block in synonym_blocks:
+            parts = tuple(part.strip() for part in block.split("*") if part.strip())
+            if parts and all(ICD_CODE_PATTERN.fullmatch(part) for part in parts):
+                codes.append(block)
+            else:
+                aliases.append(block)
+        if codes:
+            rows.append(("Codes", " * ".join(codes)))
+        if aliases:
+            rows.append(("Aliases", " * ".join(aliases)))
+
+        summary_blocks: list[str] = []
+        for intro in soup.select(".intro"):
+            for child in intro.children:
+                if getattr(child, "name", None) == "table":
+                    break
+                if getattr(child, "name", None) != "p":
+                    continue
+                text = " ".join(child.get_text(" ", strip=True).split())
+                if text:
+                    summary_blocks.append(text)
+            if summary_blocks:
+                break
+        if summary_blocks:
+            rows.append(("Summary", "\n\n".join(summary_blocks)))
+        return DiseaseTabTable(rows=tuple(rows)) if rows else None

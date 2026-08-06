@@ -15,5 +15,6 @@ def settings(tmp_path: Path) -> Settings:
         output_root=tmp_path / "output",
         session_root=tmp_path / "sessions",
         agentic_discovery_enabled=False,
+        agentic_parsing_enabled=False,
         ai_normalization_enabled=False,
     )

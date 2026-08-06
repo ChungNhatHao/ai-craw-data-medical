@@ -1,6 +1,6 @@
 # Định nghĩa các field của `disease.json`
 
-Tài liệu này mô tả cấu trúc output chuẩn `disease.json` schema `1.2`. File tham chiếu:
+Tài liệu này mô tả cấu trúc output chuẩn `disease.json` schema `1.3`. File tham chiếu:
 `output/jobs/ffb80fbb-2ec0-4db0-9496-8aab3a17cc06/items/alzheimer-s-disease--4490f0a7e03d/disease.json`.
 
 ## Quy ước
@@ -19,7 +19,7 @@ Tài liệu này mô tả cấu trúc output chuẩn `disease.json` schema `1.2`
 
 | JSON path | Kiểu | Bắt buộc | Ý nghĩa |
 | --- | --- | --- | --- |
-| `schema_version` | `string` | Có | Phiên bản schema của tài liệu. Giá trị hiện tại là `1.2`. |
+| `schema_version` | `string` | Có | Phiên bản schema của tài liệu. Giá trị hiện tại là `1.3`. |
 | `document_id` | `string` (SHA-256) | Có | ID duy nhất của crawl item; trong luồng hiện tại chính là `item_id`. |
 | `source` | `object` | Có | Nguồn và provenance của nội dung đã crawl. |
 | `disease` | `object` | Có | Dữ liệu y khoa có cấu trúc được trích xuất. |
@@ -89,7 +89,7 @@ Với mảng có `N` phần tử, phần tử ở vị trí `i` phải có `leve
 | `tabs[].available` | `boolean` | Không | Cho biết tab có truy cập/lấy dữ liệu được hay không; mặc định `true`. |
 | `tabs[].plain_text` | `string` | Không | Nội dung sạch dạng văn bản thuần; mặc định `""`. |
 | `tabs[].markdown` | `string` | Không | Nội dung sạch dạng Markdown; mặc định `""`. |
-| `tabs[].tables` | `array<object>` | Không | Các bảng tổng quát lấy từ tab. Mặc định `[]`. |
+| `tabs[].tables` | `array<object>` | Không | Các bảng dùng cho chunking và tra cứu. Ở tab `info`, bảng đầu tiên có thể là bảng tổng hợp `Codes`/`Aliases`/`Summary`; các phần tử sau là bảng lấy từ nguồn. Mặc định `[]`. |
 | `tabs[].classification_table` | `object hoặc null` | Không | Bảng phân loại/rating đã chuẩn hóa; `null` nếu tab không có bảng phù hợp. |
 | `tabs[].content_hash` | `string (SHA-256) hoặc null` | Không | Hash của Markdown sạch trong tab, dùng để phát hiện thay đổi. |
 | `tabs[].warnings` | `array<string>` | Không | Cảnh báo phát sinh khi làm sạch hoặc parse tab. Mặc định `[]`. |
@@ -108,7 +108,7 @@ Với mảng có `N` phần tử, phần tử ở vị trí `i` phải có `leve
 
 | JSON path | Kiểu | Bắt buộc | Ý nghĩa |
 | --- | --- | --- | --- |
-| `tabs[].tables[].rows` | `array<array<string>>` | Không | Các dòng/cell của bảng theo đúng thứ tự nguồn. Mặc định `[]`; schema không áp đặt số cột cố định. |
+| `tabs[].tables[].rows` | `array<array<string>>` | Không | Các dòng/cell của bảng. Mặc định `[]`; schema không áp đặt số cột cố định. Với tab `info`, bảng đầu tiên là các row tổng hợp `Codes`, `Aliases`, `Summary` được tạo từ phần mở đầu để thuận tiện cho chunking; các bảng còn lại giữ thứ tự nguồn. |
 
 ## 7. `tabs[].classification_table` — bảng phân loại chuẩn hóa
 
@@ -133,6 +133,7 @@ Với mảng có `N` phần tử, phần tử ở vị trí `i` phải có `leve
 | `...rows[].ratings` | `object<string,string>` | Có | Map động từ tên cột quyền lợi sang giá trị rating gốc; schema không giới hạn tên key hoặc mã rating. |
 | `...rows[].code` | `string hoặc null` | Có | Mã bệnh/phân loại ở cột `Code`; `null` nếu ô trống. |
 | `...rows[].raw_cells` | `array<string>` | Không | Toàn bộ cell đã căn theo `headers`, giữ thứ tự cột để audit. Mặc định `[]`. |
+| `...rows[].related_details` | `array<object>` | Không | Chú thích từ các popup link xuất hiện trực tiếp trong row classification này. Nội dung được gắn cùng row để phục vụ chunking. Mặc định `[]`. |
 
 Ví dụ `ratings` có thể chứa các key `Life`, `DD/CI`, `TPD own`, `TPD any`,
 `ADism`, `ADB`, `LTC`, `D2/52`, `D4/52`, `D13/52`, `Hospitalisation`,

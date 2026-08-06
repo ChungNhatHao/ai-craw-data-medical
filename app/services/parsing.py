@@ -44,6 +44,7 @@ class StructuredParsingService:
         language: str,
         policy: ParsingPolicy | None = None,
         canonicalize_url: Callable[[str], str] | None = None,
+        additional_warnings: tuple[str, ...] = (),
     ) -> None:
         self.client = client
         self.items = items
@@ -52,6 +53,7 @@ class StructuredParsingService:
         self.language = language
         self.policy = policy or ParsingPolicy()
         self.canonicalize_url = canonicalize_url or (lambda value: value)
+        self.additional_warnings = additional_warnings
 
     async def run(
         self,
@@ -239,6 +241,7 @@ class StructuredParsingService:
                                 else ("missing_menu_hierarchy",)
                             ),
                             *(("validation_repair_applied",) if repair_applied else ()),
+                            *self.additional_warnings,
                         )
                     ),
                 ),

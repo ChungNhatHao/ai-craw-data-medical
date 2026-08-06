@@ -95,10 +95,11 @@
       "deterministic_full_content:causes",
       "deterministic_full_content:symptoms",
       "deterministic_full_content:diagnosis",
-      "deterministic_full_content:treatment"
+      "deterministic_full_content:treatment",
+      "incremental_unchanged_reused"
     ]
   },
-  "schema_version": "1.2",
+  "schema_version": "1.3",
   "sections": [
     {
       "heading": "Atrial fibrillation",
@@ -112,7 +113,7 @@
     "content_hash": "6571e5bb20392f1aab6d20c45ba7d1ae9fcab08f00dbf16b184621510cb2e36e",
     "language": "en",
     "plugin": "genre_manuals",
-    "retrieved_at": "2026-08-03T03:43:02.583595Z",
+    "retrieved_at": "2026-08-05T09:02:50.161353Z",
     "url": "https://www.genre-manuals.com/en_atrial_fibrillation.htm"
   },
   "tabs": [
@@ -127,6 +128,22 @@
       "related_details": [],
       "source_url": "https://www.genre-manuals.com/en_atrial_fibrillation.htm",
       "tables": [
+        {
+          "rows": [
+            [
+              "Codes",
+              "I48 * I48.0 * I48.1 * I48.2 * I48.3 * I48.4 * I48.9"
+            ],
+            [
+              "Aliases",
+              "AF * Absolute arrhythmia * Tachyarrhythmia absoluta * Holiday heart syndrome * Chronic atrial fibrillation"
+            ],
+            [
+              "Summary",
+              "Atrial fibrillation (AF) is characterised by disorganised atrial activity. When an abnormally high atrial rate develops, irregular transmission of stimuli to the ventricles occurs resulting in a rapid, irregular heart rate. AF is a common cardiac rhythm disturbance. It may occur as a brief symptom- free episode with transient bouts of irregular heart beat or as a sustained form of arrhythmia (paroxysmal AF or transient AF). Episodes of AF may spontaneously revert to normal sinus rhythm or may enter a chronic stage. Although AF may present as a transient episode in otherwise fit subjects it usually is an indication of associated cardiac disease."
+            ]
+          ]
+        },
         {
           "rows": [
             [
@@ -211,6 +228,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "f175018c000ea18ddea430b758cdba3c859906f62f502d1b7056dcde20d40216",
+                "label": "heart disease or comorbidities",
+                "markdown": "# Heart disease or comorbidities\n\n**Heart disease:**\n\n- Coronary heart disease\n- Cardiomyopathy\n- Heart valve disorder\n- Ischaemic heart disease\n- Wolff-Parkinson-White syndrome\n\n**Comorbidities (non-cardiac conditions):**\n\n- Hyperthyroidism\n- Thyrotoxicosis\n\n## Heart disease or comorbidities\n\n**Heart disease:**\n\n- Coronary heart disease\n- Cardiomyopathy\n- Heart valve disorder\n- Ischaemic heart disease\n- Wolff-Parkinson-White syndrome\n\n**Comorbidities (non-cardiac conditions):**\n\n- Hyperthyroidism\n- Thyrotoxicosis\n",
+                "plain_text": "Heart disease or comorbidities\nHeart disease:\nCoronary heart disease\nCardiomyopathy\nHeart valve disorder\nIschaemic heart disease\nWolff-Parkinson-White syndrome\nComorbidities (non-cardiac conditions):\nHyperthyroidism\nThyrotoxicosis\nHeart disease or comorbidities\nHeart disease:\nCoronary heart disease\nCardiomyopathy\nHeart valve disorder\nIschaemic heart disease\nWolff-Parkinson-White syndrome\nComorbidities (non-cardiac conditions):\nHyperthyroidism\nThyrotoxicosis",
+                "url": "https://www.genre-manuals.com/en_heart_disease.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -244,6 +272,17 @@
               "P",
               "P",
               "I48.9"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "a0dc2e8e9507273c12af529d9939c61f29b934b1be86a4de4e5ba68634f59062",
+                "label": "atrial fibrillation",
+                "markdown": "# Atrial fibrillation: Types\n\n| Column 1 | Column 2 |\n| --- | --- |\n| According to 2014 AHA / ACC / HRS Guideline |  |\n| Type | Definition |\n| Paroxysmal AF | AF that terminates spontaneously or with intervention within 7 days of onset / Episodes may recur with variable frequency |\n| Persistent AF | Continuous AF that is sustained > 7 days |\n| Long-standing persistent AF *(previously called chronic AF)* | Continuous AF > 12 months in duration. |\n| Permanent AF | The term “permanent AF” is used when the patient and clinician make a joint decision to stop further attempts to restore and / or maintain sinus rhythm. |\n\n## Atrial fibrillation: Types\n\n| Column 1 | Column 2 |\n| --- | --- |\n| According to 2014 AHA / ACC / HRS Guideline |  |\n| Type | Definition |\n| Paroxysmal AF | AF that terminates spontaneously or with intervention within 7 days of onset / Episodes may recur with variable frequency |\n| Persistent AF | Continuous AF that is sustained > 7 days |\n| Long-standing persistent AF *(previously called chronic AF)* | Continuous AF > 12 months in duration. |\n| Permanent AF | The term “permanent AF” is used when the patient and clinician make a joint decision to stop further attempts to restore and / or maintain sinus rhythm. |\n",
+                "plain_text": "Atrial fibrillation: Types\nAccording to 2014 AHA / ACC / HRS Guideline\nType\nDefinition\nParoxysmal AF\nAF that terminates spontaneously or with intervention within 7 days of onset\nEpisodes may recur with variable frequency\nPersistent AF\nContinuous AF that is sustained > 7 days\nLong-standing persistent AF\n(previously called chronic AF)\nContinuous AF > 12 months in duration.\nPermanent AF\nThe term “permanent AF” is used when the patient and clinician make a joint decision to stop further attempts to restore and / or maintain sinus rhythm.\nAtrial fibrillation: Types\nAccording to 2014 AHA / ACC / HRS Guideline\nType\nDefinition\nParoxysmal AF\nAF that terminates spontaneously or with intervention within 7 days of onset\nEpisodes may recur with variable frequency\nPersistent AF\nContinuous AF that is sustained > 7 days\nLong-standing persistent AF\n(previously called chronic AF)\nContinuous AF > 12 months in duration.\nPermanent AF\nThe term “permanent AF” is used when the patient and clinician make a joint decision to stop further attempts to restore and / or maintain sinus rhythm.",
+                "url": "https://www.genre-manuals.com/en_af_types.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -277,6 +316,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "a0dc2e8e9507273c12af529d9939c61f29b934b1be86a4de4e5ba68634f59062",
+                "label": "atrial fibrillation",
+                "markdown": "# Atrial fibrillation: Types\n\n| Column 1 | Column 2 |\n| --- | --- |\n| According to 2014 AHA / ACC / HRS Guideline |  |\n| Type | Definition |\n| Paroxysmal AF | AF that terminates spontaneously or with intervention within 7 days of onset / Episodes may recur with variable frequency |\n| Persistent AF | Continuous AF that is sustained > 7 days |\n| Long-standing persistent AF *(previously called chronic AF)* | Continuous AF > 12 months in duration. |\n| Permanent AF | The term “permanent AF” is used when the patient and clinician make a joint decision to stop further attempts to restore and / or maintain sinus rhythm. |\n\n## Atrial fibrillation: Types\n\n| Column 1 | Column 2 |\n| --- | --- |\n| According to 2014 AHA / ACC / HRS Guideline |  |\n| Type | Definition |\n| Paroxysmal AF | AF that terminates spontaneously or with intervention within 7 days of onset / Episodes may recur with variable frequency |\n| Persistent AF | Continuous AF that is sustained > 7 days |\n| Long-standing persistent AF *(previously called chronic AF)* | Continuous AF > 12 months in duration. |\n| Permanent AF | The term “permanent AF” is used when the patient and clinician make a joint decision to stop further attempts to restore and / or maintain sinus rhythm. |\n",
+                "plain_text": "Atrial fibrillation: Types\nAccording to 2014 AHA / ACC / HRS Guideline\nType\nDefinition\nParoxysmal AF\nAF that terminates spontaneously or with intervention within 7 days of onset\nEpisodes may recur with variable frequency\nPersistent AF\nContinuous AF that is sustained > 7 days\nLong-standing persistent AF\n(previously called chronic AF)\nContinuous AF > 12 months in duration.\nPermanent AF\nThe term “permanent AF” is used when the patient and clinician make a joint decision to stop further attempts to restore and / or maintain sinus rhythm.\nAtrial fibrillation: Types\nAccording to 2014 AHA / ACC / HRS Guideline\nType\nDefinition\nParoxysmal AF\nAF that terminates spontaneously or with intervention within 7 days of onset\nEpisodes may recur with variable frequency\nPersistent AF\nContinuous AF that is sustained > 7 days\nLong-standing persistent AF\n(previously called chronic AF)\nContinuous AF > 12 months in duration.\nPermanent AF\nThe term “permanent AF” is used when the patient and clinician make a joint decision to stop further attempts to restore and / or maintain sinus rhythm.",
+                "url": "https://www.genre-manuals.com/en_af_types.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -311,7 +361,8 @@
               "+50",
               "+50",
               "I48.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≥ 1 year and normal sinus rhythm",
@@ -345,7 +396,8 @@
               "+0",
               "+0",
               "I48.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Without underlying heart disease or comorbidities",
@@ -377,6 +429,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "f175018c000ea18ddea430b758cdba3c859906f62f502d1b7056dcde20d40216",
+                "label": "heart disease or comorbidities",
+                "markdown": "# Heart disease or comorbidities\n\n**Heart disease:**\n\n- Coronary heart disease\n- Cardiomyopathy\n- Heart valve disorder\n- Ischaemic heart disease\n- Wolff-Parkinson-White syndrome\n\n**Comorbidities (non-cardiac conditions):**\n\n- Hyperthyroidism\n- Thyrotoxicosis\n\n## Heart disease or comorbidities\n\n**Heart disease:**\n\n- Coronary heart disease\n- Cardiomyopathy\n- Heart valve disorder\n- Ischaemic heart disease\n- Wolff-Parkinson-White syndrome\n\n**Comorbidities (non-cardiac conditions):**\n\n- Hyperthyroidism\n- Thyrotoxicosis\n",
+                "plain_text": "Heart disease or comorbidities\nHeart disease:\nCoronary heart disease\nCardiomyopathy\nHeart valve disorder\nIschaemic heart disease\nWolff-Parkinson-White syndrome\nComorbidities (non-cardiac conditions):\nHyperthyroidism\nThyrotoxicosis\nHeart disease or comorbidities\nHeart disease:\nCoronary heart disease\nCardiomyopathy\nHeart valve disorder\nIschaemic heart disease\nWolff-Parkinson-White syndrome\nComorbidities (non-cardiac conditions):\nHyperthyroidism\nThyrotoxicosis",
+                "url": "https://www.genre-manuals.com/en_heart_disease.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -410,7 +473,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Atrial fibrillation (except paroxysmal)",
@@ -444,7 +508,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Ventricular rate not controlled",
@@ -479,7 +544,8 @@
               "P",
               "P",
               "I48.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Ventricular rate controlled with or without therapy",
@@ -514,7 +580,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Age at application",
@@ -550,7 +617,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≤ 60 years",
@@ -587,7 +655,8 @@
               "+25",
               "+30",
               "I48.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "> 60 years",
@@ -624,7 +693,8 @@
               "+50",
               "+30",
               "I48.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Paroxysmal atrial fibrilation",
@@ -658,7 +728,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Short infrequent episodes, lasting less than a day, and ≤ 3 episodes a year",
@@ -693,7 +764,8 @@
               "+25",
               "+30",
               "I48.0"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Frequent episodes, lasting longer than a day, or > 3 episodes per year",
@@ -728,7 +800,8 @@
               "+50",
               "+30",
               "I48.0"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "History",
@@ -761,7 +834,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "< 1 year and normal sinus rhythm",
@@ -795,7 +869,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Age at application",
@@ -830,7 +905,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≤ 60 years",
@@ -866,7 +942,8 @@
               "+25",
               "+30",
               "I48.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "> 60 years",
@@ -902,7 +979,8 @@
               "+50",
               "+30",
               "I48.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≥ 1 year and normal sinus rhythm",
@@ -936,7 +1014,8 @@
               "+0",
               "+0",
               "I48.9"
-            ]
+            ],
+            "related_details": []
           }
         ],
         "tree": [
@@ -1892,6 +1971,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "f175018c000ea18ddea430b758cdba3c859906f62f502d1b7056dcde20d40216",
+                "label": "heart disease or comorbidities",
+                "markdown": "# Heart disease or comorbidities\n\n**Heart disease:**\n\n- Coronary heart disease\n- Cardiomyopathy\n- Heart valve disorder\n- Ischaemic heart disease\n- Wolff-Parkinson-White syndrome\n\n**Comorbidities (non-cardiac conditions):**\n\n- Hyperthyroidism\n- Thyrotoxicosis\n\n## Heart disease or comorbidities\n\n**Heart disease:**\n\n- Coronary heart disease\n- Cardiomyopathy\n- Heart valve disorder\n- Ischaemic heart disease\n- Wolff-Parkinson-White syndrome\n\n**Comorbidities (non-cardiac conditions):**\n\n- Hyperthyroidism\n- Thyrotoxicosis\n",
+                "plain_text": "Heart disease or comorbidities\nHeart disease:\nCoronary heart disease\nCardiomyopathy\nHeart valve disorder\nIschaemic heart disease\nWolff-Parkinson-White syndrome\nComorbidities (non-cardiac conditions):\nHyperthyroidism\nThyrotoxicosis\nHeart disease or comorbidities\nHeart disease:\nCoronary heart disease\nCardiomyopathy\nHeart valve disorder\nIschaemic heart disease\nWolff-Parkinson-White syndrome\nComorbidities (non-cardiac conditions):\nHyperthyroidism\nThyrotoxicosis",
+                "url": "https://www.genre-manuals.com/en_heart_disease.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -1917,6 +2007,17 @@
               "P",
               "P",
               "I48.9"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "a0dc2e8e9507273c12af529d9939c61f29b934b1be86a4de4e5ba68634f59062",
+                "label": "atrial fibrillation",
+                "markdown": "# Atrial fibrillation: Types\n\n| Column 1 | Column 2 |\n| --- | --- |\n| According to 2014 AHA / ACC / HRS Guideline |  |\n| Type | Definition |\n| Paroxysmal AF | AF that terminates spontaneously or with intervention within 7 days of onset / Episodes may recur with variable frequency |\n| Persistent AF | Continuous AF that is sustained > 7 days |\n| Long-standing persistent AF *(previously called chronic AF)* | Continuous AF > 12 months in duration. |\n| Permanent AF | The term “permanent AF” is used when the patient and clinician make a joint decision to stop further attempts to restore and / or maintain sinus rhythm. |\n\n## Atrial fibrillation: Types\n\n| Column 1 | Column 2 |\n| --- | --- |\n| According to 2014 AHA / ACC / HRS Guideline |  |\n| Type | Definition |\n| Paroxysmal AF | AF that terminates spontaneously or with intervention within 7 days of onset / Episodes may recur with variable frequency |\n| Persistent AF | Continuous AF that is sustained > 7 days |\n| Long-standing persistent AF *(previously called chronic AF)* | Continuous AF > 12 months in duration. |\n| Permanent AF | The term “permanent AF” is used when the patient and clinician make a joint decision to stop further attempts to restore and / or maintain sinus rhythm. |\n",
+                "plain_text": "Atrial fibrillation: Types\nAccording to 2014 AHA / ACC / HRS Guideline\nType\nDefinition\nParoxysmal AF\nAF that terminates spontaneously or with intervention within 7 days of onset\nEpisodes may recur with variable frequency\nPersistent AF\nContinuous AF that is sustained > 7 days\nLong-standing persistent AF\n(previously called chronic AF)\nContinuous AF > 12 months in duration.\nPermanent AF\nThe term “permanent AF” is used when the patient and clinician make a joint decision to stop further attempts to restore and / or maintain sinus rhythm.\nAtrial fibrillation: Types\nAccording to 2014 AHA / ACC / HRS Guideline\nType\nDefinition\nParoxysmal AF\nAF that terminates spontaneously or with intervention within 7 days of onset\nEpisodes may recur with variable frequency\nPersistent AF\nContinuous AF that is sustained > 7 days\nLong-standing persistent AF\n(previously called chronic AF)\nContinuous AF > 12 months in duration.\nPermanent AF\nThe term “permanent AF” is used when the patient and clinician make a joint decision to stop further attempts to restore and / or maintain sinus rhythm.",
+                "url": "https://www.genre-manuals.com/en_af_types.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -1942,6 +2043,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "a0dc2e8e9507273c12af529d9939c61f29b934b1be86a4de4e5ba68634f59062",
+                "label": "atrial fibrillation",
+                "markdown": "# Atrial fibrillation: Types\n\n| Column 1 | Column 2 |\n| --- | --- |\n| According to 2014 AHA / ACC / HRS Guideline |  |\n| Type | Definition |\n| Paroxysmal AF | AF that terminates spontaneously or with intervention within 7 days of onset / Episodes may recur with variable frequency |\n| Persistent AF | Continuous AF that is sustained > 7 days |\n| Long-standing persistent AF *(previously called chronic AF)* | Continuous AF > 12 months in duration. |\n| Permanent AF | The term “permanent AF” is used when the patient and clinician make a joint decision to stop further attempts to restore and / or maintain sinus rhythm. |\n\n## Atrial fibrillation: Types\n\n| Column 1 | Column 2 |\n| --- | --- |\n| According to 2014 AHA / ACC / HRS Guideline |  |\n| Type | Definition |\n| Paroxysmal AF | AF that terminates spontaneously or with intervention within 7 days of onset / Episodes may recur with variable frequency |\n| Persistent AF | Continuous AF that is sustained > 7 days |\n| Long-standing persistent AF *(previously called chronic AF)* | Continuous AF > 12 months in duration. |\n| Permanent AF | The term “permanent AF” is used when the patient and clinician make a joint decision to stop further attempts to restore and / or maintain sinus rhythm. |\n",
+                "plain_text": "Atrial fibrillation: Types\nAccording to 2014 AHA / ACC / HRS Guideline\nType\nDefinition\nParoxysmal AF\nAF that terminates spontaneously or with intervention within 7 days of onset\nEpisodes may recur with variable frequency\nPersistent AF\nContinuous AF that is sustained > 7 days\nLong-standing persistent AF\n(previously called chronic AF)\nContinuous AF > 12 months in duration.\nPermanent AF\nThe term “permanent AF” is used when the patient and clinician make a joint decision to stop further attempts to restore and / or maintain sinus rhythm.\nAtrial fibrillation: Types\nAccording to 2014 AHA / ACC / HRS Guideline\nType\nDefinition\nParoxysmal AF\nAF that terminates spontaneously or with intervention within 7 days of onset\nEpisodes may recur with variable frequency\nPersistent AF\nContinuous AF that is sustained > 7 days\nLong-standing persistent AF\n(previously called chronic AF)\nContinuous AF > 12 months in duration.\nPermanent AF\nThe term “permanent AF” is used when the patient and clinician make a joint decision to stop further attempts to restore and / or maintain sinus rhythm.",
+                "url": "https://www.genre-manuals.com/en_af_types.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -1968,7 +2080,8 @@
               "+50",
               "+50",
               "I48.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≥ 1 year and normal sinus rhythm",
@@ -1994,7 +2107,8 @@
               "+0",
               "+0",
               "I48.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Without underlying heart disease or comorbidities",
@@ -2018,6 +2132,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "f175018c000ea18ddea430b758cdba3c859906f62f502d1b7056dcde20d40216",
+                "label": "heart disease or comorbidities",
+                "markdown": "# Heart disease or comorbidities\n\n**Heart disease:**\n\n- Coronary heart disease\n- Cardiomyopathy\n- Heart valve disorder\n- Ischaemic heart disease\n- Wolff-Parkinson-White syndrome\n\n**Comorbidities (non-cardiac conditions):**\n\n- Hyperthyroidism\n- Thyrotoxicosis\n\n## Heart disease or comorbidities\n\n**Heart disease:**\n\n- Coronary heart disease\n- Cardiomyopathy\n- Heart valve disorder\n- Ischaemic heart disease\n- Wolff-Parkinson-White syndrome\n\n**Comorbidities (non-cardiac conditions):**\n\n- Hyperthyroidism\n- Thyrotoxicosis\n",
+                "plain_text": "Heart disease or comorbidities\nHeart disease:\nCoronary heart disease\nCardiomyopathy\nHeart valve disorder\nIschaemic heart disease\nWolff-Parkinson-White syndrome\nComorbidities (non-cardiac conditions):\nHyperthyroidism\nThyrotoxicosis\nHeart disease or comorbidities\nHeart disease:\nCoronary heart disease\nCardiomyopathy\nHeart valve disorder\nIschaemic heart disease\nWolff-Parkinson-White syndrome\nComorbidities (non-cardiac conditions):\nHyperthyroidism\nThyrotoxicosis",
+                "url": "https://www.genre-manuals.com/en_heart_disease.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -2043,7 +2168,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Atrial fibrillation (except paroxysmal)",
@@ -2069,7 +2195,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Ventricular rate not controlled",
@@ -2096,7 +2223,8 @@
               "P",
               "P",
               "I48.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Ventricular rate controlled with or without therapy",
@@ -2123,7 +2251,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Age at application",
@@ -2151,7 +2280,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≤ 60 years",
@@ -2180,7 +2310,8 @@
               "+100",
               "+100",
               "I48.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "> 60 years",
@@ -2209,7 +2340,8 @@
               "D",
               "D",
               "I48.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Paroxysmal atrial fibrilation",
@@ -2235,7 +2367,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Short infrequent episodes, lasting less than a day, and ≤ 3 episodes a year",
@@ -2262,7 +2395,8 @@
               "+100",
               "+100",
               "I48.0"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Frequent episodes, lasting longer than a day, or > 3 episodes per year",
@@ -2289,7 +2423,8 @@
               "D",
               "D",
               "I48.0"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "History",
@@ -2314,7 +2449,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "< 1 year and normal sinus rhythm",
@@ -2340,7 +2476,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Age at application",
@@ -2367,7 +2504,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≤ 60 years",
@@ -2395,7 +2533,8 @@
               "+100",
               "+100",
               "I48.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "> 60 years",
@@ -2423,7 +2562,8 @@
               "D",
               "D",
               "I48.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≥ 1 year and normal sinus rhythm",
@@ -2449,7 +2589,8 @@
               "+0",
               "+0",
               "I48.9"
-            ]
+            ],
+            "related_details": []
           }
         ],
         "tree": [
@@ -3183,6 +3324,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "f175018c000ea18ddea430b758cdba3c859906f62f502d1b7056dcde20d40216",
+                "label": "heart disease or comorbidities",
+                "markdown": "# Heart disease or comorbidities\n\n**Heart disease:**\n\n- Coronary heart disease\n- Cardiomyopathy\n- Heart valve disorder\n- Ischaemic heart disease\n- Wolff-Parkinson-White syndrome\n\n**Comorbidities (non-cardiac conditions):**\n\n- Hyperthyroidism\n- Thyrotoxicosis\n\n## Heart disease or comorbidities\n\n**Heart disease:**\n\n- Coronary heart disease\n- Cardiomyopathy\n- Heart valve disorder\n- Ischaemic heart disease\n- Wolff-Parkinson-White syndrome\n\n**Comorbidities (non-cardiac conditions):**\n\n- Hyperthyroidism\n- Thyrotoxicosis\n",
+                "plain_text": "Heart disease or comorbidities\nHeart disease:\nCoronary heart disease\nCardiomyopathy\nHeart valve disorder\nIschaemic heart disease\nWolff-Parkinson-White syndrome\nComorbidities (non-cardiac conditions):\nHyperthyroidism\nThyrotoxicosis\nHeart disease or comorbidities\nHeart disease:\nCoronary heart disease\nCardiomyopathy\nHeart valve disorder\nIschaemic heart disease\nWolff-Parkinson-White syndrome\nComorbidities (non-cardiac conditions):\nHyperthyroidism\nThyrotoxicosis",
+                "url": "https://www.genre-manuals.com/en_heart_disease.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -3210,6 +3362,17 @@
               "D",
               "D",
               "I48.9"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "a0dc2e8e9507273c12af529d9939c61f29b934b1be86a4de4e5ba68634f59062",
+                "label": "atrial fibrillation",
+                "markdown": "# Atrial fibrillation: Types\n\n| Column 1 | Column 2 |\n| --- | --- |\n| According to 2014 AHA / ACC / HRS Guideline |  |\n| Type | Definition |\n| Paroxysmal AF | AF that terminates spontaneously or with intervention within 7 days of onset / Episodes may recur with variable frequency |\n| Persistent AF | Continuous AF that is sustained > 7 days |\n| Long-standing persistent AF *(previously called chronic AF)* | Continuous AF > 12 months in duration. |\n| Permanent AF | The term “permanent AF” is used when the patient and clinician make a joint decision to stop further attempts to restore and / or maintain sinus rhythm. |\n\n## Atrial fibrillation: Types\n\n| Column 1 | Column 2 |\n| --- | --- |\n| According to 2014 AHA / ACC / HRS Guideline |  |\n| Type | Definition |\n| Paroxysmal AF | AF that terminates spontaneously or with intervention within 7 days of onset / Episodes may recur with variable frequency |\n| Persistent AF | Continuous AF that is sustained > 7 days |\n| Long-standing persistent AF *(previously called chronic AF)* | Continuous AF > 12 months in duration. |\n| Permanent AF | The term “permanent AF” is used when the patient and clinician make a joint decision to stop further attempts to restore and / or maintain sinus rhythm. |\n",
+                "plain_text": "Atrial fibrillation: Types\nAccording to 2014 AHA / ACC / HRS Guideline\nType\nDefinition\nParoxysmal AF\nAF that terminates spontaneously or with intervention within 7 days of onset\nEpisodes may recur with variable frequency\nPersistent AF\nContinuous AF that is sustained > 7 days\nLong-standing persistent AF\n(previously called chronic AF)\nContinuous AF > 12 months in duration.\nPermanent AF\nThe term “permanent AF” is used when the patient and clinician make a joint decision to stop further attempts to restore and / or maintain sinus rhythm.\nAtrial fibrillation: Types\nAccording to 2014 AHA / ACC / HRS Guideline\nType\nDefinition\nParoxysmal AF\nAF that terminates spontaneously or with intervention within 7 days of onset\nEpisodes may recur with variable frequency\nPersistent AF\nContinuous AF that is sustained > 7 days\nLong-standing persistent AF\n(previously called chronic AF)\nContinuous AF > 12 months in duration.\nPermanent AF\nThe term “permanent AF” is used when the patient and clinician make a joint decision to stop further attempts to restore and / or maintain sinus rhythm.",
+                "url": "https://www.genre-manuals.com/en_af_types.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -3237,6 +3400,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "a0dc2e8e9507273c12af529d9939c61f29b934b1be86a4de4e5ba68634f59062",
+                "label": "atrial fibrillation",
+                "markdown": "# Atrial fibrillation: Types\n\n| Column 1 | Column 2 |\n| --- | --- |\n| According to 2014 AHA / ACC / HRS Guideline |  |\n| Type | Definition |\n| Paroxysmal AF | AF that terminates spontaneously or with intervention within 7 days of onset / Episodes may recur with variable frequency |\n| Persistent AF | Continuous AF that is sustained > 7 days |\n| Long-standing persistent AF *(previously called chronic AF)* | Continuous AF > 12 months in duration. |\n| Permanent AF | The term “permanent AF” is used when the patient and clinician make a joint decision to stop further attempts to restore and / or maintain sinus rhythm. |\n\n## Atrial fibrillation: Types\n\n| Column 1 | Column 2 |\n| --- | --- |\n| According to 2014 AHA / ACC / HRS Guideline |  |\n| Type | Definition |\n| Paroxysmal AF | AF that terminates spontaneously or with intervention within 7 days of onset / Episodes may recur with variable frequency |\n| Persistent AF | Continuous AF that is sustained > 7 days |\n| Long-standing persistent AF *(previously called chronic AF)* | Continuous AF > 12 months in duration. |\n| Permanent AF | The term “permanent AF” is used when the patient and clinician make a joint decision to stop further attempts to restore and / or maintain sinus rhythm. |\n",
+                "plain_text": "Atrial fibrillation: Types\nAccording to 2014 AHA / ACC / HRS Guideline\nType\nDefinition\nParoxysmal AF\nAF that terminates spontaneously or with intervention within 7 days of onset\nEpisodes may recur with variable frequency\nPersistent AF\nContinuous AF that is sustained > 7 days\nLong-standing persistent AF\n(previously called chronic AF)\nContinuous AF > 12 months in duration.\nPermanent AF\nThe term “permanent AF” is used when the patient and clinician make a joint decision to stop further attempts to restore and / or maintain sinus rhythm.\nAtrial fibrillation: Types\nAccording to 2014 AHA / ACC / HRS Guideline\nType\nDefinition\nParoxysmal AF\nAF that terminates spontaneously or with intervention within 7 days of onset\nEpisodes may recur with variable frequency\nPersistent AF\nContinuous AF that is sustained > 7 days\nLong-standing persistent AF\n(previously called chronic AF)\nContinuous AF > 12 months in duration.\nPermanent AF\nThe term “permanent AF” is used when the patient and clinician make a joint decision to stop further attempts to restore and / or maintain sinus rhythm.",
+                "url": "https://www.genre-manuals.com/en_af_types.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -3265,7 +3439,8 @@
               "P",
               "P",
               "I48.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≥ 1 year and normal sinus rhythm",
@@ -3293,6 +3468,17 @@
               "EX",
               "EX",
               "I48.9"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "4a6f0202c4d1baba123c1561426234cbb6a7f37a0d2632b4b0b5dcc508597596",
+                "label": "EX",
+                "markdown": "# Excl (Health): Cardiac arrhythmia (39)\n\n| Column 1 | Column 2 |\n| --- | --- |\n| Health | No benefits shall be payable under this policy for any treatment, whether medical or otherwise, directly or indirectly intended for***conversion to and for the maintenance of cardiac sinus rhythm***. |\n\n## Excl (Health): Cardiac arrhythmia (39)\n\n| Column 1 | Column 2 |\n| --- | --- |\n| Health | No benefits shall be payable under this policy for any treatment, whether medical or otherwise, directly or indirectly intended for***conversion to and for the maintenance of cardiac sinus rhythm***. |\n",
+                "plain_text": "Excl (Health): Cardiac arrhythmia (39)\nHealth\nNo benefits shall be payable under this policy for any treatment, whether medical or otherwise, directly or indirectly intended for\nconversion to and for the maintenance of cardiac sinus rhythm\n.\nExcl (Health): Cardiac arrhythmia (39)\nHealth\nNo benefits shall be payable under this policy for any treatment, whether medical or otherwise, directly or indirectly intended for\nconversion to and for the maintenance of cardiac sinus rhythm\n.",
+                "url": "https://www.genre-manuals.com/en_excl_cardiac_arrhythmia.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -3319,6 +3505,17 @@
               "",
               "",
               ""
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "f175018c000ea18ddea430b758cdba3c859906f62f502d1b7056dcde20d40216",
+                "label": "heart disease or comorbidities",
+                "markdown": "# Heart disease or comorbidities\n\n**Heart disease:**\n\n- Coronary heart disease\n- Cardiomyopathy\n- Heart valve disorder\n- Ischaemic heart disease\n- Wolff-Parkinson-White syndrome\n\n**Comorbidities (non-cardiac conditions):**\n\n- Hyperthyroidism\n- Thyrotoxicosis\n\n## Heart disease or comorbidities\n\n**Heart disease:**\n\n- Coronary heart disease\n- Cardiomyopathy\n- Heart valve disorder\n- Ischaemic heart disease\n- Wolff-Parkinson-White syndrome\n\n**Comorbidities (non-cardiac conditions):**\n\n- Hyperthyroidism\n- Thyrotoxicosis\n",
+                "plain_text": "Heart disease or comorbidities\nHeart disease:\nCoronary heart disease\nCardiomyopathy\nHeart valve disorder\nIschaemic heart disease\nWolff-Parkinson-White syndrome\nComorbidities (non-cardiac conditions):\nHyperthyroidism\nThyrotoxicosis\nHeart disease or comorbidities\nHeart disease:\nCoronary heart disease\nCardiomyopathy\nHeart valve disorder\nIschaemic heart disease\nWolff-Parkinson-White syndrome\nComorbidities (non-cardiac conditions):\nHyperthyroidism\nThyrotoxicosis",
+                "url": "https://www.genre-manuals.com/en_heart_disease.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -3346,7 +3543,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Atrial fibrillation (except paroxysmal)",
@@ -3374,7 +3572,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Ventricular rate not controlled",
@@ -3403,7 +3602,8 @@
               "P",
               "P",
               "I48.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Ventricular rate controlled with or without therapy",
@@ -3432,7 +3632,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Age at application",
@@ -3462,7 +3663,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≤ 60 years",
@@ -3493,7 +3695,8 @@
               "D",
               "D",
               "I48.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "> 60 years",
@@ -3524,7 +3727,8 @@
               "D",
               "D",
               "I48.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Paroxysmal atrial fibrilation",
@@ -3552,7 +3756,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Short infrequent episodes, lasting less than a day, and ≤ 3 episodes a year",
@@ -3581,6 +3786,17 @@
               "+20 and EX",
               "+15 and EX",
               "I48.0"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "4a6f0202c4d1baba123c1561426234cbb6a7f37a0d2632b4b0b5dcc508597596",
+                "label": "EX",
+                "markdown": "# Excl (Health): Cardiac arrhythmia (39)\n\n| Column 1 | Column 2 |\n| --- | --- |\n| Health | No benefits shall be payable under this policy for any treatment, whether medical or otherwise, directly or indirectly intended for***conversion to and for the maintenance of cardiac sinus rhythm***. |\n\n## Excl (Health): Cardiac arrhythmia (39)\n\n| Column 1 | Column 2 |\n| --- | --- |\n| Health | No benefits shall be payable under this policy for any treatment, whether medical or otherwise, directly or indirectly intended for***conversion to and for the maintenance of cardiac sinus rhythm***. |\n",
+                "plain_text": "Excl (Health): Cardiac arrhythmia (39)\nHealth\nNo benefits shall be payable under this policy for any treatment, whether medical or otherwise, directly or indirectly intended for\nconversion to and for the maintenance of cardiac sinus rhythm\n.\nExcl (Health): Cardiac arrhythmia (39)\nHealth\nNo benefits shall be payable under this policy for any treatment, whether medical or otherwise, directly or indirectly intended for\nconversion to and for the maintenance of cardiac sinus rhythm\n.",
+                "url": "https://www.genre-manuals.com/en_excl_cardiac_arrhythmia.htm",
+                "warnings": []
+              }
             ]
           },
           {
@@ -3610,7 +3826,8 @@
               "D",
               "D",
               "I48.0"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "History",
@@ -3637,7 +3854,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "< 1 year and normal sinus rhythm",
@@ -3665,7 +3883,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "Age at application",
@@ -3694,7 +3913,8 @@
               "",
               "",
               ""
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≤ 60 years",
@@ -3724,7 +3944,8 @@
               "P",
               "P",
               "I48.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "> 60 years",
@@ -3754,7 +3975,8 @@
               "P",
               "P",
               "I48.9"
-            ]
+            ],
+            "related_details": []
           },
           {
             "classification": "≥ 1 year and normal sinus rhythm",
@@ -3782,6 +4004,17 @@
               "+15 and EX",
               "+15 and EX",
               "I48.9"
+            ],
+            "related_details": [
+              {
+                "available": true,
+                "content_hash": "4a6f0202c4d1baba123c1561426234cbb6a7f37a0d2632b4b0b5dcc508597596",
+                "label": "EX",
+                "markdown": "# Excl (Health): Cardiac arrhythmia (39)\n\n| Column 1 | Column 2 |\n| --- | --- |\n| Health | No benefits shall be payable under this policy for any treatment, whether medical or otherwise, directly or indirectly intended for***conversion to and for the maintenance of cardiac sinus rhythm***. |\n\n## Excl (Health): Cardiac arrhythmia (39)\n\n| Column 1 | Column 2 |\n| --- | --- |\n| Health | No benefits shall be payable under this policy for any treatment, whether medical or otherwise, directly or indirectly intended for***conversion to and for the maintenance of cardiac sinus rhythm***. |\n",
+                "plain_text": "Excl (Health): Cardiac arrhythmia (39)\nHealth\nNo benefits shall be payable under this policy for any treatment, whether medical or otherwise, directly or indirectly intended for\nconversion to and for the maintenance of cardiac sinus rhythm\n.\nExcl (Health): Cardiac arrhythmia (39)\nHealth\nNo benefits shall be payable under this policy for any treatment, whether medical or otherwise, directly or indirectly intended for\nconversion to and for the maintenance of cardiac sinus rhythm\n.",
+                "url": "https://www.genre-manuals.com/en_excl_cardiac_arrhythmia.htm",
+                "warnings": []
+              }
             ]
           }
         ],

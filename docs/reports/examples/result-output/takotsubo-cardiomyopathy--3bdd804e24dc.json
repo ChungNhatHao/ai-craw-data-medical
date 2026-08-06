@@ -1,0 +1,1665 @@
+{
+  "disease": {
+    "aliases": [
+      "Stress induced cardiomyopathy",
+      "Apical ballooning syndrome"
+    ],
+    "causes": [
+      "The majority of early cases presented in association with significant stressful situations or events. However the cause is unknown but possible mechanisms include temporary catecholamine excess, coronary artery spasm, microvascular dysfunction or outflow tract obstruction causing ballooning of the left ventricle."
+    ],
+    "diagnosis": [
+      "Cardiological report with follow-up / Cardiac CT / MRI or coronary angiography (invasive) / Echocardiography (transthoracic or transoesophageal) / Resting ECG / Exercise ECG / Blood pressure"
+    ],
+    "name": "Takotsubo cardiomyopathy",
+    "prevention": [],
+    "prognosis": "This has a good prognosis in most cases. With complete recovery of ventricular function and the absence of coronary artery disease, the outcome should be good. However it is thought that this can recur in a small number of people in the right circumstances.",
+    "risk_factors": [],
+    "summary": "This is a condition that is characterized by temporary reduction in systolic function (usually lasting a few weeks) of the apical (and/or mid) segments of the left ventricle resembling the effects of myocardial infarction, but in the absence of ischaemia from obstructive coronary artery disease. The characteristic changes to the shape of the heart is said to resemble a traditional Japanese pot used for octopus trapping; the Takotsubo.",
+    "symptoms": [
+      "The presentation may be very similar to an acute infarct with chest pain, breathlessness and even collapse."
+    ],
+    "treatment": [
+      "Normal resuscitation and supportive therapy may be required"
+    ],
+    "when_to_seek_care": []
+  },
+  "document_id": "3bdd804e24dc835c9cca4f82b3f651c4faa0a3758b92b3e2024dbed786ad9574",
+  "menu_hierarchy": [
+    {
+      "distance_from_disease": 6,
+      "is_current": false,
+      "label": "Home",
+      "level": 0,
+      "url": "https://www.genre-manuals.com/sites/CLUE/home.html"
+    },
+    {
+      "distance_from_disease": 5,
+      "is_current": false,
+      "label": "Medical",
+      "level": 1,
+      "url": "https://www.genre-manuals.com/sites/CLUE/home/page7.html"
+    },
+    {
+      "distance_from_disease": 4,
+      "is_current": false,
+      "label": "Ratings",
+      "level": 2,
+      "url": "https://www.genre-manuals.com/sites/CLUE/home/page7/page8.html"
+    },
+    {
+      "distance_from_disease": 3,
+      "is_current": false,
+      "label": "Circulatory system",
+      "level": 3,
+      "url": "https://www.genre-manuals.com/sites/CLUE/home/page7/page8/circulatory-system.html"
+    },
+    {
+      "distance_from_disease": 2,
+      "is_current": false,
+      "label": "Heart",
+      "level": 4,
+      "url": "https://www.genre-manuals.com/sites/CLUE/home/page7/page8/circulatory-system/heart.html"
+    },
+    {
+      "distance_from_disease": 1,
+      "is_current": false,
+      "label": "Cardiomyopathies",
+      "level": 5,
+      "url": "https://www.genre-manuals.com/sites/CLUE/home/page7/page8/circulatory-system/heart/cardiomyopathies.html"
+    },
+    {
+      "distance_from_disease": 0,
+      "is_current": true,
+      "label": "Takotsubo cardiomyopathy",
+      "level": 6,
+      "url": "https://www.genre-manuals.com/en_takotsubo_cardiomyopathy.htm"
+    }
+  ],
+  "parse_metadata": {
+    "confidence": null,
+    "method": "llm",
+    "model": "gemini-3.5-flash-lite",
+    "parser_version": "agentic-1.4.0",
+    "prompt_version": "agentic-1.2.0",
+    "warnings": [
+      "missing_field:risk_factors",
+      "missing_field:prevention",
+      "missing_field:when_to_seek_care",
+      "ai_normalization_not_required",
+      "deterministic_full_content:summary",
+      "deterministic_full_content:prognosis",
+      "deterministic_full_content:aliases",
+      "deterministic_full_content:causes",
+      "deterministic_full_content:symptoms",
+      "deterministic_full_content:diagnosis",
+      "deterministic_full_content:treatment"
+    ]
+  },
+  "schema_version": "1.3",
+  "sections": [
+    {
+      "heading": "Takotsubo cardiomyopathy",
+      "level": 1,
+      "markdown": "# Takotsubo cardiomyopathy\n\nI42.9\n\nStress induced cardiomyopathy * Apical ballooning syndrome\n\nThis is a condition that is characterized by temporary reduction in systolic function (usually lasting a few weeks) of the apical (and/or mid) segments of the left ventricle resembling the effects of myocardial infarction, but in the absence of ischaemia from obstructive coronary artery disease. The characteristic changes to the shape of the heart is said to resemble a traditional Japanese pot used for octopus trapping; the Takotsubo.\n\n| Column 1 | Column 2 |\n| --- | --- |\n| Causes | The majority of early cases presented in association with significant stressful situations or events. However the cause is unknown but possible mechanisms include temporary catecholamine excess, coronary artery spasm, microvascular dysfunction or outflow tract obstruction causing ballooning of the left ventricle. |\n| Symptoms | The presentation may be very similar to an acute infarct with chest pain, breathlessness and even collapse. |\n| Complications | There can be acute pulmonary oedema, arrhythmias or even cardiogenic shock. However there should be complete recovery of normal left ventricular function after a period of time. |\n| Treatment | Normal resuscitation and supportive therapy may be required |\n| Prognosis | This has a good prognosis in most cases. With complete recovery of ventricular function and the absence of coronary artery disease, the outcome should be good. However it is thought that this can recur in a small number of people in the right circumstances. |\n| Disability | Should be a low risk if full recovery and without coronary artery disease. However there is a risk of anxiety of recurrence with heightened sensitivity to chest symptoms and suggested or imposed restrictions on activities. |\n\n| Column 1 | Column 2 |\n| --- | --- |\n| [Supportive evidence](https://www.genre-manuals.com/en_supportive_evidence.htm) | Cardiological report with follow-up / Cardiac CT / MRI or coronary angiography (invasive) / Echocardiography (transthoracic or transoesophageal) / Resting ECG / Exercise ECG / Blood pressure |",
+      "order": 1
+    }
+  ],
+  "source": {
+    "canonical_url": "https://www.genre-manuals.com/en_takotsubo_cardiomyopathy.htm",
+    "content_hash": "64f4c60389a74e11f9c7a4164db1c3d26cbd3f00f7393517ca8a4e6c4f4f1685",
+    "language": "en",
+    "plugin": "genre_manuals",
+    "retrieved_at": "2026-08-05T09:04:25.911226Z",
+    "url": "https://www.genre-manuals.com/en_takotsubo_cardiomyopathy.htm"
+  },
+  "tabs": [
+    {
+      "available": true,
+      "classification_table": null,
+      "content_hash": "e57e2c1458857dfaf850f137e67c17821589db85b9f91b6b0425c66ce17507b3",
+      "key": "info",
+      "label": "Info",
+      "markdown": "I42.9\n\nStress induced cardiomyopathy * Apical ballooning syndrome\n\nThis is a condition that is characterized by temporary reduction in systolic function (usually lasting a few weeks) of the apical (and/or mid) segments of the left ventricle resembling the effects of myocardial infarction, but in the absence of ischaemia from obstructive coronary artery disease. The characteristic changes to the shape of the heart is said to resemble a traditional Japanese pot used for octopus trapping; the Takotsubo.\n\n| Column 1 | Column 2 |\n| --- | --- |\n| Causes | The majority of early cases presented in association with significant stressful situations or events. However the cause is unknown but possible mechanisms include temporary catecholamine excess, coronary artery spasm, microvascular dysfunction or outflow tract obstruction causing ballooning of the left ventricle. |\n| Symptoms | The presentation may be very similar to an acute infarct with chest pain, breathlessness and even collapse. |\n| Complications | There can be acute pulmonary oedema, arrhythmias or even cardiogenic shock. However there should be complete recovery of normal left ventricular function after a period of time. |\n| Treatment | Normal resuscitation and supportive therapy may be required |\n| Prognosis | This has a good prognosis in most cases. With complete recovery of ventricular function and the absence of coronary artery disease, the outcome should be good. However it is thought that this can recur in a small number of people in the right circumstances. |\n| Disability | Should be a low risk if full recovery and without coronary artery disease. However there is a risk of anxiety of recurrence with heightened sensitivity to chest symptoms and suggested or imposed restrictions on activities. |\n\n| Column 1 | Column 2 |\n| --- | --- |\n| [Supportive evidence](https://www.genre-manuals.com/en_supportive_evidence.htm) | Cardiological report with follow-up / Cardiac CT / MRI or coronary angiography (invasive) / Echocardiography (transthoracic or transoesophageal) / Resting ECG / Exercise ECG / Blood pressure |\n",
+      "plain_text": "I42.9\nStress induced cardiomyopathy * Apical ballooning syndrome\nThis is a condition that is characterized by temporary reduction in systolic function (usually lasting a few weeks) of the apical (and/or mid) segments of the left ventricle resembling the effects of myocardial infarction, but in the absence of ischaemia from obstructive coronary artery disease. The characteristic changes to the shape of the heart is said to resemble a traditional Japanese pot used for octopus trapping; the Takotsubo.\nCauses\nThe majority of early cases presented in association with significant stressful situations or events. However the cause is unknown but possible mechanisms include temporary catecholamine excess, coronary artery spasm, microvascular dysfunction or outflow tract obstruction causing ballooning of the left ventricle.\nSymptoms\nThe presentation may be very similar to an acute infarct with chest pain, breathlessness and even collapse.\nComplications\nThere can be acute pulmonary oedema, arrhythmias or even cardiogenic shock. However there should be complete recovery of normal left ventricular function after a period of time.\nTreatment\nNormal resuscitation and supportive therapy may be required\nPrognosis\nThis has a good prognosis in most cases. With complete recovery of ventricular function and the absence of coronary artery disease, the outcome should be good. However it is thought that this can recur in a small number of people in the right circumstances.\nDisability\nShould be a low risk if full recovery and without coronary artery disease. However there is a risk of anxiety of recurrence with heightened sensitivity to chest symptoms and suggested or imposed restrictions on activities.\nSupportive evidence\nCardiological report with follow-up\nCardiac CT / MRI or coronary angiography (invasive)\nEchocardiography (transthoracic or transoesophageal)\nResting ECG\nExercise ECG\nBlood pressure",
+      "related_details": [],
+      "source_url": "https://www.genre-manuals.com/en_takotsubo_cardiomyopathy.htm",
+      "tables": [
+        {
+          "rows": [
+            [
+              "Codes",
+              "I42.9"
+            ],
+            [
+              "Aliases",
+              "Stress induced cardiomyopathy * Apical ballooning syndrome"
+            ],
+            [
+              "Summary",
+              "This is a condition that is characterized by temporary reduction in systolic function (usually lasting a few weeks) of the apical (and/or mid) segments of the left ventricle resembling the effects of myocardial infarction, but in the absence of ischaemia from obstructive coronary artery disease. The characteristic changes to the shape of the heart is said to resemble a traditional Japanese pot used for octopus trapping; the Takotsubo."
+            ]
+          ]
+        },
+        {
+          "rows": [
+            [
+              "Causes",
+              "The majority of early cases presented in association with significant stressful situations or events. However the cause is unknown but possible mechanisms include temporary catecholamine excess, coronary artery spasm, microvascular dysfunction or outflow tract obstruction causing ballooning of the left ventricle."
+            ],
+            [
+              "Symptoms",
+              "The presentation may be very similar to an acute infarct with chest pain, breathlessness and even collapse."
+            ],
+            [
+              "Complications",
+              "There can be acute pulmonary oedema, arrhythmias or even cardiogenic shock. However there should be complete recovery of normal left ventricular function after a period of time."
+            ],
+            [
+              "Treatment",
+              "Normal resuscitation and supportive therapy may be required"
+            ],
+            [
+              "Prognosis",
+              "This has a good prognosis in most cases. With complete recovery of ventricular function and the absence of coronary artery disease, the outcome should be good. However it is thought that this can recur in a small number of people in the right circumstances."
+            ],
+            [
+              "Disability",
+              "Should be a low risk if full recovery and without coronary artery disease. However there is a risk of anxiety of recurrence with heightened sensitivity to chest symptoms and suggested or imposed restrictions on activities."
+            ]
+          ]
+        },
+        {
+          "rows": [
+            [
+              "Supportive evidence",
+              "Cardiological report with follow-up Cardiac CT / MRI or coronary angiography (invasive) Echocardiography (transthoracic or transoesophageal) Resting ECG Exercise ECG Blood pressure"
+            ]
+          ]
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "available": true,
+      "classification_table": {
+        "headers": [
+          "Classification",
+          "Life",
+          "DD/CI",
+          "TPD own",
+          "TPD any",
+          "ADism",
+          "ADB",
+          "LTC",
+          "Code"
+        ],
+        "rows": [
+          {
+            "classification": "< 1 year of illness",
+            "classification_id": "c53afaab8dee7d5af6186c557c9a7726ce23a7d05be70ba568bc0cbcde7e5bf4",
+            "classification_path": [
+              "< 1 year of illness"
+            ],
+            "code": "I42.9",
+            "is_group": false,
+            "level": 0,
+            "parent_classification": null,
+            "parent_classification_id": null,
+            "ratings": {
+              "ADB": "P",
+              "ADism": "P",
+              "DD/CI": "P",
+              "LTC": "P",
+              "Life": "P",
+              "TPD any": "P",
+              "TPD own": "P"
+            },
+            "raw_cells": [
+              "< 1 year of illness",
+              "P",
+              "P",
+              "P",
+              "P",
+              "P",
+              "P",
+              "P",
+              "I42.9"
+            ],
+            "related_details": []
+          },
+          {
+            "classification": "≥ 1 - ≤ 3 years of illness",
+            "classification_id": "250bf47242be9489d9e20669fad82c12b06d5d789ca4d05d51adbacb7571c494",
+            "classification_path": [
+              "≥ 1 - ≤ 3 years of illness"
+            ],
+            "code": null,
+            "is_group": true,
+            "level": 0,
+            "parent_classification": null,
+            "parent_classification_id": null,
+            "ratings": {
+              "ADB": "",
+              "ADism": "",
+              "DD/CI": "",
+              "LTC": "",
+              "Life": "",
+              "TPD any": "",
+              "TPD own": ""
+            },
+            "raw_cells": [
+              "≥ 1 - ≤ 3 years of illness",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "related_details": []
+          },
+          {
+            "classification": "Full recovery, normal ejection fraction, normal coronary arteries",
+            "classification_id": "afa43072748e0c0825377c6d928b8208a9f1cff8bb3395acddef76d233dfd2f6",
+            "classification_path": [
+              "≥ 1 - ≤ 3 years of illness",
+              "Full recovery, normal ejection fraction, normal coronary arteries"
+            ],
+            "code": "I42.9",
+            "is_group": false,
+            "level": 1,
+            "parent_classification": "≥ 1 - ≤ 3 years of illness",
+            "parent_classification_id": "250bf47242be9489d9e20669fad82c12b06d5d789ca4d05d51adbacb7571c494",
+            "ratings": {
+              "ADB": "+0",
+              "ADism": "+0",
+              "DD/CI": "CMO",
+              "LTC": "+0",
+              "Life": "+0",
+              "TPD any": "P",
+              "TPD own": "P"
+            },
+            "raw_cells": [
+              "Full recovery, normal ejection fraction, normal coronary arteries",
+              "+0",
+              "CMO",
+              "P",
+              "P",
+              "+0",
+              "+0",
+              "+0",
+              "I42.9"
+            ],
+            "related_details": []
+          },
+          {
+            "classification": "Otherwise",
+            "classification_id": "3a32d9ccddef39496fb4d6e3db5c5f5f5e4af3e198b92d9a6c221180d6333f17",
+            "classification_path": [
+              "≥ 1 - ≤ 3 years of illness",
+              "Otherwise"
+            ],
+            "code": "I42.9",
+            "is_group": false,
+            "level": 1,
+            "parent_classification": "≥ 1 - ≤ 3 years of illness",
+            "parent_classification_id": "250bf47242be9489d9e20669fad82c12b06d5d789ca4d05d51adbacb7571c494",
+            "ratings": {
+              "ADB": "CMO",
+              "ADism": "CMO",
+              "DD/CI": "D",
+              "LTC": "CMO",
+              "Life": "CMO",
+              "TPD any": "D",
+              "TPD own": "D"
+            },
+            "raw_cells": [
+              "Otherwise",
+              "CMO",
+              "D",
+              "D",
+              "D",
+              "CMO",
+              "CMO",
+              "CMO",
+              "I42.9"
+            ],
+            "related_details": []
+          },
+          {
+            "classification": "> 3 years of illness",
+            "classification_id": "a2a1ac82c9036255ae7bf020d207992f688b4daada2d88dfa6409d2a16e4e837",
+            "classification_path": [
+              "> 3 years of illness"
+            ],
+            "code": null,
+            "is_group": true,
+            "level": 0,
+            "parent_classification": null,
+            "parent_classification_id": null,
+            "ratings": {
+              "ADB": "",
+              "ADism": "",
+              "DD/CI": "",
+              "LTC": "",
+              "Life": "",
+              "TPD any": "",
+              "TPD own": ""
+            },
+            "raw_cells": [
+              "> 3 years of illness",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "related_details": []
+          },
+          {
+            "classification": "Full recovery, normal ejection fraction, normal coronary arteries",
+            "classification_id": "510429e12e9e903b0932cc3f8965bc31cea9064757ae747cee3c7186632b32c1",
+            "classification_path": [
+              "> 3 years of illness",
+              "Full recovery, normal ejection fraction, normal coronary arteries"
+            ],
+            "code": "I42.9",
+            "is_group": false,
+            "level": 1,
+            "parent_classification": "> 3 years of illness",
+            "parent_classification_id": "a2a1ac82c9036255ae7bf020d207992f688b4daada2d88dfa6409d2a16e4e837",
+            "ratings": {
+              "ADB": "+0",
+              "ADism": "+0",
+              "DD/CI": "CMO",
+              "LTC": "+0",
+              "Life": "+0",
+              "TPD any": "CMO",
+              "TPD own": "CMO"
+            },
+            "raw_cells": [
+              "Full recovery, normal ejection fraction, normal coronary arteries",
+              "+0",
+              "CMO",
+              "CMO",
+              "CMO",
+              "+0",
+              "+0",
+              "+0",
+              "I42.9"
+            ],
+            "related_details": []
+          },
+          {
+            "classification": "Otherwise",
+            "classification_id": "53d83ee1d545d1f871fdd2d4e7573e01c92c8c3223d5a5814a7fa41a8a7cdc5b",
+            "classification_path": [
+              "> 3 years of illness",
+              "Otherwise"
+            ],
+            "code": "I42.9",
+            "is_group": false,
+            "level": 1,
+            "parent_classification": "> 3 years of illness",
+            "parent_classification_id": "a2a1ac82c9036255ae7bf020d207992f688b4daada2d88dfa6409d2a16e4e837",
+            "ratings": {
+              "ADB": "CMO",
+              "ADism": "CMO",
+              "DD/CI": "D",
+              "LTC": "CMO",
+              "Life": "CMO",
+              "TPD any": "D",
+              "TPD own": "D"
+            },
+            "raw_cells": [
+              "Otherwise",
+              "CMO",
+              "D",
+              "D",
+              "D",
+              "CMO",
+              "CMO",
+              "CMO",
+              "I42.9"
+            ],
+            "related_details": []
+          }
+        ],
+        "tree": [
+          {
+            "children": [],
+            "classification": "< 1 year of illness",
+            "classification_id": "c53afaab8dee7d5af6186c557c9a7726ce23a7d05be70ba568bc0cbcde7e5bf4",
+            "classification_path": [
+              "< 1 year of illness"
+            ],
+            "code": "I42.9",
+            "is_group": false,
+            "level": 0,
+            "parent_classification": null,
+            "parent_classification_id": null,
+            "ratings": {
+              "ADB": "P",
+              "ADism": "P",
+              "DD/CI": "P",
+              "LTC": "P",
+              "Life": "P",
+              "TPD any": "P",
+              "TPD own": "P"
+            }
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "classification": "Full recovery, normal ejection fraction, normal coronary arteries",
+                "classification_id": "afa43072748e0c0825377c6d928b8208a9f1cff8bb3395acddef76d233dfd2f6",
+                "classification_path": [
+                  "≥ 1 - ≤ 3 years of illness",
+                  "Full recovery, normal ejection fraction, normal coronary arteries"
+                ],
+                "code": "I42.9",
+                "is_group": false,
+                "level": 1,
+                "parent_classification": "≥ 1 - ≤ 3 years of illness",
+                "parent_classification_id": "250bf47242be9489d9e20669fad82c12b06d5d789ca4d05d51adbacb7571c494",
+                "ratings": {
+                  "ADB": "+0",
+                  "ADism": "+0",
+                  "DD/CI": "CMO",
+                  "LTC": "+0",
+                  "Life": "+0",
+                  "TPD any": "P",
+                  "TPD own": "P"
+                }
+              },
+              {
+                "children": [],
+                "classification": "Otherwise",
+                "classification_id": "3a32d9ccddef39496fb4d6e3db5c5f5f5e4af3e198b92d9a6c221180d6333f17",
+                "classification_path": [
+                  "≥ 1 - ≤ 3 years of illness",
+                  "Otherwise"
+                ],
+                "code": "I42.9",
+                "is_group": false,
+                "level": 1,
+                "parent_classification": "≥ 1 - ≤ 3 years of illness",
+                "parent_classification_id": "250bf47242be9489d9e20669fad82c12b06d5d789ca4d05d51adbacb7571c494",
+                "ratings": {
+                  "ADB": "CMO",
+                  "ADism": "CMO",
+                  "DD/CI": "D",
+                  "LTC": "CMO",
+                  "Life": "CMO",
+                  "TPD any": "D",
+                  "TPD own": "D"
+                }
+              }
+            ],
+            "classification": "≥ 1 - ≤ 3 years of illness",
+            "classification_id": "250bf47242be9489d9e20669fad82c12b06d5d789ca4d05d51adbacb7571c494",
+            "classification_path": [
+              "≥ 1 - ≤ 3 years of illness"
+            ],
+            "code": null,
+            "is_group": true,
+            "level": 0,
+            "parent_classification": null,
+            "parent_classification_id": null,
+            "ratings": {
+              "ADB": "",
+              "ADism": "",
+              "DD/CI": "",
+              "LTC": "",
+              "Life": "",
+              "TPD any": "",
+              "TPD own": ""
+            }
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "classification": "Full recovery, normal ejection fraction, normal coronary arteries",
+                "classification_id": "510429e12e9e903b0932cc3f8965bc31cea9064757ae747cee3c7186632b32c1",
+                "classification_path": [
+                  "> 3 years of illness",
+                  "Full recovery, normal ejection fraction, normal coronary arteries"
+                ],
+                "code": "I42.9",
+                "is_group": false,
+                "level": 1,
+                "parent_classification": "> 3 years of illness",
+                "parent_classification_id": "a2a1ac82c9036255ae7bf020d207992f688b4daada2d88dfa6409d2a16e4e837",
+                "ratings": {
+                  "ADB": "+0",
+                  "ADism": "+0",
+                  "DD/CI": "CMO",
+                  "LTC": "+0",
+                  "Life": "+0",
+                  "TPD any": "CMO",
+                  "TPD own": "CMO"
+                }
+              },
+              {
+                "children": [],
+                "classification": "Otherwise",
+                "classification_id": "53d83ee1d545d1f871fdd2d4e7573e01c92c8c3223d5a5814a7fa41a8a7cdc5b",
+                "classification_path": [
+                  "> 3 years of illness",
+                  "Otherwise"
+                ],
+                "code": "I42.9",
+                "is_group": false,
+                "level": 1,
+                "parent_classification": "> 3 years of illness",
+                "parent_classification_id": "a2a1ac82c9036255ae7bf020d207992f688b4daada2d88dfa6409d2a16e4e837",
+                "ratings": {
+                  "ADB": "CMO",
+                  "ADism": "CMO",
+                  "DD/CI": "D",
+                  "LTC": "CMO",
+                  "Life": "CMO",
+                  "TPD any": "D",
+                  "TPD own": "D"
+                }
+              }
+            ],
+            "classification": "> 3 years of illness",
+            "classification_id": "a2a1ac82c9036255ae7bf020d207992f688b4daada2d88dfa6409d2a16e4e837",
+            "classification_path": [
+              "> 3 years of illness"
+            ],
+            "code": null,
+            "is_group": true,
+            "level": 0,
+            "parent_classification": null,
+            "parent_classification_id": null,
+            "ratings": {
+              "ADB": "",
+              "ADism": "",
+              "DD/CI": "",
+              "LTC": "",
+              "Life": "",
+              "TPD any": "",
+              "TPD own": ""
+            }
+          }
+        ],
+        "warnings": []
+      },
+      "content_hash": "a6894e084fca9637f196badcfa728b1f3ce8dfed18b89f399450886786372b0d",
+      "key": "life_dd_tpd",
+      "label": "Life/DD/TPD",
+      "markdown": "| Classification | [Life](https://www.genre-manuals.com/life_insurance.htm) | [DD/CI](https://www.genre-manuals.com/dreaddisease.htm) | [TPD own](https://www.genre-manuals.com/total_and_permanent_disability.htm) | [TPD any](https://www.genre-manuals.com/total_and_permanent_disability.htm) | [ADism](https://www.genre-manuals.com/accidental_dismemberment_adism_.htm) | [ADB](https://www.genre-manuals.com/accidentaldeathbenefit_adb_.htm) | [LTC](https://www.genre-manuals.com/long_term_care.htm) | Code |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n\n|  |  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| < 1 year of illness | P | P | P | P | P | P | P | I42.9 |  |\n| ≥ 1 - ≤ 3 years of illness |  |  |  |  |  |  |  |  |  |\n| Full recovery, normal ejection fraction, normal coronary arteries | +0 | CMO | P | P | +0 | +0 | +0 | I42.9 |  |\n| Otherwise | CMO | D | D | D | CMO | CMO | CMO | I42.9 |  |\n| > 3 years of illness |  |  |  |  |  |  |  |  |  |\n| Full recovery, normal ejection fraction, normal coronary arteries | +0 | CMO | CMO | CMO | +0 | +0 | +0 | I42.9 |  |\n| Otherwise | CMO | D | D | D | CMO | CMO | CMO | I42.9 |  |\n",
+      "plain_text": "Classification\nLife\nDD/CI\nTPD own\nTPD any\nADism\nADB\nLTC\nCode\n< 1 year of illness\nP\nP\nP\nP\nP\nP\nP\nI42.9\n≥ 1 - ≤ 3 years of illness\nFull recovery, normal ejection fraction, normal coronary arteries\n+0\nCMO\nP\nP\n+0\n+0\n+0\nI42.9\nOtherwise\nCMO\nD\nD\nD\nCMO\nCMO\nCMO\nI42.9\n> 3 years of illness\nFull recovery, normal ejection fraction, normal coronary arteries\n+0\nCMO\nCMO\nCMO\n+0\n+0\n+0\nI42.9\nOtherwise\nCMO\nD\nD\nD\nCMO\nCMO\nCMO\nI42.9",
+      "related_details": [
+        {
+          "available": true,
+          "content_hash": "859460d0b7c5088d547b80bf04bd7fe0e42a24c0b34fa8ab23582a27ad8da972",
+          "label": "Life",
+          "markdown": "# Life Insurance\n\nLife Insurance pays an amount upon death of the insured, providing this occurs during the term of the insurance. Death may occur due to accident or illness.\n\nThe nature of the insured’s occupation is a significant risk factor in the risk assessment process. Not only do occupational injuries represent the main cause of accident fatalities, but occupation related diseases is also now accepted as a major source of all mortality.\n\nDeath may also occur due to the nature of the insured’s sporting activity. This is a factor in the overall risk assessment process that should be taken into account. Sport injuries represent a significant proportion of all accidental injuries and fatalities.\n\nFor non-medical risks, the ratings suggested are generally based on the sum insured rather than the premium. As such, they may be applied equally to all forms of life insurance, from term assurance to whole of life covers or endowments.\n\nUnless otherwise stated, ratings should be applied throughout the term of the insurance, whether the applicant is for annual renewable term, convertible term or group insurance.\n\n## Life Insurance\n\nLife Insurance pays an amount upon death of the insured, providing this occurs during the term of the insurance. Death may occur due to accident or illness.\n\nThe nature of the insured’s occupation is a significant risk factor in the risk assessment process. Not only do occupational injuries represent the main cause of accident fatalities, but occupation related diseases is also now accepted as a major source of all mortality.\n\nDeath may also occur due to the nature of the insured’s sporting activity. This is a factor in the overall risk assessment process that should be taken into account. Sport injuries represent a significant proportion of all accidental injuries and fatalities.\n\nFor non-medical risks, the ratings suggested are generally based on the sum insured rather than the premium. As such, they may be applied equally to all forms of life insurance, from term assurance to whole of life covers or endowments.\n\nUnless otherwise stated, ratings should be applied throughout the term of the insurance, whether the applicant is for annual renewable term, convertible term or group insurance.\n",
+          "plain_text": "Life Insurance\nLife Insurance pays an amount upon death of the insured, providing this occurs during the term of the insurance. Death may occur due to accident or illness.\nThe nature of the insured’s occupation is a significant risk factor in the risk assessment process. Not only do occupational injuries represent the main cause of accident fatalities, but occupation related diseases is also now accepted as a major source of all mortality.\nDeath may also occur due to the nature of the insured’s sporting activity. This is a factor in the overall risk assessment process that should be taken into account. Sport injuries represent a significant proportion of all accidental injuries and fatalities.\nFor non-medical risks, the ratings suggested are generally based on the sum insured rather than the premium. As such, they may be applied equally to all forms of life insurance, from term assurance to whole of life covers or endowments.\nUnless otherwise stated, ratings should be applied throughout the term of the insurance, whether the applicant is for annual renewable term, convertible term or group insurance.\nLife Insurance\nLife Insurance pays an amount upon death of the insured, providing this occurs during the term of the insurance. Death may occur due to accident or illness.\nThe nature of the insured’s occupation is a significant risk factor in the risk assessment process. Not only do occupational injuries represent the main cause of accident fatalities, but occupation related diseases is also now accepted as a major source of all mortality.\nDeath may also occur due to the nature of the insured’s sporting activity. This is a factor in the overall risk assessment process that should be taken into account. Sport injuries represent a significant proportion of all accidental injuries and fatalities.\nFor non-medical risks, the ratings suggested are generally based on the sum insured rather than the premium. As such, they may be applied equally to all forms of life insurance, from term assurance to whole of life covers or endowments.\nUnless otherwise stated, ratings should be applied throughout the term of the insurance, whether the applicant is for annual renewable term, convertible term or group insurance.",
+          "url": "https://www.genre-manuals.com/life_insurance.htm",
+          "warnings": []
+        },
+        {
+          "available": true,
+          "content_hash": "dfceae42ccd58a1233d7ff3577cca9c26e54d7624ad0e6464055958fc5891600",
+          "label": "DD/CI",
+          "markdown": "# Dread Disease / Critical Illness\n\nDread disease or Critical illness cover pays the sum insured should one of several pre-defined events occur during the term of the contract.\n\nOur rating guidelines are mainly based on the core elements:\n\n- Myocardial infarction\n- Stroke\n- Coronary bypass\n- Cancer\n- Renal failure\n- Multiple sclerosis\n\nIn many markets, however, companies have included more and more diseases in their dread disease policy coverages as evidenced by the increase from the original six to a total of now more than forty diseases.\n\nThus, our ratings assume that the contract also covers defined additional events which are often caused by accidents. This is especially relevant for the assessment of occupations, pursuits and travel. These events may include:\n\n- Severe burns\n- Coma\n- Paralysis\n- Loss of limb\n- Blindness\n- Deafness\n- Major head trauma\n- etc.\n\nThe underwriter should always take the company’s list into consideration when underwriting this risk. It should be noted that Gen Re guidelines may not cover all aspects relevant to a specific set of diseases.\n\nShould the Dread Disease cover being underwritten not include any such benefits and be a true health event only contract, an occupational and/or a pursuits loading should still be considered, due to the role environment plays in many diseases. Certain occupational elements, for instance, are now recognised as potential causes of cancer, in particular, exposure to chemicals and other carcinogens, such as used engine oils, asbestos etc. A pursuits loading should be considered due to the effect injuries have in the development of some diseases.\n\n[Exclusions: Dread Disease / Critical Illness](https://www.genre-manuals.com/exclusions_dd.htm)\n\n## Dread Disease / Critical Illness\n\nDread disease or Critical illness cover pays the sum insured should one of several pre-defined events occur during the term of the contract.\n\nOur rating guidelines are mainly based on the core elements:\n\n- Myocardial infarction\n- Stroke\n- Coronary bypass\n- Cancer\n- Renal failure\n- Multiple sclerosis\n\nIn many markets, however, companies have included more and more diseases in their dread disease policy coverages as evidenced by the increase from the original six to a total of now more than forty diseases.\n\nThus, our ratings assume that the contract also covers defined additional events which are often caused by accidents. This is especially relevant for the assessment of occupations, pursuits and travel. These events may include:\n\n- Severe burns\n- Coma\n- Paralysis\n- Loss of limb\n- Blindness\n- Deafness\n- Major head trauma\n- etc.\n\nThe underwriter should always take the company’s list into consideration when underwriting this risk. It should be noted that Gen Re guidelines may not cover all aspects relevant to a specific set of diseases.\n\nShould the Dread Disease cover being underwritten not include any such benefits and be a true health event only contract, an occupational and/or a pursuits loading should still be considered, due to the role environment plays in many diseases. Certain occupational elements, for instance, are now recognised as potential causes of cancer, in particular, exposure to chemicals and other carcinogens, such as used engine oils, asbestos etc. A pursuits loading should be considered due to the effect injuries have in the development of some diseases.\n\n[Exclusions: Dread Disease / Critical Illness](https://www.genre-manuals.com/exclusions_dd.htm)\n",
+          "plain_text": "Dread Disease / Critical Illness\nDread disease or Critical illness cover pays the sum insured should one of several pre-defined events occur during the term of the contract.\nOur rating guidelines are mainly based on the core elements:\nMyocardial infarction\nStroke\nCoronary bypass\nCancer\nRenal failure\nMultiple sclerosis\nIn many markets, however, companies have included more and more diseases in their dread disease policy coverages as evidenced by the increase from the original six to a total of now more than forty diseases.\nThus, our ratings assume that the contract also covers defined additional events which are often caused by accidents. This is especially relevant for the assessment of occupations, pursuits and travel. These events may include:\nSevere burns\nComa\nParalysis\nLoss of limb\nBlindness\nDeafness\nMajor head trauma\netc.\nThe underwriter should always take\nthe\ncompany’s list into consideration when underwriting this risk. It should be noted that\nGen Re\nguidelines may not cover all aspects relevant to a specific set of diseases.\nShould the Dread Disease cover being underwritten not include any such benefits and be a true health event only contract, an occupational and/or a pursuits loading should still be considered, due to the role environment plays in many diseases. Certain occupational elements, for instance, are now recognised as potential causes of cancer, in particular, exposure to chemicals and other carcinogens, such as used engine oils, asbestos etc. A pursuits loading should be considered due to the effect injuries have in the development of some diseases.\nExclusions: Dread Disease / Critical Illness\nDread Disease / Critical Illness\nDread disease or Critical illness cover pays the sum insured should one of several pre-defined events occur during the term of the contract.\nOur rating guidelines are mainly based on the core elements:\nMyocardial infarction\nStroke\nCoronary bypass\nCancer\nRenal failure\nMultiple sclerosis\nIn many markets, however, companies have included more and more diseases in their dread disease policy coverages as evidenced by the increase from the original six to a total of now more than forty diseases.\nThus, our ratings assume that the contract also covers defined additional events which are often caused by accidents. This is especially relevant for the assessment of occupations, pursuits and travel. These events may include:\nSevere burns\nComa\nParalysis\nLoss of limb\nBlindness\nDeafness\nMajor head trauma\netc.\nThe underwriter should always take\nthe\ncompany’s list into consideration when underwriting this risk. It should be noted that\nGen Re\nguidelines may not cover all aspects relevant to a specific set of diseases.\nShould the Dread Disease cover being underwritten not include any such benefits and be a true health event only contract, an occupational and/or a pursuits loading should still be considered, due to the role environment plays in many diseases. Certain occupational elements, for instance, are now recognised as potential causes of cancer, in particular, exposure to chemicals and other carcinogens, such as used engine oils, asbestos etc. A pursuits loading should be considered due to the effect injuries have in the development of some diseases.\nExclusions: Dread Disease / Critical Illness",
+          "url": "https://www.genre-manuals.com/dreaddisease.htm",
+          "warnings": []
+        },
+        {
+          "available": true,
+          "content_hash": "7cbb9acb25ba8a84c4fcdc392a7199b6b10695ac65f82753eea371558f243fbd",
+          "label": "TPD own",
+          "markdown": "# Total and Permanent Disability\n\nTPD provides a lump sum payment upon major disability of the insured which totally renders them unable to work, and from which recovery is not expected. A minimum waiting period of 6 months is common, as such a period is required to fully assess the permanent nature of the disability. Cover typically terminates at age 65 or earlier.\n\nTPD may be sold as a rider to other insurances such as life cover or dread disease, or as a stand-alone product. The suggested ratings apply equally to either situation.\n\nThe two most common types of TPD insurance are the following:\n\nTPD own -\n\nTotal and Permanent Disability **–** Own Occupation\n\nA typical definition would be \"a total and permanent inability to carry out all the duties of your usual occupation\".\n\nTPD any **-**\n\nTotal and Permanent Disability – Any Occupation\n\nA typical definition would be \"a total and permanent inability to carry out any occupation whatsoever\".\n\n[Exclusions: Total Permanent Disability](https://www.genre-manuals.com/exclusions_tpd.htm)\n\n## Total and Permanent Disability\n\nTPD provides a lump sum payment upon major disability of the insured which totally renders them unable to work, and from which recovery is not expected. A minimum waiting period of 6 months is common, as such a period is required to fully assess the permanent nature of the disability. Cover typically terminates at age 65 or earlier.\n\nTPD may be sold as a rider to other insurances such as life cover or dread disease, or as a stand-alone product. The suggested ratings apply equally to either situation.\n\nThe two most common types of TPD insurance are the following:\n\nTPD own -\n\nTotal and Permanent Disability **–** Own Occupation\n\nA typical definition would be \"a total and permanent inability to carry out all the duties of your usual occupation\".\n\nTPD any **-**\n\nTotal and Permanent Disability – Any Occupation\n\nA typical definition would be \"a total and permanent inability to carry out any occupation whatsoever\".\n\n[Exclusions: Total Permanent Disability](https://www.genre-manuals.com/exclusions_tpd.htm)\n",
+          "plain_text": "Total and Permanent Disability\nTPD provides a lump sum payment upon major disability of the insured which totally renders them unable to work, and from which recovery is not expected. A minimum waiting period of 6 months is common, as such a period is required to fully assess the permanent nature of the disability. Cover typically terminates at age 65 or earlier.\nTPD may be sold as a rider to other insurances such as life cover or dread disease, or as a stand-alone product. The suggested ratings apply equally to either situation.\nThe two most common types of TPD insurance are the following:\nTPD own -\nTotal and Permanent Disability\n–\nOwn Occupation\nA typical definition would be \"a total and permanent inability to carry out all the duties of your usual occupation\".\nTPD any\n-\nTotal and Permanent Disability – Any Occupation\nA typical definition would be \"a total and permanent inability to carry out any occupation whatsoever\".\nExclusions: Total Permanent Disability\nTotal and Permanent Disability\nTPD provides a lump sum payment upon major disability of the insured which totally renders them unable to work, and from which recovery is not expected. A minimum waiting period of 6 months is common, as such a period is required to fully assess the permanent nature of the disability. Cover typically terminates at age 65 or earlier.\nTPD may be sold as a rider to other insurances such as life cover or dread disease, or as a stand-alone product. The suggested ratings apply equally to either situation.\nThe two most common types of TPD insurance are the following:\nTPD own -\nTotal and Permanent Disability\n–\nOwn Occupation\nA typical definition would be \"a total and permanent inability to carry out all the duties of your usual occupation\".\nTPD any\n-\nTotal and Permanent Disability – Any Occupation\nA typical definition would be \"a total and permanent inability to carry out any occupation whatsoever\".\nExclusions: Total Permanent Disability",
+          "url": "https://www.genre-manuals.com/total_and_permanent_disability.htm",
+          "warnings": []
+        },
+        {
+          "available": true,
+          "content_hash": "ac22a6aeae2c9cbbabc49869f2488b576e6ad0ee5a1070afb20b75eb95ff441b",
+          "label": "ADism",
+          "markdown": "# Accidental Dismemberment\n\nAccidental Dismemberment insurance pays out a pre-defined percentage of the sum assured based on the severity of injury sustained by the insured.\n\nInsured events range from major traumas such as loss of an arm, or major head injury to relatively mild conditions such as a broken bone or loss of teeth.\n\n[Exclusions: Accidental Dismemberment](https://www.genre-manuals.com/exclusions_accidental_dismemberment.htm)\n\n## Accidental Dismemberment\n\nAccidental Dismemberment insurance pays out a pre-defined percentage of the sum assured based on the severity of injury sustained by the insured.\n\nInsured events range from major traumas such as loss of an arm, or major head injury to relatively mild conditions such as a broken bone or loss of teeth.\n\n[Exclusions: Accidental Dismemberment](https://www.genre-manuals.com/exclusions_accidental_dismemberment.htm)\n",
+          "plain_text": "Accidental Dismemberment\nAccidental Dismemberment insurance pays out a pre-defined percentage of the sum assured based on the severity of injury sustained by the insured.\nInsured events range from major traumas such as loss of an arm, or major head injury to relatively mild conditions such as a broken bone or loss of teeth.\nExclusions: Accidental Dismemberment\nAccidental Dismemberment\nAccidental Dismemberment insurance pays out a pre-defined percentage of the sum assured based on the severity of injury sustained by the insured.\nInsured events range from major traumas such as loss of an arm, or major head injury to relatively mild conditions such as a broken bone or loss of teeth.\nExclusions: Accidental Dismemberment",
+          "url": "https://www.genre-manuals.com/accidental_dismemberment_adism_.htm",
+          "warnings": []
+        },
+        {
+          "available": true,
+          "content_hash": "94636d6978d5efe7ec603d87294a8de6adc58043d082731999d564e79bcbca77",
+          "label": "ADB",
+          "markdown": "# Accidental Death Benefit\n\nSold as a rider to another insurance or as a stand-alone product, ADB pays out the sum assured should the insured die in an accident.\n\nConsideration should be given to the definition of an accident, as in some countries health events, such as a heart attack, may be counted as a work related accident, particularly if the said event cannot be attributed to any other risk factors.\n\n[Exclusions: Accidental Death Benefit](https://www.genre-manuals.com/exclusions_accidental_death_benefit.htm)\n\n## Accidental Death Benefit\n\nSold as a rider to another insurance or as a stand-alone product, ADB pays out the sum assured should the insured die in an accident.\n\nConsideration should be given to the definition of an accident, as in some countries health events, such as a heart attack, may be counted as a work related accident, particularly if the said event cannot be attributed to any other risk factors.\n\n[Exclusions: Accidental Death Benefit](https://www.genre-manuals.com/exclusions_accidental_death_benefit.htm)\n",
+          "plain_text": "Accidental Death Benefit\nSold as a rider to another insurance or as a stand-alone product, ADB pays out the sum assured should the insured die in an accident.\nConsideration should be given to the definition of an accident, as in some countries health events, such as a heart attack, may be counted as a work related accident, particularly if the said event cannot be attributed to any other risk factors.\nExclusions: Accidental Death Benefit\nAccidental Death Benefit\nSold as a rider to another insurance or as a stand-alone product, ADB pays out the sum assured should the insured die in an accident.\nConsideration should be given to the definition of an accident, as in some countries health events, such as a heart attack, may be counted as a work related accident, particularly if the said event cannot be attributed to any other risk factors.\nExclusions: Accidental Death Benefit",
+          "url": "https://www.genre-manuals.com/accidentaldeathbenefit_adb_.htm",
+          "warnings": []
+        },
+        {
+          "available": true,
+          "content_hash": "97d070b7f8730b85671de44001f81a0e3811a4b30ffa583b9904708a33e12623",
+          "label": "LTC",
+          "markdown": "# LTC\n\nLong Term Care (LTC) insurance provides cover against the risk of becoming too frail to care for oneself without physical assistance from another person even when using assistive devices.\n\nAn internationally recognised, and widely used, definition for LTC insurance is based on six Activities of Daily Living (ADLs): dressing, feeding, washing, continence, mobility and transferring. Here “transferring” means the ability to get into an upright position from a bed or a chair; “feeding” does not include the ability to prepare meals.\n\nTo claim, the insured person must be incapable of performing a defined number of ADLs even when using special equipment. Instead, they require continuous physical assistance from another person and are very likely to require help for the next six months. This means, for example, that a person who can use a wheelchair to move from one room to another will not fail the ADL “mobility”.\n\nPeople suffering from dementia also require help and support, but they may remain physically capable of performing ADLs so would not qualify for benefit based on ADL assessment alone. For this reason, many products consider dementia as an alternative claims trigger based on the individual’s need for continuous supervision by another person.\n\nFor practical reasons, if a public scheme exists, private insurance products often copy the local definition, sometimes in addition to the ADL trigger.\n\n## LTC\n\nLong Term Care (LTC) insurance provides cover against the risk of becoming too frail to care for oneself without physical assistance from another person even when using assistive devices.\n\nAn internationally recognised, and widely used, definition for LTC insurance is based on six Activities of Daily Living (ADLs): dressing, feeding, washing, continence, mobility and transferring. Here “transferring” means the ability to get into an upright position from a bed or a chair; “feeding” does not include the ability to prepare meals.\n\nTo claim, the insured person must be incapable of performing a defined number of ADLs even when using special equipment. Instead, they require continuous physical assistance from another person and are very likely to require help for the next six months. This means, for example, that a person who can use a wheelchair to move from one room to another will not fail the ADL “mobility”.\n\nPeople suffering from dementia also require help and support, but they may remain physically capable of performing ADLs so would not qualify for benefit based on ADL assessment alone. For this reason, many products consider dementia as an alternative claims trigger based on the individual’s need for continuous supervision by another person.\n\nFor practical reasons, if a public scheme exists, private insurance products often copy the local definition, sometimes in addition to the ADL trigger.\n",
+          "plain_text": "LTC\nLong Term Care (LTC) insurance provides cover against the risk of becoming too frail to care for oneself without physical assistance from another person even when using assistive devices.\nAn internationally recognised, and widely used, definition for LTC insurance is based on six Activities of Daily Living (ADLs): dressing, feeding, washing, continence, mobility and transferring. Here “transferring” means the ability to get into an upright position from a bed or a chair; “feeding” does not include the ability to prepare meals.\nTo claim, the insured person must be incapable of performing a defined number of ADLs even when using special equipment. Instead, they require continuous physical assistance from another person and are very likely to require help for the next six months. This means, for example, that a person who can use a wheelchair to move from one room to another will not fail the ADL “mobility”.\nPeople suffering from dementia also require help and support, but they may remain physically capable of performing ADLs so would not qualify for benefit based on ADL assessment alone. For this reason, many products consider dementia as an alternative claims trigger based on the individual’s need for continuous supervision by another person.\nFor practical reasons, if a public scheme exists, private insurance products often copy the local definition, sometimes in addition to the ADL trigger.\nLTC\nLong Term Care (LTC) insurance provides cover against the risk of becoming too frail to care for oneself without physical assistance from another person even when using assistive devices.\nAn internationally recognised, and widely used, definition for LTC insurance is based on six Activities of Daily Living (ADLs): dressing, feeding, washing, continence, mobility and transferring. Here “transferring” means the ability to get into an upright position from a bed or a chair; “feeding” does not include the ability to prepare meals.\nTo claim, the insured person must be incapable of performing a defined number of ADLs even when using special equipment. Instead, they require continuous physical assistance from another person and are very likely to require help for the next six months. This means, for example, that a person who can use a wheelchair to move from one room to another will not fail the ADL “mobility”.\nPeople suffering from dementia also require help and support, but they may remain physically capable of performing ADLs so would not qualify for benefit based on ADL assessment alone. For this reason, many products consider dementia as an alternative claims trigger based on the individual’s need for continuous supervision by another person.\nFor practical reasons, if a public scheme exists, private insurance products often copy the local definition, sometimes in addition to the ADL trigger.",
+          "url": "https://www.genre-manuals.com/long_term_care.htm",
+          "warnings": []
+        }
+      ],
+      "source_url": "https://www.genre-manuals.com/sites/CLUE/home/page7/page8/circulatory-system/heart/cardiomyopathies/page798/maincontent/tab510.html.ajax",
+      "tables": [
+        {
+          "rows": [
+            [
+              "Classification",
+              "Life",
+              "DD/CI",
+              "TPD own",
+              "TPD any",
+              "ADism",
+              "ADB",
+              "LTC",
+              "Code",
+              ""
+            ]
+          ]
+        },
+        {
+          "rows": [
+            [
+              "< 1 year of illness",
+              "P",
+              "P",
+              "P",
+              "P",
+              "P",
+              "P",
+              "P",
+              "I42.9",
+              ""
+            ],
+            [
+              "≥ 1 - ≤ 3 years of illness",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Full recovery, normal ejection fraction, normal coronary arteries",
+              "+0",
+              "CMO",
+              "P",
+              "P",
+              "+0",
+              "+0",
+              "+0",
+              "I42.9",
+              ""
+            ],
+            [
+              "Otherwise",
+              "CMO",
+              "D",
+              "D",
+              "D",
+              "CMO",
+              "CMO",
+              "CMO",
+              "I42.9",
+              ""
+            ],
+            [
+              "> 3 years of illness",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Full recovery, normal ejection fraction, normal coronary arteries",
+              "+0",
+              "CMO",
+              "CMO",
+              "CMO",
+              "+0",
+              "+0",
+              "+0",
+              "I42.9",
+              ""
+            ],
+            [
+              "Otherwise",
+              "CMO",
+              "D",
+              "D",
+              "D",
+              "CMO",
+              "CMO",
+              "CMO",
+              "I42.9",
+              ""
+            ]
+          ]
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "available": true,
+      "classification_table": {
+        "headers": [
+          "Classification",
+          "D2/52",
+          "D4/52",
+          "D13/52",
+          "Code"
+        ],
+        "rows": [
+          {
+            "classification": "< 1 year of illness",
+            "classification_id": "c53afaab8dee7d5af6186c557c9a7726ce23a7d05be70ba568bc0cbcde7e5bf4",
+            "classification_path": [
+              "< 1 year of illness"
+            ],
+            "code": "I42.9",
+            "is_group": false,
+            "level": 0,
+            "parent_classification": null,
+            "parent_classification_id": null,
+            "ratings": {
+              "D13/52": "P",
+              "D2/52": "P",
+              "D4/52": "P"
+            },
+            "raw_cells": [
+              "< 1 year of illness",
+              "P",
+              "P",
+              "P",
+              "I42.9"
+            ],
+            "related_details": []
+          },
+          {
+            "classification": "≥ 1 - ≤ 3 years of illness",
+            "classification_id": "250bf47242be9489d9e20669fad82c12b06d5d789ca4d05d51adbacb7571c494",
+            "classification_path": [
+              "≥ 1 - ≤ 3 years of illness"
+            ],
+            "code": null,
+            "is_group": true,
+            "level": 0,
+            "parent_classification": null,
+            "parent_classification_id": null,
+            "ratings": {
+              "D13/52": "",
+              "D2/52": "",
+              "D4/52": ""
+            },
+            "raw_cells": [
+              "≥ 1 - ≤ 3 years of illness",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "related_details": []
+          },
+          {
+            "classification": "Full recovery, normal ejection fraction, normal coronary arteries",
+            "classification_id": "afa43072748e0c0825377c6d928b8208a9f1cff8bb3395acddef76d233dfd2f6",
+            "classification_path": [
+              "≥ 1 - ≤ 3 years of illness",
+              "Full recovery, normal ejection fraction, normal coronary arteries"
+            ],
+            "code": "I42.9",
+            "is_group": false,
+            "level": 1,
+            "parent_classification": "≥ 1 - ≤ 3 years of illness",
+            "parent_classification_id": "250bf47242be9489d9e20669fad82c12b06d5d789ca4d05d51adbacb7571c494",
+            "ratings": {
+              "D13/52": "P",
+              "D2/52": "P",
+              "D4/52": "P"
+            },
+            "raw_cells": [
+              "Full recovery, normal ejection fraction, normal coronary arteries",
+              "P",
+              "P",
+              "P",
+              "I42.9"
+            ],
+            "related_details": []
+          },
+          {
+            "classification": "Otherwise",
+            "classification_id": "3a32d9ccddef39496fb4d6e3db5c5f5f5e4af3e198b92d9a6c221180d6333f17",
+            "classification_path": [
+              "≥ 1 - ≤ 3 years of illness",
+              "Otherwise"
+            ],
+            "code": "I42.9",
+            "is_group": false,
+            "level": 1,
+            "parent_classification": "≥ 1 - ≤ 3 years of illness",
+            "parent_classification_id": "250bf47242be9489d9e20669fad82c12b06d5d789ca4d05d51adbacb7571c494",
+            "ratings": {
+              "D13/52": "D",
+              "D2/52": "D",
+              "D4/52": "D"
+            },
+            "raw_cells": [
+              "Otherwise",
+              "D",
+              "D",
+              "D",
+              "I42.9"
+            ],
+            "related_details": []
+          },
+          {
+            "classification": "> 3 years of illness",
+            "classification_id": "a2a1ac82c9036255ae7bf020d207992f688b4daada2d88dfa6409d2a16e4e837",
+            "classification_path": [
+              "> 3 years of illness"
+            ],
+            "code": null,
+            "is_group": true,
+            "level": 0,
+            "parent_classification": null,
+            "parent_classification_id": null,
+            "ratings": {
+              "D13/52": "",
+              "D2/52": "",
+              "D4/52": ""
+            },
+            "raw_cells": [
+              "> 3 years of illness",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "related_details": []
+          },
+          {
+            "classification": "Full recovery, normal ejection fraction, normal coronary arteries",
+            "classification_id": "510429e12e9e903b0932cc3f8965bc31cea9064757ae747cee3c7186632b32c1",
+            "classification_path": [
+              "> 3 years of illness",
+              "Full recovery, normal ejection fraction, normal coronary arteries"
+            ],
+            "code": "I42.9",
+            "is_group": false,
+            "level": 1,
+            "parent_classification": "> 3 years of illness",
+            "parent_classification_id": "a2a1ac82c9036255ae7bf020d207992f688b4daada2d88dfa6409d2a16e4e837",
+            "ratings": {
+              "D13/52": "CMO",
+              "D2/52": "CMO",
+              "D4/52": "CMO"
+            },
+            "raw_cells": [
+              "Full recovery, normal ejection fraction, normal coronary arteries",
+              "CMO",
+              "CMO",
+              "CMO",
+              "I42.9"
+            ],
+            "related_details": []
+          },
+          {
+            "classification": "Otherwise",
+            "classification_id": "53d83ee1d545d1f871fdd2d4e7573e01c92c8c3223d5a5814a7fa41a8a7cdc5b",
+            "classification_path": [
+              "> 3 years of illness",
+              "Otherwise"
+            ],
+            "code": "I42.9",
+            "is_group": false,
+            "level": 1,
+            "parent_classification": "> 3 years of illness",
+            "parent_classification_id": "a2a1ac82c9036255ae7bf020d207992f688b4daada2d88dfa6409d2a16e4e837",
+            "ratings": {
+              "D13/52": "D",
+              "D2/52": "D",
+              "D4/52": "D"
+            },
+            "raw_cells": [
+              "Otherwise",
+              "D",
+              "D",
+              "D",
+              "I42.9"
+            ],
+            "related_details": []
+          }
+        ],
+        "tree": [
+          {
+            "children": [],
+            "classification": "< 1 year of illness",
+            "classification_id": "c53afaab8dee7d5af6186c557c9a7726ce23a7d05be70ba568bc0cbcde7e5bf4",
+            "classification_path": [
+              "< 1 year of illness"
+            ],
+            "code": "I42.9",
+            "is_group": false,
+            "level": 0,
+            "parent_classification": null,
+            "parent_classification_id": null,
+            "ratings": {
+              "D13/52": "P",
+              "D2/52": "P",
+              "D4/52": "P"
+            }
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "classification": "Full recovery, normal ejection fraction, normal coronary arteries",
+                "classification_id": "afa43072748e0c0825377c6d928b8208a9f1cff8bb3395acddef76d233dfd2f6",
+                "classification_path": [
+                  "≥ 1 - ≤ 3 years of illness",
+                  "Full recovery, normal ejection fraction, normal coronary arteries"
+                ],
+                "code": "I42.9",
+                "is_group": false,
+                "level": 1,
+                "parent_classification": "≥ 1 - ≤ 3 years of illness",
+                "parent_classification_id": "250bf47242be9489d9e20669fad82c12b06d5d789ca4d05d51adbacb7571c494",
+                "ratings": {
+                  "D13/52": "P",
+                  "D2/52": "P",
+                  "D4/52": "P"
+                }
+              },
+              {
+                "children": [],
+                "classification": "Otherwise",
+                "classification_id": "3a32d9ccddef39496fb4d6e3db5c5f5f5e4af3e198b92d9a6c221180d6333f17",
+                "classification_path": [
+                  "≥ 1 - ≤ 3 years of illness",
+                  "Otherwise"
+                ],
+                "code": "I42.9",
+                "is_group": false,
+                "level": 1,
+                "parent_classification": "≥ 1 - ≤ 3 years of illness",
+                "parent_classification_id": "250bf47242be9489d9e20669fad82c12b06d5d789ca4d05d51adbacb7571c494",
+                "ratings": {
+                  "D13/52": "D",
+                  "D2/52": "D",
+                  "D4/52": "D"
+                }
+              }
+            ],
+            "classification": "≥ 1 - ≤ 3 years of illness",
+            "classification_id": "250bf47242be9489d9e20669fad82c12b06d5d789ca4d05d51adbacb7571c494",
+            "classification_path": [
+              "≥ 1 - ≤ 3 years of illness"
+            ],
+            "code": null,
+            "is_group": true,
+            "level": 0,
+            "parent_classification": null,
+            "parent_classification_id": null,
+            "ratings": {
+              "D13/52": "",
+              "D2/52": "",
+              "D4/52": ""
+            }
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "classification": "Full recovery, normal ejection fraction, normal coronary arteries",
+                "classification_id": "510429e12e9e903b0932cc3f8965bc31cea9064757ae747cee3c7186632b32c1",
+                "classification_path": [
+                  "> 3 years of illness",
+                  "Full recovery, normal ejection fraction, normal coronary arteries"
+                ],
+                "code": "I42.9",
+                "is_group": false,
+                "level": 1,
+                "parent_classification": "> 3 years of illness",
+                "parent_classification_id": "a2a1ac82c9036255ae7bf020d207992f688b4daada2d88dfa6409d2a16e4e837",
+                "ratings": {
+                  "D13/52": "CMO",
+                  "D2/52": "CMO",
+                  "D4/52": "CMO"
+                }
+              },
+              {
+                "children": [],
+                "classification": "Otherwise",
+                "classification_id": "53d83ee1d545d1f871fdd2d4e7573e01c92c8c3223d5a5814a7fa41a8a7cdc5b",
+                "classification_path": [
+                  "> 3 years of illness",
+                  "Otherwise"
+                ],
+                "code": "I42.9",
+                "is_group": false,
+                "level": 1,
+                "parent_classification": "> 3 years of illness",
+                "parent_classification_id": "a2a1ac82c9036255ae7bf020d207992f688b4daada2d88dfa6409d2a16e4e837",
+                "ratings": {
+                  "D13/52": "D",
+                  "D2/52": "D",
+                  "D4/52": "D"
+                }
+              }
+            ],
+            "classification": "> 3 years of illness",
+            "classification_id": "a2a1ac82c9036255ae7bf020d207992f688b4daada2d88dfa6409d2a16e4e837",
+            "classification_path": [
+              "> 3 years of illness"
+            ],
+            "code": null,
+            "is_group": true,
+            "level": 0,
+            "parent_classification": null,
+            "parent_classification_id": null,
+            "ratings": {
+              "D13/52": "",
+              "D2/52": "",
+              "D4/52": ""
+            }
+          }
+        ],
+        "warnings": []
+      },
+      "content_hash": "e2f2166bfbf2772a4f2c82fd104ecbd349c65f67de848fb4e3ae2ae3a012850c",
+      "key": "ip",
+      "label": "IP",
+      "markdown": "| Classification | [D2/52](https://www.genre-manuals.com/incomeprotection_ip_.htm) | [D4/52](https://www.genre-manuals.com/incomeprotection_ip_.htm) | [D13/52](https://www.genre-manuals.com/incomeprotection_ip_.htm) | Code |  |\n| --- | --- | --- | --- | --- | --- |\n\n|  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- |\n| < 1 year of illness | P | P | P | I42.9 |  |\n| ≥ 1 - ≤ 3 years of illness |  |  |  |  |  |\n| Full recovery, normal ejection fraction, normal coronary arteries | P | P | P | I42.9 |  |\n| Otherwise | D | D | D | I42.9 |  |\n| > 3 years of illness |  |  |  |  |  |\n| Full recovery, normal ejection fraction, normal coronary arteries | CMO | CMO | CMO | I42.9 |  |\n| Otherwise | D | D | D | I42.9 |  |\n",
+      "plain_text": "Classification\nD2/52\nD4/52\nD13/52\nCode\n< 1 year of illness\nP\nP\nP\nI42.9\n≥ 1 - ≤ 3 years of illness\nFull recovery, normal ejection fraction, normal coronary arteries\nP\nP\nP\nI42.9\nOtherwise\nD\nD\nD\nI42.9\n> 3 years of illness\nFull recovery, normal ejection fraction, normal coronary arteries\nCMO\nCMO\nCMO\nI42.9\nOtherwise\nD\nD\nD\nI42.9",
+      "related_details": [
+        {
+          "available": true,
+          "content_hash": "f9b2074464d73b655f055d2ab16f5bd30c3bdd3d7a3245160108173d166ffd5e",
+          "label": "D2/52",
+          "markdown": "# Income Protection\n\nIncome Protection Insurance is designed to provide a regular payment of an insurance benefit to the insured to compensate for the loss of income suffered as a result of being disabled through sickness or injury and unable to work.\n\nA typical definition would be:\n\n\"The Insured must be unable to perform his or her usual occupation or any other occupation to which he/she may be suited due to their education, training, or experience”.\n\nThe vast majority of disability policies issued do not provide benefits immediately upon disablement. Instead, a period of time must elapse before benefits become payable and this period is known most commonly as Deferred Period or Waiting Period.\n\nDeferred periods can be as short as seven days or as long as two years. In some markets, deferred periods of two - D2/52 - and four weeks - D4/52 - are common. In other markets, longer deferred periods such as 13 weeks - D13/52 - are more common and very short deferred periods are not generally offered or perhaps only to certain professions.\n\n[Exclusions: Income Protection](https://www.genre-manuals.com/exclusions_income_protection.htm)\n\n##### Underwriting Considerations\n\nUnderwriting IP tends to be more complex than life insurance as the policy benefits are triggered by morbidity rather than mortality. Key factors of IP underwriting include:\n\nMedical:\n\n- The relationship between medical disorders and the ability to remain at work until normal retirement age is at the heart of medical assessment of IP applicants. Underwriters must identify these links when assessing the available medical evidence.\n- Overlap with a disorder and a particular job type or with the hazards known to be associated with that particular industry (e.g. respiratory conditions with dusty working environments)\n- Medical conditions which worsen with age. Acceptance terms must reflect this increasing risk as the IP contract offers cover through to retirement age (e.g. degenerative joint disorders with manual occupations)\n- Overlap between personality types and the stresses of a particular branch of employment (e.g. anxiety disorders with psychologically demanding jobs)\n\nOccupation:\n\nFor IP occupations are classified to reflect the different degrees of risk of claim. Among the factors that influence claims experience are the following:\n\n- Accident and health hazards associated with that industry\n- Degree of skills required to perform the job. These could be very low which could mean that the work is not especially interesting or financially rewarding. Alternatively skill levels could be very high resulting in a degree of specialisation that could be a risk in itself.\n- Amount of physical work involved in the job. Where a job requires a demanding level of fitness then continued robust health will be required to perform the job over many years.\n- Stress levels may be high because of difficult working conditions or may be associated with that type of work. A person susceptible to stress could find these pressures become intolerable over a lifetime.\n- Claims experience. Gen Re has gathered a great deal of experience from IP writers in many markets which demonstrate that certain jobs generate more claims than might be anticipated at first glance.\n\n[Occupational risk classes](https://www.genre-manuals.com/en_occupational_risk_classes.htm)\n\nIncentive to work:\n\nAll IP applicants will be in active employment at policy inception. The incentive to remain at work varies amongst different people especially once the fallback of an IP policy to cover income during absence is in place. The will to work may be linked to the following aspects:\n\n- Personal satisfaction gained from a job\n- Financial rewards\n- Working conditions\n- Long-term employment prospects\n\n## Income Protection\n\nIncome Protection Insurance is designed to provide a regular payment of an insurance benefit to the insured to compensate for the loss of income suffered as a result of being disabled through sickness or injury and unable to work.\n\nA typical definition would be:\n\n\"The Insured must be unable to perform his or her usual occupation or any other occupation to which he/she may be suited due to their education, training, or experience”.\n\nThe vast majority of disability policies issued do not provide benefits immediately upon disablement. Instead, a period of time must elapse before benefits become payable and this period is known most commonly as Deferred Period or Waiting Period.\n\nDeferred periods can be as short as seven days or as long as two years. In some markets, deferred periods of two - D2/52 - and four weeks - D4/52 - are common. In other markets, longer deferred periods such as 13 weeks - D13/52 - are more common and very short deferred periods are not generally offered or perhaps only to certain professions.\n\n[Exclusions: Income Protection](https://www.genre-manuals.com/exclusions_income_protection.htm)\n\n##### Underwriting Considerations\n\nUnderwriting IP tends to be more complex than life insurance as the policy benefits are triggered by morbidity rather than mortality. Key factors of IP underwriting include:\n\nMedical:\n\n- The relationship between medical disorders and the ability to remain at work until normal retirement age is at the heart of medical assessment of IP applicants. Underwriters must identify these links when assessing the available medical evidence.\n- Overlap with a disorder and a particular job type or with the hazards known to be associated with that particular industry (e.g. respiratory conditions with dusty working environments)\n- Medical conditions which worsen with age. Acceptance terms must reflect this increasing risk as the IP contract offers cover through to retirement age (e.g. degenerative joint disorders with manual occupations)\n- Overlap between personality types and the stresses of a particular branch of employment (e.g. anxiety disorders with psychologically demanding jobs)\n\nOccupation:\n\nFor IP occupations are classified to reflect the different degrees of risk of claim. Among the factors that influence claims experience are the following:\n\n- Accident and health hazards associated with that industry\n- Degree of skills required to perform the job. These could be very low which could mean that the work is not especially interesting or financially rewarding. Alternatively skill levels could be very high resulting in a degree of specialisation that could be a risk in itself.\n- Amount of physical work involved in the job. Where a job requires a demanding level of fitness then continued robust health will be required to perform the job over many years.\n- Stress levels may be high because of difficult working conditions or may be associated with that type of work. A person susceptible to stress could find these pressures become intolerable over a lifetime.\n- Claims experience. Gen Re has gathered a great deal of experience from IP writers in many markets which demonstrate that certain jobs generate more claims than might be anticipated at first glance.\n\n[Occupational risk classes](https://www.genre-manuals.com/en_occupational_risk_classes.htm)\n\nIncentive to work:\n\nAll IP applicants will be in active employment at policy inception. The incentive to remain at work varies amongst different people especially once the fallback of an IP policy to cover income during absence is in place. The will to work may be linked to the following aspects:\n\n- Personal satisfaction gained from a job\n- Financial rewards\n- Working conditions\n- Long-term employment prospects\n",
+          "plain_text": "Income Protection\nIncome Protection Insurance is designed to provide a regular payment of an insurance benefit to the insured to compensate for the loss of income suffered as a result of being disabled through sickness or injury and unable to work.\nA typical definition would be:\n\"The Insured must be unable to perform his or her usual occupation or any other occupation to which he/she may be suited due to their education, training, or experience”.\nThe vast majority of disability policies issued do not provide benefits immediately upon disablement. Instead, a period of time must elapse before benefits become payable and this period is known most commonly as Deferred Period or Waiting Period.\nDeferred periods can be as short as seven days or as long as two years. In some markets, deferred periods of two -\nD2/52\n- and four weeks -\nD4/52\n- are common. In other markets, longer deferred periods such as 13 weeks -\nD13/52\n- are more common and very short deferred periods are not generally offered or perhaps only to certain professions.\nExclusions: Income Protection\nUnderwriting Considerations\nUnderwriting IP tends to be more complex than life insurance as the policy benefits are triggered by morbidity rather than mortality. Key factors of IP underwriting include:\nMedical:\nThe relationship between medical disorders and the ability to remain at work until normal retirement age is at the heart of medical assessment of IP applicants. Underwriters must identify these links when assessing the available medical evidence.\nOverlap with a disorder and a particular job type or with the hazards known to be associated with that particular industry (e.g. respiratory conditions with dusty working environments)\nMedical conditions which worsen with age. Acceptance terms must reflect this increasing risk as the IP contract offers cover through to retirement age (e.g. degenerative joint disorders with manual occupations)\nOverlap between personality types and the stresses of a particular branch of employment (e.g. anxiety disorders with psychologically demanding jobs)\nOccupation:\nFor IP occupations are classified to reflect the different degrees of risk of claim. Among the factors that influence claims experience are the following:\nAccident and health hazards associated with that industry\nDegree of skills required to perform the job. These could be very low which could mean that the work is not especially interesting or financially rewarding. Alternatively skill levels could be very high resulting in a degree of specialisation that could be a risk in itself.\nAmount of physical work involved in the job. Where a job requires a demanding level of fitness then continued robust health will be required to perform the job over many years.\nStress levels may be high because of difficult working conditions or may be associated with that type of work. A person susceptible to stress could find these pressures become intolerable over a lifetime.\nClaims experience. Gen Re has gathered a great deal of experience from IP writers in many markets which demonstrate that certain jobs generate more claims than might be anticipated at first glance.\nOccupational risk classes\nIncentive to work:\nAll IP applicants will be in active employment at policy inception. The incentive to remain at work varies amongst different people especially once the fallback of an IP policy to cover income during absence is in place. The will to work may be linked to the following aspects:\nPersonal satisfaction gained from a job\nFinancial rewards\nWorking conditions\nLong-term employment prospects\nIncome Protection\nIncome Protection Insurance is designed to provide a regular payment of an insurance benefit to the insured to compensate for the loss of income suffered as a result of being disabled through sickness or injury and unable to work.\nA typical definition would be:\n\"The Insured must be unable to perform his or her usual occupation or any other occupation to which he/she may be suited due to their education, training, or experience”.\nThe vast majority of disability policies issued do not provide benefits immediately upon disablement. Instead, a period of time must elapse before benefits become payable and this period is known most commonly as Deferred Period or Waiting Period.\nDeferred periods can be as short as seven days or as long as two years. In some markets, deferred periods of two -\nD2/52\n- and four weeks -\nD4/52\n- are common. In other markets, longer deferred periods such as 13 weeks -\nD13/52\n- are more common and very short deferred periods are not generally offered or perhaps only to certain professions.\nExclusions: Income Protection\nUnderwriting Considerations\nUnderwriting IP tends to be more complex than life insurance as the policy benefits are triggered by morbidity rather than mortality. Key factors of IP underwriting include:\nMedical:\nThe relationship between medical disorders and the ability to remain at work until normal retirement age is at the heart of medical assessment of IP applicants. Underwriters must identify these links when assessing the available medical evidence.\nOverlap with a disorder and a particular job type or with the hazards known to be associated with that particular industry (e.g. respiratory conditions with dusty working environments)\nMedical conditions which worsen with age. Acceptance terms must reflect this increasing risk as the IP contract offers cover through to retirement age (e.g. degenerative joint disorders with manual occupations)\nOverlap between personality types and the stresses of a particular branch of employment (e.g. anxiety disorders with psychologically demanding jobs)\nOccupation:\nFor IP occupations are classified to reflect the different degrees of risk of claim. Among the factors that influence claims experience are the following:\nAccident and health hazards associated with that industry\nDegree of skills required to perform the job. These could be very low which could mean that the work is not especially interesting or financially rewarding. Alternatively skill levels could be very high resulting in a degree of specialisation that could be a risk in itself.\nAmount of physical work involved in the job. Where a job requires a demanding level of fitness then continued robust health will be required to perform the job over many years.\nStress levels may be high because of difficult working conditions or may be associated with that type of work. A person susceptible to stress could find these pressures become intolerable over a lifetime.\nClaims experience. Gen Re has gathered a great deal of experience from IP writers in many markets which demonstrate that certain jobs generate more claims than might be anticipated at first glance.\nOccupational risk classes\nIncentive to work:\nAll IP applicants will be in active employment at policy inception. The incentive to remain at work varies amongst different people especially once the fallback of an IP policy to cover income during absence is in place. The will to work may be linked to the following aspects:\nPersonal satisfaction gained from a job\nFinancial rewards\nWorking conditions\nLong-term employment prospects",
+          "url": "https://www.genre-manuals.com/incomeprotection_ip_.htm",
+          "warnings": []
+        }
+      ],
+      "source_url": "https://www.genre-manuals.com/sites/CLUE/home/page7/page8/circulatory-system/heart/cardiomyopathies/page798/maincontent/tab510.html.ajax",
+      "tables": [
+        {
+          "rows": [
+            [
+              "Classification",
+              "D2/52",
+              "D4/52",
+              "D13/52",
+              "Code",
+              ""
+            ]
+          ]
+        },
+        {
+          "rows": [
+            [
+              "< 1 year of illness",
+              "P",
+              "P",
+              "P",
+              "I42.9",
+              ""
+            ],
+            [
+              "≥ 1 - ≤ 3 years of illness",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Full recovery, normal ejection fraction, normal coronary arteries",
+              "P",
+              "P",
+              "P",
+              "I42.9",
+              ""
+            ],
+            [
+              "Otherwise",
+              "D",
+              "D",
+              "D",
+              "I42.9",
+              ""
+            ],
+            [
+              "> 3 years of illness",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Full recovery, normal ejection fraction, normal coronary arteries",
+              "CMO",
+              "CMO",
+              "CMO",
+              "I42.9",
+              ""
+            ],
+            [
+              "Otherwise",
+              "D",
+              "D",
+              "D",
+              "I42.9",
+              ""
+            ]
+          ]
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "available": true,
+      "classification_table": {
+        "headers": [
+          "Classification",
+          "Hospitalisation",
+          "Surgery",
+          "OPD",
+          "Chronic Medication",
+          "Code"
+        ],
+        "rows": [
+          {
+            "classification": "< 1 year of illness",
+            "classification_id": "c53afaab8dee7d5af6186c557c9a7726ce23a7d05be70ba568bc0cbcde7e5bf4",
+            "classification_path": [
+              "< 1 year of illness"
+            ],
+            "code": "I42.9",
+            "is_group": false,
+            "level": 0,
+            "parent_classification": null,
+            "parent_classification_id": null,
+            "ratings": {
+              "Chronic Medication": "P",
+              "Hospitalisation": "P",
+              "OPD": "P",
+              "Surgery": "P"
+            },
+            "raw_cells": [
+              "< 1 year of illness",
+              "P",
+              "P",
+              "P",
+              "P",
+              "I42.9"
+            ],
+            "related_details": []
+          },
+          {
+            "classification": "≥ 1 - ≤ 3 years of illness",
+            "classification_id": "250bf47242be9489d9e20669fad82c12b06d5d789ca4d05d51adbacb7571c494",
+            "classification_path": [
+              "≥ 1 - ≤ 3 years of illness"
+            ],
+            "code": null,
+            "is_group": true,
+            "level": 0,
+            "parent_classification": null,
+            "parent_classification_id": null,
+            "ratings": {
+              "Chronic Medication": "",
+              "Hospitalisation": "",
+              "OPD": "",
+              "Surgery": ""
+            },
+            "raw_cells": [
+              "≥ 1 - ≤ 3 years of illness",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "related_details": []
+          },
+          {
+            "classification": "Full recovery, normal ejection fraction, normal coronary arteries",
+            "classification_id": "afa43072748e0c0825377c6d928b8208a9f1cff8bb3395acddef76d233dfd2f6",
+            "classification_path": [
+              "≥ 1 - ≤ 3 years of illness",
+              "Full recovery, normal ejection fraction, normal coronary arteries"
+            ],
+            "code": "I42.9",
+            "is_group": false,
+            "level": 1,
+            "parent_classification": "≥ 1 - ≤ 3 years of illness",
+            "parent_classification_id": "250bf47242be9489d9e20669fad82c12b06d5d789ca4d05d51adbacb7571c494",
+            "ratings": {
+              "Chronic Medication": "CMO",
+              "Hospitalisation": "CMO",
+              "OPD": "CMO",
+              "Surgery": "CMO"
+            },
+            "raw_cells": [
+              "Full recovery, normal ejection fraction, normal coronary arteries",
+              "CMO",
+              "CMO",
+              "CMO",
+              "CMO",
+              "I42.9"
+            ],
+            "related_details": []
+          },
+          {
+            "classification": "Otherwise",
+            "classification_id": "3a32d9ccddef39496fb4d6e3db5c5f5f5e4af3e198b92d9a6c221180d6333f17",
+            "classification_path": [
+              "≥ 1 - ≤ 3 years of illness",
+              "Otherwise"
+            ],
+            "code": "I42.9",
+            "is_group": false,
+            "level": 1,
+            "parent_classification": "≥ 1 - ≤ 3 years of illness",
+            "parent_classification_id": "250bf47242be9489d9e20669fad82c12b06d5d789ca4d05d51adbacb7571c494",
+            "ratings": {
+              "Chronic Medication": "D",
+              "Hospitalisation": "D",
+              "OPD": "D",
+              "Surgery": "D"
+            },
+            "raw_cells": [
+              "Otherwise",
+              "D",
+              "D",
+              "D",
+              "D",
+              "I42.9"
+            ],
+            "related_details": []
+          },
+          {
+            "classification": "> 3 years of illness",
+            "classification_id": "a2a1ac82c9036255ae7bf020d207992f688b4daada2d88dfa6409d2a16e4e837",
+            "classification_path": [
+              "> 3 years of illness"
+            ],
+            "code": null,
+            "is_group": true,
+            "level": 0,
+            "parent_classification": null,
+            "parent_classification_id": null,
+            "ratings": {
+              "Chronic Medication": "",
+              "Hospitalisation": "",
+              "OPD": "",
+              "Surgery": ""
+            },
+            "raw_cells": [
+              "> 3 years of illness",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "related_details": []
+          },
+          {
+            "classification": "Full recovery, normal ejection fraction, normal coronary arteries",
+            "classification_id": "510429e12e9e903b0932cc3f8965bc31cea9064757ae747cee3c7186632b32c1",
+            "classification_path": [
+              "> 3 years of illness",
+              "Full recovery, normal ejection fraction, normal coronary arteries"
+            ],
+            "code": "I42.9",
+            "is_group": false,
+            "level": 1,
+            "parent_classification": "> 3 years of illness",
+            "parent_classification_id": "a2a1ac82c9036255ae7bf020d207992f688b4daada2d88dfa6409d2a16e4e837",
+            "ratings": {
+              "Chronic Medication": "CMO",
+              "Hospitalisation": "CMO",
+              "OPD": "CMO",
+              "Surgery": "CMO"
+            },
+            "raw_cells": [
+              "Full recovery, normal ejection fraction, normal coronary arteries",
+              "CMO",
+              "CMO",
+              "CMO",
+              "CMO",
+              "I42.9"
+            ],
+            "related_details": []
+          },
+          {
+            "classification": "Otherwise",
+            "classification_id": "53d83ee1d545d1f871fdd2d4e7573e01c92c8c3223d5a5814a7fa41a8a7cdc5b",
+            "classification_path": [
+              "> 3 years of illness",
+              "Otherwise"
+            ],
+            "code": "I42.9",
+            "is_group": false,
+            "level": 1,
+            "parent_classification": "> 3 years of illness",
+            "parent_classification_id": "a2a1ac82c9036255ae7bf020d207992f688b4daada2d88dfa6409d2a16e4e837",
+            "ratings": {
+              "Chronic Medication": "D",
+              "Hospitalisation": "D",
+              "OPD": "D",
+              "Surgery": "D"
+            },
+            "raw_cells": [
+              "Otherwise",
+              "D",
+              "D",
+              "D",
+              "D",
+              "I42.9"
+            ],
+            "related_details": []
+          }
+        ],
+        "tree": [
+          {
+            "children": [],
+            "classification": "< 1 year of illness",
+            "classification_id": "c53afaab8dee7d5af6186c557c9a7726ce23a7d05be70ba568bc0cbcde7e5bf4",
+            "classification_path": [
+              "< 1 year of illness"
+            ],
+            "code": "I42.9",
+            "is_group": false,
+            "level": 0,
+            "parent_classification": null,
+            "parent_classification_id": null,
+            "ratings": {
+              "Chronic Medication": "P",
+              "Hospitalisation": "P",
+              "OPD": "P",
+              "Surgery": "P"
+            }
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "classification": "Full recovery, normal ejection fraction, normal coronary arteries",
+                "classification_id": "afa43072748e0c0825377c6d928b8208a9f1cff8bb3395acddef76d233dfd2f6",
+                "classification_path": [
+                  "≥ 1 - ≤ 3 years of illness",
+                  "Full recovery, normal ejection fraction, normal coronary arteries"
+                ],
+                "code": "I42.9",
+                "is_group": false,
+                "level": 1,
+                "parent_classification": "≥ 1 - ≤ 3 years of illness",
+                "parent_classification_id": "250bf47242be9489d9e20669fad82c12b06d5d789ca4d05d51adbacb7571c494",
+                "ratings": {
+                  "Chronic Medication": "CMO",
+                  "Hospitalisation": "CMO",
+                  "OPD": "CMO",
+                  "Surgery": "CMO"
+                }
+              },
+              {
+                "children": [],
+                "classification": "Otherwise",
+                "classification_id": "3a32d9ccddef39496fb4d6e3db5c5f5f5e4af3e198b92d9a6c221180d6333f17",
+                "classification_path": [
+                  "≥ 1 - ≤ 3 years of illness",
+                  "Otherwise"
+                ],
+                "code": "I42.9",
+                "is_group": false,
+                "level": 1,
+                "parent_classification": "≥ 1 - ≤ 3 years of illness",
+                "parent_classification_id": "250bf47242be9489d9e20669fad82c12b06d5d789ca4d05d51adbacb7571c494",
+                "ratings": {
+                  "Chronic Medication": "D",
+                  "Hospitalisation": "D",
+                  "OPD": "D",
+                  "Surgery": "D"
+                }
+              }
+            ],
+            "classification": "≥ 1 - ≤ 3 years of illness",
+            "classification_id": "250bf47242be9489d9e20669fad82c12b06d5d789ca4d05d51adbacb7571c494",
+            "classification_path": [
+              "≥ 1 - ≤ 3 years of illness"
+            ],
+            "code": null,
+            "is_group": true,
+            "level": 0,
+            "parent_classification": null,
+            "parent_classification_id": null,
+            "ratings": {
+              "Chronic Medication": "",
+              "Hospitalisation": "",
+              "OPD": "",
+              "Surgery": ""
+            }
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "classification": "Full recovery, normal ejection fraction, normal coronary arteries",
+                "classification_id": "510429e12e9e903b0932cc3f8965bc31cea9064757ae747cee3c7186632b32c1",
+                "classification_path": [
+                  "> 3 years of illness",
+                  "Full recovery, normal ejection fraction, normal coronary arteries"
+                ],
+                "code": "I42.9",
+                "is_group": false,
+                "level": 1,
+                "parent_classification": "> 3 years of illness",
+                "parent_classification_id": "a2a1ac82c9036255ae7bf020d207992f688b4daada2d88dfa6409d2a16e4e837",
+                "ratings": {
+                  "Chronic Medication": "CMO",
+                  "Hospitalisation": "CMO",
+                  "OPD": "CMO",
+                  "Surgery": "CMO"
+                }
+              },
+              {
+                "children": [],
+                "classification": "Otherwise",
+                "classification_id": "53d83ee1d545d1f871fdd2d4e7573e01c92c8c3223d5a5814a7fa41a8a7cdc5b",
+                "classification_path": [
+                  "> 3 years of illness",
+                  "Otherwise"
+                ],
+                "code": "I42.9",
+                "is_group": false,
+                "level": 1,
+                "parent_classification": "> 3 years of illness",
+                "parent_classification_id": "a2a1ac82c9036255ae7bf020d207992f688b4daada2d88dfa6409d2a16e4e837",
+                "ratings": {
+                  "Chronic Medication": "D",
+                  "Hospitalisation": "D",
+                  "OPD": "D",
+                  "Surgery": "D"
+                }
+              }
+            ],
+            "classification": "> 3 years of illness",
+            "classification_id": "a2a1ac82c9036255ae7bf020d207992f688b4daada2d88dfa6409d2a16e4e837",
+            "classification_path": [
+              "> 3 years of illness"
+            ],
+            "code": null,
+            "is_group": true,
+            "level": 0,
+            "parent_classification": null,
+            "parent_classification_id": null,
+            "ratings": {
+              "Chronic Medication": "",
+              "Hospitalisation": "",
+              "OPD": "",
+              "Surgery": ""
+            }
+          }
+        ],
+        "warnings": []
+      },
+      "content_hash": "6f2e7fcf10ebf7f0a637d782f2e454dbd363f93795d955a5f650950776533e77",
+      "key": "health",
+      "label": "Health",
+      "markdown": "| Classification | [Hospitalisation](https://www.genre-manuals.com/hospitalisation.htm) | [Surgery](https://www.genre-manuals.com/surgery.htm) | [OPD](https://www.genre-manuals.com/out_patient.htm) | [Chronic Medication](https://www.genre-manuals.com/chronic_medication.htm) | Code |  |\n| --- | --- | --- | --- | --- | --- | --- |\n\n|  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- |\n| < 1 year of illness | P | P | P | P | I42.9 |  |\n| ≥ 1 - ≤ 3 years of illness |  |  |  |  |  |  |\n| Full recovery, normal ejection fraction, normal coronary arteries | CMO | CMO | CMO | CMO | I42.9 |  |\n| Otherwise | D | D | D | D | I42.9 |  |\n| > 3 years of illness |  |  |  |  |  |  |\n| Full recovery, normal ejection fraction, normal coronary arteries | CMO | CMO | CMO | CMO | I42.9 |  |\n| Otherwise | D | D | D | D | I42.9 |  |\n",
+      "plain_text": "Classification\nHospitalisation\nSurgery\nOPD\nChronic Medication\nCode\n< 1 year of illness\nP\nP\nP\nP\nI42.9\n≥ 1 - ≤ 3 years of illness\nFull recovery, normal ejection fraction, normal coronary arteries\nCMO\nCMO\nCMO\nCMO\nI42.9\nOtherwise\nD\nD\nD\nD\nI42.9\n> 3 years of illness\nFull recovery, normal ejection fraction, normal coronary arteries\nCMO\nCMO\nCMO\nCMO\nI42.9\nOtherwise\nD\nD\nD\nD\nI42.9",
+      "related_details": [
+        {
+          "available": true,
+          "content_hash": "75cb4fe903ca6354e4dd12f935f15339bae385c8c5cee162e85f259a9330c0f5",
+          "label": "Hospitalisation",
+          "markdown": "# Hospitalisation\n\n**Definition**\n\nThe ***Hospitalisation***benefit is defined as:\n\n1. medically-recommended confinement of the policyholder within the ward of a hospital;\n2. which has been registered as a recognised hospital or hospital clinic in terms of legislation;\n3. incorporating insurance against\n\n- costs of bed occupancy and room and board of the confinement;\n- costs of general nursing services provided by the hospital during confinement including technical and medical aids as may be generally required;\n- costs of necessary special medical services provided by hospital staff such as X-rays, laboratory tests, blood transfusion, medication; and **excluding** the costs of surgery, anaesthesia, operating theatre use, and surgeon and surgical staff fees.\n\n**Notes**\n\nOccupancy should be at the recommendation of a physician, surgeon or accident and emergency medical officer and be as a result of accident or sickness, and should be of a continuous nature. CLUE does not recognise temporary hospital admissions for routine check-ups or treatment (e.g. dialysis) as falling under the ***Hospitalisation***benefit; these are regarded primarily as Out Patient matters and so payable under the ***OPD***benefit. Your office may have different practices.\n\n“One night” or “daily” hospitalisation actually comprises three elements: the first night of admission, subsequent nights of hospital occupancy, and the final night of occupancy before discharge. Your office will have established its own definitions. Although these have little bearing on the underwriting ratings, the “working definition” used for this Manual has been to assume that all days following the day of admission and prior to the day of discharge each constitute a full 24 hours of continuous hospital confinement. The day of admission may vary in hours, but should exceed eight hours confinement. The day of discharge may be variable.\n\nExpenses incurred while so hospitalised can usually be assumed to qualify under the ***Hospitalisation***benefit if the policyholder would normally receive a single billing for all services that were received while confined. Any surgical services and costs may be billed separately. Health policies will tend to vary as to which costs or benefits may be claimed.\n\nFor underwriting purposes, the ***Hospitalisation***benefit category does not include surgery, as this is covered under the ***Surgery***benefit category.\n\nHospitals as defined here specifically exclude rehabilitation centres, extended care centres, rest home services, health “retreats” and “cures” such as hydros and spas, and any clinic which would not qualify in terms of state legislation as a “hospital”.\n\n## Hospitalisation\n\n**Definition**\n\nThe ***Hospitalisation***benefit is defined as:\n\n1. medically-recommended confinement of the policyholder within the ward of a hospital;\n2. which has been registered as a recognised hospital or hospital clinic in terms of legislation;\n3. incorporating insurance against\n\n- costs of bed occupancy and room and board of the confinement;\n- costs of general nursing services provided by the hospital during confinement including technical and medical aids as may be generally required;\n- costs of necessary special medical services provided by hospital staff such as X-rays, laboratory tests, blood transfusion, medication; and **excluding** the costs of surgery, anaesthesia, operating theatre use, and surgeon and surgical staff fees.\n\n**Notes**\n\nOccupancy should be at the recommendation of a physician, surgeon or accident and emergency medical officer and be as a result of accident or sickness, and should be of a continuous nature. CLUE does not recognise temporary hospital admissions for routine check-ups or treatment (e.g. dialysis) as falling under the ***Hospitalisation***benefit; these are regarded primarily as Out Patient matters and so payable under the ***OPD***benefit. Your office may have different practices.\n\n“One night” or “daily” hospitalisation actually comprises three elements: the first night of admission, subsequent nights of hospital occupancy, and the final night of occupancy before discharge. Your office will have established its own definitions. Although these have little bearing on the underwriting ratings, the “working definition” used for this Manual has been to assume that all days following the day of admission and prior to the day of discharge each constitute a full 24 hours of continuous hospital confinement. The day of admission may vary in hours, but should exceed eight hours confinement. The day of discharge may be variable.\n\nExpenses incurred while so hospitalised can usually be assumed to qualify under the ***Hospitalisation***benefit if the policyholder would normally receive a single billing for all services that were received while confined. Any surgical services and costs may be billed separately. Health policies will tend to vary as to which costs or benefits may be claimed.\n\nFor underwriting purposes, the ***Hospitalisation***benefit category does not include surgery, as this is covered under the ***Surgery***benefit category.\n\nHospitals as defined here specifically exclude rehabilitation centres, extended care centres, rest home services, health “retreats” and “cures” such as hydros and spas, and any clinic which would not qualify in terms of state legislation as a “hospital”.\n",
+          "plain_text": "Hospitalisation\nDefinition\nThe\nHospitalisation\nbenefit is defined as:\nmedically-recommended confinement of the policyholder within the ward of a hospital;\nwhich has been registered as a recognised hospital or hospital clinic in terms of legislation;\nincorporating insurance against\ncosts of bed occupancy and room and board of the confinement;\ncosts of general nursing services provided by the hospital during confinement including technical and medical aids as may be generally required;\ncosts of necessary special medical services provided by hospital staff such as X-rays, laboratory tests, blood transfusion, medication; and\nexcluding\nthe costs of surgery, anaesthesia, operating theatre use, and surgeon and surgical staff fees.\nNotes\nOccupancy should be at the recommendation of a physician, surgeon or accident and emergency medical officer and be as a result of accident or sickness, and should be of a continuous nature. CLUE does not recognise temporary hospital admissions for routine check-ups or treatment (e.g. dialysis) as falling under the\nHospitalisation\nbenefit; these are regarded primarily as Out Patient matters and so payable under the\nOPD\nbenefit. Your office may have different practices.\n“One night” or “daily” hospitalisation actually comprises three elements: the first night of admission, subsequent nights of hospital occupancy, and the final night of occupancy before discharge. Your office will have established its own definitions. Although these have little bearing on the underwriting ratings, the “working definition” used for this Manual has been to assume that all days following the day of admission and prior to the day of discharge each constitute a full 24 hours of continuous hospital confinement. The day of admission may vary in hours, but should exceed eight hours confinement. The day of discharge may be variable.\nExpenses incurred while so hospitalised can usually be assumed to qualify under the\nHospitalisation\nbenefit if the policyholder would normally receive a single billing for all services that were received while confined. Any surgical services and costs may be billed separately. Health policies will tend to vary as to which costs or benefits may be claimed.\nFor underwriting purposes, the\nHospitalisation\nbenefit category does not include surgery, as this is covered under the\nSurgery\nbenefit category.\nHospitals as defined here specifically exclude rehabilitation centres, extended care centres, rest home services, health “retreats” and “cures” such as hydros and spas, and any clinic which would not qualify in terms of state legislation as a “hospital”.\nHospitalisation\nDefinition\nThe\nHospitalisation\nbenefit is defined as:\nmedically-recommended confinement of the policyholder within the ward of a hospital;\nwhich has been registered as a recognised hospital or hospital clinic in terms of legislation;\nincorporating insurance against\ncosts of bed occupancy and room and board of the confinement;\ncosts of general nursing services provided by the hospital during confinement including technical and medical aids as may be generally required;\ncosts of necessary special medical services provided by hospital staff such as X-rays, laboratory tests, blood transfusion, medication; and\nexcluding\nthe costs of surgery, anaesthesia, operating theatre use, and surgeon and surgical staff fees.\nNotes\nOccupancy should be at the recommendation of a physician, surgeon or accident and emergency medical officer and be as a result of accident or sickness, and should be of a continuous nature. CLUE does not recognise temporary hospital admissions for routine check-ups or treatment (e.g. dialysis) as falling under the\nHospitalisation\nbenefit; these are regarded primarily as Out Patient matters and so payable under the\nOPD\nbenefit. Your office may have different practices.\n“One night” or “daily” hospitalisation actually comprises three elements: the first night of admission, subsequent nights of hospital occupancy, and the final night of occupancy before discharge. Your office will have established its own definitions. Although these have little bearing on the underwriting ratings, the “working definition” used for this Manual has been to assume that all days following the day of admission and prior to the day of discharge each constitute a full 24 hours of continuous hospital confinement. The day of admission may vary in hours, but should exceed eight hours confinement. The day of discharge may be variable.\nExpenses incurred while so hospitalised can usually be assumed to qualify under the\nHospitalisation\nbenefit if the policyholder would normally receive a single billing for all services that were received while confined. Any surgical services and costs may be billed separately. Health policies will tend to vary as to which costs or benefits may be claimed.\nFor underwriting purposes, the\nHospitalisation\nbenefit category does not include surgery, as this is covered under the\nSurgery\nbenefit category.\nHospitals as defined here specifically exclude rehabilitation centres, extended care centres, rest home services, health “retreats” and “cures” such as hydros and spas, and any clinic which would not qualify in terms of state legislation as a “hospital”.",
+          "url": "https://www.genre-manuals.com/hospitalisation.htm",
+          "warnings": []
+        },
+        {
+          "available": true,
+          "content_hash": "6aa47b323a937217a893f313d2d42afea392c8db885539a3bcd7eac2e8998a1e",
+          "label": "Surgery",
+          "markdown": "# Surgery\n\n**Definition**\n\nThe ***Surgery***benefit is defined as:\n\n1. the medical necessity of undergoing surgery under local, epidural or general anaesthesia by the policyholder in a fully-equipped operating theatre;\n2. possessing facilities for general anaesthesia, emergency blood transfusion, the monitoring of vital life signs, and emergency resuscitation equipment;\n3. incorporating insurance against the costs of\n\n- incisional surgical procedures for diagnostic and exploratory purposes;\n- incisional surgical remedial procedures;\n- other quasi-surgical procedures traditionally performed by a surgeon or a specialist for whom such procedures are an essential duty;\n- the full-time presence of an anaesthetist;\n- anaesthetist fees;\n- anaesthesia;\n- blood transfusions for surgical purposes;\n- necessary instrumentation and preparation thereof;\n- materials of surgical necessity and/or established practices used before, during and at the conclusion of the surgical procedure;\n- laboratory analyses performed during or as part of the surgical process;\n- surgeon and surgical staff fees;\n- operating theatre and equipment rental costs;\n- one night’s hospitalisation prior to surgery, including any pre-operative preparations, and one day’s hospitalisation following the surgical procedure;\n- specific post-operative medications and use of equipment during subsequent hospital confinement; and\n\n1. other than as noted above, excluding the costs of general hospitalisation, out-patient consultations prior to and following the surgery, and any other expenses incurred outside the operating theatre except for traditional check-ups whilst recuperating in hospital by the surgeon or specialist if the latter is not employed by the hospital.\n\n**Notes**\n\nSurgery must be undergone for exploratory or remedial reasons at the recommendation of a consulting physician, surgeon, or emergency medical officer. It must be performed in a fully equipped operating theatre. Surgery performed in a “mini” surgical adjunct in a surgeon’s or a specialist’s rooms would not be deemed as Surgery under this Manual but would be considered as ***Out Patient (OPD)*** services.\n\nDepending on individual Health policy conditions, surgery may fall within a Hospitalisation benefit. Nevertheless, for underwriting purposes, such risks would be assessed under the Surgery benefit category. Note that a minimum pre- and post-surgery hospital confinement has been taken into account under the ***Surgery***benefit category, but this would normally be billed as a Hospitalisation expense.\n\nFor purposes of this Manual, if the surgeon or specialist is not employed by the hospital with which the operating theatre is associated (e.g. an independent practitioner visits the policyholder in hospital following the surgery and submits bills for such visits), such billings would normally be assigned to the Surgery benefit and not to the ***Hospitalisation***or ***OPD***benefit. If such visits are undertaken by a surgeon employed by the hospital, such costs should normally be assigned to the ***Hospitalisation***benefit. Policyholder visits to a surgeon and associated specialists’ rooms prior to and after surgery would be allocated to the ***OPD***benefit. Your office may have different practices.\n\nSurgery should be performed for the sole purpose for which the policyholder was referred. Cases should be reviewed by the claims department if additional surgeries were performed that were not in response to discovery at the time of the surgery (e.g. during surgery, an additional procedure was needed once the surgeon became aware of the extent of disease), or if the additional procedures appeared to be cosmetic in nature. This will depend on the nature of the Health policy issued by your office.\n\nShould emergency medical and surgical action be necessary soon after surgery, whether while still in hospital or after being discharged, such necessity arising from the condition for which the initial surgery was performed or as a result of the latter, costs will usually be attributable to the ***Surgery***benefit if reasonable causality can be established, or to the Hospitalisation benefit if there is doubt, or allocated between both if an exact determination cannot be made. Your office will usually provide guidelines for this in its Health insurance policy. Claim management should be circumspect in its assessment of such claims as there may be numerous legal ramifications.\n\n## Surgery\n\n**Definition**\n\nThe ***Surgery***benefit is defined as:\n\n1. the medical necessity of undergoing surgery under local, epidural or general anaesthesia by the policyholder in a fully-equipped operating theatre;\n2. possessing facilities for general anaesthesia, emergency blood transfusion, the monitoring of vital life signs, and emergency resuscitation equipment;\n3. incorporating insurance against the costs of\n\n- incisional surgical procedures for diagnostic and exploratory purposes;\n- incisional surgical remedial procedures;\n- other quasi-surgical procedures traditionally performed by a surgeon or a specialist for whom such procedures are an essential duty;\n- the full-time presence of an anaesthetist;\n- anaesthetist fees;\n- anaesthesia;\n- blood transfusions for surgical purposes;\n- necessary instrumentation and preparation thereof;\n- materials of surgical necessity and/or established practices used before, during and at the conclusion of the surgical procedure;\n- laboratory analyses performed during or as part of the surgical process;\n- surgeon and surgical staff fees;\n- operating theatre and equipment rental costs;\n- one night’s hospitalisation prior to surgery, including any pre-operative preparations, and one day’s hospitalisation following the surgical procedure;\n- specific post-operative medications and use of equipment during subsequent hospital confinement; and\n\n1. other than as noted above, excluding the costs of general hospitalisation, out-patient consultations prior to and following the surgery, and any other expenses incurred outside the operating theatre except for traditional check-ups whilst recuperating in hospital by the surgeon or specialist if the latter is not employed by the hospital.\n\n**Notes**\n\nSurgery must be undergone for exploratory or remedial reasons at the recommendation of a consulting physician, surgeon, or emergency medical officer. It must be performed in a fully equipped operating theatre. Surgery performed in a “mini” surgical adjunct in a surgeon’s or a specialist’s rooms would not be deemed as Surgery under this Manual but would be considered as ***Out Patient (OPD)*** services.\n\nDepending on individual Health policy conditions, surgery may fall within a Hospitalisation benefit. Nevertheless, for underwriting purposes, such risks would be assessed under the Surgery benefit category. Note that a minimum pre- and post-surgery hospital confinement has been taken into account under the ***Surgery***benefit category, but this would normally be billed as a Hospitalisation expense.\n\nFor purposes of this Manual, if the surgeon or specialist is not employed by the hospital with which the operating theatre is associated (e.g. an independent practitioner visits the policyholder in hospital following the surgery and submits bills for such visits), such billings would normally be assigned to the Surgery benefit and not to the ***Hospitalisation***or ***OPD***benefit. If such visits are undertaken by a surgeon employed by the hospital, such costs should normally be assigned to the ***Hospitalisation***benefit. Policyholder visits to a surgeon and associated specialists’ rooms prior to and after surgery would be allocated to the ***OPD***benefit. Your office may have different practices.\n\nSurgery should be performed for the sole purpose for which the policyholder was referred. Cases should be reviewed by the claims department if additional surgeries were performed that were not in response to discovery at the time of the surgery (e.g. during surgery, an additional procedure was needed once the surgeon became aware of the extent of disease), or if the additional procedures appeared to be cosmetic in nature. This will depend on the nature of the Health policy issued by your office.\n\nShould emergency medical and surgical action be necessary soon after surgery, whether while still in hospital or after being discharged, such necessity arising from the condition for which the initial surgery was performed or as a result of the latter, costs will usually be attributable to the ***Surgery***benefit if reasonable causality can be established, or to the Hospitalisation benefit if there is doubt, or allocated between both if an exact determination cannot be made. Your office will usually provide guidelines for this in its Health insurance policy. Claim management should be circumspect in its assessment of such claims as there may be numerous legal ramifications.\n",
+          "plain_text": "Surgery\nDefinition\nThe\nSurgery\nbenefit is defined as:\nthe medical necessity of undergoing surgery under local, epidural or general anaesthesia by the policyholder in a fully-equipped operating theatre;\npossessing facilities for general anaesthesia, emergency blood transfusion, the monitoring of vital life signs, and emergency resuscitation equipment;\nincorporating insurance against the costs of\nincisional surgical procedures for diagnostic and exploratory purposes;\nincisional surgical remedial procedures;\nother quasi-surgical procedures traditionally performed by a surgeon or a specialist for whom such procedures are an essential duty;\nthe full-time presence of an anaesthetist;\nanaesthetist fees;\nanaesthesia;\nblood transfusions for surgical purposes;\nnecessary instrumentation and preparation thereof;\nmaterials of surgical necessity and/or established practices used before, during and at the conclusion of the surgical procedure;\nlaboratory analyses performed during or as part of the surgical process;\nsurgeon and surgical staff fees;\noperating theatre and equipment rental costs;\none night’s hospitalisation prior to surgery, including any pre-operative preparations, and one day’s hospitalisation following the surgical procedure;\nspecific post-operative medications and use of equipment during subsequent hospital confinement; and\nother than as noted above,\nexcluding\nthe costs of general hospitalisation, out-patient consultations prior to and following the surgery, and any other expenses incurred outside the operating theatre except for traditional check-ups whilst recuperating in hospital by the surgeon or specialist if the latter is not employed by the hospital.\nNotes\nSurgery must be undergone for exploratory or remedial reasons at the recommendation of a consulting physician, surgeon, or emergency medical officer. It must be performed in a fully equipped operating theatre. Surgery performed in a “mini” surgical adjunct in a surgeon’s or a specialist’s rooms would not be deemed as Surgery under this Manual but would be considered as\nOut Patient (OPD)\nservices.\nDepending on individual Health policy conditions, surgery may fall within a Hospitalisation benefit. Nevertheless, for underwriting purposes, such risks would be assessed under the Surgery benefit category. Note that a minimum pre- and post-surgery hospital confinement has been taken into account under the\nSurgery\nbenefit category, but this would normally be billed as a Hospitalisation expense.\nFor purposes of this Manual, if the surgeon or specialist is not employed by the hospital with which the operating theatre is associated (e.g. an independent practitioner visits the policyholder in hospital following the surgery and submits bills for such visits), such billings would normally be assigned to the Surgery benefit and not to the\nHospitalisation\nor\nOPD\nbenefit. If such visits are undertaken by a surgeon employed by the hospital, such costs should normally be assigned to the\nHospitalisation\nbenefit. Policyholder visits to a surgeon and associated specialists’ rooms prior to and after surgery would be allocated to the\nOPD\nbenefit. Your office may have different practices.\nSurgery should be performed for the sole purpose for which the policyholder was referred. Cases should be reviewed by the claims department if additional surgeries were performed that were not in response to discovery at the time of the surgery (e.g. during surgery, an additional procedure was needed once the surgeon became aware of the extent of disease), or if the additional procedures appeared to be cosmetic in nature. This will depend on the nature of the Health policy issued by your office.\nShould emergency medical and surgical action be necessary soon after surgery, whether while still in hospital or after being discharged, such necessity arising from the condition for which the initial surgery was performed or as a result of the latter, costs will usually be attributable to the\nSurgery\nbenefit if reasonable causality can be established, or to the Hospitalisation benefit if there is doubt, or allocated between both if an exact determination cannot be made. Your office will usually provide guidelines for this in its Health insurance policy. Claim management should be circumspect in its assessment of such claims as there may be numerous legal ramifications.\nSurgery\nDefinition\nThe\nSurgery\nbenefit is defined as:\nthe medical necessity of undergoing surgery under local, epidural or general anaesthesia by the policyholder in a fully-equipped operating theatre;\npossessing facilities for general anaesthesia, emergency blood transfusion, the monitoring of vital life signs, and emergency resuscitation equipment;\nincorporating insurance against the costs of\nincisional surgical procedures for diagnostic and exploratory purposes;\nincisional surgical remedial procedures;\nother quasi-surgical procedures traditionally performed by a surgeon or a specialist for whom such procedures are an essential duty;\nthe full-time presence of an anaesthetist;\nanaesthetist fees;\nanaesthesia;\nblood transfusions for surgical purposes;\nnecessary instrumentation and preparation thereof;\nmaterials of surgical necessity and/or established practices used before, during and at the conclusion of the surgical procedure;\nlaboratory analyses performed during or as part of the surgical process;\nsurgeon and surgical staff fees;\noperating theatre and equipment rental costs;\none night’s hospitalisation prior to surgery, including any pre-operative preparations, and one day’s hospitalisation following the surgical procedure;\nspecific post-operative medications and use of equipment during subsequent hospital confinement; and\nother than as noted above,\nexcluding\nthe costs of general hospitalisation, out-patient consultations prior to and following the surgery, and any other expenses incurred outside the operating theatre except for traditional check-ups whilst recuperating in hospital by the surgeon or specialist if the latter is not employed by the hospital.\nNotes\nSurgery must be undergone for exploratory or remedial reasons at the recommendation of a consulting physician, surgeon, or emergency medical officer. It must be performed in a fully equipped operating theatre. Surgery performed in a “mini” surgical adjunct in a surgeon’s or a specialist’s rooms would not be deemed as Surgery under this Manual but would be considered as\nOut Patient (OPD)\nservices.\nDepending on individual Health policy conditions, surgery may fall within a Hospitalisation benefit. Nevertheless, for underwriting purposes, such risks would be assessed under the Surgery benefit category. Note that a minimum pre- and post-surgery hospital confinement has been taken into account under the\nSurgery\nbenefit category, but this would normally be billed as a Hospitalisation expense.\nFor purposes of this Manual, if the surgeon or specialist is not employed by the hospital with which the operating theatre is associated (e.g. an independent practitioner visits the policyholder in hospital following the surgery and submits bills for such visits), such billings would normally be assigned to the Surgery benefit and not to the\nHospitalisation\nor\nOPD\nbenefit. If such visits are undertaken by a surgeon employed by the hospital, such costs should normally be assigned to the\nHospitalisation\nbenefit. Policyholder visits to a surgeon and associated specialists’ rooms prior to and after surgery would be allocated to the\nOPD\nbenefit. Your office may have different practices.\nSurgery should be performed for the sole purpose for which the policyholder was referred. Cases should be reviewed by the claims department if additional surgeries were performed that were not in response to discovery at the time of the surgery (e.g. during surgery, an additional procedure was needed once the surgeon became aware of the extent of disease), or if the additional procedures appeared to be cosmetic in nature. This will depend on the nature of the Health policy issued by your office.\nShould emergency medical and surgical action be necessary soon after surgery, whether while still in hospital or after being discharged, such necessity arising from the condition for which the initial surgery was performed or as a result of the latter, costs will usually be attributable to the\nSurgery\nbenefit if reasonable causality can be established, or to the Hospitalisation benefit if there is doubt, or allocated between both if an exact determination cannot be made. Your office will usually provide guidelines for this in its Health insurance policy. Claim management should be circumspect in its assessment of such claims as there may be numerous legal ramifications.",
+          "url": "https://www.genre-manuals.com/surgery.htm",
+          "warnings": []
+        },
+        {
+          "available": true,
+          "content_hash": "458e1bfaff139ac818cf11cc9cfe5a2eb218da633e4075d845b7a75fec3d8009",
+          "label": "OPD",
+          "markdown": "# Out Patient\n\n**Definition**\n\nThe ***Out Patient*** benefit is defined as insurance against the costs of\n\n- medical consultations and examinations performed by an accredited physician, surgeon or sectional specialist in their rooms;\n- medical consultations and examinations performed by accredited physician, surgeon or sectional specialist or accredited health care worker on call to the policyholder’s domicile or other location in cases of emergency;\n- medical consultations and examinations performed by the staff of an accredited hospital or hospital clinic, with such consultations or examinations not falling within the scope of the [Hospitalisation](https://www.genre-manuals.com/hospitalisation.htm) benefit;\n- exploratory, diagnostic and laboratory tests ordered by an accredited physician, surgeon or sectional specialist while the patient is not hospitalised;\n- out-patient therapies prescribed by an accredited physician, surgeon or sectional specialist prior to, during or subsequent to the manifestation of an illness;\n- such medication as prescribed by an accredited physician, surgeon or sectional specialist as may be charged to the patient by a qualified pharmacist or hospital dispensary, with the exception of [Chronic medication](https://www.genre-manuals.com/chronic_medication.htm) as defined;\n- authorised emergency hospital or rescue transportation utilised to convey the policyholder to a hospital or emergency care centre or between hospitals for purposes of attending further to the policyholder’s illness or injuries;\n- all reasonable medically supervised activities directly associated with a specified illness, accident, or the further prevention of such illness;\n- all reasonable surgery performed within an accredited physician’s, specialist’s, or surgeon’s rooms or adjoining surgery, if such surgery does not fall within the constraints of the [Surgery](https://www.genre-manuals.com/surgery.htm) benefit;\n- and excluding (except where not specifically excluded by a policy) any of the above activities which incurred no cost whatsoever to the policyholder, or which were not directly attributable to the sickness or accident of the policyholder, or which were provided by any persons or institutions not licensed by state legislation to perform such services.\n\n**Notes**\n\nOut Patient Department (OPD) treatment has given this benefit its name. As may be seen, it can cover all costs which would not be covered by the other benefits in this manual, provided that such costs are of a valid nature. There will be overlap between hospitalisation and consultations before and after surgery, but many of these situations have been included in the ratings.\n\nSome confusion may result from the exclusion in (10) above. This relates to the sale of “mini-Dread Disease” type policies and Major Medical Expense policies where the actual undergoing of a procedure, whether fully at the expense of the State or not, results in a lump-sum payment commensurate with the insurer’s benefit list.\n\nIt has been assumed that expenses are of a reasonable or legally-established nature and that they have been set by a government agency or medical association. Naturally, patients choose the care provider they prefer whenever possible, and sometimes these choices involve extremely expensive specialists and elaborate physiotherapy establishments. Health insurance companies will have generally foreseen this possibility, and policies and benefits will be appropriately tailored. This Manual has assumed moderation in this regard, although it makes little difference in the underwriting process, as loadings are percentage increases in the premium. If the premium is low, the insurer is likely to be cautious, and if the premium is high (possibly indicating an expectation of higher claims), so too will be the loadings in monetary terms.\n\n## Out Patient\n\n**Definition**\n\nThe ***Out Patient*** benefit is defined as insurance against the costs of\n\n- medical consultations and examinations performed by an accredited physician, surgeon or sectional specialist in their rooms;\n- medical consultations and examinations performed by accredited physician, surgeon or sectional specialist or accredited health care worker on call to the policyholder’s domicile or other location in cases of emergency;\n- medical consultations and examinations performed by the staff of an accredited hospital or hospital clinic, with such consultations or examinations not falling within the scope of the [Hospitalisation](https://www.genre-manuals.com/hospitalisation.htm) benefit;\n- exploratory, diagnostic and laboratory tests ordered by an accredited physician, surgeon or sectional specialist while the patient is not hospitalised;\n- out-patient therapies prescribed by an accredited physician, surgeon or sectional specialist prior to, during or subsequent to the manifestation of an illness;\n- such medication as prescribed by an accredited physician, surgeon or sectional specialist as may be charged to the patient by a qualified pharmacist or hospital dispensary, with the exception of [Chronic medication](https://www.genre-manuals.com/chronic_medication.htm) as defined;\n- authorised emergency hospital or rescue transportation utilised to convey the policyholder to a hospital or emergency care centre or between hospitals for purposes of attending further to the policyholder’s illness or injuries;\n- all reasonable medically supervised activities directly associated with a specified illness, accident, or the further prevention of such illness;\n- all reasonable surgery performed within an accredited physician’s, specialist’s, or surgeon’s rooms or adjoining surgery, if such surgery does not fall within the constraints of the [Surgery](https://www.genre-manuals.com/surgery.htm) benefit;\n- and excluding (except where not specifically excluded by a policy) any of the above activities which incurred no cost whatsoever to the policyholder, or which were not directly attributable to the sickness or accident of the policyholder, or which were provided by any persons or institutions not licensed by state legislation to perform such services.\n\n**Notes**\n\nOut Patient Department (OPD) treatment has given this benefit its name. As may be seen, it can cover all costs which would not be covered by the other benefits in this manual, provided that such costs are of a valid nature. There will be overlap between hospitalisation and consultations before and after surgery, but many of these situations have been included in the ratings.\n\nSome confusion may result from the exclusion in (10) above. This relates to the sale of “mini-Dread Disease” type policies and Major Medical Expense policies where the actual undergoing of a procedure, whether fully at the expense of the State or not, results in a lump-sum payment commensurate with the insurer’s benefit list.\n\nIt has been assumed that expenses are of a reasonable or legally-established nature and that they have been set by a government agency or medical association. Naturally, patients choose the care provider they prefer whenever possible, and sometimes these choices involve extremely expensive specialists and elaborate physiotherapy establishments. Health insurance companies will have generally foreseen this possibility, and policies and benefits will be appropriately tailored. This Manual has assumed moderation in this regard, although it makes little difference in the underwriting process, as loadings are percentage increases in the premium. If the premium is low, the insurer is likely to be cautious, and if the premium is high (possibly indicating an expectation of higher claims), so too will be the loadings in monetary terms.\n",
+          "plain_text": "Out Patient\nDefinition\nThe\nOut Patient\nbenefit is defined as insurance against the costs of\nmedical consultations and examinations performed by an accredited physician, surgeon or sectional specialist in their rooms;\nmedical consultations and examinations performed by accredited physician, surgeon or sectional specialist or accredited health care worker on call to the policyholder’s domicile or other location in cases of emergency;\nmedical consultations and examinations performed by the staff of an accredited hospital or hospital clinic, with such consultations or examinations not falling within the scope of the\nHospitalisation\nbenefit;\nexploratory, diagnostic and laboratory tests ordered by an accredited physician, surgeon or sectional specialist while the patient is not hospitalised;\nout-patient therapies prescribed by an accredited physician, surgeon or sectional specialist prior to, during or subsequent to the manifestation of an illness;\nsuch medication as prescribed by an accredited physician, surgeon or sectional specialist as may be charged to the patient by a qualified pharmacist or hospital dispensary, with the exception of\nChronic medication\nas defined;\nauthorised emergency hospital or rescue transportation utilised to convey the policyholder to a hospital or emergency care centre or between hospitals for purposes of attending further to the policyholder’s illness or injuries;\nall reasonable medically supervised activities directly associated with a specified illness, accident, or the further prevention of such illness;\nall reasonable surgery performed within an accredited physician’s, specialist’s, or surgeon’s rooms or adjoining surgery, if such surgery does not fall within the constraints of the\nSurgery\nbenefit;\nand excluding (except where not specifically excluded by a policy) any of the above activities which incurred no cost whatsoever to the policyholder, or which were not directly attributable to the sickness or accident of the policyholder, or which were provided by any persons or institutions not licensed by state legislation to perform such services.\nNotes\nOut Patient Department (OPD) treatment has given this benefit its name. As may be seen, it can cover all costs which would not be covered by the other benefits in this manual, provided that such costs are of a valid nature. There will be overlap between hospitalisation and consultations before and after surgery, but many of these situations have been included in the ratings.\nSome confusion may result from the exclusion in (10) above. This relates to the sale of “mini-Dread Disease” type policies and Major Medical Expense policies where the actual undergoing of a procedure, whether fully at the expense of the State or not, results in a lump-sum payment commensurate with the insurer’s benefit list.\nIt has been assumed that expenses are of a reasonable or legally-established nature and that they have been set by a government agency or medical association. Naturally, patients choose the care provider they prefer whenever possible, and sometimes these choices involve extremely expensive specialists and elaborate physiotherapy establishments. Health insurance companies will have generally foreseen this possibility, and policies and benefits will be appropriately tailored. This Manual has assumed moderation in this regard, although it makes little difference in the underwriting process, as loadings are percentage increases in the premium. If the premium is low, the insurer is likely to be cautious, and if the premium is high (possibly indicating an expectation of higher claims), so too will be the loadings in monetary terms.\nOut Patient\nDefinition\nThe\nOut Patient\nbenefit is defined as insurance against the costs of\nmedical consultations and examinations performed by an accredited physician, surgeon or sectional specialist in their rooms;\nmedical consultations and examinations performed by accredited physician, surgeon or sectional specialist or accredited health care worker on call to the policyholder’s domicile or other location in cases of emergency;\nmedical consultations and examinations performed by the staff of an accredited hospital or hospital clinic, with such consultations or examinations not falling within the scope of the\nHospitalisation\nbenefit;\nexploratory, diagnostic and laboratory tests ordered by an accredited physician, surgeon or sectional specialist while the patient is not hospitalised;\nout-patient therapies prescribed by an accredited physician, surgeon or sectional specialist prior to, during or subsequent to the manifestation of an illness;\nsuch medication as prescribed by an accredited physician, surgeon or sectional specialist as may be charged to the patient by a qualified pharmacist or hospital dispensary, with the exception of\nChronic medication\nas defined;\nauthorised emergency hospital or rescue transportation utilised to convey the policyholder to a hospital or emergency care centre or between hospitals for purposes of attending further to the policyholder’s illness or injuries;\nall reasonable medically supervised activities directly associated with a specified illness, accident, or the further prevention of such illness;\nall reasonable surgery performed within an accredited physician’s, specialist’s, or surgeon’s rooms or adjoining surgery, if such surgery does not fall within the constraints of the\nSurgery\nbenefit;\nand excluding (except where not specifically excluded by a policy) any of the above activities which incurred no cost whatsoever to the policyholder, or which were not directly attributable to the sickness or accident of the policyholder, or which were provided by any persons or institutions not licensed by state legislation to perform such services.\nNotes\nOut Patient Department (OPD) treatment has given this benefit its name. As may be seen, it can cover all costs which would not be covered by the other benefits in this manual, provided that such costs are of a valid nature. There will be overlap between hospitalisation and consultations before and after surgery, but many of these situations have been included in the ratings.\nSome confusion may result from the exclusion in (10) above. This relates to the sale of “mini-Dread Disease” type policies and Major Medical Expense policies where the actual undergoing of a procedure, whether fully at the expense of the State or not, results in a lump-sum payment commensurate with the insurer’s benefit list.\nIt has been assumed that expenses are of a reasonable or legally-established nature and that they have been set by a government agency or medical association. Naturally, patients choose the care provider they prefer whenever possible, and sometimes these choices involve extremely expensive specialists and elaborate physiotherapy establishments. Health insurance companies will have generally foreseen this possibility, and policies and benefits will be appropriately tailored. This Manual has assumed moderation in this regard, although it makes little difference in the underwriting process, as loadings are percentage increases in the premium. If the premium is low, the insurer is likely to be cautious, and if the premium is high (possibly indicating an expectation of higher claims), so too will be the loadings in monetary terms.",
+          "url": "https://www.genre-manuals.com/out_patient.htm",
+          "warnings": []
+        },
+        {
+          "available": true,
+          "content_hash": "ef371cb1ff5cfa02dbc322abe811d18fd6fa4d0e19283ea1dbe9a9d39cee2c4e",
+          "label": "Chronic Medication",
+          "markdown": "# Chronic Medication\n\n**Definition**\n\nThe ***Chronic Medication*** benefit is defined as insurance against the costs of\n\n- specific medication prescribed by an accredited physician, surgeon or sectional specialist in the management of a patient;\n- for a continuous period of not less than three months; and\n- to permit, maintain or enhance quality of life and function which would otherwise be impaired were the prescribed medication not utilised or otherwise not made available on a regular long-term basis.\n\n**Notes**\n\nShort-term and “once-off” medications will be covered under the other benefits, primarily ***Out-Patient*** Chronic medication should be of a long-term nature, e.g. medications for treatment of hypertension, diabetes mellitus, or epilepsy.\n\nChronic medication may be dispensed in hospitals (but would not – except in extreme cases of long-term hospitalisation – fall under the Hospitalisation benefit). It is more likely to be dispensed by Hospital Out Patient Departments (OPDs) and clinics, and may also be supplied by dispensing physicians and incorporated within the consultation charge. The latter possibility has been taken into account in the OPD ratings, but any policy which incorporates an OPD benefit for chronic medication should underwrite the risk in terms of the latter category as well.\n\n## Chronic Medication\n\n**Definition**\n\nThe ***Chronic Medication*** benefit is defined as insurance against the costs of\n\n- specific medication prescribed by an accredited physician, surgeon or sectional specialist in the management of a patient;\n- for a continuous period of not less than three months; and\n- to permit, maintain or enhance quality of life and function which would otherwise be impaired were the prescribed medication not utilised or otherwise not made available on a regular long-term basis.\n\n**Notes**\n\nShort-term and “once-off” medications will be covered under the other benefits, primarily ***Out-Patient*** Chronic medication should be of a long-term nature, e.g. medications for treatment of hypertension, diabetes mellitus, or epilepsy.\n\nChronic medication may be dispensed in hospitals (but would not – except in extreme cases of long-term hospitalisation – fall under the Hospitalisation benefit). It is more likely to be dispensed by Hospital Out Patient Departments (OPDs) and clinics, and may also be supplied by dispensing physicians and incorporated within the consultation charge. The latter possibility has been taken into account in the OPD ratings, but any policy which incorporates an OPD benefit for chronic medication should underwrite the risk in terms of the latter category as well.\n",
+          "plain_text": "Chronic Medication\nDefinition\nThe\nChronic Medication\nbenefit is defined as insurance against the costs of\nspecific medication prescribed by an accredited physician, surgeon or sectional specialist in the management of a patient;\nfor a continuous period of not less than three months; and\nto permit, maintain or enhance quality of life and function which would otherwise be impaired were the prescribed medication not utilised or otherwise not made available on a regular long-term basis.\nNotes\nShort-term and “once-off” medications will be covered under the other benefits, primarily\nOut-Patient\nChronic medication should be of a long-term nature, e.g. medications for treatment of hypertension, diabetes mellitus, or epilepsy.\nChronic medication may be dispensed in hospitals (but would not – except in extreme cases of long-term hospitalisation – fall under the Hospitalisation benefit). It is more likely to be dispensed by Hospital Out Patient Departments (OPDs) and clinics, and may also be supplied by dispensing physicians and incorporated within the consultation charge. The latter possibility has been taken into account in the OPD ratings, but any policy which incorporates an OPD benefit for chronic medication should underwrite the risk in terms of the latter category as well.\nChronic Medication\nDefinition\nThe\nChronic Medication\nbenefit is defined as insurance against the costs of\nspecific medication prescribed by an accredited physician, surgeon or sectional specialist in the management of a patient;\nfor a continuous period of not less than three months; and\nto permit, maintain or enhance quality of life and function which would otherwise be impaired were the prescribed medication not utilised or otherwise not made available on a regular long-term basis.\nNotes\nShort-term and “once-off” medications will be covered under the other benefits, primarily\nOut-Patient\nChronic medication should be of a long-term nature, e.g. medications for treatment of hypertension, diabetes mellitus, or epilepsy.\nChronic medication may be dispensed in hospitals (but would not – except in extreme cases of long-term hospitalisation – fall under the Hospitalisation benefit). It is more likely to be dispensed by Hospital Out Patient Departments (OPDs) and clinics, and may also be supplied by dispensing physicians and incorporated within the consultation charge. The latter possibility has been taken into account in the OPD ratings, but any policy which incorporates an OPD benefit for chronic medication should underwrite the risk in terms of the latter category as well.",
+          "url": "https://www.genre-manuals.com/chronic_medication.htm",
+          "warnings": []
+        }
+      ],
+      "source_url": "https://www.genre-manuals.com/sites/CLUE/home/page7/page8/circulatory-system/heart/cardiomyopathies/page798/maincontent/tab510.html.ajax",
+      "tables": [
+        {
+          "rows": [
+            [
+              "Classification",
+              "Hospitalisation",
+              "Surgery",
+              "OPD",
+              "Chronic Medication",
+              "Code",
+              ""
+            ]
+          ]
+        },
+        {
+          "rows": [
+            [
+              "< 1 year of illness",
+              "P",
+              "P",
+              "P",
+              "P",
+              "I42.9",
+              ""
+            ],
+            [
+              "≥ 1 - ≤ 3 years of illness",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Full recovery, normal ejection fraction, normal coronary arteries",
+              "CMO",
+              "CMO",
+              "CMO",
+              "CMO",
+              "I42.9",
+              ""
+            ],
+            [
+              "Otherwise",
+              "D",
+              "D",
+              "D",
+              "D",
+              "I42.9",
+              ""
+            ],
+            [
+              "> 3 years of illness",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Full recovery, normal ejection fraction, normal coronary arteries",
+              "CMO",
+              "CMO",
+              "CMO",
+              "CMO",
+              "I42.9",
+              ""
+            ],
+            [
+              "Otherwise",
+              "D",
+              "D",
+              "D",
+              "D",
+              "I42.9",
+              ""
+            ]
+          ]
+        }
+      ],
+      "warnings": []
+    }
+  ]
+}

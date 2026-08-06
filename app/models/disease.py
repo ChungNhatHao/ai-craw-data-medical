@@ -56,7 +56,7 @@ class ParseMetadata(BaseModel):
 
 
 class DiseaseDocument(BaseModel):
-    schema_version: str = "1.2"
+    schema_version: str = "1.3"
     document_id: str = Field(pattern=SHA256_PATTERN)
     source: DiseaseSource
     disease: DiseaseFields
@@ -99,7 +99,10 @@ class PartialDiseaseFields(BaseModel):
 
 
 class ParsingPolicy(BaseModel):
-    timeout_seconds: float = Field(default=30, gt=0)
+    timeout_seconds: float = Field(default=90, gt=0)
+    max_attempts: int = Field(default=3, ge=1)
+    retry_base_seconds: float = Field(default=2, ge=0)
+    retry_max_seconds: float = Field(default=10, ge=0)
     max_model_calls: int = Field(default=40, ge=1)
     max_input_chars: int = Field(default=200_000, ge=1)
 

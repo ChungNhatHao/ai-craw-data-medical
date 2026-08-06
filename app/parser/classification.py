@@ -8,6 +8,7 @@ from app.models.tabs import (
     ClassificationNode,
     ClassificationRow,
     DiseaseClassificationTable,
+    TabRelatedDetail,
 )
 
 PADDING_LEFT = re.compile(
@@ -19,6 +20,8 @@ LEVEL_WIDTH_PX = 25
 
 def extract_classification_table(
     html: str,
+    *,
+    related_details: tuple[TabRelatedDetail, ...] = (),
 ) -> DiseaseClassificationTable | None:
     soup = BeautifulSoup(html, "lxml")
     data_table = soup.select_one("table#conditionTable")
@@ -31,6 +34,7 @@ def extract_classification_table(
     rows: list[ClassificationRow] = []
     path_stack: list[str] = []
     seen_paths: set[tuple[str, ...]] = set()
+    details_by_label = _details_by_label(related_details)
     for row in data_table.find_all("tr"):
         if str(row.get("aria-hidden", "")).casefold() == "true":
             continue
@@ -73,6 +77,10 @@ def extract_classification_table(
                 ratings=ratings,
                 code=code,
                 raw_cells=aligned,
+                related_details=_row_related_details(
+                    row,
+                    details_by_label,
+                ),
             )
         )
     return DiseaseClassificationTable(
@@ -81,6 +89,32 @@ def extract_classification_table(
         tree=_build_tree(rows),
         warnings=tuple(dict.fromkeys(warnings)),
     )
+
+
+def _details_by_label(
+    details: tuple[TabRelatedDetail, ...],
+) -> dict[str, tuple[TabRelatedDetail, ...]]:
+    grouped: dict[str, list[TabRelatedDetail]] = {}
+    for detail in details:
+        key = " ".join(detail.label.casefold().split())
+        grouped.setdefault(key, []).append(detail)
+    return {key: tuple(values) for key, values in grouped.items()}
+
+
+def _row_related_details(
+    row: Tag,
+    details_by_label: dict[str, tuple[TabRelatedDetail, ...]],
+) -> tuple[TabRelatedDetail, ...]:
+    matched: list[TabRelatedDetail] = []
+    seen_urls: set[str] = set()
+    for link in row.select("a.genrePopup[href]"):
+        label = " ".join(link.get_text(" ", strip=True).casefold().split())
+        for detail in details_by_label.get(label, ()):
+            url = str(detail.url)
+            if url not in seen_urls:
+                matched.append(detail)
+                seen_urls.add(url)
+    return tuple(matched)
 
 
 def _extract_headers(

@@ -715,7 +715,7 @@ class GenreManualsPlugin(SitePlugin):
                 not label
                 or not href
                 or normalized_label in {"edit", "edit note", "+"}
-                or "edit" in normalized_label
+                or normalized_label.startswith("edit ")
             ):
                 continue
             target = self.canonicalize_url(urljoin(base_url, href))
